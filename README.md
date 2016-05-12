@@ -26,3 +26,38 @@ Repositório contendo documentação técnica sobre o Patinho Feio, primeiro com
 * Em Mrio de 2016 o professor João José Neto encontrou em meio a seus pertences e transcreveu um documento antigo contendo a listagem do micro-pré-loader de autoria de Moshe Bain.
 * Disponível em: Micro_pré_loader__Moshe_Bain_1977_07_21.pdf
 
+# Arquivos binários
+
+No diretório "binários" estão arquivos binários de programas para o Patinho:
+
+## apendice_g__hexam.bin
+
+* programa absoluto para ser carregado no endereço /E00
+* Programa HEXAM, para manipular dados da memória por meio do console da teletype.
+* transcrito da listagem do apendice g do manual do montador.
+* CRC(e608f6d3)
+* SHA1(3f76b5f91d9b2573e70919539d47752e7623e40a)
+
+## exemplo_16.7.bin
+
+* programa absoluto para ser carregado no endereço /006
+* programa "hello world" extraído da página 16.7 do manual do montador. Imprime "PATINHO FEIO" na DECWRITER.
+* CRC(0a87ac8d)
+* SHA1(7c35ac3eed9ed239f2ef56c26e6f0c59f635e1ac)
+
+## loader.bin
+
+* programa absoluto a ser carregado no endereço /F80
+* mero "placeholder". Arquivo inteiramente composto de zeros.
+* O loader original da década de 70 ainda não foi encontrado.
+* CRC(c2a8fa9d)
+* SHA1(0ae4f711ef5d6e9d26c611fd2c8c8ac45ecbf9e7)
+
+## micro-pre-loader.bin
+
+* programa absoluto a ser carregado no endereço /000
+* implementação mínimalista para facilitar a sua introdução manual pelo operador do computador em situações de bootstraping.
+* Resgatado com base em memórias do professor João José Neto em Maio de 2016. Portanto, pode conter erros.
+* CRC(1921feab)
+* SHA1(bb063102e44e9ab963f95b45710141dc2c5046b0)
+ 
