@@ -75,6 +75,7 @@ Segue abaixo uma lista de documentos relacionados ao Patinho Feio mas que ainda 
 * PINHEIRO, WANNER MONTEIRO "A linguagem Assembler so Patinho Feio" Publicação interna do Lab. de Sistemas Digitais (EPUSP), 1974.
 * MASSOLA, ANTONIO MARCOS DE AGUIRRA "Automação de Projeto de Sistemas Digitais: Simulação em Nível de Portas Lógicas" Tese de Doutorado - EPUSP, 1974
 * TACHIBANA, MÁRIO "Carregador Relocável para o Computador Pato Feio" Publicação interna do Lab.Digitais, 1974
+* SHIMIZU, SELMA “Automação de projetos de sistemas digitais: posicionamento de componentes” Dissertação (EPUSP), 1975.
 * RUGGIERO, WILSON VICENTE. "Projeto de um processador microprogramado." Dissertação (Mestrado em Engenharia) – EPUSP, 1975.
 * Resolução do trabalho final da cadeira de arquitetura de computadores PEL-727 (projeto de sistemas digitais), 1971. Uma versão escaneada encontra-se nos anexos da dissertação de Marcia de Oliveira Cardoso, 2003, mas seria desejável re-escanear o documento em uma resoluçao melhor.
 * Áudio e/ou transcrições das entrevistas de Marcia de Oliveira Cardoso, caso existam.
