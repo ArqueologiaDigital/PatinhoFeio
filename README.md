@@ -102,9 +102,9 @@ Segue abaixo uma lista de documentos (possivelmente) relacionados direta ou indi
 * acervos pessoais de fitas perfuradas (para serem digitalizadas)
 
 ## Outros documentos possivelmente relacionados disponíveis na bibliteca de eng. elétrica EPUSP
-* FD101
-* FD118
-* FT241
-* FT452 
-* FD904
-
+* NETO, JOÃO JOSÉ. "SPD : um sistema automático de apoio ao projeto e desenvolvimento de sistemas digitais." Tese de Doutorado, 1980. (Bibl. Poli-Elétrica FT-452) http://dedalus.usp.br/F/X3PQ1FBIYLQ6VRV6NX6QPPVU5M414BH4GFD1L5FLI9HX4MAYIP-01055?func=full-set-set&set_number=005347&set_entry=000118&format=999
+* MARTINI, JOSÉ SIDNEI COLOMBO. "Automação de projetos de sistemas digitais : rotas de circuito impresso" (Bibl. Poli-Elétrica FD-101) http://dedalus.usp.br/F/X3PQ1FBIYLQ6VRV6NX6QPPVU5M414BH4GFD1L5FLI9HX4MAYIP-11222?func=full-set-set&set_number=007973&set_entry=000005&format=999
+* CUNHA JUNIOR, NESTOR DE MATOS. "Automação de projetos de sistemas digitais : partição de circuitos lógicos." (Bibl. Poli-Elétrica FD118)
+http://dedalus.usp.br/F/X3PQ1FBIYLQ6VRV6NX6QPPVU5M414BH4GFD1L5FLI9HX4MAYIP-08231?func=full-set-set&set_number=008208&set_entry=000013&format=999
+* MASSOLA, ANTONIO MARCOS DE AGUIRRA. "Automacao de projetos de sistemas digitais : arquivo central." Tese de livre-docência (Bibl. Poli-Elétrica FT241) http://dedalus.usp.br/F/X3PQ1FBIYLQ6VRV6NX6QPPVU5M414BH4GFD1L5FLI9HX4MAYIP-01939?func=full-set-set&set_number=008367&set_entry=000048&format=999
+* MARTUCCI JUNIOR, MOACYR. "Projeto de uma memória monolítica : recurso para ampliação da memória principal de um minicomputador." (Bibl. Poli-Elétrica FD904) http://dedalus.usp.br/F/X3PQ1FBIYLQ6VRV6NX6QPPVU5M414BH4GFD1L5FLI9HX4MAYIP-16877?func=full-set-set&set_number=008678&set_entry=000049&format=999
