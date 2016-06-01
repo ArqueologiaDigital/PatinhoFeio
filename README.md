@@ -16,6 +16,13 @@ Repositório contendo documentação técnica sobre o Patinho Feio, primeiro com
 * PDF disponível em: Projeto_de_Computadores_Digitais_2a_ed__EFregni_GLangdonJr_1974__reimpressao_de_1979__escaneamento_incompleto.pdf
 * Arquivos originais do escaneamento (para gerar imagens de maior resolução) disponíveis em: https://gitlab.com/fsanches/Projeto_de_Computadores_Digitais_2a_ed
 
+## 1979: GUIDO STOLFI: "Descrição de um Sistema Modular de Sintese de Sons Com Controle Automático Por Computador"
+* Visão geral sobre o Sintetizador de Guido Stolfi e sua integração aos computadores Patinho Feio e HP21MX.
+* Contém fotos em preto-e-branco do sintetizador
+* Contém alguns esquemáticos e equações de filtros
+* PDF disponível em: Descrição_de_um_Sistema_Modular_de_Sintese_de_Sons_Com_Controle_Automático_Por_Computador__Guido_Stolfi__1979.pdf
+* Arquivos originais do escaneamento (para gerar imagens de maior resolução) disponíveis em: https://github.com/felipesanches/SintetizadorGuidoStolfi
+
 ## 2003: Tese de mestrado de Marcia de Oliveira Cardoso
 * Em 2003, Marcia de Oliveira Cardoso desenvolveu uma tese de mestrado entitulada "O Patinho Feio como construção sociotécnica", defendida no Instituto de Matemática da Universidade Federal do Rio de Janeiro – IM/UFRJ.
 * [Dissertação completa] O_Patinho_Feio_como_Construção_Sociotécnica__Marcia_de_Oliveira_Cardoso__2003_dissertação_de_mestrado_UFRJ.pdf
