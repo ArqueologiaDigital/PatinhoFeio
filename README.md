@@ -1,6 +1,12 @@
 # PatinhoFeio
 Repositório contendo documentação técnica sobre o Patinho Feio, primeiro computador brasileiro (Escola Politécnica da USP - 1971)
 
+## 1974-DEZ-26: Relatório nº 1 - JJN e Eloah
+* Relatório sobre representação de notação musical para armazenar partituras a serem tocadas no sintetizador do Guido Stolfi
+* Autores: João José Neto e Eloah
+* Disponível em: 1974_12_26__Relatório_No.1_JJN_e_Eloah.pdf
+* Arquivos originais do escaneamento (para gerar imagens de maior resolução) disponíveis em: https://github.com/felipesanches/SintetizadorGuidoStolfi
+
 ## 1975: Tese de mestrado do prof. João José Neto
 * A tese de mestrado "Aspectos do Projeto de Software de um Minicomputador" de JJNeto (1975) apresenta os diversos componentes de software que foram desenvolvidos para o Patinho Feio, incluindo montador, desmontador, debugger e outras ferramentas.
 * Disponível em: Aspectos_do_Projeto_de_Software_de_um_Minicomputador__JJNeto_1975_lowres.pdf
