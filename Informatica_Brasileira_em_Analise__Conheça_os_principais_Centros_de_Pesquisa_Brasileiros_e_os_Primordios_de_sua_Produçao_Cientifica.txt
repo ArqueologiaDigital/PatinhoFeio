@@ -1,0 +1,38 @@
+Resgatado de:
+https://web.archive.org/web/20020527231335/http://www.cesar.org.br/analise/n_27/centros.html
+Captura do Internet Archive - WaybackMachine feita em 27 de Maio 2002
+
+Conheça os principais Centros de Pesquisa Brasileiros e os Primórdios de sua Produção Científica
+
+O surgimento dos primeiros centros se confunde com a própria história da Ciência da Computação no Brasil
+
+O uso do computador nos lares e no ambiente de trabalho já se tornou tão comum que as pessoas esquecem que isto é resultado de uma seqüência de inventos revolucionários como nunca houve na história da humanidade. A necessidade humana de instrumentos de auxílio ao cálculo e à manipulação de informações data de milhares de anos. O computador é um desses instrumentos e sua história tem mais de três mil anos. Vem desde a contagem de pedrinhas, passando pelo Ábaco (China), Círculos de Proporção (William Oughtred) até o Z1 (Konrad Zuse) e as atuais potências eletrônicas.
+
+No Brasil, o primeiro computador americano instalado foi o Univac (Jonh W. Mauchly e J. Presper Eckert), no Centro de Informação do Exército do Rio de Janeiro. O invento utilizava diodos de cristal e memória de mercúrio. Trabalhava com caracteres alfanuméricos e tinha periféricos operacionalmente independentes. Foi o primeiro que armazenava programas e estava disponível comercialmente. Assim começa a história da Ciência da Computação no país. A primeira máquina nacional e não comercial foi construída na Poli/USP. Era o Patinho Feio. Mais tarde surgiu o G-10, este sim, para uso industrial. Seu desenvolvimento reuniu o Centro de Pesquisa da Marinha, USP e PUC-RJ. Tempos depois, foi lançado o G-20. Ao ser comercializado, passou a se chamar Cobra (Computadores do Brasil).
+
+De acordo com Manoel Agamenon Lopes, um dos fundadores do Departamento de Informática da UFPE, o Cobra deixou de existir depois da queda da reserva de mercado. Era uma empresa criada pela Digibrás (1970 - 1986), e que desenvolvia atividades de informática no Brasil. Na mesma época o Serviço de Processamento de Dados da UFPE - Serpro - mantinha no Rio um laboratório de pesquisa onde atuavam diversos cientistas de renome.
+
+	Inicialmente a pesquisa em informática era muito limitada, estávamos mais fuçando do que fazendo pesquisa de forma organizada". Arndt von Staa, PUC-RJ.
+		Os centros de pesquisa e especialmente os pesquisadores foram os responsáveis pela evolução da atividade. O crescimento e fortalecimento de diferentes programas e projetos de pesquisa; o aumento no número de cursos de pós-graduação e graduação; a contribuição de pesquisadores brasileiros em resultados de pesquisa de ponta em nível internacional e a consolidação de eventos nacionais de porte (os vários simpósios da SBC) foram os resultados mais visíveis da evolução. Contribuiram ainda para a liderança indiscutível que a Computação Brasileira exerce em toda a América Latina.
+
+	
+
+PRIMEIRO CENTRO - O centro de pesquisa nacional pioneiro foi o da PUC-RJ, que formou os primeiros cientistas da área no país. No início, a equipe era formada por professores interessados em Computação, mas que tinham graduação em Engenharia ou Matemática - um cenário que se perpetuava em todo o país. Alguns professores engajados na fundação do DI-PUC-RJ são hoje nomes conhecidos no meio acadêmico, como: Carlos José Pereira de Lucena, Antônio Luz Furtado, Roberto Lins de Carvalho, Terezinha Chaves, Arndt von Staa, Sérgio Teixeira, Marília Rosa Pingueli, Luís de Castro Martins entre outros. Muitos deles, com mestrado e doutorado no Canadá e Estados Unidos.
+
+O DI da PUC do Rio é considerado um grande centro, além de ser o mais experiente. Seu mestrado data de 1960 e o doutorado de 1975. Como nem tudo são flores, haviam as divergências dentro da própria comunidade. O DI da PUC foi um dos campos de batalha mais acirrados na época. A briga foi tão intensa, o conflito tão irreconciliável, que foi necessário separar fisicamente os dois grupos: um constituiria o departamento acadêmico, chefiado por Carlos José Lucena e responsável pelo primeiro doutorado no país, e o outro constituía o projeto de construção do software básico, sistema operacional e compiladores, do primeiro computador brasileiro.
+
+"Para fazer essa separação e prevenir um mal maior, como uma briga chegando às vias de fato, construiu-se um andar extra, o 5º andar, no prédio do RDC, sede do DI, para comportar o grupo do projeto. Consta que um padre, diretor da PUC à época, advertiu - "Evitem brigas futuras, pois as fundações do prédio não suportam mais nem um andar", conta Tarcísio Pequeno, aluno de mestrado desta universidade na década de 70.
+
+
+Enquanto isso, no resto do país surgiam outros departamentos de informática. Os mais importantes e de destaque são os da UFPE, Universidade e Centro Tecnológico de Campinas, USP, UFRGS e UFMG. Naquele tempo, a pesquisa girava em torno da engenharia de software, incluindo banco de dados e linguagens, hardware e teorias.
+
+Outro grande centro, este no Nordeste, o DI-UFPE nasceu em setembro de 1972, tendo como primeiro chefe o Prof. Manoel Agamenon Lopes. "Nessa época não havia o curso, eu era responsável por disciplinas de Cálculo Numérico e de Computação, oferecidas para outros cursos. Em 1974, começou a funcionar o mestrado e em 1975, a graduação, que teve como primeiro coordenador o Dr. Múcio Gomes de Queiroz", conta. Os primeiros quatro mestres a se formarem pela UFPE foram: Paulo Cunha, João Jesus Pereira, Oceano Neves e Veríssimo Neto.
+
+Uma curiosidade é que praticamente todas as universidades, com exceção da USP, começaram suas atividades em Ciência da Computação com o curso de pós-graduação. O objetivo era formar professores para lecionar nos cursos de graduação. "Na época, o pouco conhecimento na área não justificava a existência deste curso", ressalta Carlos Lucena, professor da PUC-RJ. Ele acredita que a meta era conquistar graduados em outras áreas como Matemática e Engenharia, fato que ocorreu na maior parte do mundo.
+
+Um dos desafios encontrados pelas Universidades no início da Computação no país era a obtenção de equipamentos para as atividades de ensino e pesquisa, principalmente porque os preços eram bem mais altos do que os atuais. "No entanto, um hábito que existia na época e contra o qual muito se lutou, era o de destinar às universidades os equipamentos velhos descartados por empresas e entidades governamentais, quando, naturalmente, as universidades deveriam e devem estar equipadas com a tecnologia mais atual, de modo que os alunos estejam atualizados com o mercado de trabalho", afirma o Prof. Clésio Saraiva dos Santos, da UFRGS.
+
+LINKS:
+http://www.inf.ufsc.br/~danielcs/hist/frhist.html
+http://www.homeshopping.com.br/~eriksen/histria.htm
+http://www.cotianet.com.br/bit/HIST/
