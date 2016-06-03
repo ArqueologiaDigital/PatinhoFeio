@@ -1,6 +1,14 @@
 # PatinhoFeio
 Repositório contendo documentação técnica sobre o Patinho Feio, primeiro computador brasileiro (Escola Politécnica da USP - 1971)
 
+## 1972: EDSON FREGNI. "Projeto Logico da Unidade de Controle de um Minicomputador"
+* Dissertação de mestrado do professor Edson Fregni, de 1972
+* Contém descrição detalhada do projeto da unidade de controle do Patinho Feio
+* Inclui cartas de tempo das micro-instruções da CPU
+* Contém esquemáticos dos circuitos de implementação da CPU
+* Disponível em: Projeto_Logico_da_Unidade_de_Controle_de_um_Minicomputador__EFregni_1972.pdf
+* Arquivos originais do escaneamento (para gerar imagens de maior resolução) disponíveis em: https://github.com/felipesanches/Projeto_Logico_da_Unidade_de_Controle_de_um_Minicomputador__EFregni_1972
+
 ## 1974-DEZ-26: Relatório nº 1 - JJN e Eloah
 * Relatório sobre representação de notação musical para armazenar partituras a serem tocadas no sintetizador do Guido Stolfi
 * Autores: João José Neto e Eloah
