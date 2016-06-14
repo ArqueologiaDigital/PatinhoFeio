@@ -50,6 +50,10 @@ Repositório contendo documentação técnica sobre o Patinho Feio, primeiro com
 * Em Mrio de 2016 o professor João José Neto encontrou em meio a seus pertences e transcreveu um documento antigo contendo a listagem do micro-pré-loader de autoria de Moshe Bain.
 * PDF disponível em: Micro_pré_loader__Moshe_Bain_1977_07_21.pdf
 
+# Videos relacionados ao Patinho Feio
+
+Video da Escola Politécnica da Universidade de São Paulo sobre o desenvolvimento do projeto Patinho Feio disponível neste link: [https://www.youtube.com/watch?v=wQ22Ymo0Spk](https://www.youtube.com/watch?v=wQ22Ymo0Spk)
+
 # Arquivos binários
 
 No diretório "binários" estão arquivos binários de programas para o Patinho:
