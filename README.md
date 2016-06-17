@@ -96,7 +96,8 @@ Segue abaixo uma lista de documentos (possivelmente) relacionados direta ou indi
 ## Documentos
 
 ### Encontrados, falta escanear (Patinho Feio)
-* FREGNI, EDSON "Projeto Lógico da Unidade de Controle de um Minicomputador" Dissertação de Mestrado - EPUSP, 1972. DISPONIVEL: Biblioteca Eng. Elétrica EPUSP: FD-910
+* Manuscritos do acervo pessoal de Guido Stolfi
+* Manuscritos do acervo pessoal de João José Neto
 * SOUZA, BENÍCIO JOSÉ DE "Software de um Minicomputador" Dissertação de Mestrado - EPUSP, 1976. DISPONIVEL: Biblioteca Eng. Elétrica EPUSP: FD-147 e.2 
 * RANZINI, EDITH "Projeto e Ensaio de Memórias de Núcleos de Ferrite" Dissertação de Mestrado - EPUSP, 1975. DISPONIVEL: Biblioteca Eng. Elétrica EPUSP: FD-105
 * RUGGIERO, WILSON VICENTE "Projeto de um processador microprogramado." Dissertação (Mestrado em Engenharia) – EPUSP, 1975. DISPONIVEL: Biblioteca Eng. Elétrica EPUSP: FD-87 e.2
@@ -122,9 +123,16 @@ Segue abaixo uma lista de documentos (possivelmente) relacionados direta ou indi
 
 ## Software
 
-* Loader/Carregador Relocável (listagem e/ou fita binária)
+### Localizados (falta digitalizar)
 * Codificador de Partitura para o sintetizador (GStolfi tem binário e listagem armazenados em fita perfurada)
-* acervos pessoais de fitas perfuradas (para serem digitalizadas)
+* Acervo pessoal de fitas perfuradas de João José Neto
+* Acervo pessoal de fitas perfuradas de Sebastião Barreto
+* Acervo pessoal de fitas perfuradas de Guido Stolfi
+* Acervo pessoal de fitas perfuradas de Selma Shimizu
+
+### Ainda não encontrados:
+* Loader/Carregador Relocável (listagem e/ou fita binária)
+* acervos pessoais de fitas perfuradas de outros pesquisadores (para serem digitalizadas)
 
 ## Outros documentos possivelmente relacionados disponíveis na bibliteca de eng. elétrica EPUSP
 * NETO, JOÃO JOSÉ. "SPD : um sistema automático de apoio ao projeto e desenvolvimento de sistemas digitais." Tese de Doutorado, 1980. (Bibl. Poli-Elétrica FT-452) http://dedalus.usp.br/F/X3PQ1FBIYLQ6VRV6NX6QPPVU5M414BH4GFD1L5FLI9HX4MAYIP-01055?func=full-set-set&set_number=005347&set_entry=000118&format=999
