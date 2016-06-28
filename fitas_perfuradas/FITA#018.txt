@@ -1,0 +1,239 @@
+      NAM EDITA
+      ENT EDIT
+      ENT TELET
+TTY   EQU 11B
+      COM INTER(1),COMP(3),BUF(4092)
+LINHA BSS 80
+X     DEF BUF
+L     DEF BUF
+LIN   DEF LINHA
+AUX   DEF LINHA
+DEFE1 DEF ERRO1
+DEFE2 DEF ERRO2
+DEFE3 DEF ERRO3
+ALG2  DEC 0
+NUM   DEC 0
+ERRO  DEC 0
+NCM1  DEC 0
+NNC   DEC 0
+*              INTERRUPCAO DA TTY
+TELET NOP
+      STA ALG2
+      NOP
+      CLA,INA
+      STA INTER
+      CLC TTY
+      LDA ALG2
+      JMP TELET,I
+*              SUB. LE UM CARACTER
+LEUM  NOP
+      LDA =B160000
+      OTA TTY
+      STC TTY,C
+      SFS TTY
+      JMP *-1
+      LIA TTY,C
+      AND =B177
+      JMP LEUM,I
+*              SUB. ESCREVE UM CARACTER
+ESC   NOP
+      LDB =B120000
+      OTB TTY
+      OTA TTY
+      STC TTY,C
+      SFS TTY
+      JMP *-1
+      CLF TTY
+      JMP ESC,I
+*              SUB. LE UMA LINHA
+LELIN NOP
+RELE  LDB LIN
+LEE   JSB LEUM
+      STA 1,I
+      CPA =B40 E BRANCO?
+      JMP LEE
+      CPA =B177 E RUBOUT?
+      JMP ROUT
+      CPA =B3  E A CONTROLADO?
+      JMP ACONT
+      CPA =B15  E RETURN?
+      JMP RTRN
+      INB
+      JMP LEE
+*
+ROUT  JSB LEUM
+      CPA =B12  E LINE FEED?
+      JMP RELE
+      JMP ROUT
+*
+ACONT CPB LIN
+      JMP LEE
+      ADB =B-1
+      JMP LEE
+* 
+RTRN  JSB LEUM
+      CPA =B12  E LINE FEED?
+      JMP LELIN,I
+      JMP RTRN
+*
+*              SUB. TRANSF. DECIMAL EM BINARIO
+PRS   NOP
+      CLA
+STALG LDB AUX,I
+      CPB =B54  E ,?
+      JMP PRS,I
+      CPB =B15  E RETURN?
+      JMP PRS,I
+      ADB =B-60
+      SSB
+      JMP ERRO,I
+      ADB =D-10
+      SSB,RSS
+      JMP ERRO,I
+      ADB =D10
+      STB ALG2
+      MPY =D10
+      SZB
+      JMP ERRO,I
+      ADA ALG2
+      ISZ AUX
+      JMP STALG
+*
+*              EDITAR
+EDIT  NOP
+      CLF 0
+      CLA 
+      STA INTER
+      LDA =B103  C
+ESC1  JSB ESC
+      JSB LELIN
+      LDA DEFE1
+      STA ERRO
+      LDA LIN
+      STA AUX
+      JSB PRS
+      STA COMP
+CEDI  LDA DEFE2
+      STA ERRO
+      LDA =B77   ?
+ESC2  JSB ESC
+      JSB LELIN
+      LDA LIN,I
+      CPA =B120  P
+      JMP POSIC
+      CPA =B106  F
+      JMP EDIT,I
+ERRO2 LDA =B105  E
+      JMP ESC2
+*
+ERRO1 LDA =B105  E
+      JMP ESC1
+*
+POSIC LDB LIN
+      INB
+      STB AUX
+      JSB PRS
+      ADA =B-1
+      STA NCM1
+      ISZ AUX
+      JSB PRS
+      STA NNC
+      LDA X
+      STA L
+      LDB L,I
+      STB NUM
+      LDA NCM1
+LAB1  SZA
+      JMP LAB4
+      CMB,INB
+      ADB COMP
+      SSB
+      JMP ERRO2
+      LDB NNC
+      CMB,INB
+      ADB NUM
+LAB5  SZB,RSS
+      JMP QUA
+      SSB,RSS
+      JMP ERRO2
+      ISZ L
+      ISZ L
+      ADB L,I
+      JMP LAB5
+*
+LAB2  LDB NUM
+      ISZ L
+      ISZ L
+      ADB L,I
+      STB NUM
+LAB4  LDB COMP
+      CMB,INB
+      ADB NUM
+      SSB
+      JMP LAB2
+      STB NUM
+      ADA =B-1
+      JMP LAB1
+*
+QUA   ISZ AUX
+      JSB PRS
+      ALF,ALF
+      STA NCM1
+      ISZ AUX
+      JSB PRS
+      ADA NCM1
+PROX  ISZ L
+      CPA L,I
+      JMP ACHEI
+      ISZ L
+      LDB L,I
+      SZB,RSS
+      JMP PROX
+      JMP ERRO2
+*
+ACHEI LDA DEFE3
+      STA ERRO
+      LDA =B100  @
+ESC3  JSB ESC
+      JSB LELIN
+      LDA LIN,I
+      CPA =B103  C
+      JMP COMAN
+      CPA =B124  T
+      JMP TEMPO
+ERRO3 LDA =B105  E
+      JMP ESC3
+*
+TEMPO LDA LIN
+      INA
+      STA AUX
+      JSB PRS
+      LDB L
+      ADB =B-1
+      STA 1,I
+      JMP CEDI
+*
+COMAN LDA LIN
+      INA
+      STA AUX
+      JSB PRS
+      ALF,ALF
+      STA NNC
+      ISZ AUX
+      JSB PRS
+      ADA NNC
+      STA L,I
+      JMP CEDI
+*
+      END
+**END-OF-TAPE 
+*
+/E
+**END-OF-TAPE 
+*
+**END-OF-TAPE 
+*
+
+
+**END-OF-TAPE 
+*

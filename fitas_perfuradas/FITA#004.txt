@@ -1,0 +1,110 @@
+
+HPAL,L,B,"COMPL"
+      BEGIN 
+       INTEGER ARRAY NUM[1:10],XNUM[1:5],IND[1:20],XIN[1:10,1:20],
+                     K[1:20],XA[1:80];
+       INTEGER I,J,M,N,I1,P,FLGA,FLGP,FLGIN,A,J1,IPAR;
+       LABEL L1,L2,L3,L4,FIM; 
+          PROCEDURE HE ;
+             BEGIN
+               INTEGER I; 
+                 J1:=J1+1;
+              IF J1>80 THEN BEGIN 
+                          READ(5,#(80R1),FOR I:=1 TO 80 DO XA[I]);
+                             J1:=1
+                           END; 
+              IF XA[J1]="$"   THEN GO TO FIM; 
+      A:=XA[J1] 
+             END; 
+          PROCEDURE ERRO ;
+              BEGIN 
+               LABEL LX;
+                WRITE(6,#(/,10X,"*********************** ERRO ****"));
+      LX:       LE; 
+                IF A="," THEN GO TO L1
+                         ELSE GO TO LX
+              END;
+          PROCEDURE MONTA ; 
+             BEGIN
+               INTEGER P,J; 
+                WRITE(6,#(/,3X,50("+"))); 
+                WRITE(6,#(/,10X,"INSTRUCOES")); 
+                FOR J:=1 TO M DO
+                 WRITE(6,#(12X,30R1),FOR P:=1 TO K[J] DO XIN[J,P]); 
+                WRITE(6,#(/,10X,"VALORES"));
+                FOR J:=1 TO N DO WRITE(6,#(12X,I5),NUM[J]); 
+                WRITE(6,#(/,10X,"INDICADORES"));
+                WRITE(6,#(/,12X,30I1),FOR P:=1 TO I1 DO IND[P]);
+                I1:=0;
+                FOR P:=1 TO M DO K[P]:=0; 
+     FOR P:=1 TO N DO NUM[P]:=0;
+                N:=0; 
+                M:=0; 
+                FLGIN:=FLGP:=FLGA:=0; 
+         FLGP:=1; 
+                             I:=0;
+                            GO TO L1
+             END; 
+         I:=M:=N:=I1:=FLGA:=FLGP:=FLGIN:=0; 
+         FLGP:=1; 
+                       J1:=80;
+       L1:   LE;
+         IF A="1" OR A="2" OR A="3" OR A="4" OR A="5" OR A="6" OR 
+         A="7" OR A="8" OR A="9" OR A="0" THEN  BEGIN 
+       L3:                      I:=I+1; 
+            XNUM[I]:=A-48;
+                                FLGIN:=0; 
+                                GO TO L1; 
+                               END; 
+           IF FLGIN=0 THEN BEGIN
+                 IF I=0 THEN GO TO L2;
+                            N:=N+1; 
+                            P:=I-1; 
+                            FOR J:=1 TO I DO
+                             BEGIN
+                              NUM[N]:=NUM[N]+XNUM[J]*10^P;
+                              P:=P-1
+                             END; 
+                            I1:=I1+1; 
+                            IND[I1]:=0; 
+                            I:=0; 
+                            FLGA:=1;
+                            FLGP:=1 
+                           END; 
+      L2: IF A=" " THEN BEGIN 
+                         LE;
+                         FLGP:=1; 
+                         GO TO L2 
+                        END;
+         IF A="1" OR A="2" OR A="3" OR A="4" OR A="5" OR A="6" OR 
+         A="7" OR A="8" OR A="9" OR A="0" THEN GO TO L3;
+          IF A="," THEN IF FLGA=0 AND FLGIN=0 THEN ERRO 
+                                              ELSE MONTA; 
+          IF A="(" THEN IF FLGIN=0 AND FLGA=0 THEN BEGIN
+         FLGP:=1; 
+                                         IPAR:=1; 
+                                         GO TO L1 
+                                        END 
+                                   ELSE ERRO; 
+          IF A=")" THEN IF FLGIN=0 AND FLGA=0 THEN BEGIN
+         FLGP:=1; 
+                                         IPAR:=0; 
+                                         GO TO L1 
+                                        END 
+                                   ELSE ERRO; 
+          IF A="+" OR A="-" THEN BEGIN
+       FLGIN:=1;
+                                  FLGP:=1;
+                                  GO TO L4
+                                 END; 
+          FLGIN:=1; 
+          IF FLGP=1 THEN BEGIN
+                          FLGP:=0;
+      L4:                 M:=M+1; 
+                          I1:=I1+1; 
+                          IND[I1]:=1
+                         END; 
+          K[M]:=K[M]+1; 
+          XIN[M,K[M]]:=A; 
+                GO TO L1; 
+      FIM:END$

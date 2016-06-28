@@ -1,0 +1,212 @@
+      NAM TOCA
+START NOP
+      CLF 0
+      CLC 0
+      LDA Y
+      STA TBGEN
+      LDA W
+      STA NOSSA
+      LDA Z
+      STA LO
+      CCA
+      STA F
+      LDA =B52525
+      STA DOIS
+      LDA =B42104
+      STA QUAT
+      LDA X
+      STA L
+      STA S
+      ADA TAM
+      STA FBUF
+      CLA
+      JSB LEOT
+      STA ACC
+      CLA
+      JSB LEOT
+      CMA
+      ADA =B2
+      STA TINT
+      STA PULSO
+      CLA
+      JSB LEOT
+      STA RI
+EBUF  CLA
+      JSB LEOT
+      CPA =B377
+      JMP ACAB
+      ALF,ALF
+      JSB LEOT
+      STA L,I
+      ISZ L
+      CLA
+      JSB LEOT
+      ALF,ALF
+      JSB LEOT
+      STA L,I
+      ISZ L
+      LDA L
+      XOR FBUF
+      SZA
+      JMP EBUF
+      LDA X
+      STA L
+      JMP LIZ
+*
+ACAB  LDA L
+      STA F
+      CLF LO
+LIZ   CLC LO
+      LDA X,I
+      STA TEMP
+      LDA =B1
+      CPA ACC
+      JMP IM
+      STC NOSSA
+INO   STF 0
+INIC  LDA S
+      CPA F
+      JMP PARE
+      LDA TEMP
+      ADA =B-1
+      SSA,RSS
+      JMP TCB
+TOB   SFS NOSSA
+      JMP TCB
+      LDA S
+      INA 
+      LDB 0,I
+      OTB NOSSA,C
+      INA
+      CPA FBUF
+      LDA X
+      STA S
+      LDA S,I
+      ADA TEMP
+      STA TEMP
+      JMP INIC
+*
+IM    ADA RI
+      OTA TBGEN
+      STC TBGEN,C
+      JMP INO
+*
+LEOT  NOP
+      STC LO,C
+      SFS LO
+      JMP *-1
+      MIA LO
+      JMP LEOT,I
+*
+PARE  CLF 0
+      CLC 0
+      HLT 73B
+      JMP START+9
+*
+TCB   SFS LO
+      JMP INIC
+      LDA L
+      CPA S
+      JMP INIC
+      STC LO,C
+      JMP INIC
+*          INTERRUPCAO DA L.O.
+LEO   NOP
+      STA AC1
+      STB RI
+      LDA DOIS
+      RAL 
+      STA DOIS
+      LDB QUAT
+      RBL
+      STB QUAT
+      SSB,RSS
+      JMP QT0
+      CLB
+      MIB LO
+      CPB =B377
+      JMP FIL
+BLFS  BLF,BLF
+      STB L,I
+      JMP RESTI
+*
+QT0   SSA,RSS
+      JMP D0
+      CLB
+      MIB LO
+      JMP BLFS
+*
+D0    LDB L,I
+      MIB LO
+      STB L,I
+      LDA L
+      INA
+      CPA FBUF
+      LDA X
+      STA L
+RESTI LDA AC1
+      LDB RI
+      CLC LO
+      JMP LEO,I
+*
+FIL   LDA L
+      STA F
+      CLF LO
+      JMP RESTI
+*            INTERRUPCAO DA TBGEN
+TBG   NOP
+      STF NOSSA
+      STA ACC SALVAR
+      ISZ PULSO
+      JMP REST
+      LDA TINT
+      STA PULSO
+      LDA TEMP
+      ADA =B-1
+      STA TEMP
+REST  LDA ACC
+      CLF TBGEN
+      JMP TBG,I
+*            INTERRUPCAO DA NOSSA
+NOS   NOP
+      STA ACC
+      ISZ PULSO
+      JMP RES
+      LDA TINT
+      STA PULSO
+      LDA TEMP
+      ADA =B-1
+      STA TEMP
+RES   LDA ACC
+      CLC NOSSA
+      STC NOSSA
+      JMP NOS,I
+*     DEFINICAO DE VARIAVEIS
+      ENT START
+BUF   BSS 128
+NOSSA EQU 15B
+TBGEN EQU 10B
+LO    EQU 12B
+Y     JSB T,I
+W     JSB N,I
+Z     JSB L.,I
+X     DEF BUF
+TAM   DEC 128
+FBUF  DEC 0
+DOIS  OCT 52525
+QUAT  OCT 42104
+TEMP  DEC 0
+TINT  DEC 0
+PULSO DEC 0
+ACC   DEC 0
+AC1   DEC 0
+RI    DEC 0
+L     DEC 0
+S     DEC 0
+F     DEC 0
+      ORB
+T     DEF TBG
+N     DEF NOS
+L.    DEF LEO
+      ORR
+      END START

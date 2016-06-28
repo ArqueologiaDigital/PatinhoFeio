@@ -1,0 +1,140 @@
+      ORG 200B
+      HLT 1
+      CLC 0
+      STF 0
+      STC 15B
+      CLA
+      OTA 5
+      LIA 1
+      STA SEM
+      HLT 2
+      LIA 1
+      CMA
+      STA NNOTA
+GN    JSB ALEAT
+      LDA SEM
+      AND QUBT
+      STA NOTA
+      CMA,INA
+      ADA ONZE
+      SSA
+      JMP GN
+GO    JSB ALEAT
+      LDA SEM
+      AND QUBT
+      STA OIT
+      CMA,INA
+      ADA NOVE
+      SSA
+      JMP GO
+      JSB ALEAT
+      LDA SEM
+      STA DIR
+      HLT 3
+      LIA 1
+      STA NMIN
+      HLT 4
+      LIA 1
+      STA NMAX
+      HLT 5
+      LIA 1
+      STA PROB
+INIC  JSB ALEAT
+      LDA SEM
+      AND B15Z
+      CMA,INA
+      ADA PROB
+      SSA
+      JMP *+4
+      LDA DIR
+      CMA
+      STA DIR
+COCO  CLA
+      STA FD
+      LDA DIR
+      SLA
+      JMP LUM
+      LDA NOTA
+      ADA MEUM
+      STA NOTA
+      SSA,RSS
+      JMP FR
+      LDA OIT
+      ADA MEUM
+      STA OIT
+      LDA SI
+      STA NOTA
+FR    LDA OIT
+      ALF
+      IOR NOTA
+      STA COM
+      CMA,INA
+      ADA NMIN
+      SSA
+      JMP XIXI
+MAGAL LDA DIR
+      CMA
+      STA DIR
+      LDA B15Z
+      STA FD
+      JMP XIXI
+LUM   LDA NOTA
+      CMA,INA
+      ADA SI
+      SSA
+      JMP CU
+      LDA NOTA
+      INA
+      STA NOTA
+      JMP BUNDA
+CU    LDA OIT
+      INA
+      STA OIT
+      CLA
+      STA NOTA
+BUNDA LDA OIT
+      ALF
+      IOR NOTA
+      STA COM
+      CMA,INA
+      ADA NMAX
+      SSA,RSS
+      JMP XIXI
+      JMP MAGAL
+XIXI  LDA COM
+      JMP *
+FIM   ISZ NNOTA
+      JMP PU
+      JMP HA
+PU    LDA FD
+      SZA
+      JMP COCO
+      JMP INIC
+HA    HLT 6
+INTER NOP
+      OTA 15B,C
+      JMP FIM
+SEM   EQU 145B
+NNOTA NOP
+ALEAT EQU 105B
+QUBT  OCT 17
+NOTA  NOP
+ONZE  DEC 11
+NOVE DEC 9
+B15Z  OCT 77777
+DIR   NOP
+PROB  NOP
+MEUM  DEC -1
+OIT   NOP
+SI    DEC 11
+COM   NOP
+NMIN  NOP
+NMAX  NOP
+FD    NOP
+      ORG 15B
+      JSB INTER
+      END
+
+
+**END-HA+WAPE 
+*
