@@ -1,0 +1,204 @@
+        ORG   /200
+TAB BLOC 150
+MNE     BLOC  3 
+LINHA   BLOC  74
+VAUX    DEFC   0
+IND     DEFC  /2
+INDI    DEFC  0 
+FIM     DEFC  0 
+ERRO    DEFC  2 
+ERROR   DEFC  @E
+        DEFC  @R
+        DEFC  @R
+        DEFC  @O
+ ORG /380 
+COMECO  CARI  /0
+        ARM   INDI
+LEA     LIMP0 
+RELE    TRI 
+        CARI  20
+        TRE 
+LEE     PUG   LE
+        PLAZ  FFRAM 
+        ARMX  LINHA 
+        SOMI  /81 
+        PLAZ  ROUT
+        SOMI  /7C 
+        PLAZ  ACETX 
+        SOMI  /2
+        PLAZ  ACETX 
+        SOMI  /F7 
+        PLAZ  S√M
+        TRI 
+        INC 
+        PLA  RELE 
+* 
+ROUT    PUG   LE
+        SOMI  /F6 
+        PLAZ  LEA 
+        PLA   ROUT
+* 
+–ˇç
+ACETX   SUS   0 
+        PLA   LEE 
+        PLA   LEE 
+* 
+LE      PLA   0 
+        FNC   /E6
+ESP ††††SAL ††/E1
+        PLA   ESP 
+        ENTR  /≈0 
+        NAND  /7F 
+        CMP1
+        PLA   LE
+* 
+SCM     CARI  /31 
+        ARM   ERRO
+        CARI  2 
+        TRI 
+        CARI  /20 
+III     ARMX  MNE 
+        SUS   0 
+        PLA   III 
+        CARI  71     NUMERO MAXIMO DE 
+        ARM   VAUX    CARACTERES NUMA LINHA E 72
+        LIMP0 
+AGAIN   TRI 
+        CARX  LINHA 
+        SOMI  /D4 
+        PLAZ  ACHEI 
+        TRI 
+        INC 
+        SUS   VAUX
+        PLA   AGAIN 
+        PLA   IME 
+* 
+ACHEI   TRI 
+        PLAZ  IME 
+        SOMI  -1
+        ARM   FIM 
+        LIMP0 
+        TRE 
+        LIMP0 
+PROC    TRI 
+PROX    CARX  LINHA 
+        SOMI  /E0 
+        PLAZ  SEGUINT 
+        SOMI  /20 
+        TRE 
+        TRI 
+        TRE 
+        ARMX  MNE 
+        TRE 
+        INC 
+        TRI 
+        SOMI  -2
+        PLAZ  STRES 
+        INC 
+STRES   SOMI  2 
+        TRE 
+        SUS   FIM 
+        PLA   PROX
+        PLA   DEP 
+* 
+SEGUINT TRI 
+        INC 
+        SUS   FIM 
+        PLA   PROC
+DEP     TRE 
+        PLAZ  IME 
+        LIMP0 
+XMN     TRI 
+        CARX MNE
+        IND 
+        ARM   IND 
+        CAR   INDI
+        INC 
+        ARM   INDI
+        TRI 
+        SOMI  -2
+        PLAZ  LEA 
+        SOMI  3 
+        PLA   XMN 
+* 
+∆∆“AM††SUS†††±ç
+††††††††PÃA†††Ã≈≈ç
+IMP     CARI  9 
+        ARM   FIM 
+        LIMP0 
+        ARM   INDI
+MUD     CARI  2 
+        ARM   VAUX
+        LIMP0 
+MUM     TRI 
+        IND 
+        CAR   IND 
+        ARMX  LINHA 
+        CAR   INDI
+        INC 
+        ARM   INDI
+        TRI 
+        INC 
+        SUS   VAUX
+        PLA   MUM 
+        TRI 
+        CARI  /D
+        ARMX  LINHA 
+        TRI 
+        INC 
+        TRI 
+        CARI  /A
+        ARMX  LINHA 
+        PUG   IMPLIN
+        SUS   FIM 
+        PLA   MUD 
+        PARE
+        PLA   COMECO
+* 
+IMPLIN  PLA   0 
+        LIMP0 
+DUMP    TRI 
+        CARX  LINHA 
+        PUG   ESC 
+        SOMI  /F6 
+        PLAZ  IMPLIN
+        TRI 
+        INC 
+        PLA   DUMP
+* 
+ESC     PLA   0 
+        SAI   /B0 
+ESPERA  SAL   /B1 
+        PLA   ESPERA
+        PLA   ESC 
+* 
+IME     CARI  3 
+        ARM   VAUX
+        LIMP0 
+VOLTA   TRI 
+        CARX  ERROR 
+        PUG   ESC 
+        TRI 
+        INC 
+        SUS   VAUX
+        PLA   VOLTA 
+        CARI  2 
+        ARM   VAUX
+        LIMP0 
+RETOR   TRI 
+        CARI  /20 
+        PUG   ESC 
+        TRI 
+        INC 
+        SUS   VAUX
+        PLA   RETOR 
+        CAR   ERRO
+        PUG   ESC 
+        CARI  /D
+        PUG   ESC 
+        CARI  /A
+        PUG   ESC 
+        PARE
+        PLA   COMECO
+* 
+        FIM   0 

@@ -1,0 +1,130 @@
+      NAM EXECT
+START NOP
+      CLF 0
+      CLF 5
+      CLC 0
+      LDA W
+      STA NOSSA
+      LDA X
+      STA Y
+      STA F
+      ADA TAM
+      STA FBUF
+      JSB LEOT
+      CLA
+      STA 5
+      JSB LEOT
+      CMA
+      ADA =B2
+      STA TINT
+      STA PULSO
+      JSB LEOT
+EBUF  CLA
+      JSB LEOT
+      CPA =B377
+      JMP ACAB
+      ALF,ALF
+      JSB LEOT
+      STA F,I
+      ISZ F
+      CLA
+      JSB LEOT
+      ALF,ALF
+      JSB LEOT
+      STA F,I
+      ISZ F
+      LDA F
+      OTA 1
+      XOR FBUF
+      SZA
+      JMP EBUF
+      HLT
+ACAB  CLC LO,C
+      STF 0
+BIS   CLC NOSSA
+      LDA Y
+      STA X
+      STA S
+      LDA S,I
+      STA TEMP
+      LIA NOSSA,C
+      LIA NOSSA
+      SLA,RSS
+      JMP *-2
+      STC NOSSA
+INIC  LDA S
+      CPA F
+      JMP BIS
+      LIA NOSSA
+      SLA,RSS
+      JMP BIS
+      LDA TEMP
+      OTA 1
+      ADA =B-1
+      SSA,RSS
+      JMP INIC
+TOB   SFS NOSSA
+      JMP INIC
+      LDA S
+      INA 
+      LDB 0,I
+      OTB NOSSA,C
+      INA
+      CPA FBUF
+      JMP BIS
+      STA S
+      LDA S,I
+      OTA 1
+      ADA TEMP
+      STA TEMP
+      JMP INIC
+*            LEITURA DE UM CARACTER
+LEOT  NOP
+      STC LO,C
+      SFS LO
+      JMP *-1
+      MIA LO
+      JMP LEOT,I
+*            INTERRUPCAO DA NOSSA
+NOS   NOP
+      CLC 0
+      STF NOSSA
+      STA ACC
+      ISZ PULSO
+      JMP RES
+      LDA TINT
+      STA PULSO
+      LDA TEMP
+      ADA =B-1
+      STA TEMP
+RES   LDA ACC
+      CLC NOSSA
+      STF 0
+      STC NOSSA
+      JMP NOS,I
+*     DEFINICAO DE VARIAVEIS
+BUF   BSS 4092
+NOSSA EQU 15B
+LO    EQU 12B
+W     JSB N,I
+X     DEF BUF
+TAM   DEC 4092
+FBUF  DEC 0
+TEMP  DEC 0
+TINT  DEC 0
+PULSO DEC 0
+ACC   DEC 0
+S     DEC 0
+F     DEC 0
+Y     DEC 0
+      ORB
+N     DEF NOS
+      ORR
+      END START
+**END-OF-TAPE 
+*
+
+
+**END-OF-TAPE 
+*
+/E
