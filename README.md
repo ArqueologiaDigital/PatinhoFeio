@@ -20,6 +20,14 @@ Repositório contendo documentação técnica sobre o Patinho Feio, primeiro com
 * Disponível em: Aspectos_do_Projeto_de_Software_de_um_Minicomputador__JJNeto_1975_lowres.pdf
 * Arquivos originais do escaneamento (para gerar imagens de maior resolução) disponíveis em: https://github.com/felipesanches/Aspectos_do_Projeto_de_Software_de_um_Minicomputador__JJNeto_1975
 
+
+## 1975: EDIT GRASSIANI. "Procedimentos Microprogramados num Minicomputador"
+* Dissertação de Mestrado - EPUSP, 1975.
+* Escaneado de exemplar da Biblioteca Eng. Elétrica EPUSP: FD-104
+* SINOPSE: Após considerações gerais sobre microprogramação, esta dissetação apresenta as técnicas de microprogramação adotadas no computador G-10. São discutidos os compromissos entre implementação por hardware, software e mocroprogramação, bem como a otimização das instruções no G-10. Estuda-se a emulação do computador IBM 1130 concluindo-se por sua viabilidade, e analisa-se o desempenho resultande. Apêndices apresentam as micro-ordens e listagens de exemplos de mocroprogramas do G-10 e do emulador do IBM 1130.
+* Disponível em: Procedimentos_Microprogramados_num_Minicomputador__EGrassiani_1975.pdf
+* Arquivos originais do escaneamento (para gerar imagens de maior resolução) disponíveis em: https://github.com/felipesanches/Procedimentos_Microprogramados_num_Minicomputador__EGrassiani_1975
+
 ## 1977: Manual do Montador do Patinho Feio
 * Este manual técnico foi o primeiro material relativo ao projeto do Patinho Feio que (eu, Felipe Sanches) tive acesso. Foi com base nas informações contidas aqui que grande parte do emulador do Patinho Feio junto ao projeto MAME foi desenvolvido. Os demais documentos foram (e continuam sendo) úteis para aprimorar o emulador e para complementar as informações técnicas.
 * PDF disponível em: Montador_do_Patinho_Feio__Julho1977.pdf
@@ -108,9 +116,6 @@ Segue abaixo uma lista de documentos (possivelmente) relacionados direta ou indi
 ### Encontrados, falta escanear (G-10)
 * KOVACH, STEPHAN "Projeto de Um Sistema de Entrada e Saída de um Minicomputador" Dissertação de Mestrado - EPUSP, 1975. - DISPONIVEL: Biblioteca Eng. Elétrica EPUSP: FD-122 ex.2
  "[...] descreve-se a estrutura do sistema de entrada e saída do minicomputador G-10, e em particular, o projeto de dois canais que fazem parte do sistema."
-
-* GRASSIANI, EDIT "Procedimentos Microprogramados num Minicomputador" Dissertação de Mestrado - EPUSP, 1975. - DISPONIVEL:Biblioteca Eng. Elétrica EPUSP: FD-104
- SINOPSE: Após considerações gerais sobre microprogramação, esta dissetação apresenta as técnicas de microprogramação adotadas no computador G-10. São discutidos os compromissos entre implementação por hardware, software e mocroprogramação, bem como a otimização das instruções no G-10. Estuda-se a emulação do computador IBM 1130 concluindo-se por sua viabilidade, e analisa-se o desempenho resultande. Apêndices apresentam as micro-ordens e listagens de exemplos de mocroprogramas do G-10 e do emulador do IBM 1130.
 
 ### Publicações internas do LSD ainda não encontradas
 * PINHEIRO, WANNER MONTEIRO "A linguagem Assembler do Patinho Feio" Publicação interna do Lab. de Sistemas Digitais (EPUSP), 1974.
