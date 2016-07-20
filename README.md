@@ -28,6 +28,12 @@ Repositório contendo documentação técnica sobre o Patinho Feio, primeiro com
 * Disponível em: Procedimentos_Microprogramados_num_Minicomputador__EGrassiani_1975.pdf
 * Arquivos originais do escaneamento (para gerar imagens de maior resolução) disponíveis em: https://github.com/felipesanches/Procedimentos_Microprogramados_num_Minicomputador__EGrassiani_1975
 
+## 1975: WILSON VICENTE RUGGIERO. "Projeto de um processador microprogramado."
+* Dissertação (Mestrado em Engenharia) – EPUSP, 1975.
+* Digitalizado a partir de exemplar da Biblioteca Eng. Elétrica EPUSP: FD-87 e.2
+* Disponivel em: Projeto_de_um_Processador_Central_Microprogramado__WRuggiero_1975.pdf
+* Arquivos originais do escaneamento (para gerar imagens de maior resolução) disponíveis em: https://github.com/felipesanches/Projeto_de_um_Processador_Central_Microprogramado__WRuggiero_1975
+
 ## 1977: Manual do Montador do Patinho Feio
 * Este manual técnico foi o primeiro material relativo ao projeto do Patinho Feio que (eu, Felipe Sanches) tive acesso. Foi com base nas informações contidas aqui que grande parte do emulador do Patinho Feio junto ao projeto MAME foi desenvolvido. Os demais documentos foram (e continuam sendo) úteis para aprimorar o emulador e para complementar as informações técnicas.
 * PDF disponível em: Montador_do_Patinho_Feio__Julho1977.pdf
@@ -108,7 +114,6 @@ Segue abaixo uma lista de documentos (possivelmente) relacionados direta ou indi
 * Manuscritos do acervo pessoal de João José Neto
 * SOUZA, BENÍCIO JOSÉ DE "Software de um Minicomputador" Dissertação de Mestrado - EPUSP, 1976. DISPONIVEL: Biblioteca Eng. Elétrica EPUSP: FD-147 e.2 
 * RANZINI, EDITH "Projeto e Ensaio de Memórias de Núcleos de Ferrite" Dissertação de Mestrado - EPUSP, 1975. DISPONIVEL: Biblioteca Eng. Elétrica EPUSP: FD-105
-* RUGGIERO, WILSON VICENTE "Projeto de um processador microprogramado." Dissertação (Mestrado em Engenharia) – EPUSP, 1975. DISPONIVEL: Biblioteca Eng. Elétrica EPUSP: FD-87 e.2
 * FERREIRA, MARIA ALICE GRIGAS VARELLA "Sistema de Programação 'Cross-Montador' para um minicomputador" Dissertação de Mestrado - EPUSP, 1974. DISPONIVEL: Biblioteca Eng. Elétrica EPUSP: FD-85
 * SHIMIZU, SELMA “Automação de projetos de sistemas digitais: posicionamento de componentes” Dissertação (EPUSP), 1977. FD-175 (contém exemplo de posicionamento de componentes numa das placas do Patinho - Prancha XII)
 * MASSOLA, ANTONIO MARCOS DE AGUIRRA "Automação de Projeto de Sistemas Digitais: Simulação em Nível de Portas Lógicas" Tese de Doutorado - EPUSP, 1974 FT-441
