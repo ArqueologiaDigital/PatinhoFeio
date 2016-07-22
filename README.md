@@ -20,7 +20,6 @@ Repositório contendo documentação técnica sobre o Patinho Feio, primeiro com
 * Disponível em: Aspectos_do_Projeto_de_Software_de_um_Minicomputador__JJNeto_1975_lowres.pdf
 * Arquivos originais do escaneamento (para gerar imagens de maior resolução) disponíveis em: https://github.com/felipesanches/Aspectos_do_Projeto_de_Software_de_um_Minicomputador__JJNeto_1975
 
-
 ## 1975: EDIT GRASSIANI. "Procedimentos Microprogramados num Minicomputador"
 * Dissertação de Mestrado - EPUSP, 1975.
 * Escaneado de exemplar da Biblioteca Eng. Elétrica EPUSP: FD-104
@@ -49,6 +48,12 @@ Repositório contendo documentação técnica sobre o Patinho Feio, primeiro com
 * Recebi em 10/Maio/2016 autorização do prof. Edson Fregni para escaneamento e publicação na internet da íntegra do livro "Projeto de Computadores Digitais" de Edson Fregni e Glen George Langdon Jr. (com publicação original impressa em 1974 e reimpressões em 1977 e 1979)
 * PDF disponível em: Projeto_de_Computadores_Digitais_2a_ed__EFregni_GLangdonJr_1974__reimpressao_de_1979__escaneamento_incompleto.pdf
 * Arquivos originais do escaneamento (para gerar imagens de maior resolução) disponíveis em: https://gitlab.com/fsanches/Projeto_de_Computadores_Digitais_2a_ed
+
+## aprox. 1975/78: GUIDO STOLFI. "Manual do Sintetizador"
+
+* Escaneamento parcial do caderno. Falta terminar de digitalizar.
+* Disponivel em: Manual_do_Sintetizador__Guido_Stolfi.pdf
+* Arquivos originais do escaneamento (para gerar imagens de maior resolução) disponíveis em: https://github.com/felipesanches/Manual_do_Sintetizador__Guido_Stolfi
 
 ## 1979: GUIDO STOLFI: "Descrição de um Sistema Modular de Sintese de Sons Com Controle Automático Por Computador"
 * Visão geral sobre o Sintetizador de Guido Stolfi e sua integração aos computadores Patinho Feio e HP21MX.
