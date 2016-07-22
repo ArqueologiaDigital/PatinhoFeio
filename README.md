@@ -51,7 +51,7 @@ Repositório contendo documentação técnica sobre o Patinho Feio, primeiro com
 
 ## aprox. 1975/78: GUIDO STOLFI. "Manual do Sintetizador"
 
-* Escaneamento parcial do caderno. Falta terminar de digitalizar.
+* Escaneamento do caderno "Manual do Sintetizador" (também identificado como "Anexo 6.11").
 * Disponivel em: Manual_do_Sintetizador__Guido_Stolfi.pdf
 * Arquivos originais do escaneamento (para gerar imagens de maior resolução) disponíveis em: https://github.com/felipesanches/Manual_do_Sintetizador__Guido_Stolfi
 
