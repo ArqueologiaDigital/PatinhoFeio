@@ -15,6 +15,12 @@ Repositório contendo documentação técnica sobre o Patinho Feio, primeiro com
 * Disponível em: 1974_12_26__Relatório_No.1_JJN_e_Eloah.pdf
 * Arquivos originais do escaneamento (para gerar imagens de maior resolução) disponíveis em: https://github.com/felipesanches/SintetizadorGuidoStolfi
 
+## 1974: MARIA ALICE GRIGAS VARELLA FERREIRA. "Sistema de Programação 'Cross-Montador' para um minicomputador"
+* Dissertação de Mestrado - EPUSP, 1974.
+* Digitalizado a partir de exemplar da Biblioteca Eng. Elétrica EPUSP: FD-85
+* Disponível em: Sistema_de_Programacao_Cross-Montador_para_um_Minicomputador__MariaAliceFerreira__1974.pdf
+* Arquivos originais do escaneamento (para gerar imagens de maior resolução) disponíveis em: https://github.com/felipesanches/Sistema_de_Programacao_Cross-Montador_para_um_Minicomputador__MariaAliceFerreira__1974
+
 ## 1975: Tese de mestrado do prof. João José Neto
 * A tese de mestrado "Aspectos do Projeto de Software de um Minicomputador" de JJNeto (1975) apresenta os diversos componentes de software que foram desenvolvidos para o Patinho Feio, incluindo montador, desmontador, debugger e outras ferramentas.
 * Disponível em: Aspectos_do_Projeto_de_Software_de_um_Minicomputador__JJNeto_1975_lowres.pdf
@@ -43,6 +49,12 @@ Repositório contendo documentação técnica sobre o Patinho Feio, primeiro com
 * Este manual técnico foi o primeiro material relativo ao projeto do Patinho Feio que (eu, Felipe Sanches) tive acesso. Foi com base nas informações contidas aqui que grande parte do emulador do Patinho Feio junto ao projeto MAME foi desenvolvido. Os demais documentos foram (e continuam sendo) úteis para aprimorar o emulador e para complementar as informações técnicas.
 * PDF disponível em: Montador_do_Patinho_Feio__Julho1977.pdf
 * Arquivos originais do escaneamento (para gerar imagens de maior resolução) disponíveis em: https://github.com/felipesanches/Montador_do_Patinho_Feio__Julho1977/
+
+## 1977: SELMA SHIMIZU. “Automação de projetos de sistemas digitais: posicionamento de componentes”
+* Dissertação (EPUSP), 1977. FD-175
+* Contém exemplo de posicionamento de componentes numa das placas do Patinho - Prancha XII
+* PDF disponível em: Automação_de_Projetos_de_Sistemas_Digitais__Posicionamento_de_Componentes__Selma_Shimizu_1977.pdf
+* Arquivos originais do escaneamento (para gerar imagens de maior resolução) disponíveis em: https://github.com/felipesanches/Automacao_de_Projetos_de_Sistemas_Digitais__Posicionamento_de_Componentes__Selma_Shimizu_1977
 
 ## 1974/79: Livro do prof. Edson Fregni
 * Recebi em 10/Maio/2016 autorização do prof. Edson Fregni para escaneamento e publicação na internet da íntegra do livro "Projeto de Computadores Digitais" de Edson Fregni e Glen George Langdon Jr. (com publicação original impressa em 1974 e reimpressões em 1977 e 1979)
@@ -124,8 +136,6 @@ Segue abaixo uma lista de documentos (possivelmente) relacionados direta ou indi
 * Manuscritos do acervo pessoal de Guido Stolfi
 * Manuscritos do acervo pessoal de João José Neto
 * RANZINI, EDITH "Projeto e Ensaio de Memórias de Núcleos de Ferrite" Dissertação de Mestrado - EPUSP, 1975. DISPONIVEL: Biblioteca Eng. Elétrica EPUSP: FD-105
-* FERREIRA, MARIA ALICE GRIGAS VARELLA "Sistema de Programação 'Cross-Montador' para um minicomputador" Dissertação de Mestrado - EPUSP, 1974. DISPONIVEL: Biblioteca Eng. Elétrica EPUSP: FD-85
-* SHIMIZU, SELMA “Automação de projetos de sistemas digitais: posicionamento de componentes” Dissertação (EPUSP), 1977. FD-175 (contém exemplo de posicionamento de componentes numa das placas do Patinho - Prancha XII)
 * MASSOLA, ANTONIO MARCOS DE AGUIRRA "Automação de Projeto de Sistemas Digitais: Simulação em Nível de Portas Lógicas" Tese de Doutorado - EPUSP, 1974 FT-441
 
 ### Encontrados, falta escanear (G-10)
