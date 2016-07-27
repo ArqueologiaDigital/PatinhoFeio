@@ -21,6 +21,13 @@ Repositório contendo documentação técnica sobre o Patinho Feio, primeiro com
 * Disponível em: Sistema_de_Programacao_Cross-Montador_para_um_Minicomputador__MariaAliceFerreira__1974.pdf
 * Arquivos originais do escaneamento (para gerar imagens de maior resolução) disponíveis em: https://github.com/felipesanches/Sistema_de_Programacao_Cross-Montador_para_um_Minicomputador__MariaAliceFerreira__1974
 
+
+## 1974: ANTONIO MARCOS DE AGUIRRA MASSOLA. "Automação de Projeto de Sistemas Digitais: Simulação em Nível de Portas Lógicas"
+* Tese de Doutorado - EPUSP, 1974
+* Escaneado a partir de exemplar da Biblioteca Eng. Elétrica EPUSP: FT-441
+* Disponível em: Automação_de_Projetos_de_Sistemas_Digitais__Simulacao_em_Nivel_de_Portas_Logicas__Massola_1974.pdf
+* Arquivos originais do escaneamento (para gerar imagens de maior resolução) disponíveis em: https://github.com/felipesanches/Automacao_de_Projetos_de_Sistemas_Digitais__Simulacao_em_Nivel_de_Portas_Logicas__Massola_1974
+
 ## 1975: Tese de mestrado do prof. João José Neto
 * A tese de mestrado "Aspectos do Projeto de Software de um Minicomputador" de JJNeto (1975) apresenta os diversos componentes de software que foram desenvolvidos para o Patinho Feio, incluindo montador, desmontador, debugger e outras ferramentas.
 * Disponível em: Aspectos_do_Projeto_de_Software_de_um_Minicomputador__JJNeto_1975_lowres.pdf
@@ -136,7 +143,6 @@ Segue abaixo uma lista de documentos (possivelmente) relacionados direta ou indi
 * Manuscritos do acervo pessoal de Guido Stolfi
 * Manuscritos do acervo pessoal de João José Neto
 * RANZINI, EDITH "Projeto e Ensaio de Memórias de Núcleos de Ferrite" Dissertação de Mestrado - EPUSP, 1975. DISPONIVEL: Biblioteca Eng. Elétrica EPUSP: FD-105
-* MASSOLA, ANTONIO MARCOS DE AGUIRRA "Automação de Projeto de Sistemas Digitais: Simulação em Nível de Portas Lógicas" Tese de Doutorado - EPUSP, 1974 FT-441
 
 ### Encontrados, falta escanear (G-10)
 * KOVACH, STEPHAN "Projeto de Um Sistema de Entrada e Saída de um Minicomputador" Dissertação de Mestrado - EPUSP, 1975. - DISPONIVEL: Biblioteca Eng. Elétrica EPUSP: FD-122 ex.2
