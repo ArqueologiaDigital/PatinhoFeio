@@ -140,6 +140,7 @@ Segue abaixo uma lista de documentos (possivelmente) relacionados direta ou indi
 ## Documentos
 
 ### Encontrados, falta escanear (Patinho Feio)
+* Listagens do montador cruzado da prof. Maria Alice. Rodava no IBM-1130 e gerava código objeto do Patinho Feio em cartão perfurado. O HP2116B era usado para converter os cartões para código objeto em fita perfurada.
 * Manuscritos do acervo pessoal de Guido Stolfi
 * Manuscritos do acervo pessoal de João José Neto
 * RANZINI, EDITH "Projeto e Ensaio de Memórias de Núcleos de Ferrite" Dissertação de Mestrado - EPUSP, 1975. DISPONIVEL: Biblioteca Eng. Elétrica EPUSP: FD-105
