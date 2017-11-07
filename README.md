@@ -1,5 +1,5 @@
 # PatinhoFeio
-Repositório contendo documentação técnica sobre o Patinho Feio, primeiro computador brasileiro (Escola Politécnica da USP - 1971)
+Repositório contendo documentação técnica sobre o Patinho Feio, um computador pioneiro brasileiro desenvolvido na Escola Politécnica da USP em 1971 e inaugurado em 1972.
 
 ## 1972: EDSON FREGNI. "Projeto Logico da Unidade de Controle de um Minicomputador"
 * Dissertação de mestrado do professor Edson Fregni, de 1972
