@@ -30,8 +30,8 @@ Para uma introdução mais direta ao projeto de desenvolvimento do "Patinho Feio
 * Disponível em: https://archive.org/details/AutomacaoDeProjetoDeSistemasDigitaisSimulacaoEmNivelDePortasLogicas
 * Arquivos originais do escaneamento (para gerar imagens de maior resolução) disponíveis em: https://github.com/felipesanches/Automacao_de_Projetos_de_Sistemas_Digitais__Simulacao_em_Nivel_de_Portas_Logicas__Massola_1974
 
-## 1975: Tese de mestrado do prof. João José Neto
-* A tese de mestrado "Aspectos do Projeto de Software de um Minicomputador" de JJNeto (1975) apresenta os diversos componentes de software que foram desenvolvidos para o Patinho Feio, incluindo montador, desmontador, debugger e outras ferramentas.
+## 1975: Dissertação de mestrado do prof. João José Neto
+* A dissertação de mestrado "Aspectos do Projeto de Software de um Minicomputador" de JJNeto (1975) apresenta os diversos componentes de software que foram desenvolvidos para o Patinho Feio, incluindo montador, desmontador, debugger e outras ferramentas.
 * Disponível em https://archive.org/details/AspectosDoProjetoDeSoftwareDeUmMinicomputador
 * Arquivos originais do escaneamento (para gerar imagens de maior resolução) disponíveis em: https://github.com/felipesanches/Aspectos_do_Projeto_de_Software_de_um_Minicomputador__JJNeto_1975
 
@@ -83,8 +83,8 @@ Para uma introdução mais direta ao projeto de desenvolvimento do "Patinho Feio
 * PDF disponível em: Descrição_de_um_Sistema_Modular_de_Sintese_de_Sons_Com_Controle_Automático_Por_Computador__Guido_Stolfi__1979.pdf
 * Arquivos originais do escaneamento (para gerar imagens de maior resolução) disponíveis em: https://github.com/felipesanches/SintetizadorGuidoStolfi
 
-## 2003: Tese de mestrado de Marcia de Oliveira Cardoso
-* Em 2003, Marcia de Oliveira Cardoso desenvolveu uma tese de mestrado entitulada "O Patinho Feio como construção sociotécnica", defendida no Instituto de Matemática da Universidade Federal do Rio de Janeiro – IM/UFRJ.
+## 2003: Dissertação de mestrado de Marcia de Oliveira Cardoso
+* Em 2003, Marcia de Oliveira Cardoso desenvolveu uma dissertação de mestrado entitulada "O Patinho Feio como construção sociotécnica", defendida no Instituto de Matemática da Universidade Federal do Rio de Janeiro – IM/UFRJ.
 * [Dissertação completa] O_Patinho_Feio_como_Construção_Sociotécnica__Marcia_de_Oliveira_Cardoso__2003_dissertação_de_mestrado_UFRJ.pdf
 * [Resumo para apresentação em congresso] O_Patinho_Feio_como_Construção_Sociotécnica__Marcia_de_Oliveira_Cardoso__2003_JoaoPessoa_XXII_ANPUH.pdf
 
