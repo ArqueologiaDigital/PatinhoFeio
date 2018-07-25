@@ -3,38 +3,36 @@ Repositório contendo documentação técnica sobre o Patinho Feio, um computado
 
 Para uma introdução mais direta ao projeto de desenvolvimento do "Patinho Feio" assista ao vídeo ["A história do Patinho Feio"](https://www.youtube.com/watch?v=wQ22Ymo0Spk) no canal da Escola Politécnica da USP no [Youtube](https://www.youtube.com/watch?v=wQ22Ymo0Spk).
 
----
-
-## 1972: EDSON FREGNI. "Projeto Logico da Unidade de Controle de um Minicomputador"
+## 1972: EDSON FREGNI. "Projeto Lógico da Unidade de Controle de um Minicomputador"
 * Dissertação de mestrado do professor Edson Fregni, de 1972
 * Contém descrição detalhada do projeto da unidade de controle do Patinho Feio
 * Inclui cartas de tempo das micro-instruções da CPU
 * Contém esquemáticos dos circuitos de implementação da CPU
-* Disponível em: Projeto_Logico_da_Unidade_de_Controle_de_um_Minicomputador__EFregni_1972.pdf
+* Disponível em https://archive.org/details/ProjetoLogicoDaUnidadeDeControleDeUmMinicomputador
 * Arquivos originais do escaneamento (para gerar imagens de maior resolução) disponíveis em: https://github.com/felipesanches/Projeto_Logico_da_Unidade_de_Controle_de_um_Minicomputador__EFregni_1972
 
 ## 1974-DEZ-26: Relatório nº 1 - JJN e Eloah
 * Relatório sobre representação de notação musical para armazenar partituras a serem tocadas no sintetizador do Guido Stolfi
 * Autores: João José Neto e Eloah
-* Disponível em: 1974_12_26__Relatório_No.1_JJN_e_Eloah.pdf
+* Disponível em https://archive.org/details/Relatrio1_1974-DEZ-26
 * Arquivos originais do escaneamento (para gerar imagens de maior resolução) disponíveis em: https://github.com/felipesanches/SintetizadorGuidoStolfi
 
 ## 1974: MARIA ALICE GRIGAS VARELLA FERREIRA. "Sistema de Programação 'Cross-Montador' para um minicomputador"
 * Dissertação de Mestrado - EPUSP, 1974.
 * Digitalizado a partir de exemplar da Biblioteca Eng. Elétrica EPUSP: FD-85
-* Disponível em: Sistema_de_Programacao_Cross-Montador_para_um_Minicomputador__MariaAliceFerreira__1974.pdf
+* Disponível em https://archive.org/details/SistemaDeProgramacaoCrossMontadorParaUmMinicomputador
 * Arquivos originais do escaneamento (para gerar imagens de maior resolução) disponíveis em: https://github.com/felipesanches/Sistema_de_Programacao_Cross-Montador_para_um_Minicomputador__MariaAliceFerreira__1974
 
 
 ## 1974: ANTONIO MARCOS DE AGUIRRA MASSOLA. "Automação de Projeto de Sistemas Digitais: Simulação em Nível de Portas Lógicas"
 * Tese de Doutorado - EPUSP, 1974
 * Escaneado a partir de exemplar da Biblioteca Eng. Elétrica EPUSP: FT-441
-* Disponível em: Automação_de_Projetos_de_Sistemas_Digitais__Simulacao_em_Nivel_de_Portas_Logicas__Massola_1974.pdf
+* Disponível em: https://archive.org/details/AutomacaoDeProjetoDeSistemasDigitaisSimulacaoEmNivelDePortasLogicas
 * Arquivos originais do escaneamento (para gerar imagens de maior resolução) disponíveis em: https://github.com/felipesanches/Automacao_de_Projetos_de_Sistemas_Digitais__Simulacao_em_Nivel_de_Portas_Logicas__Massola_1974
 
 ## 1975: Tese de mestrado do prof. João José Neto
 * A tese de mestrado "Aspectos do Projeto de Software de um Minicomputador" de JJNeto (1975) apresenta os diversos componentes de software que foram desenvolvidos para o Patinho Feio, incluindo montador, desmontador, debugger e outras ferramentas.
-* Disponível em: Aspectos_do_Projeto_de_Software_de_um_Minicomputador__JJNeto_1975_lowres.pdf
+* Disponível em https://archive.org/details/AspectosDoProjetoDeSoftwareDeUmMinicomputador
 * Arquivos originais do escaneamento (para gerar imagens de maior resolução) disponíveis em: https://github.com/felipesanches/Aspectos_do_Projeto_de_Software_de_um_Minicomputador__JJNeto_1975
 
 ## 1975: EDIT GRASSIANI. "Procedimentos Microprogramados num Minicomputador"
@@ -44,7 +42,7 @@ Para uma introdução mais direta ao projeto de desenvolvimento do "Patinho Feio
 * Disponível em: Procedimentos_Microprogramados_num_Minicomputador__EGrassiani_1975.pdf
 * Arquivos originais do escaneamento (para gerar imagens de maior resolução) disponíveis em: https://github.com/felipesanches/Procedimentos_Microprogramados_num_Minicomputador__EGrassiani_1975
 
-## 1975: WILSON VICENTE RUGGIERO. "Projeto de um processador microprogramado."
+## 1975: WILSON VICENTE RUGGIERO. "Projeto de um Processador Central Microprogramado."
 * Dissertação (Mestrado em Engenharia) – EPUSP, 1975.
 * Digitalizado a partir de exemplar da Biblioteca Eng. Elétrica EPUSP: FD-87 e.2
 * Disponivel em: Projeto_de_um_Processador_Central_Microprogramado__WRuggiero_1975.pdf
@@ -158,6 +156,7 @@ Segue abaixo uma lista de documentos (possivelmente) relacionados direta ou indi
 * TACHIBANA, MÁRIO "Carregador Relocável para o Computador Pato Feio" Publicação interna do Lab.Digitais, 1974
 
 ### Outros documentos ainda não encontrados
+* Moshe Bain - um trabalho sobre o uso do Patinho Feio como RJE (Remote Job Entry) para o computador Borroughs B6700 que ficava localizado no CCE-USP (Centro de Computação Eletronica). Talvez tenha sido publicado nos anais de ~1976 da SUCESU. (dica do Tião)
 * Resolução do trabalho final da cadeira de arquitetura de computadores PEL-727 (projeto de sistemas digitais), 1971. Uma versão escaneada encontra-se nos anexos da dissertação de Marcia de Oliveira Cardoso, 2003, mas seria desejável re-escanear o documento em uma resoluçao melhor.
 * Áudio e/ou transcrições das entrevistas de Marcia de Oliveira Cardoso, caso existam.
 * LANGDON, Glen George. Computer Design. San Jose, CA: Computeach Press Inc. 1982. 577 p.
@@ -174,6 +173,8 @@ Segue abaixo uma lista de documentos (possivelmente) relacionados direta ou indi
 ### Ainda não encontrados:
 * Loader/Carregador Relocável (listagem e/ou fita binária)
 * acervos pessoais de fitas perfuradas de outros pesquisadores (para serem digitalizadas)
+* Tião mencionou que Mario Tachibana escreveu em Patol um programa gerador de comandos CNC para uma máquina que fazia furos em PCBs. Há uma história interessante sobre um bug no compilador de Patol (de autoria do Tião e do Charlie Lin) que foi detectado pelo Mário durante o desenvolvimento do software de CNC.
+
 
 ## Outros documentos possivelmente relacionados disponíveis na bibliteca de eng. elétrica EPUSP
 * NETO, JOÃO JOSÉ. "SPD : um sistema automático de apoio ao projeto e desenvolvimento de sistemas digitais." Tese de Doutorado, 1980. (Bibl. Poli-Elétrica FT-452) http://dedalus.usp.br/F/X3PQ1FBIYLQ6VRV6NX6QPPVU5M414BH4GFD1L5FLI9HX4MAYIP-01055?func=full-set-set&set_number=005347&set_entry=000118&format=999
