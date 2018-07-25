@@ -15,7 +15,7 @@
    viewBox="0 0 370 600"
    version="1.1"
    id="svg8"
-   inkscape:version="0.91+devel r"
+   inkscape:version="0.92+devel unknown"
    sodipodi:docname="Painel_Frontal_PatinhoFeio.svg"
    inkscape:export-filename="/home/felipe/devel/github_felipesanches/PatinhoFeio/SVG/Painel_Frontal_PatinhoFeio_300dpi.png"
    inkscape:export-xdpi="300.01633"
@@ -163,14 +163,14 @@
      borderopacity="1.0"
      inkscape:pageopacity="0.0"
      inkscape:pageshadow="2"
-     inkscape:zoom="0.23724306"
-     inkscape:cx="239.76817"
-     inkscape:cy="1133.8583"
+     inkscape:zoom="0.82828137"
+     inkscape:cx="699.40234"
+     inkscape:cy="445.11846"
      inkscape:document-units="mm"
-     inkscape:current-layer="layer6"
+     inkscape:current-layer="g2602"
      showgrid="false"
-     inkscape:window-width="1360"
-     inkscape:window-height="698"
+     inkscape:window-width="1918"
+     inkscape:window-height="1012"
      inkscape:window-x="0"
      inkscape:window-y="0"
      inkscape:window-maximized="1"
@@ -179,7 +179,19 @@
      fit-margin-top="0"
      fit-margin-left="0"
      fit-margin-right="0"
-     fit-margin-bottom="0" />
+     fit-margin-bottom="0"
+     inkscape:document-rotation="0">
+    <sodipodi:guide
+       position="124.72201,-11.121707"
+       orientation="0,1"
+       id="guide2556"
+       inkscape:locked="false" />
+    <sodipodi:guide
+       position="343.18413,246.66358"
+       orientation="0,1"
+       id="guide2558"
+       inkscape:locked="false" />
+  </sodipodi:namedview>
   <metadata
      id="metadata5">
     <rdf:RDF>
@@ -201,8 +213,8 @@
     <rect
        style="opacity:1;fill:#79a482;fill-opacity:1;stroke:none;stroke-width:3.00480008;stroke-linecap:round;stroke-linejoin:round;stroke-miterlimit:4;stroke-dasharray:none;stroke-dashoffset:45;stroke-opacity:1"
        id="rect505"
-       width="370"
-       height="600"
+       width="370.00015"
+       height="611.1217"
        x="20.136974"
        y="-310.6763"
        rx="7.087604e-06"
@@ -553,48 +565,44 @@
        id="rect5085-4" />
     <text
        xml:space="preserve"
-       style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:2.85086322px;line-height:125%;font-family:FreeMono;-inkscape-font-specification:FreeMono;letter-spacing:0px;word-spacing:0px;fill:#000000;fill-opacity:1;stroke:none;stroke-width:0.05939297px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1"
+       style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;line-height:0%;font-family:FreeMono;-inkscape-font-specification:FreeMono;letter-spacing:0px;word-spacing:0px;fill:#000000;fill-opacity:1;stroke:none;stroke-width:0.05939297px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1"
        x="104.40278"
        y="27.403471"
-       id="text4632"
-       sodipodi:linespacing="125%"><tspan
+       id="text4632"><tspan
          sodipodi:role="line"
          id="tspan4630"
          x="104.40278"
          y="27.403471"
-         style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-family:IPAPGothic;-inkscape-font-specification:IPAPGothic;stroke-width:0.05939297px">A  C  U  M  U  L  A  D  O  R</tspan></text>
+         style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:2.85086298px;line-height:1.25;font-family:IPAPGothic;-inkscape-font-specification:IPAPGothic;stroke-width:0.05939297px">A  C  U  M  U  L  A  D  O  R</tspan></text>
     <text
-       sodipodi:linespacing="125%"
        id="text4278"
        y="4.6438227"
        x="109.73694"
-       style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:2.85086322px;line-height:125%;font-family:FreeMono;-inkscape-font-specification:FreeMono;letter-spacing:0px;word-spacing:0px;fill:#000000;fill-opacity:1;stroke:none;stroke-width:0.05939297px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1"
+       style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;line-height:0%;font-family:FreeMono;-inkscape-font-specification:FreeMono;letter-spacing:0px;word-spacing:0px;fill:#000000;fill-opacity:1;stroke:none;stroke-width:0.05939297px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1"
        xml:space="preserve"><tspan
-         style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-family:IPAPGothic;-inkscape-font-specification:IPAPGothic;stroke-width:0.05939297px"
+         style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:2.85086298px;line-height:1.25;font-family:IPAPGothic;-inkscape-font-specification:IPAPGothic;stroke-width:0.05939297px"
          y="4.6438227"
          x="109.73694"
          id="tspan4276"
          sodipodi:role="line">M   E   M   Ó   R   I   A</tspan></text>
     <text
        xml:space="preserve"
-       style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:2.85086322px;line-height:125%;font-family:FreeMono;-inkscape-font-specification:FreeMono;letter-spacing:0px;word-spacing:0px;fill:#000000;fill-opacity:1;stroke:none;stroke-width:0.05939297px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1"
+       style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;line-height:0%;font-family:FreeMono;-inkscape-font-specification:FreeMono;letter-spacing:0px;word-spacing:0px;fill:#000000;fill-opacity:1;stroke:none;stroke-width:0.05939297px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1"
        x="98.297272"
        y="60.293102"
-       id="text4276"
-       sodipodi:linespacing="125%"><tspan
+       id="text4276"><tspan
          sodipodi:role="line"
          id="tspan4274"
          x="98.297272"
          y="60.293102"
-         style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-family:IPAPGothic;-inkscape-font-specification:IPAPGothic;stroke-width:0.05939297px">C Ó D I G O   D E   I N S T R U Ç Ã O</tspan></text>
+         style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:2.85086298px;line-height:1.25;font-family:IPAPGothic;-inkscape-font-specification:IPAPGothic;stroke-width:0.05939297px">C Ó D I G O   D E   I N S T R U Ç Ã O</tspan></text>
     <text
-       sodipodi:linespacing="125%"
        id="text4280"
        y="93.221725"
        x="95.72654"
-       style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:2.85086322px;line-height:125%;font-family:FreeMono;-inkscape-font-specification:FreeMono;letter-spacing:0px;word-spacing:0px;fill:#000000;fill-opacity:1;stroke:none;stroke-width:0.05939297px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1"
+       style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;line-height:0%;font-family:FreeMono;-inkscape-font-specification:FreeMono;letter-spacing:0px;word-spacing:0px;fill:#000000;fill-opacity:1;stroke:none;stroke-width:0.05939297px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1"
        xml:space="preserve"><tspan
-         style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-family:IPAPGothic;-inkscape-font-specification:IPAPGothic;stroke-width:0.05939297px"
+         style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:2.85086298px;line-height:1.25;font-family:IPAPGothic;-inkscape-font-specification:IPAPGothic;stroke-width:0.05939297px"
          y="93.221725"
          x="95.72654"
          id="tspan4278"
@@ -625,13 +633,12 @@
        d="m 73.024135,-4.7709045 h -1.840198 v 8.3423373 h 21.300355 m 58.367368,0 h 25.37468 v -8.3423373 h -2.23759"
        style="opacity:1;fill:none;fill-opacity:1;stroke:#000000;stroke-width:0.21107221;stroke-linecap:square;stroke-linejoin:miter;stroke-miterlimit:4;stroke-dasharray:none;stroke-dashoffset:0;stroke-opacity:1" />
     <text
-       sodipodi:linespacing="125%"
        id="text4307"
        y="27.403471"
        x="255.66087"
-       style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:2.85086322px;line-height:125%;font-family:FreeMono;-inkscape-font-specification:FreeMono;letter-spacing:0px;word-spacing:0px;fill:#000000;fill-opacity:1;stroke:none;stroke-width:0.05939297px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1"
+       style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;line-height:0%;font-family:FreeMono;-inkscape-font-specification:FreeMono;letter-spacing:0px;word-spacing:0px;fill:#000000;fill-opacity:1;stroke:none;stroke-width:0.05939297px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1"
        xml:space="preserve"><tspan
-         style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-family:IPAPGothic;-inkscape-font-specification:IPAPGothic;stroke-width:0.05939297px"
+         style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:2.85086298px;line-height:1.25;font-family:IPAPGothic;-inkscape-font-specification:IPAPGothic;stroke-width:0.05939297px"
          y="27.403471"
          x="255.66087"
          id="tspan4305"
@@ -644,16 +651,15 @@
        style="opacity:1;fill:none;fill-opacity:1;stroke:#000000;stroke-width:0.21107221;stroke-linecap:square;stroke-linejoin:miter;stroke-miterlimit:4;stroke-dasharray:none;stroke-dashoffset:0;stroke-opacity:1" />
     <text
        xml:space="preserve"
-       style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:2.85086322px;line-height:125%;font-family:FreeMono;-inkscape-font-specification:FreeMono;letter-spacing:0px;word-spacing:0px;fill:#000000;fill-opacity:1;stroke:none;stroke-width:0.05939297px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1"
+       style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;line-height:0%;font-family:FreeMono;-inkscape-font-specification:FreeMono;letter-spacing:0px;word-spacing:0px;fill:#000000;fill-opacity:1;stroke:none;stroke-width:0.05939297px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1"
        x="260.40253"
        y="-4.5511799"
-       id="text4313"
-       sodipodi:linespacing="125%"><tspan
+       id="text4313"><tspan
          sodipodi:role="line"
          id="tspan4311"
          x="260.40253"
          y="-4.5511799"
-         style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-family:IPAPGothic;-inkscape-font-specification:IPAPGothic;stroke-width:0.05939297px">E N D E R E Ç O   N A   M E M Ó R I A</tspan></text>
+         style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:2.85086298px;line-height:1.25;font-family:IPAPGothic;-inkscape-font-specification:IPAPGothic;stroke-width:0.05939297px">E N D E R E Ç O   N A   M E M Ó R I A</tspan></text>
     <path
        style="opacity:1;fill:none;fill-opacity:1;stroke:#000000;stroke-width:0.21107221;stroke-linecap:square;stroke-linejoin:miter;stroke-miterlimit:4;stroke-dasharray:none;stroke-dashoffset:0;stroke-opacity:1"
        d="m 237.27743,-14.824996 h -1.8402 v 9.1244994 H 239.53 m 88.19475,0 h 4.06073 v -9.1244994 h -2.23759"
@@ -662,24 +668,22 @@
        sodipodi:nodetypes="cccccccc" />
     <text
        xml:space="preserve"
-       style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:2.85086322px;line-height:125%;font-family:FreeMono;-inkscape-font-specification:FreeMono;letter-spacing:0px;word-spacing:0px;fill:#000000;fill-opacity:1;stroke:none;stroke-width:0.05939297px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1"
+       style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;line-height:0%;font-family:FreeMono;-inkscape-font-specification:FreeMono;letter-spacing:0px;word-spacing:0px;fill:#000000;fill-opacity:1;stroke:none;stroke-width:0.05939297px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1"
        x="228.24173"
        y="44.30851"
-       id="text139"
-       sodipodi:linespacing="125%"><tspan
+       id="text139"><tspan
          sodipodi:role="line"
          id="tspan137"
          x="228.24173"
          y="44.30851"
-         style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-family:IPAPGothic;-inkscape-font-specification:IPAPGothic;stroke-width:0.05939297px">T R A N S B O R D O</tspan></text>
+         style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:2.85086298px;line-height:1.25;font-family:IPAPGothic;-inkscape-font-specification:IPAPGothic;stroke-width:0.05939297px">T R A N S B O R D O</tspan></text>
     <text
-       sodipodi:linespacing="125%"
        id="text141"
        y="44.30851"
        x="319.15787"
-       style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:2.85086322px;line-height:125%;font-family:FreeMono;-inkscape-font-specification:FreeMono;letter-spacing:0px;word-spacing:0px;fill:#000000;fill-opacity:1;stroke:none;stroke-width:0.05939297px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1"
+       style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;line-height:0%;font-family:FreeMono;-inkscape-font-specification:FreeMono;letter-spacing:0px;word-spacing:0px;fill:#000000;fill-opacity:1;stroke:none;stroke-width:0.05939297px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1"
        xml:space="preserve"><tspan
-         style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-family:IPAPGothic;-inkscape-font-specification:IPAPGothic;stroke-width:0.05939297px"
+         style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:2.85086298px;line-height:1.25;font-family:IPAPGothic;-inkscape-font-specification:IPAPGothic;stroke-width:0.05939297px"
          y="44.30851"
          x="319.15787"
          id="tspan139"
@@ -704,33 +708,31 @@
        sodipodi:nodetypes="ccccccccc" />
     <text
        xml:space="preserve"
-       style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:2.85086322px;line-height:125%;font-family:FreeMono;-inkscape-font-specification:FreeMono;letter-spacing:0px;word-spacing:0px;fill:#000000;fill-opacity:1;stroke:none;stroke-width:0.05939297px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1"
+       style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;line-height:0%;font-family:FreeMono;-inkscape-font-specification:FreeMono;letter-spacing:0px;word-spacing:0px;fill:#000000;fill-opacity:1;stroke:none;stroke-width:0.05939297px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1"
        x="280.62445"
        y="70.030518"
-       id="text155"
-       sodipodi:linespacing="125%"><tspan
+       id="text155"><tspan
          sodipodi:role="line"
          id="tspan153"
          x="280.62445"
          y="70.030518"
-         style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-family:IPAPGothic;-inkscape-font-specification:IPAPGothic;text-align:center;text-anchor:middle;stroke-width:0.05939297px">U  N  I  D  A  D  E</tspan><tspan
+         style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:2.85086298px;line-height:1.25;font-family:IPAPGothic;-inkscape-font-specification:IPAPGothic;text-align:center;text-anchor:middle;stroke-width:0.05939297px">U  N  I  D  A  D  E</tspan><tspan
          sodipodi:role="line"
          x="280.62445"
-         y="73.594093"
-         style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-family:IPAPGothic;-inkscape-font-specification:IPAPGothic;text-align:center;text-anchor:middle;stroke-width:0.05939297px"
+         y="74.671753"
+         style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:2.85086298px;line-height:1.25;font-family:IPAPGothic;-inkscape-font-specification:IPAPGothic;text-align:center;text-anchor:middle;stroke-width:0.05939297px"
          id="tspan157">A R I T M É T I C A   E   L Ó G I C A</tspan></text>
     <text
        xml:space="preserve"
-       style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:2.85086322px;line-height:125%;font-family:FreeMono;-inkscape-font-specification:FreeMono;letter-spacing:0px;word-spacing:0px;fill:#000000;fill-opacity:1;stroke:none;stroke-width:0.05939297px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1"
+       style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;line-height:0%;font-family:FreeMono;-inkscape-font-specification:FreeMono;letter-spacing:0px;word-spacing:0px;fill:#000000;fill-opacity:1;stroke:none;stroke-width:0.05939297px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1"
        x="257.55597"
        y="107.28897"
-       id="text151"
-       sodipodi:linespacing="125%"><tspan
+       id="text151"><tspan
          sodipodi:role="line"
          id="tspan149"
          x="257.55597"
          y="107.28897"
-         style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-family:IPAPGothic;-inkscape-font-specification:IPAPGothic;stroke-width:0.05939297px">D  A  D  O  S       D  O       P  A  I  N  E  L</tspan></text>
+         style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:2.85086298px;line-height:1.25;font-family:IPAPGothic;-inkscape-font-specification:IPAPGothic;stroke-width:0.05939297px">D  A  D  O  S       D  O       P  A  I  N  E  L</tspan></text>
     <path
        style="opacity:1;fill:none;fill-opacity:1;stroke:#000000;stroke-width:0.21107221;stroke-linecap:square;stroke-linejoin:miter;stroke-miterlimit:4;stroke-dasharray:none;stroke-dashoffset:0;stroke-opacity:1"
        d="m 237.27743,97.015151 h -1.8402 v 9.124499 H 239.53 m 88.19475,0 h 4.06073 v -9.124499 h -2.23759"
@@ -753,166 +755,153 @@
        inkscape:connector-curvature="0" />
     <text
        xml:space="preserve"
-       style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:2.85086346px;line-height:125%;font-family:FreeMono;-inkscape-font-specification:FreeMono;letter-spacing:0px;word-spacing:0px;fill:#000000;fill-opacity:1;stroke:none;stroke-width:0.05939297px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1"
+       style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;line-height:0%;font-family:FreeMono;-inkscape-font-specification:FreeMono;letter-spacing:0px;word-spacing:0px;fill:#000000;fill-opacity:1;stroke:none;stroke-width:0.05939297px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1"
        x="73.784225"
        y="23.249832"
-       id="text4632-7"
-       sodipodi:linespacing="125%"><tspan
+       id="text4632-7"><tspan
          sodipodi:role="line"
          id="tspan4630-7"
          x="73.784225"
          y="23.249832"
-         style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-family:IPAPGothic;-inkscape-font-specification:IPAPGothic;text-align:center;text-anchor:middle;stroke-width:0.05939297px">E N T R A D A</tspan><tspan
+         style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:2.85086298px;line-height:1.25;font-family:IPAPGothic;-inkscape-font-specification:IPAPGothic;text-align:center;text-anchor:middle;stroke-width:0.05939297px">E N T R A D A</tspan><tspan
          sodipodi:role="line"
          x="73.784225"
-         y="26.813412"
-         style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-family:IPAPGothic;-inkscape-font-specification:IPAPGothic;text-align:center;text-anchor:middle;stroke-width:0.05939297px"
+         y="27.891066"
+         style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:2.85086298px;line-height:1.25;font-family:IPAPGothic;-inkscape-font-specification:IPAPGothic;text-align:center;text-anchor:middle;stroke-width:0.05939297px"
          id="tspan156">E</tspan><tspan
          sodipodi:role="line"
          x="73.784225"
-         y="30.376991"
-         style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-family:IPAPGothic;-inkscape-font-specification:IPAPGothic;text-align:center;text-anchor:middle;stroke-width:0.05939297px"
+         y="32.532299"
+         style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:2.85086298px;line-height:1.25;font-family:IPAPGothic;-inkscape-font-specification:IPAPGothic;text-align:center;text-anchor:middle;stroke-width:0.05939297px"
          id="tspan158">S A Í D A</tspan></text>
     <text
-       sodipodi:linespacing="125%"
        id="text161"
        y="7.6238432"
        x="237.2352"
-       style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:1.96854639px;line-height:125%;font-family:FreeMono;-inkscape-font-specification:FreeMono;letter-spacing:0px;word-spacing:0px;fill:#000000;fill-opacity:1;stroke:none;stroke-width:0.04101137px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1"
+       style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;line-height:0%;font-family:FreeMono;-inkscape-font-specification:FreeMono;letter-spacing:0px;word-spacing:0px;fill:#000000;fill-opacity:1;stroke:none;stroke-width:0.04101137px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1"
        xml:space="preserve"><tspan
-         style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-family:IPAPGothic;-inkscape-font-specification:IPAPGothic;stroke-width:0.04101137px"
+         style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:1.96854603px;line-height:1.25;font-family:IPAPGothic;-inkscape-font-specification:IPAPGothic;stroke-width:0.04101137px"
          y="7.6238432"
          x="237.2352"
          id="tspan159"
          sodipodi:role="line">OCTAL</tspan></text>
     <text
        xml:space="preserve"
-       style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:1.96854639px;line-height:125%;font-family:FreeMono;-inkscape-font-specification:FreeMono;letter-spacing:0px;word-spacing:0px;fill:#000000;fill-opacity:1;stroke:none;stroke-width:0.04101137px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1"
+       style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;line-height:0%;font-family:FreeMono;-inkscape-font-specification:FreeMono;letter-spacing:0px;word-spacing:0px;fill:#000000;fill-opacity:1;stroke:none;stroke-width:0.04101137px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1"
        x="237.2352"
        y="20.160618"
-       id="text165"
-       sodipodi:linespacing="125%"><tspan
+       id="text165"><tspan
          sodipodi:role="line"
          id="tspan163"
          x="237.2352"
          y="20.160618"
-         style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-family:IPAPGothic;-inkscape-font-specification:IPAPGothic;stroke-width:0.04101137px">HEXAD</tspan></text>
+         style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:1.96854603px;line-height:1.25;font-family:IPAPGothic;-inkscape-font-specification:IPAPGothic;stroke-width:0.04101137px">HEXAD</tspan></text>
     <text
        xml:space="preserve"
-       style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:1.96854639px;line-height:125%;font-family:FreeMono;-inkscape-font-specification:FreeMono;letter-spacing:0px;word-spacing:0px;fill:#000000;fill-opacity:1;stroke:none;stroke-width:0.04101137px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1"
+       style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;line-height:0%;font-family:FreeMono;-inkscape-font-specification:FreeMono;letter-spacing:0px;word-spacing:0px;fill:#000000;fill-opacity:1;stroke:none;stroke-width:0.04101137px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1"
        x="237.2352"
        y="-24.301201"
-       id="text164"
-       sodipodi:linespacing="125%"><tspan
+       id="text164"><tspan
          sodipodi:role="line"
          id="tspan162"
          x="237.2352"
          y="-24.301201"
-         style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-family:IPAPGothic;-inkscape-font-specification:IPAPGothic;stroke-width:0.04101137px">OCTAL</tspan></text>
+         style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:1.96854603px;line-height:1.25;font-family:IPAPGothic;-inkscape-font-specification:IPAPGothic;stroke-width:0.04101137px">OCTAL</tspan></text>
     <text
-       sodipodi:linespacing="125%"
        id="text168"
        y="-11.764426"
        x="237.2352"
-       style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:1.96854639px;line-height:125%;font-family:FreeMono;-inkscape-font-specification:FreeMono;letter-spacing:0px;word-spacing:0px;fill:#000000;fill-opacity:1;stroke:none;stroke-width:0.04101137px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1"
+       style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;line-height:0%;font-family:FreeMono;-inkscape-font-specification:FreeMono;letter-spacing:0px;word-spacing:0px;fill:#000000;fill-opacity:1;stroke:none;stroke-width:0.04101137px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1"
        xml:space="preserve"><tspan
-         style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-family:IPAPGothic;-inkscape-font-specification:IPAPGothic;stroke-width:0.04101137px"
+         style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:1.96854603px;line-height:1.25;font-family:IPAPGothic;-inkscape-font-specification:IPAPGothic;stroke-width:0.04101137px"
          y="-11.764426"
          x="237.2352"
          id="tspan166"
          sodipodi:role="line">HEXAD</tspan></text>
     <text
        xml:space="preserve"
-       style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:1.96854639px;line-height:125%;font-family:FreeMono;-inkscape-font-specification:FreeMono;letter-spacing:0px;word-spacing:0px;fill:#000000;fill-opacity:1;stroke:none;stroke-width:0.04101137px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1"
+       style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;line-height:0%;font-family:FreeMono;-inkscape-font-specification:FreeMono;letter-spacing:0px;word-spacing:0px;fill:#000000;fill-opacity:1;stroke:none;stroke-width:0.04101137px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1"
        x="237.2352"
        y="87.509346"
-       id="text180"
-       sodipodi:linespacing="125%"><tspan
+       id="text180"><tspan
          sodipodi:role="line"
          id="tspan178"
          x="237.2352"
          y="87.509346"
-         style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-family:IPAPGothic;-inkscape-font-specification:IPAPGothic;stroke-width:0.04101137px">OCTAL</tspan></text>
+         style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:1.96854603px;line-height:1.25;font-family:IPAPGothic;-inkscape-font-specification:IPAPGothic;stroke-width:0.04101137px">OCTAL</tspan></text>
     <text
-       sodipodi:linespacing="125%"
        id="text184"
        y="100.04612"
        x="237.2352"
-       style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:1.96854639px;line-height:125%;font-family:FreeMono;-inkscape-font-specification:FreeMono;letter-spacing:0px;word-spacing:0px;fill:#000000;fill-opacity:1;stroke:none;stroke-width:0.04101137px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1"
+       style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;line-height:0%;font-family:FreeMono;-inkscape-font-specification:FreeMono;letter-spacing:0px;word-spacing:0px;fill:#000000;fill-opacity:1;stroke:none;stroke-width:0.04101137px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1"
        xml:space="preserve"><tspan
-         style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-family:IPAPGothic;-inkscape-font-specification:IPAPGothic;stroke-width:0.04101137px"
+         style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:1.96854603px;line-height:1.25;font-family:IPAPGothic;-inkscape-font-specification:IPAPGothic;stroke-width:0.04101137px"
          y="100.04612"
          x="237.2352"
          id="tspan182"
          sodipodi:role="line">HEXAD</tspan></text>
     <text
        xml:space="preserve"
-       style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:1.96854639px;line-height:125%;font-family:FreeMono;-inkscape-font-specification:FreeMono;letter-spacing:0px;word-spacing:0px;fill:#000000;fill-opacity:1;stroke:none;stroke-width:0.04101137px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1"
+       style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;line-height:0%;font-family:FreeMono;-inkscape-font-specification:FreeMono;letter-spacing:0px;word-spacing:0px;fill:#000000;fill-opacity:1;stroke:none;stroke-width:0.04101137px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1"
        x="91.9683"
        y="7.4224725"
-       id="text180-9"
-       sodipodi:linespacing="125%"><tspan
+       id="text180-9"><tspan
          sodipodi:role="line"
          id="tspan178-5"
          x="91.9683"
          y="7.4224725"
-         style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-family:IPAPGothic;-inkscape-font-specification:IPAPGothic;stroke-width:0.04101137px">OCTAL</tspan></text>
+         style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:1.96854603px;line-height:1.25;font-family:IPAPGothic;-inkscape-font-specification:IPAPGothic;stroke-width:0.04101137px">OCTAL</tspan></text>
     <text
-       sodipodi:linespacing="125%"
        id="text184-1"
        y="19.959248"
        x="91.9683"
-       style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:1.96854639px;line-height:125%;font-family:FreeMono;-inkscape-font-specification:FreeMono;letter-spacing:0px;word-spacing:0px;fill:#000000;fill-opacity:1;stroke:none;stroke-width:0.04101137px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1"
+       style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;line-height:0%;font-family:FreeMono;-inkscape-font-specification:FreeMono;letter-spacing:0px;word-spacing:0px;fill:#000000;fill-opacity:1;stroke:none;stroke-width:0.04101137px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1"
        xml:space="preserve"><tspan
-         style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-family:IPAPGothic;-inkscape-font-specification:IPAPGothic;stroke-width:0.04101137px"
+         style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:1.96854603px;line-height:1.25;font-family:IPAPGothic;-inkscape-font-specification:IPAPGothic;stroke-width:0.04101137px"
          y="19.959248"
          x="91.9683"
          id="tspan182-7"
          sodipodi:role="line">HEXAD</tspan></text>
     <text
-       sodipodi:linespacing="125%"
        id="text212"
        y="40.659504"
        x="91.9683"
-       style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:1.96854639px;line-height:125%;font-family:FreeMono;-inkscape-font-specification:FreeMono;letter-spacing:0px;word-spacing:0px;fill:#000000;fill-opacity:1;stroke:none;stroke-width:0.04101137px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1"
+       style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;line-height:0%;font-family:FreeMono;-inkscape-font-specification:FreeMono;letter-spacing:0px;word-spacing:0px;fill:#000000;fill-opacity:1;stroke:none;stroke-width:0.04101137px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1"
        xml:space="preserve"><tspan
-         style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-family:IPAPGothic;-inkscape-font-specification:IPAPGothic;stroke-width:0.04101137px"
+         style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:1.96854603px;line-height:1.25;font-family:IPAPGothic;-inkscape-font-specification:IPAPGothic;stroke-width:0.04101137px"
          y="40.659504"
          x="91.9683"
          id="tspan210"
          sodipodi:role="line">OCTAL</tspan></text>
     <text
        xml:space="preserve"
-       style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:1.96854639px;line-height:125%;font-family:FreeMono;-inkscape-font-specification:FreeMono;letter-spacing:0px;word-spacing:0px;fill:#000000;fill-opacity:1;stroke:none;stroke-width:0.04101137px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1"
+       style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;line-height:0%;font-family:FreeMono;-inkscape-font-specification:FreeMono;letter-spacing:0px;word-spacing:0px;fill:#000000;fill-opacity:1;stroke:none;stroke-width:0.04101137px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1"
        x="91.9683"
        y="53.196278"
-       id="text216"
-       sodipodi:linespacing="125%"><tspan
+       id="text216"><tspan
          sodipodi:role="line"
          id="tspan214"
          x="91.9683"
          y="53.196278"
-         style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-family:IPAPGothic;-inkscape-font-specification:IPAPGothic;stroke-width:0.04101137px">HEXAD</tspan></text>
+         style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:1.96854603px;line-height:1.25;font-family:IPAPGothic;-inkscape-font-specification:IPAPGothic;stroke-width:0.04101137px">HEXAD</tspan></text>
     <text
        xml:space="preserve"
-       style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:1.96854639px;line-height:125%;font-family:FreeMono;-inkscape-font-specification:FreeMono;letter-spacing:0px;word-spacing:0px;fill:#000000;fill-opacity:1;stroke:none;stroke-width:0.04101137px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1"
+       style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;line-height:0%;font-family:FreeMono;-inkscape-font-specification:FreeMono;letter-spacing:0px;word-spacing:0px;fill:#000000;fill-opacity:1;stroke:none;stroke-width:0.04101137px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1"
        x="91.9683"
        y="73.823647"
-       id="text220"
-       sodipodi:linespacing="125%"><tspan
+       id="text220"><tspan
          sodipodi:role="line"
          id="tspan218"
          x="91.9683"
          y="73.823647"
-         style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-family:IPAPGothic;-inkscape-font-specification:IPAPGothic;stroke-width:0.04101137px">OCTAL</tspan></text>
+         style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:1.96854603px;line-height:1.25;font-family:IPAPGothic;-inkscape-font-specification:IPAPGothic;stroke-width:0.04101137px">OCTAL</tspan></text>
     <text
-       sodipodi:linespacing="125%"
        id="text224"
        y="86.36042"
        x="91.9683"
-       style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:1.96854639px;line-height:125%;font-family:FreeMono;-inkscape-font-specification:FreeMono;letter-spacing:0px;word-spacing:0px;fill:#000000;fill-opacity:1;stroke:none;stroke-width:0.04101137px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1"
+       style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;line-height:0%;font-family:FreeMono;-inkscape-font-specification:FreeMono;letter-spacing:0px;word-spacing:0px;fill:#000000;fill-opacity:1;stroke:none;stroke-width:0.04101137px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1"
        xml:space="preserve"><tspan
-         style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-family:IPAPGothic;-inkscape-font-specification:IPAPGothic;stroke-width:0.04101137px"
+         style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:1.96854603px;line-height:1.25;font-family:IPAPGothic;-inkscape-font-specification:IPAPGothic;stroke-width:0.04101137px"
          y="86.36042"
          x="91.9683"
          id="tspan222"
@@ -1021,217 +1010,199 @@
        inkscape:connector-curvature="0"
        sodipodi:nodetypes="cccccc" />
     <text
-       sodipodi:linespacing="125%"
        id="text4280-5"
        y="117.06756"
        x="83.188072"
-       style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:2.85086346px;line-height:125%;font-family:FreeMono;-inkscape-font-specification:FreeMono;letter-spacing:0px;word-spacing:0px;fill:#000000;fill-opacity:1;stroke:none;stroke-width:0.05939297px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1"
+       style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;line-height:0%;font-family:FreeMono;-inkscape-font-specification:FreeMono;letter-spacing:0px;word-spacing:0px;fill:#000000;fill-opacity:1;stroke:none;stroke-width:0.05939297px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1"
        xml:space="preserve"><tspan
-         style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-family:IPAPGothic;-inkscape-font-specification:IPAPGothic;stroke-width:0.05939297px"
+         style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:2.85086298px;line-height:1.25;font-family:IPAPGothic;-inkscape-font-specification:IPAPGothic;stroke-width:0.05939297px"
          y="117.06756"
          x="83.188072"
          id="tspan4278-4"
          sodipodi:role="line">F  A  S  E  S      D  E      O  P  E  R  A  Ç  Ã  O</tspan></text>
     <text
        xml:space="preserve"
-       style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:2.85086346px;line-height:125%;font-family:FreeMono;-inkscape-font-specification:FreeMono;letter-spacing:0px;word-spacing:0px;fill:#000000;fill-opacity:1;stroke:none;stroke-width:0.05939297px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1"
+       style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;line-height:0%;font-family:FreeMono;-inkscape-font-specification:FreeMono;letter-spacing:0px;word-spacing:0px;fill:#000000;fill-opacity:1;stroke:none;stroke-width:0.05939297px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1"
        x="60.523499"
        y="134.99806"
-       id="text226"
-       sodipodi:linespacing="125%"><tspan
+       id="text226"><tspan
          sodipodi:role="line"
          id="tspan224"
          x="60.523499"
          y="134.99806"
-         style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-family:IPAPGothic;-inkscape-font-specification:IPAPGothic;stroke-width:0.05939297px">1</tspan></text>
+         style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:2.85086298px;line-height:1.25;font-family:IPAPGothic;-inkscape-font-specification:IPAPGothic;stroke-width:0.05939297px">1</tspan></text>
     <text
-       sodipodi:linespacing="125%"
        id="text228"
        y="134.99806"
        x="84.747185"
-       style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:2.85086346px;line-height:125%;font-family:FreeMono;-inkscape-font-specification:FreeMono;letter-spacing:0px;word-spacing:0px;fill:#000000;fill-opacity:1;stroke:none;stroke-width:0.05939297px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1"
+       style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;line-height:0%;font-family:FreeMono;-inkscape-font-specification:FreeMono;letter-spacing:0px;word-spacing:0px;fill:#000000;fill-opacity:1;stroke:none;stroke-width:0.05939297px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1"
        xml:space="preserve"><tspan
-         style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-family:IPAPGothic;-inkscape-font-specification:IPAPGothic;stroke-width:0.05939297px"
+         style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:2.85086298px;line-height:1.25;font-family:IPAPGothic;-inkscape-font-specification:IPAPGothic;stroke-width:0.05939297px"
          y="134.99806"
          x="84.747185"
          id="tspan226"
          sodipodi:role="line">2</tspan></text>
     <text
        xml:space="preserve"
-       style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:2.85086346px;line-height:125%;font-family:FreeMono;-inkscape-font-specification:FreeMono;letter-spacing:0px;word-spacing:0px;fill:#000000;fill-opacity:1;stroke:none;stroke-width:0.05939297px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1"
+       style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;line-height:0%;font-family:FreeMono;-inkscape-font-specification:FreeMono;letter-spacing:0px;word-spacing:0px;fill:#000000;fill-opacity:1;stroke:none;stroke-width:0.05939297px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1"
        x="109.22857"
        y="134.99806"
-       id="text230"
-       sodipodi:linespacing="125%"><tspan
+       id="text230"><tspan
          sodipodi:role="line"
          id="tspan228"
          x="109.22857"
          y="134.99806"
-         style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-family:IPAPGothic;-inkscape-font-specification:IPAPGothic;stroke-width:0.05939297px">3</tspan></text>
+         style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:2.85086298px;line-height:1.25;font-family:IPAPGothic;-inkscape-font-specification:IPAPGothic;stroke-width:0.05939297px">3</tspan></text>
     <text
-       sodipodi:linespacing="125%"
        id="text234"
        y="134.99806"
        x="133.65842"
-       style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:2.85086346px;line-height:125%;font-family:FreeMono;-inkscape-font-specification:FreeMono;letter-spacing:0px;word-spacing:0px;fill:#000000;fill-opacity:1;stroke:none;stroke-width:0.05939297px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1"
+       style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;line-height:0%;font-family:FreeMono;-inkscape-font-specification:FreeMono;letter-spacing:0px;word-spacing:0px;fill:#000000;fill-opacity:1;stroke:none;stroke-width:0.05939297px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1"
        xml:space="preserve"><tspan
-         style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-family:IPAPGothic;-inkscape-font-specification:IPAPGothic;stroke-width:0.05939297px"
+         style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:2.85086298px;line-height:1.25;font-family:IPAPGothic;-inkscape-font-specification:IPAPGothic;stroke-width:0.05939297px"
          y="134.99806"
          x="133.65842"
          id="tspan232"
          sodipodi:role="line">4</tspan></text>
     <text
        xml:space="preserve"
-       style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:2.85086346px;line-height:125%;font-family:FreeMono;-inkscape-font-specification:FreeMono;letter-spacing:0px;word-spacing:0px;fill:#000000;fill-opacity:1;stroke:none;stroke-width:0.05939297px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1"
+       style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;line-height:0%;font-family:FreeMono;-inkscape-font-specification:FreeMono;letter-spacing:0px;word-spacing:0px;fill:#000000;fill-opacity:1;stroke:none;stroke-width:0.05939297px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1"
        x="158.08826"
        y="134.99806"
-       id="text238"
-       sodipodi:linespacing="125%"><tspan
+       id="text238"><tspan
          sodipodi:role="line"
          id="tspan236"
          x="158.08826"
          y="134.99806"
-         style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-family:IPAPGothic;-inkscape-font-specification:IPAPGothic;stroke-width:0.05939297px">5</tspan></text>
+         style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:2.85086298px;line-height:1.25;font-family:IPAPGothic;-inkscape-font-specification:IPAPGothic;stroke-width:0.05939297px">5</tspan></text>
     <text
-       sodipodi:linespacing="125%"
        id="text236"
        y="160.17468"
        x="84.993866"
-       style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:2.85086346px;line-height:125%;font-family:FreeMono;-inkscape-font-specification:FreeMono;letter-spacing:0px;word-spacing:0px;fill:#000000;fill-opacity:1;stroke:none;stroke-width:0.05939297px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1"
+       style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;line-height:0%;font-family:FreeMono;-inkscape-font-specification:FreeMono;letter-spacing:0px;word-spacing:0px;fill:#000000;fill-opacity:1;stroke:none;stroke-width:0.05939297px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1"
        xml:space="preserve"><tspan
-         style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-family:IPAPGothic;-inkscape-font-specification:IPAPGothic;stroke-width:0.05939297px"
+         style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:2.85086298px;line-height:1.25;font-family:IPAPGothic;-inkscape-font-specification:IPAPGothic;stroke-width:0.05939297px"
          y="160.17468"
          x="84.993866"
          id="tspan234"
          sodipodi:role="line">6</tspan></text>
     <text
        xml:space="preserve"
-       style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:2.85086346px;line-height:125%;font-family:FreeMono;-inkscape-font-specification:FreeMono;letter-spacing:0px;word-spacing:0px;fill:#000000;fill-opacity:1;stroke:none;stroke-width:0.05939297px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1"
+       style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;line-height:0%;font-family:FreeMono;-inkscape-font-specification:FreeMono;letter-spacing:0px;word-spacing:0px;fill:#000000;fill-opacity:1;stroke:none;stroke-width:0.05939297px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1"
        x="133.4928"
        y="160.17468"
-       id="text240"
-       sodipodi:linespacing="125%"><tspan
+       id="text240"><tspan
          sodipodi:role="line"
          id="tspan238"
          x="133.4928"
          y="160.17468"
-         style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-family:IPAPGothic;-inkscape-font-specification:IPAPGothic;stroke-width:0.05939297px">7</tspan></text>
+         style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:2.85086298px;line-height:1.25;font-family:IPAPGothic;-inkscape-font-specification:IPAPGothic;stroke-width:0.05939297px">7</tspan></text>
     <text
        xml:space="preserve"
-       style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:2.85086346px;line-height:125%;font-family:FreeMono;-inkscape-font-specification:FreeMono;letter-spacing:0px;word-spacing:0px;fill:#000000;fill-opacity:1;stroke:none;stroke-width:0.05939297px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1"
+       style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;line-height:0%;font-family:FreeMono;-inkscape-font-specification:FreeMono;letter-spacing:0px;word-spacing:0px;fill:#000000;fill-opacity:1;stroke:none;stroke-width:0.05939297px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1"
        x="67.152657"
        y="130.33322"
-       id="text241"
-       sodipodi:linespacing="125%"><tspan
+       id="text241"><tspan
          sodipodi:role="line"
          id="tspan239"
          x="67.152657"
          y="130.33322"
-         style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-family:IPAPGothic;-inkscape-font-specification:IPAPGothic;stroke-width:0.05939297px">B U S C A</tspan></text>
+         style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:2.85086298px;line-height:1.25;font-family:IPAPGothic;-inkscape-font-specification:IPAPGothic;stroke-width:0.05939297px">B U S C A</tspan></text>
     <text
-       sodipodi:linespacing="125%"
        id="text245"
        y="130.33322"
        x="111.76025"
-       style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:2.85086346px;line-height:125%;font-family:FreeMono;-inkscape-font-specification:FreeMono;letter-spacing:0px;word-spacing:0px;fill:#000000;fill-opacity:1;stroke:none;stroke-width:0.05939297px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1"
+       style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;line-height:0%;font-family:FreeMono;-inkscape-font-specification:FreeMono;letter-spacing:0px;word-spacing:0px;fill:#000000;fill-opacity:1;stroke:none;stroke-width:0.05939297px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1"
        xml:space="preserve"><tspan
-         style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-family:IPAPGothic;-inkscape-font-specification:IPAPGothic;stroke-width:0.05939297px"
+         style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:2.85086298px;line-height:1.25;font-family:IPAPGothic;-inkscape-font-specification:IPAPGothic;stroke-width:0.05939297px"
          y="130.33322"
          x="111.76025"
          id="tspan243"
          sodipodi:role="line">E X E C U Ç Ã O</tspan></text>
     <text
        xml:space="preserve"
-       style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:2.85086346px;line-height:125%;font-family:FreeMono;-inkscape-font-specification:FreeMono;letter-spacing:0px;word-spacing:0px;fill:#000000;fill-opacity:1;stroke:none;stroke-width:0.05939297px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1"
+       style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;line-height:0%;font-family:FreeMono;-inkscape-font-specification:FreeMono;letter-spacing:0px;word-spacing:0px;fill:#000000;fill-opacity:1;stroke:none;stroke-width:0.05939297px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1"
        x="150.49133"
        y="130.33322"
-       id="text249"
-       sodipodi:linespacing="125%"><tspan
+       id="text249"><tspan
          sodipodi:role="line"
          id="tspan247"
          x="150.49133"
          y="130.33322"
-         style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-family:IPAPGothic;-inkscape-font-specification:IPAPGothic;stroke-width:0.05939297px">INDEXAÇÃO</tspan></text>
+         style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:2.85086298px;line-height:1.25;font-family:IPAPGothic;-inkscape-font-specification:IPAPGothic;stroke-width:0.05939297px">INDEXAÇÃO</tspan></text>
     <text
-       sodipodi:linespacing="125%"
        id="text253"
        y="154.96944"
        x="100.82703"
-       style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:2.85086346px;line-height:125%;font-family:FreeMono;-inkscape-font-specification:FreeMono;letter-spacing:0px;word-spacing:0px;fill:#000000;fill-opacity:1;stroke:none;stroke-width:0.05939297px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1"
+       style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;line-height:0%;font-family:FreeMono;-inkscape-font-specification:FreeMono;letter-spacing:0px;word-spacing:0px;fill:#000000;fill-opacity:1;stroke:none;stroke-width:0.05939297px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1"
        xml:space="preserve"><tspan
-         style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-family:IPAPGothic;-inkscape-font-specification:IPAPGothic;stroke-width:0.05939297px"
+         style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:2.85086298px;line-height:1.25;font-family:IPAPGothic;-inkscape-font-specification:IPAPGothic;stroke-width:0.05939297px"
          y="154.96944"
          x="100.82703"
          id="tspan251"
          sodipodi:role="line">I N D I R E T O</tspan></text>
     <text
-       sodipodi:linespacing="125%"
        id="text250"
        y="134.95071"
        x="187.57651"
-       style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:2.85086346px;line-height:125%;font-family:FreeMono;-inkscape-font-specification:FreeMono;letter-spacing:0px;word-spacing:0px;fill:#000000;fill-opacity:1;stroke:none;stroke-width:0.05939297px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1"
+       style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;line-height:0%;font-family:FreeMono;-inkscape-font-specification:FreeMono;letter-spacing:0px;word-spacing:0px;fill:#000000;fill-opacity:1;stroke:none;stroke-width:0.05939297px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1"
        xml:space="preserve"><tspan
-         style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-family:IPAPGothic;-inkscape-font-specification:IPAPGothic;stroke-width:0.05939297px"
+         style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:2.85086298px;line-height:1.25;font-family:IPAPGothic;-inkscape-font-specification:IPAPGothic;stroke-width:0.05939297px"
          y="134.95071"
          x="187.57651"
          id="tspan248"
          sodipodi:role="line">PARADO</tspan></text>
     <text
        xml:space="preserve"
-       style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:2.85086346px;line-height:125%;font-family:FreeMono;-inkscape-font-specification:FreeMono;letter-spacing:0px;word-spacing:0px;fill:#000000;fill-opacity:1;stroke:none;stroke-width:0.05939297px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1"
+       style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;line-height:0%;font-family:FreeMono;-inkscape-font-specification:FreeMono;letter-spacing:0px;word-spacing:0px;fill:#000000;fill-opacity:1;stroke:none;stroke-width:0.05939297px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1"
        x="216.8593"
        y="134.95071"
-       id="text258"
-       sodipodi:linespacing="125%"><tspan
+       id="text258"><tspan
          sodipodi:role="line"
          id="tspan256"
          x="216.8593"
          y="134.95071"
-         style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-family:IPAPGothic;-inkscape-font-specification:IPAPGothic;stroke-width:0.05939297px">EXTERNO</tspan></text>
+         style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:2.85086298px;line-height:1.25;font-family:IPAPGothic;-inkscape-font-specification:IPAPGothic;stroke-width:0.05939297px">EXTERNO</tspan></text>
     <text
-       sodipodi:linespacing="125%"
        id="text262"
        y="157.78864"
        x="252.73366"
-       style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:2.85086346px;line-height:125%;font-family:FreeMono;-inkscape-font-specification:FreeMono;letter-spacing:0px;word-spacing:0px;fill:#000000;fill-opacity:1;stroke:none;stroke-width:0.05939297px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1"
+       style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;line-height:0%;font-family:FreeMono;-inkscape-font-specification:FreeMono;letter-spacing:0px;word-spacing:0px;fill:#000000;fill-opacity:1;stroke:none;stroke-width:0.05939297px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1"
        xml:space="preserve"><tspan
-         style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-family:IPAPGothic;-inkscape-font-specification:IPAPGothic;stroke-width:0.05939297px"
+         style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:2.85086298px;line-height:1.25;font-family:IPAPGothic;-inkscape-font-specification:IPAPGothic;stroke-width:0.05939297px"
          y="157.78864"
          x="252.73366"
          id="tspan260"
          sodipodi:role="line">E N D E R E Ç A M E N T O</tspan></text>
     <text
        xml:space="preserve"
-       style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:2.85086346px;line-height:125%;font-family:FreeMono;-inkscape-font-specification:FreeMono;letter-spacing:0px;word-spacing:0px;fill:#000000;fill-opacity:1;stroke:none;stroke-width:0.05939297px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1"
+       style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;line-height:0%;font-family:FreeMono;-inkscape-font-specification:FreeMono;letter-spacing:0px;word-spacing:0px;fill:#000000;fill-opacity:1;stroke:none;stroke-width:0.05939297px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1"
        x="325.05594"
        y="157.78864"
-       id="text266"
-       sodipodi:linespacing="125%"><tspan
+       id="text266"><tspan
          sodipodi:role="line"
          id="tspan264"
          x="325.05594"
          y="157.78864"
-         style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-family:IPAPGothic;-inkscape-font-specification:IPAPGothic;stroke-width:0.05939297px">M E M Ó R I A</tspan></text>
+         style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:2.85086298px;line-height:1.25;font-family:IPAPGothic;-inkscape-font-specification:IPAPGothic;stroke-width:0.05939297px">M E M Ó R I A</tspan></text>
     <text
        xml:space="preserve"
-       style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:2.85086346px;line-height:125%;font-family:FreeMono;-inkscape-font-specification:FreeMono;letter-spacing:0px;word-spacing:0px;fill:#000000;fill-opacity:1;stroke:none;stroke-width:0.05939297px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1"
+       style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;line-height:0%;font-family:FreeMono;-inkscape-font-specification:FreeMono;letter-spacing:0px;word-spacing:0px;fill:#000000;fill-opacity:1;stroke:none;stroke-width:0.05939297px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1"
        x="280.754"
        y="132.02982"
-       id="text4458"
-       sodipodi:linespacing="125%"><tspan
+       id="text4458"><tspan
          sodipodi:role="line"
          id="tspan4456"
          x="280.754"
          y="132.02982"
-         style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-family:IPAPGothic;-inkscape-font-specification:IPAPGothic;stroke-width:0.05939297px">SEQÜENCIAL</tspan></text>
+         style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:2.85086298px;line-height:1.25;font-family:IPAPGothic;-inkscape-font-specification:IPAPGothic;stroke-width:0.05939297px">SEQÜENCIAL</tspan></text>
     <text
-       sodipodi:linespacing="125%"
        id="text4462"
        y="132.02982"
        x="250.60614"
-       style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:2.85086346px;line-height:125%;font-family:FreeMono;-inkscape-font-specification:FreeMono;letter-spacing:0px;word-spacing:0px;fill:#000000;fill-opacity:1;stroke:none;stroke-width:0.05939297px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1"
+       style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;line-height:0%;font-family:FreeMono;-inkscape-font-specification:FreeMono;letter-spacing:0px;word-spacing:0px;fill:#000000;fill-opacity:1;stroke:none;stroke-width:0.05939297px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1"
        xml:space="preserve"><tspan
-         style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-family:IPAPGothic;-inkscape-font-specification:IPAPGothic;stroke-width:0.05939297px"
+         style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:2.85086298px;line-height:1.25;font-family:IPAPGothic;-inkscape-font-specification:IPAPGothic;stroke-width:0.05939297px"
          y="132.02982"
          x="250.60614"
          id="tspan4460"
@@ -1247,29 +1218,27 @@
        d="m 260.32486,130.92586 h 1.87772 l 4.84105,8.38494"
        style="fill:none;fill-rule:evenodd;stroke:#000000;stroke-width:0.26458332px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1" />
     <text
-       sodipodi:linespacing="125%"
        id="text4486"
        y="132.02982"
        x="344.80521"
-       style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:2.85086346px;line-height:125%;font-family:FreeMono;-inkscape-font-specification:FreeMono;letter-spacing:0px;word-spacing:0px;fill:#000000;fill-opacity:1;stroke:none;stroke-width:0.05939297px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1"
+       style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;line-height:0%;font-family:FreeMono;-inkscape-font-specification:FreeMono;letter-spacing:0px;word-spacing:0px;fill:#000000;fill-opacity:1;stroke:none;stroke-width:0.05939297px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1"
        xml:space="preserve"><tspan
-         style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-family:IPAPGothic;-inkscape-font-specification:IPAPGothic;stroke-width:0.05939297px"
+         style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:2.85086298px;line-height:1.25;font-family:IPAPGothic;-inkscape-font-specification:IPAPGothic;stroke-width:0.05939297px"
          y="132.02982"
          x="344.80521"
          id="tspan4484"
          sodipodi:role="line">PROTEGIDA</tspan></text>
     <text
        xml:space="preserve"
-       style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:2.85086346px;line-height:125%;font-family:FreeMono;-inkscape-font-specification:FreeMono;letter-spacing:0px;word-spacing:0px;fill:#000000;fill-opacity:1;stroke:none;stroke-width:0.05939297px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1"
+       style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;line-height:0%;font-family:FreeMono;-inkscape-font-specification:FreeMono;letter-spacing:0px;word-spacing:0px;fill:#000000;fill-opacity:1;stroke:none;stroke-width:0.05939297px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1"
        x="310.6741"
        y="132.02982"
-       id="text4490"
-       sodipodi:linespacing="125%"><tspan
+       id="text4490"><tspan
          sodipodi:role="line"
          id="tspan4488"
          x="310.6741"
          y="132.02982"
-         style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-family:IPAPGothic;-inkscape-font-specification:IPAPGothic;stroke-width:0.05939297px">LIBERADA</tspan></text>
+         style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:2.85086298px;line-height:1.25;font-family:IPAPGothic;-inkscape-font-specification:IPAPGothic;stroke-width:0.05939297px">LIBERADA</tspan></text>
     <path
        inkscape:connector-curvature="0"
        id="path4492"
@@ -1380,160 +1349,147 @@
        transform="matrix(0.26458333,0,0,0.26458333,0,-297)" />
     <text
        xml:space="preserve"
-       style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:2.85086346px;line-height:125%;font-family:FreeMono;-inkscape-font-specification:FreeMono;letter-spacing:0px;word-spacing:0px;fill:#000000;fill-opacity:1;stroke:none;stroke-width:0.05939297px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1"
+       style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;line-height:0%;font-family:FreeMono;-inkscape-font-specification:FreeMono;letter-spacing:0px;word-spacing:0px;fill:#000000;fill-opacity:1;stroke:none;stroke-width:0.05939297px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1"
        x="74.089859"
        y="177.52484"
-       id="text4577"
-       sodipodi:linespacing="125%"><tspan
+       id="text4577"><tspan
          sodipodi:role="line"
          id="tspan4575"
          x="74.089859"
          y="177.52484"
-         style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-family:IPAPGothic;-inkscape-font-specification:IPAPGothic;stroke-width:0.05939297px">0</tspan></text>
+         style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:2.85086298px;line-height:1.25;font-family:IPAPGothic;-inkscape-font-specification:IPAPGothic;stroke-width:0.05939297px">0</tspan></text>
     <text
-       sodipodi:linespacing="125%"
        id="text4581"
        y="177.52484"
        x="97.55706"
-       style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:2.85086346px;line-height:125%;font-family:FreeMono;-inkscape-font-specification:FreeMono;letter-spacing:0px;word-spacing:0px;fill:#000000;fill-opacity:1;stroke:none;stroke-width:0.05939297px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1"
+       style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;line-height:0%;font-family:FreeMono;-inkscape-font-specification:FreeMono;letter-spacing:0px;word-spacing:0px;fill:#000000;fill-opacity:1;stroke:none;stroke-width:0.05939297px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1"
        xml:space="preserve"><tspan
-         style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-family:IPAPGothic;-inkscape-font-specification:IPAPGothic;stroke-width:0.05939297px"
+         style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:2.85086298px;line-height:1.25;font-family:IPAPGothic;-inkscape-font-specification:IPAPGothic;stroke-width:0.05939297px"
          y="177.52484"
          x="97.55706"
          id="tspan4579"
          sodipodi:role="line">1</tspan></text>
     <text
        xml:space="preserve"
-       style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:2.85086346px;line-height:125%;font-family:FreeMono;-inkscape-font-specification:FreeMono;letter-spacing:0px;word-spacing:0px;fill:#000000;fill-opacity:1;stroke:none;stroke-width:0.05939297px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1"
+       style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;line-height:0%;font-family:FreeMono;-inkscape-font-specification:FreeMono;letter-spacing:0px;word-spacing:0px;fill:#000000;fill-opacity:1;stroke:none;stroke-width:0.05939297px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1"
        x="120.95914"
        y="177.52484"
-       id="text4585"
-       sodipodi:linespacing="125%"><tspan
+       id="text4585"><tspan
          sodipodi:role="line"
          id="tspan4583"
          x="120.95914"
          y="177.52484"
-         style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-family:IPAPGothic;-inkscape-font-specification:IPAPGothic;stroke-width:0.05939297px">2</tspan></text>
+         style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:2.85086298px;line-height:1.25;font-family:IPAPGothic;-inkscape-font-specification:IPAPGothic;stroke-width:0.05939297px">2</tspan></text>
     <text
-       sodipodi:linespacing="125%"
        id="text4589"
        y="177.52484"
        x="144.52518"
-       style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:2.85086346px;line-height:125%;font-family:FreeMono;-inkscape-font-specification:FreeMono;letter-spacing:0px;word-spacing:0px;fill:#000000;fill-opacity:1;stroke:none;stroke-width:0.05939297px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1"
+       style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;line-height:0%;font-family:FreeMono;-inkscape-font-specification:FreeMono;letter-spacing:0px;word-spacing:0px;fill:#000000;fill-opacity:1;stroke:none;stroke-width:0.05939297px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1"
        xml:space="preserve"><tspan
-         style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-family:IPAPGothic;-inkscape-font-specification:IPAPGothic;stroke-width:0.05939297px"
+         style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:2.85086298px;line-height:1.25;font-family:IPAPGothic;-inkscape-font-specification:IPAPGothic;stroke-width:0.05939297px"
          y="177.52484"
          x="144.52518"
          id="tspan4587"
          sodipodi:role="line">3</tspan></text>
     <text
        xml:space="preserve"
-       style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:2.85086346px;line-height:125%;font-family:FreeMono;-inkscape-font-specification:FreeMono;letter-spacing:0px;word-spacing:0px;fill:#000000;fill-opacity:1;stroke:none;stroke-width:0.05939297px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1"
+       style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;line-height:0%;font-family:FreeMono;-inkscape-font-specification:FreeMono;letter-spacing:0px;word-spacing:0px;fill:#000000;fill-opacity:1;stroke:none;stroke-width:0.05939297px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1"
        x="167.79305"
        y="177.52484"
-       id="text4593"
-       sodipodi:linespacing="125%"><tspan
+       id="text4593"><tspan
          sodipodi:role="line"
          id="tspan4591"
          x="167.79305"
          y="177.52484"
-         style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-family:IPAPGothic;-inkscape-font-specification:IPAPGothic;stroke-width:0.05939297px">4</tspan></text>
+         style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:2.85086298px;line-height:1.25;font-family:IPAPGothic;-inkscape-font-specification:IPAPGothic;stroke-width:0.05939297px">4</tspan></text>
     <text
-       sodipodi:linespacing="125%"
        id="text4597"
        y="177.52484"
        x="191.22093"
-       style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:2.85086346px;line-height:125%;font-family:FreeMono;-inkscape-font-specification:FreeMono;letter-spacing:0px;word-spacing:0px;fill:#000000;fill-opacity:1;stroke:none;stroke-width:0.05939297px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1"
+       style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;line-height:0%;font-family:FreeMono;-inkscape-font-specification:FreeMono;letter-spacing:0px;word-spacing:0px;fill:#000000;fill-opacity:1;stroke:none;stroke-width:0.05939297px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1"
        xml:space="preserve"><tspan
-         style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-family:IPAPGothic;-inkscape-font-specification:IPAPGothic;stroke-width:0.05939297px"
+         style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:2.85086298px;line-height:1.25;font-family:IPAPGothic;-inkscape-font-specification:IPAPGothic;stroke-width:0.05939297px"
          y="177.52484"
          x="191.22093"
          id="tspan4595"
          sodipodi:role="line">5</tspan></text>
     <text
        xml:space="preserve"
-       style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:2.85086346px;line-height:125%;font-family:FreeMono;-inkscape-font-specification:FreeMono;letter-spacing:0px;word-spacing:0px;fill:#000000;fill-opacity:1;stroke:none;stroke-width:0.05939297px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1"
+       style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;line-height:0%;font-family:FreeMono;-inkscape-font-specification:FreeMono;letter-spacing:0px;word-spacing:0px;fill:#000000;fill-opacity:1;stroke:none;stroke-width:0.05939297px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1"
        x="214.56067"
        y="177.52484"
-       id="text4605"
-       sodipodi:linespacing="125%"><tspan
+       id="text4605"><tspan
          sodipodi:role="line"
          id="tspan4603"
          x="214.56067"
          y="177.52484"
-         style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-family:IPAPGothic;-inkscape-font-specification:IPAPGothic;stroke-width:0.05939297px">6</tspan></text>
+         style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:2.85086298px;line-height:1.25;font-family:IPAPGothic;-inkscape-font-specification:IPAPGothic;stroke-width:0.05939297px">6</tspan></text>
     <text
-       sodipodi:linespacing="125%"
        id="text4609"
        y="177.52484"
        x="238.04532"
-       style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:2.85086346px;line-height:125%;font-family:FreeMono;-inkscape-font-specification:FreeMono;letter-spacing:0px;word-spacing:0px;fill:#000000;fill-opacity:1;stroke:none;stroke-width:0.05939297px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1"
+       style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;line-height:0%;font-family:FreeMono;-inkscape-font-specification:FreeMono;letter-spacing:0px;word-spacing:0px;fill:#000000;fill-opacity:1;stroke:none;stroke-width:0.05939297px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1"
        xml:space="preserve"><tspan
-         style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-family:IPAPGothic;-inkscape-font-specification:IPAPGothic;stroke-width:0.05939297px"
+         style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:2.85086298px;line-height:1.25;font-family:IPAPGothic;-inkscape-font-specification:IPAPGothic;stroke-width:0.05939297px"
          y="177.52484"
          x="238.04532"
          id="tspan4607"
          sodipodi:role="line">7</tspan></text>
     <text
        xml:space="preserve"
-       style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:2.85086346px;line-height:125%;font-family:FreeMono;-inkscape-font-specification:FreeMono;letter-spacing:0px;word-spacing:0px;fill:#000000;fill-opacity:1;stroke:none;stroke-width:0.05939297px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1"
+       style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;line-height:0%;font-family:FreeMono;-inkscape-font-specification:FreeMono;letter-spacing:0px;word-spacing:0px;fill:#000000;fill-opacity:1;stroke:none;stroke-width:0.05939297px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1"
        x="261.45016"
        y="177.52484"
-       id="text4613"
-       sodipodi:linespacing="125%"><tspan
+       id="text4613"><tspan
          sodipodi:role="line"
          id="tspan4611"
          x="261.45016"
          y="177.52484"
-         style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-family:IPAPGothic;-inkscape-font-specification:IPAPGothic;stroke-width:0.05939297px">8</tspan></text>
+         style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:2.85086298px;line-height:1.25;font-family:IPAPGothic;-inkscape-font-specification:IPAPGothic;stroke-width:0.05939297px">8</tspan></text>
     <text
-       sodipodi:linespacing="125%"
        id="text4617"
        y="177.52484"
        x="284.99994"
-       style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:2.85086346px;line-height:125%;font-family:FreeMono;-inkscape-font-specification:FreeMono;letter-spacing:0px;word-spacing:0px;fill:#000000;fill-opacity:1;stroke:none;stroke-width:0.05939297px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1"
+       style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;line-height:0%;font-family:FreeMono;-inkscape-font-specification:FreeMono;letter-spacing:0px;word-spacing:0px;fill:#000000;fill-opacity:1;stroke:none;stroke-width:0.05939297px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1"
        xml:space="preserve"><tspan
-         style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-family:IPAPGothic;-inkscape-font-specification:IPAPGothic;stroke-width:0.05939297px"
+         style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:2.85086298px;line-height:1.25;font-family:IPAPGothic;-inkscape-font-specification:IPAPGothic;stroke-width:0.05939297px"
          y="177.52484"
          x="284.99994"
          id="tspan4615"
          sodipodi:role="line">9</tspan></text>
     <text
        xml:space="preserve"
-       style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:2.85086346px;line-height:125%;font-family:FreeMono;-inkscape-font-specification:FreeMono;letter-spacing:0px;word-spacing:0px;fill:#000000;fill-opacity:1;stroke:none;stroke-width:0.05939297px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1"
+       style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;line-height:0%;font-family:FreeMono;-inkscape-font-specification:FreeMono;letter-spacing:0px;word-spacing:0px;fill:#000000;fill-opacity:1;stroke:none;stroke-width:0.05939297px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1"
        x="307.2919"
        y="177.52484"
-       id="text4621"
-       sodipodi:linespacing="125%"><tspan
+       id="text4621"><tspan
          sodipodi:role="line"
          id="tspan4619"
          x="307.2919"
          y="177.52484"
-         style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-family:IPAPGothic;-inkscape-font-specification:IPAPGothic;stroke-width:0.05939297px">10</tspan></text>
+         style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:2.85086298px;line-height:1.25;font-family:IPAPGothic;-inkscape-font-specification:IPAPGothic;stroke-width:0.05939297px">10</tspan></text>
     <text
-       sodipodi:linespacing="125%"
        id="text4625"
        y="177.52484"
        x="330.98309"
-       style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:2.85086346px;line-height:125%;font-family:FreeMono;-inkscape-font-specification:FreeMono;letter-spacing:0px;word-spacing:0px;fill:#000000;fill-opacity:1;stroke:none;stroke-width:0.05939297px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1"
+       style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;line-height:0%;font-family:FreeMono;-inkscape-font-specification:FreeMono;letter-spacing:0px;word-spacing:0px;fill:#000000;fill-opacity:1;stroke:none;stroke-width:0.05939297px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1"
        xml:space="preserve"><tspan
-         style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-family:IPAPGothic;-inkscape-font-specification:IPAPGothic;stroke-width:0.05939297px"
+         style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:2.85086298px;line-height:1.25;font-family:IPAPGothic;-inkscape-font-specification:IPAPGothic;stroke-width:0.05939297px"
          y="177.52484"
          x="330.98309"
          id="tspan4623"
          sodipodi:role="line">11</tspan></text>
     <text
        xml:space="preserve"
-       style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:2.85086346px;line-height:125%;font-family:FreeMono;-inkscape-font-specification:FreeMono;letter-spacing:0px;word-spacing:0px;fill:#000000;fill-opacity:1;stroke:none;stroke-width:0.05939297px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1"
+       style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;line-height:0%;font-family:FreeMono;-inkscape-font-specification:FreeMono;letter-spacing:0px;word-spacing:0px;fill:#000000;fill-opacity:1;stroke:none;stroke-width:0.05939297px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1"
        x="163.60393"
        y="204.56253"
-       id="text4473"
-       sodipodi:linespacing="125%"><tspan
+       id="text4473"><tspan
          sodipodi:role="line"
          id="tspan4471"
          x="163.60393"
          y="204.56253"
-         style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-family:IPAPGothic;-inkscape-font-specification:IPAPGothic;stroke-width:0.05939297px">E  N  T  R  A  D  A       M  A  N  U  A  L       D  E       D  A  D  O  S</tspan></text>
+         style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:2.85086298px;line-height:1.25;font-family:IPAPGothic;-inkscape-font-specification:IPAPGothic;stroke-width:0.05939297px">E  N  T  R  A  D  A       M  A  N  U  A  L       D  E       D  A  D  O  S</tspan></text>
     <path
        inkscape:connector-curvature="0"
        style="opacity:1;fill:none;fill-opacity:1;stroke:#000000;stroke-width:0.30000001;stroke-linecap:square;stroke-linejoin:miter;stroke-miterlimit:4;stroke-dasharray:none;stroke-dashoffset:0;stroke-opacity:1"
@@ -1584,64 +1540,59 @@
        sodipodi:nodetypes="cccccc" />
     <text
        xml:space="preserve"
-       style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:2.85086346px;line-height:125%;font-family:FreeMono;-inkscape-font-specification:FreeMono;letter-spacing:0px;word-spacing:0px;fill:#000000;fill-opacity:1;stroke:none;stroke-width:0.05939297px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1"
+       style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;line-height:0%;font-family:FreeMono;-inkscape-font-specification:FreeMono;letter-spacing:0px;word-spacing:0px;fill:#000000;fill-opacity:1;stroke:none;stroke-width:0.05939297px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1"
        x="335.99039"
        y="279.96884"
-       id="text249-8"
-       sodipodi:linespacing="125%"><tspan
+       id="text249-8"><tspan
          sodipodi:role="line"
          id="tspan247-2"
          x="335.99039"
          y="279.96884"
-         style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-family:IPAPGothic;-inkscape-font-specification:IPAPGothic;stroke-width:0.05939297px">PREPARAÇÃO</tspan></text>
+         style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:2.85086298px;line-height:1.25;font-family:IPAPGothic;-inkscape-font-specification:IPAPGothic;stroke-width:0.05939297px">PREPARAÇÃO</tspan></text>
     <text
        xml:space="preserve"
-       style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:2.85086346px;line-height:125%;font-family:FreeMono;-inkscape-font-specification:FreeMono;letter-spacing:0px;word-spacing:0px;fill:#000000;fill-opacity:1;stroke:none;stroke-width:0.05939297px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1"
+       style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;line-height:0%;font-family:FreeMono;-inkscape-font-specification:FreeMono;letter-spacing:0px;word-spacing:0px;fill:#000000;fill-opacity:1;stroke:none;stroke-width:0.05939297px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1"
        x="306.76666"
        y="251.66559"
-       id="text249-8-9"
-       sodipodi:linespacing="125%"><tspan
+       id="text249-8-9"><tspan
          sodipodi:role="line"
          id="tspan247-2-0"
          x="306.76666"
          y="251.66559"
-         style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-family:IPAPGothic;-inkscape-font-specification:IPAPGothic;stroke-width:0.05939297px">C O M A N D O</tspan></text>
+         style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:2.85086298px;line-height:1.25;font-family:IPAPGothic;-inkscape-font-specification:IPAPGothic;stroke-width:0.05939297px">C O M A N D O</tspan></text>
     <text
        xml:space="preserve"
-       style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:2.85086346px;line-height:125%;font-family:FreeMono;-inkscape-font-specification:FreeMono;letter-spacing:0px;word-spacing:0px;fill:#000000;fill-opacity:1;stroke:none;stroke-width:0.05939297px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1"
+       style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;line-height:0%;font-family:FreeMono;-inkscape-font-specification:FreeMono;letter-spacing:0px;word-spacing:0px;fill:#000000;fill-opacity:1;stroke:none;stroke-width:0.05939297px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1"
        x="280.32309"
        y="226.45612"
-       id="text249-8-9-0"
-       sodipodi:linespacing="125%"><tspan
+       id="text249-8-9-0"><tspan
          sodipodi:role="line"
          id="tspan247-2-0-9"
          x="280.32309"
          y="226.45612"
-         style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-family:IPAPGothic;-inkscape-font-specification:IPAPGothic;stroke-width:0.05939297px">E S P E R A</tspan></text>
+         style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:2.85086298px;line-height:1.25;font-family:IPAPGothic;-inkscape-font-specification:IPAPGothic;stroke-width:0.05939297px">E S P E R A</tspan></text>
     <text
        xml:space="preserve"
-       style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:2.85086346px;line-height:125%;font-family:FreeMono;-inkscape-font-specification:FreeMono;letter-spacing:0px;word-spacing:0px;fill:#000000;fill-opacity:1;stroke:none;stroke-width:0.05939297px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1"
+       style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;line-height:0%;font-family:FreeMono;-inkscape-font-specification:FreeMono;letter-spacing:0px;word-spacing:0px;fill:#000000;fill-opacity:1;stroke:none;stroke-width:0.05939297px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1"
        x="305.96704"
        y="226.32457"
-       id="text249-8-9-3"
-       sodipodi:linespacing="125%"><tspan
+       id="text249-8-9-3"><tspan
          sodipodi:role="line"
          id="tspan247-2-0-5"
          x="305.96704"
          y="226.32457"
-         style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-family:IPAPGothic;-inkscape-font-specification:IPAPGothic;stroke-width:0.05939297px">INTERRUPÇÃO</tspan></text>
+         style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:2.85086298px;line-height:1.25;font-family:IPAPGothic;-inkscape-font-specification:IPAPGothic;stroke-width:0.05939297px">INTERRUPÇÃO</tspan></text>
     <text
        xml:space="preserve"
-       style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:2.85086346px;line-height:125%;font-family:FreeMono;-inkscape-font-specification:FreeMono;letter-spacing:0px;word-spacing:0px;fill:#000000;fill-opacity:1;stroke:none;stroke-width:0.05939297px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1"
+       style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;line-height:0%;font-family:FreeMono;-inkscape-font-specification:FreeMono;letter-spacing:0px;word-spacing:0px;fill:#000000;fill-opacity:1;stroke:none;stroke-width:0.05939297px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1"
        x="337.19568"
        y="226.32457"
-       id="text249-8-9-6"
-       sodipodi:linespacing="125%"><tspan
+       id="text249-8-9-6"><tspan
          sodipodi:role="line"
          id="tspan247-2-0-7"
          x="337.19568"
          y="226.32457"
-         style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-family:IPAPGothic;-inkscape-font-specification:IPAPGothic;stroke-width:0.05939297px">P A R T I D A</tspan></text>
+         style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:2.85086298px;line-height:1.25;font-family:IPAPGothic;-inkscape-font-specification:IPAPGothic;stroke-width:0.05939297px">P A R T I D A</tspan></text>
     <path
        id="path4666"
        style="opacity:1;fill:none;fill-opacity:1;stroke:#000000;stroke-width:0.30000001;stroke-linecap:square;stroke-linejoin:miter;stroke-miterlimit:4;stroke-dasharray:none;stroke-dashoffset:0;stroke-opacity:1"
@@ -1649,136 +1600,126 @@
        inkscape:connector-curvature="0"
        sodipodi:nodetypes="cccccc" />
     <text
-       sodipodi:linespacing="125%"
        id="text253-2"
        y="218.8708"
        x="168.15002"
-       style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:2.85086346px;line-height:125%;font-family:FreeMono;-inkscape-font-specification:FreeMono;letter-spacing:0px;word-spacing:0px;fill:#000000;fill-opacity:1;stroke:none;stroke-width:0.05939297px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1"
+       style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;line-height:0%;font-family:FreeMono;-inkscape-font-specification:FreeMono;letter-spacing:0px;word-spacing:0px;fill:#000000;fill-opacity:1;stroke:none;stroke-width:0.05939297px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1"
        xml:space="preserve"><tspan
-         style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-family:IPAPGothic;-inkscape-font-specification:IPAPGothic;stroke-width:0.05939297px"
+         style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:2.85086298px;line-height:1.25;font-family:IPAPGothic;-inkscape-font-specification:IPAPGothic;stroke-width:0.05939297px"
          y="218.8708"
          x="168.15002"
          id="tspan251-1"
          sodipodi:role="line">M E M Ó R I A</tspan></text>
     <text
-       sodipodi:linespacing="125%"
        id="text253-0"
        y="226.24585"
        x="138.49127"
-       style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:2.15357447px;line-height:125%;font-family:FreeMono;-inkscape-font-specification:FreeMono;letter-spacing:0px;word-spacing:0px;fill:#000000;fill-opacity:1;stroke:none;stroke-width:0.04486612px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1"
+       style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;line-height:0%;font-family:FreeMono;-inkscape-font-specification:FreeMono;letter-spacing:0px;word-spacing:0px;fill:#000000;fill-opacity:1;stroke:none;stroke-width:0.04486612px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1"
        xml:space="preserve"><tspan
-         style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-family:IPAPGothic;-inkscape-font-specification:IPAPGothic;stroke-width:0.04486612px"
+         style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:2.15357399px;line-height:1.25;font-family:IPAPGothic;-inkscape-font-specification:IPAPGothic;stroke-width:0.04486612px"
          y="226.24585"
          x="138.49127"
          id="tspan251-3"
          sodipodi:role="line">ENDEREÇAMENTO</tspan></text>
     <text
-       sodipodi:linespacing="125%"
        id="text253-4"
        y="226.24585"
        x="167.36795"
-       style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:2.15357447px;line-height:125%;font-family:FreeMono;-inkscape-font-specification:FreeMono;letter-spacing:0px;word-spacing:0px;fill:#000000;fill-opacity:1;stroke:none;stroke-width:0.04486612px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1"
+       style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;line-height:0%;font-family:FreeMono;-inkscape-font-specification:FreeMono;letter-spacing:0px;word-spacing:0px;fill:#000000;fill-opacity:1;stroke:none;stroke-width:0.04486612px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1"
        xml:space="preserve"><tspan
-         style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-family:IPAPGothic;-inkscape-font-specification:IPAPGothic;stroke-width:0.04486612px"
+         style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:2.15357399px;line-height:1.25;font-family:IPAPGothic;-inkscape-font-specification:IPAPGothic;stroke-width:0.04486612px"
          y="226.24585"
          x="167.36795"
          id="tspan251-5"
          sodipodi:role="line">ARMAZENAMENTO</tspan></text>
     <text
-       sodipodi:linespacing="125%"
        id="text253-21"
        y="226.24585"
        x="198.19839"
-       style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:2.15357447px;line-height:125%;font-family:FreeMono;-inkscape-font-specification:FreeMono;letter-spacing:0px;word-spacing:0px;fill:#000000;fill-opacity:1;stroke:none;stroke-width:0.04486612px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1"
+       style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;line-height:0%;font-family:FreeMono;-inkscape-font-specification:FreeMono;letter-spacing:0px;word-spacing:0px;fill:#000000;fill-opacity:1;stroke:none;stroke-width:0.04486612px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1"
        xml:space="preserve"><tspan
-         style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-family:IPAPGothic;-inkscape-font-specification:IPAPGothic;stroke-width:0.04486612px"
+         style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:2.15357399px;line-height:1.25;font-family:IPAPGothic;-inkscape-font-specification:IPAPGothic;stroke-width:0.04486612px"
          y="226.24585"
          x="198.19839"
          id="tspan251-54"
          sodipodi:role="line">E X P O S I Ç Ã O</tspan></text>
     <text
-       sodipodi:linespacing="125%"
        id="text253-9"
        y="226.24585"
        x="119.57989"
-       style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:2.15357447px;line-height:125%;font-family:FreeMono;-inkscape-font-specification:FreeMono;letter-spacing:0px;word-spacing:0px;fill:#000000;fill-opacity:1;stroke:none;stroke-width:0.04486612px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1"
+       style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;line-height:0%;font-family:FreeMono;-inkscape-font-specification:FreeMono;letter-spacing:0px;word-spacing:0px;fill:#000000;fill-opacity:1;stroke:none;stroke-width:0.04486612px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1"
        xml:space="preserve"><tspan
-         style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-family:IPAPGothic;-inkscape-font-specification:IPAPGothic;text-align:center;text-anchor:middle;stroke-width:0.04486612px"
+         style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:2.15357399px;line-height:1.25;font-family:IPAPGothic;-inkscape-font-specification:IPAPGothic;text-align:center;text-anchor:middle;stroke-width:0.04486612px"
          y="226.24585"
          x="119.57989"
          id="tspan251-4"
          sodipodi:role="line">I N S T R U Ç Ã O</tspan><tspan
-         style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-family:IPAPGothic;-inkscape-font-specification:IPAPGothic;text-align:center;text-anchor:middle;stroke-width:0.04486612px"
-         y="228.93782"
+         style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:2.15357399px;line-height:1.25;font-family:IPAPGothic;-inkscape-font-specification:IPAPGothic;text-align:center;text-anchor:middle;stroke-width:0.04486612px"
+         y="230.63242"
          x="119.57989"
          sodipodi:role="line"
          id="tspan391">Ú N I C A</tspan></text>
     <text
-       sodipodi:linespacing="125%"
        id="text253-04"
        y="226.24585"
        x="80.599899"
-       style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:2.15357447px;line-height:125%;font-family:FreeMono;-inkscape-font-specification:FreeMono;letter-spacing:0px;word-spacing:0px;fill:#000000;fill-opacity:1;stroke:none;stroke-width:0.04486612px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1"
+       style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;line-height:0%;font-family:FreeMono;-inkscape-font-specification:FreeMono;letter-spacing:0px;word-spacing:0px;fill:#000000;fill-opacity:1;stroke:none;stroke-width:0.04486612px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1"
        xml:space="preserve"><tspan
-         style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-family:IPAPGothic;-inkscape-font-specification:IPAPGothic;stroke-width:0.04486612px"
+         style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:2.15357399px;line-height:1.25;font-family:IPAPGothic;-inkscape-font-specification:IPAPGothic;stroke-width:0.04486612px"
          y="226.24585"
          x="80.599899"
          id="tspan251-15"
          sodipodi:role="line">C I C L O  Ú N I C O</tspan></text>
     <text
-       sodipodi:linespacing="125%"
        id="text253-20"
        y="226.24585"
        x="53.736565"
-       style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:2.15357447px;line-height:125%;font-family:FreeMono;-inkscape-font-specification:FreeMono;letter-spacing:0px;word-spacing:0px;fill:#000000;fill-opacity:1;stroke:none;stroke-width:0.04486612px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1"
+       style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;line-height:0%;font-family:FreeMono;-inkscape-font-specification:FreeMono;letter-spacing:0px;word-spacing:0px;fill:#000000;fill-opacity:1;stroke:none;stroke-width:0.04486612px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1"
        xml:space="preserve"><tspan
-         style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-family:IPAPGothic;-inkscape-font-specification:IPAPGothic;stroke-width:0.04486612px"
+         style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:2.15357399px;line-height:1.25;font-family:IPAPGothic;-inkscape-font-specification:IPAPGothic;stroke-width:0.04486612px"
          y="226.24585"
          x="53.736565"
          id="tspan251-2"
          sodipodi:role="line">N  O  R  M  A  L</tspan></text>
     <text
-       sodipodi:linespacing="125%"
        id="text253-90"
        y="251.77542"
        x="113.08365"
-       style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:2.85086346px;line-height:125%;font-family:FreeMono;-inkscape-font-specification:FreeMono;letter-spacing:0px;word-spacing:0px;fill:#000000;fill-opacity:1;stroke:none;stroke-width:0.05939297px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1"
+       style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;line-height:0%;font-family:FreeMono;-inkscape-font-specification:FreeMono;letter-spacing:0px;word-spacing:0px;fill:#000000;fill-opacity:1;stroke:none;stroke-width:0.05939297px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1"
        xml:space="preserve"><tspan
-         style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-family:IPAPGothic;-inkscape-font-specification:IPAPGothic;stroke-width:0.05939297px"
+         style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:2.85086298px;line-height:1.25;font-family:IPAPGothic;-inkscape-font-specification:IPAPGothic;stroke-width:0.05939297px"
          y="251.77542"
          x="113.08365"
          id="tspan251-0"
          sodipodi:role="line">M O D O   D E   O P E R A Ç Ã O</tspan></text>
     <text
-       sodipodi:linespacing="125%"
        id="text394"
        y="175.62679"
        x="64.686867"
-       style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:1.96854639px;line-height:125%;font-family:FreeMono;-inkscape-font-specification:FreeMono;letter-spacing:0px;word-spacing:0px;fill:#000000;fill-opacity:1;stroke:none;stroke-width:0.04101137px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1"
+       style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;line-height:0%;font-family:FreeMono;-inkscape-font-specification:FreeMono;letter-spacing:0px;word-spacing:0px;fill:#000000;fill-opacity:1;stroke:none;stroke-width:0.04101137px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1"
        xml:space="preserve"><tspan
-         style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-family:IPAPGothic;-inkscape-font-specification:IPAPGothic;stroke-width:0.04101137px"
+         style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:1.96854603px;line-height:1.25;font-family:IPAPGothic;-inkscape-font-specification:IPAPGothic;stroke-width:0.04101137px"
          y="175.62679"
          x="64.686867"
          id="tspan392"
          sodipodi:role="line">OCTAL</tspan></text>
     <text
        xml:space="preserve"
-       style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:1.96854639px;line-height:125%;font-family:FreeMono;-inkscape-font-specification:FreeMono;letter-spacing:0px;word-spacing:0px;fill:#000000;fill-opacity:1;stroke:none;stroke-width:0.04101137px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1"
+       style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;line-height:0%;font-family:FreeMono;-inkscape-font-specification:FreeMono;letter-spacing:0px;word-spacing:0px;fill:#000000;fill-opacity:1;stroke:none;stroke-width:0.04101137px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1"
        x="64.686867"
        y="205.18863"
-       id="text398"
-       sodipodi:linespacing="125%"><tspan
+       id="text398"><tspan
          sodipodi:role="line"
          id="tspan396"
          x="64.686867"
          y="205.18863"
-         style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-family:IPAPGothic;-inkscape-font-specification:IPAPGothic;stroke-width:0.04101137px">HEXADECIMAL</tspan></text>
+         style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:1.96854603px;line-height:1.25;font-family:IPAPGothic;-inkscape-font-specification:IPAPGothic;stroke-width:0.04101137px">HEXADECIMAL</tspan></text>
   </g>
   <g
      inkscape:groupmode="layer"
      id="layer6"
      inkscape:label="stickers"
-     style="display:inline">
+     style="display:none">
     <path
        inkscape:connector-curvature="0"
        id="path6106"
@@ -1812,26 +1753,25 @@
          style="opacity:1;fill:#bf895c;fill-opacity:1;stroke:#333333;stroke-width:0.30000001;stroke-linecap:square;stroke-linejoin:miter;stroke-miterlimit:4;stroke-dasharray:none;stroke-dashoffset:0;stroke-opacity:1" />
       <text
          xml:space="preserve"
-         style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:3.26758981px;line-height:125%;font-family:FreeMono;-inkscape-font-specification:FreeMono;letter-spacing:0px;word-spacing:0px;fill:#1a1a1a;fill-opacity:1;stroke:#4d4d4d;stroke-width:0.06807477px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1"
+         style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;line-height:0%;font-family:FreeMono;-inkscape-font-specification:FreeMono;letter-spacing:0px;word-spacing:0px;fill:#1a1a1a;fill-opacity:1;stroke:#4d4d4d;stroke-width:0.06807477px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1"
          x="310.15585"
          y="117.44855"
-         id="text4500"
-         sodipodi:linespacing="125%"><tspan
+         id="text4500"><tspan
            sodipodi:role="line"
            id="tspan4498"
            x="310.15585"
            y="117.44855"
-           style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-family:Teleprinter;-inkscape-font-specification:Teleprinter;fill:#1a1a1a;fill-opacity:1;stroke:#4d4d4d;stroke-width:0.06807477px"> O &quot;loader&quot; roda com a</tspan><tspan
+           style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:3.26759005px;line-height:1.25;font-family:Teleprinter;-inkscape-font-specification:Teleprinter;fill:#1a1a1a;fill-opacity:1;stroke:#4d4d4d;stroke-width:0.06807477px"> O &quot;loader&quot; roda com a</tspan><tspan
            id="tspan4502"
            sodipodi:role="line"
            x="310.15585"
-           y="121.53304"
-           style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-family:Teleprinter;-inkscape-font-specification:Teleprinter;fill:#1a1a1a;fill-opacity:1;stroke:#4d4d4d;stroke-width:0.06807477px"> memOria protegida. </tspan><tspan
+           y="122.24198"
+           style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:3.26759005px;line-height:1.25;font-family:Teleprinter;-inkscape-font-specification:Teleprinter;fill:#1a1a1a;fill-opacity:1;stroke:#4d4d4d;stroke-width:0.06807477px"> memOria protegida. </tspan><tspan
            id="tspan4504"
            sodipodi:role="line"
            x="310.15585"
-           y="125.61752"
-           style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-family:Teleprinter;-inkscape-font-specification:Teleprinter;fill:#1a1a1a;fill-opacity:1;stroke:#4d4d4d;stroke-width:0.06807477px">NAO DESPROTEGER A MEMORIA</tspan></text>
+           y="127.03542"
+           style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:3.26759005px;line-height:1.25;font-family:Teleprinter;-inkscape-font-specification:Teleprinter;fill:#1a1a1a;fill-opacity:1;stroke:#4d4d4d;stroke-width:0.06807477px">NAO DESPROTEGER A MEMORIA</tspan></text>
     </g>
     <path
        style="display:inline;fill:#1a1a1a;fill-opacity:1;fill-rule:evenodd;stroke:#4d4d4d;stroke-width:0.07;stroke-linecap:butt;stroke-linejoin:miter;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1"
@@ -2880,6 +2820,483 @@
            id="path638-81"
            style="fill:#000000;fill-rule:evenodd;stroke:none;stroke-width:1px;stroke-linecap:butt;stroke-linejoin:round;stroke-opacity:1"
            d="m 76.469519,191.72965 -3.547716,5.79245 -5.48684,-0.0494 7.309562,-5.76645 z" />
+      </g>
+    </g>
+    <g
+       transform="translate(-19.966368,303.90517)"
+       style="display:inline"
+       id="g4874-3">
+      <g
+         id="g5319-6">
+        <circle
+           style="opacity:1;fill:#aa0000;fill-opacity:1;stroke:none;stroke-width:0.44604069;stroke-linecap:round;stroke-linejoin:round;stroke-miterlimit:4;stroke-dasharray:none;stroke-dashoffset:45;stroke-opacity:1"
+           id="path109-7"
+           cx="241.37448"
+           cy="-18.760525"
+           r="1.5" />
+        <use
+           x="0"
+           y="0"
+           xlink:href="#path109-7"
+           id="use3802-5"
+           transform="translate(22.878016)"
+           width="100%"
+           height="100%" />
+        <use
+           x="0"
+           y="0"
+           xlink:href="#path109-7"
+           id="use3804-3"
+           transform="translate(15.25201)"
+           width="100%"
+           height="100%" />
+        <use
+           x="0"
+           y="0"
+           xlink:href="#path109-7"
+           id="use3806-5"
+           transform="translate(30.50403)"
+           width="100%"
+           height="100%" />
+        <use
+           x="0"
+           y="0"
+           xlink:href="#path109-7"
+           id="use3808-6"
+           transform="translate(45.756029)"
+           width="100%"
+           height="100%" />
+        <use
+           x="0"
+           y="0"
+           xlink:href="#path109-7"
+           id="use3810-2"
+           transform="translate(53.382001)"
+           width="100%"
+           height="100%" />
+        <use
+           x="0"
+           y="0"
+           xlink:href="#path109-7"
+           id="use3812-9"
+           transform="translate(7.6259977)"
+           width="100%"
+           height="100%" />
+        <use
+           x="0"
+           y="0"
+           xlink:href="#path109-7"
+           id="use3814-1"
+           transform="translate(38.129996)"
+           width="100%"
+           height="100%" />
+        <use
+           x="0"
+           y="0"
+           xlink:href="#path109-7"
+           id="use3816-2"
+           transform="translate(68.634026)"
+           width="100%"
+           height="100%" />
+        <use
+           x="0"
+           y="0"
+           xlink:href="#path109-7"
+           id="use3818-7"
+           transform="translate(76.260001)"
+           width="100%"
+           height="100%" />
+        <use
+           x="0"
+           y="0"
+           xlink:href="#path109-7"
+           id="use3820-0"
+           transform="translate(83.886037)"
+           width="100%"
+           height="100%" />
+        <use
+           x="0"
+           y="0"
+           xlink:href="#path109-7"
+           id="use3822-9"
+           transform="translate(61.008023)"
+           width="100%"
+           height="100%" />
+      </g>
+      <g
+         id="use3864-3"
+         transform="translate(0,4.9743009)">
+        <circle
+           r="1.5"
+           cy="8.1809769"
+           cx="241.37448"
+           id="circle4905-6"
+           style="opacity:1;fill:#aa0000;fill-opacity:1;stroke:none;stroke-width:0.44604069;stroke-linecap:round;stroke-linejoin:round;stroke-miterlimit:4;stroke-dasharray:none;stroke-dashoffset:45;stroke-opacity:1" />
+        <use
+           height="100%"
+           width="100%"
+           transform="translate(22.878016,26.941501)"
+           id="use4907-0"
+           xlink:href="#path109-7"
+           y="0"
+           x="0" />
+        <use
+           height="100%"
+           width="100%"
+           transform="translate(15.25201,26.941501)"
+           id="use4909-6"
+           xlink:href="#path109-7"
+           y="0"
+           x="0" />
+        <use
+           height="100%"
+           width="100%"
+           transform="translate(30.50403,26.941501)"
+           id="use4911-2"
+           xlink:href="#path109-7"
+           y="0"
+           x="0" />
+        <use
+           height="100%"
+           width="100%"
+           transform="translate(45.756029,26.941501)"
+           id="use4913-6"
+           xlink:href="#path109-7"
+           y="0"
+           x="0" />
+        <use
+           height="100%"
+           width="100%"
+           transform="translate(53.382001,26.941501)"
+           id="use4915-1"
+           xlink:href="#path109-7"
+           y="0"
+           x="0" />
+        <use
+           height="100%"
+           width="100%"
+           transform="translate(7.6259977,26.941501)"
+           id="use4917-8"
+           xlink:href="#path109-7"
+           y="0"
+           x="0" />
+        <use
+           height="100%"
+           width="100%"
+           transform="translate(38.129996,26.941501)"
+           id="use4919-7"
+           xlink:href="#path109-7"
+           y="0"
+           x="0" />
+        <use
+           height="100%"
+           width="100%"
+           transform="translate(68.634026,26.941501)"
+           id="use4921-9"
+           xlink:href="#path109-7"
+           y="0"
+           x="0" />
+        <use
+           height="100%"
+           width="100%"
+           transform="translate(76.260001,26.941501)"
+           id="use4923-2"
+           xlink:href="#path109-7"
+           y="0"
+           x="0" />
+        <use
+           height="100%"
+           width="100%"
+           transform="translate(83.886037,26.941501)"
+           id="use4925-0"
+           xlink:href="#path109-7"
+           y="0"
+           x="0" />
+        <use
+           height="100%"
+           width="100%"
+           transform="translate(61.008023,26.941501)"
+           id="use4927-2"
+           xlink:href="#path109-7"
+           y="0"
+           x="0" />
+      </g>
+      <use
+         height="100%"
+         width="100%"
+         transform="translate(0,79.789509)"
+         id="use3866-3"
+         xlink:href="#use3864-3"
+         y="0"
+         x="0" />
+      <g
+         id="g3914-7"
+         transform="translate(-146.34262,4.9743012)">
+        <use
+           x="0"
+           y="0"
+           xlink:href="#path109-7"
+           id="use4004-5"
+           width="100%"
+           height="100%"
+           transform="translate(0,26.941501)" />
+        <use
+           height="100%"
+           width="100%"
+           transform="translate(22.878016,26.941501)"
+           id="use3882-9"
+           xlink:href="#path109-7"
+           y="0"
+           x="0" />
+        <use
+           height="100%"
+           width="100%"
+           transform="translate(15.25201,26.941501)"
+           id="use3884-2"
+           xlink:href="#path109-7"
+           y="0"
+           x="0" />
+        <use
+           height="100%"
+           width="100%"
+           transform="translate(30.50403,26.941501)"
+           id="use3886-2"
+           xlink:href="#path109-7"
+           y="0"
+           x="0" />
+        <use
+           height="100%"
+           width="100%"
+           transform="translate(45.756029,26.941501)"
+           id="use3888-8"
+           xlink:href="#path109-7"
+           y="0"
+           x="0" />
+        <use
+           height="100%"
+           width="100%"
+           transform="translate(53.382001,26.941501)"
+           id="use3890-9"
+           xlink:href="#path109-7"
+           y="0"
+           x="0" />
+        <use
+           height="100%"
+           width="100%"
+           transform="translate(7.6259977,26.941501)"
+           id="use3892-7"
+           xlink:href="#path109-7"
+           y="0"
+           x="0" />
+        <use
+           height="100%"
+           width="100%"
+           transform="translate(38.129996,26.941501)"
+           id="use3894-3"
+           xlink:href="#path109-7"
+           y="0"
+           x="0" />
+      </g>
+      <g
+         id="g4814-6">
+        <use
+           height="100%"
+           width="100%"
+           id="use4025-1"
+           xlink:href="#path109-7"
+           y="0"
+           x="0"
+           transform="translate(-146.34262,98.015326)" />
+        <use
+           x="0"
+           y="0"
+           xlink:href="#path109-7"
+           id="use3918-2"
+           transform="translate(-123.4646,98.015326)"
+           width="100%"
+           height="100%" />
+        <use
+           x="0"
+           y="0"
+           xlink:href="#path109-7"
+           id="use3920-9"
+           transform="translate(-131.09061,98.015326)"
+           width="100%"
+           height="100%" />
+        <use
+           x="0"
+           y="0"
+           xlink:href="#path109-7"
+           id="use3922-3"
+           transform="translate(-115.83859,98.015326)"
+           width="100%"
+           height="100%" />
+        <use
+           x="0"
+           y="0"
+           xlink:href="#path109-7"
+           id="use3926-1"
+           transform="translate(-92.960619,98.015326)"
+           width="100%"
+           height="100%" />
+        <use
+           x="0"
+           y="0"
+           xlink:href="#path109-7"
+           id="use3928-9"
+           transform="translate(-138.71662,98.015326)"
+           width="100%"
+           height="100%" />
+        <g
+           id="g5010-4">
+          <use
+             height="100%"
+             width="100%"
+             transform="translate(-100.58659,98.015326)"
+             id="use3924-7"
+             xlink:href="#path109-7"
+             y="0"
+             x="0" />
+          <use
+             height="100%"
+             width="100%"
+             transform="translate(-108.21262,98.015326)"
+             id="use3930-8"
+             xlink:href="#path109-7"
+             y="0"
+             x="0" />
+        </g>
+      </g>
+      <g
+         id="g3950-4"
+         transform="translate(-146.34262,38.024067)">
+        <use
+           x="0"
+           y="0"
+           xlink:href="#path109-7"
+           id="use4023-5"
+           width="100%"
+           height="100%"
+           transform="translate(0,26.941501)" />
+        <use
+           height="100%"
+           width="100%"
+           transform="translate(22.878016,26.941501)"
+           id="use3936-0"
+           xlink:href="#path109-7"
+           y="0"
+           x="0" />
+        <use
+           height="100%"
+           width="100%"
+           transform="translate(15.25201,26.941501)"
+           id="use3938-3"
+           xlink:href="#path109-7"
+           y="0"
+           x="0" />
+        <use
+           height="100%"
+           width="100%"
+           transform="translate(30.50403,26.941501)"
+           id="use3940-6"
+           xlink:href="#path109-7"
+           y="0"
+           x="0" />
+        <use
+           height="100%"
+           width="100%"
+           transform="translate(45.756029,26.941501)"
+           id="use3942-1"
+           xlink:href="#path109-7"
+           y="0"
+           x="0" />
+        <use
+           height="100%"
+           width="100%"
+           transform="translate(53.382001,26.941501)"
+           id="use3944-0"
+           xlink:href="#path109-7"
+           y="0"
+           x="0" />
+        <use
+           height="100%"
+           width="100%"
+           transform="translate(7.6259977,26.941501)"
+           id="use3946-6"
+           xlink:href="#path109-7"
+           y="0"
+           x="0" />
+        <use
+           height="100%"
+           width="100%"
+           transform="translate(38.129996,26.941501)"
+           id="use3948-3"
+           xlink:href="#path109-7"
+           y="0"
+           x="0" />
+      </g>
+      <g
+         transform="translate(0,-31.033831)"
+         id="g4046-2">
+        <use
+           height="100%"
+           width="100%"
+           transform="translate(0,85.533157)"
+           id="use3886-7-0"
+           xlink:href="#path109-7"
+           y="0"
+           x="0" />
+        <use
+           x="0"
+           y="0"
+           xlink:href="#path109-7"
+           id="use4042-6"
+           transform="translate(83.886037,85.533157)"
+           width="100%"
+           height="100%" />
+      </g>
+    </g>
+    <g
+       style="display:inline"
+       id="g2602"
+       transform="translate(0.17060533,-6.7711294)">
+      <path
+         style="fill:none;fill-opacity:0.5702757;fill-rule:evenodd;stroke-width:17.37555504;stroke-linecap:round;stroke-linejoin:round"
+         d="m 0.37890625,1335.4448 v 974.3066 H 1398.4258 V 1335.4448 Z M 375.5147,1993.4209 c 45.38655,10e-5 82.1796,36.7931 82.1797,82.1797 -10e-5,45.3865 -36.79315,82.1796 -82.1797,82.1797 -45.38655,-10e-5 -82.17959,-36.7932 -82.1797,-82.1797 1.1e-4,-45.3866 36.79315,-82.1796 82.1797,-82.1797 z"
+         transform="scale(0.26458333)"
+         id="path2588"
+         inkscape:connector-curvature="0"
+         sodipodi:nodetypes="cccccccccc"
+         inkscape:export-xdpi="89.959358"
+         inkscape:export-ydpi="89.959358" />
+      <g
+         id="g2659"
+         transform="matrix(0.76767302,0,0,0.76767302,-62.523105,281.46848)">
+        <rect
+           rx="4.5598898"
+           ry="4.5598898"
+           y="375.01639"
+           x="84.479675"
+           height="50.266514"
+           width="187.89337"
+           id="rect2590"
+           style="fill:#000000;fill-opacity:0.81638399;fill-rule:evenodd;stroke-width:4.90060234;stroke-linecap:round;stroke-linejoin:round" />
+        <text
+           id="text2600"
+           y="397.48959"
+           x="93.048569"
+           style="font-weight:500;font-size:16.07411385px;line-height:125%;font-family:Inconsolata;-inkscape-font-specification:'Inconsolata, Medium';font-variant-ligatures:discretionary-ligatures historical-ligatures;font-variant-numeric:slashed-zero;letter-spacing:0px;word-spacing:0px;writing-mode:lr-tb;fill:none;stroke:#000000;stroke-width:0.33487734px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1"
+           xml:space="preserve"><tspan
+             id="tspan2649"
+             style="fill:#ffff00;stroke:none;stroke-width:0.33487734px"
+             y="397.48959"
+             x="93.048569"
+             sodipodi:role="line">MAME hoje:</tspan><tspan
+             id="tspan2651"
+             style="fill:#ffff00;stroke:none;stroke-width:0.33487734px"
+             y="417.58224"
+             x="93.048569"
+             sodipodi:role="line">Um museu sem guia!</tspan></text>
       </g>
     </g>
   </g>
@@ -4012,5 +4429,180 @@
        cx="325.59491"
        cy="569.63348"
        r="7.5" />
+  </g>
+  <g
+     style="display:none"
+     inkscape:label="Tutorial Executa Instrução Única"
+     id="g2465"
+     inkscape:groupmode="layer">
+    <g
+       id="g2463"
+       transform="translate(0,1.1599803e-6)">
+      <circle
+         style="fill:#85ff56;fill-opacity:1;fill-rule:evenodd;stroke:none;stroke-width:4.59728241;stroke-linecap:round;stroke-linejoin:round"
+         id="path2490"
+         cx="99.133804"
+         cy="549.72314"
+         r="3.9717054" />
+      <path
+         style="fill:#000000;fill-opacity:0.5702757;fill-rule:evenodd;stroke-width:17.37555504;stroke-linecap:round;stroke-linejoin:round"
+         d="m 0.37890625,1335.4448 v 974.3066 H 1398.4258 V 1335.4448 Z M 1230.1875,1988.4528 c 45.3866,10e-5 82.1796,36.7931 82.1797,82.1797 -10e-5,45.3865 -36.7931,82.1796 -82.1797,82.1797 -45.3865,-10e-5 -82.1796,-36.7932 -82.1797,-82.1797 10e-5,-45.3866 36.7932,-82.1796 82.1797,-82.1797 z"
+         id="path2449"
+         inkscape:connector-curvature="0"
+         sodipodi:nodetypes="cccccccccc"
+         transform="scale(0.26458333)" />
+      <rect
+         style="fill:#000000;fill-opacity:0.81638399;fill-rule:evenodd;stroke-width:4.90060234;stroke-linecap:round;stroke-linejoin:round"
+         id="rect2451"
+         width="185.283"
+         height="82.060204"
+         x="118.95609"
+         y="441.60217"
+         ry="3.5005043"
+         rx="3.5005043" />
+      <text
+         xml:space="preserve"
+         style="font-weight:500;font-size:12.69999981px;line-height:125%;font-family:Inconsolata;-inkscape-font-specification:'Inconsolata, Medium';font-variant-ligatures:discretionary-ligatures historical-ligatures;font-variant-numeric:slashed-zero;letter-spacing:0px;word-spacing:0px;writing-mode:lr-tb;fill:none;stroke:#000000;stroke-width:0.26458332px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1"
+         x="127.63152"
+         y="461.47668"
+         id="text2461"><tspan
+           sodipodi:role="line"
+           x="127.63152"
+           y="461.47668"
+           style="fill:#ffff00;stroke:none;stroke-width:0.26458332px"
+           id="tspan2459">Apenas uma instrução é</tspan><tspan
+           sodipodi:role="line"
+           x="127.63152"
+           y="477.35168"
+           style="fill:#ffff00;stroke:none;stroke-width:0.26458332px"
+           id="tspan2476">executada pela CPU a</tspan><tspan
+           sodipodi:role="line"
+           x="127.63152"
+           y="493.22668"
+           style="fill:#ffff00;stroke:none;stroke-width:0.26458332px"
+           id="tspan2478">cada pressionamento do</tspan><tspan
+           sodipodi:role="line"
+           x="127.63152"
+           y="509.10168"
+           style="fill:#ffff00;stroke:none;stroke-width:0.26458332px"
+           id="tspan2480">botão &quot;PARTIDA&quot;.</tspan></text>
+    </g>
+  </g>
+  <g
+     inkscape:groupmode="layer"
+     id="layer5"
+     inkscape:label="Tutorial Passo Instrução Única"
+     style="display:none">
+    <circle
+       style="display:inline;fill:#85ff56;fill-opacity:1;fill-rule:evenodd;stroke:none;stroke-width:4.59728241;stroke-linecap:round;stroke-linejoin:round"
+       id="path2490-1"
+       cx="40.378395"
+       cy="549.72314"
+       r="3.9717054" />
+    <g
+       transform="translate(0,1.1599803e-6)"
+       id="g2410">
+      <path
+         sodipodi:nodetypes="cccccccccc"
+         inkscape:connector-curvature="0"
+         id="rect1575"
+         transform="scale(0.26458333)"
+         d="m 0.37890625,1335.4448 v 974.3066 H 1398.4258 V 1335.4448 Z M 375.5147,1993.4209 c 45.38655,10e-5 82.1796,36.7931 82.1797,82.1797 -10e-5,45.3865 -36.79315,82.1796 -82.1797,82.1797 -45.38655,-10e-5 -82.17959,-36.7932 -82.1797,-82.1797 1.1e-4,-45.3866 36.79315,-82.1796 82.1797,-82.1797 z"
+         style="fill:#000000;fill-opacity:0.5702757;fill-rule:evenodd;stroke-width:17.37555504;stroke-linecap:round;stroke-linejoin:round" />
+      <rect
+         rx="3.5005043"
+         ry="3.5005043"
+         y="437.25763"
+         x="136.24425"
+         height="83.069954"
+         width="215.77765"
+         id="rect2387"
+         style="fill:#000000;fill-opacity:0.81638399;fill-rule:evenodd;stroke-width:4.90060234;stroke-linecap:round;stroke-linejoin:round" />
+      <text
+         id="text2391"
+         y="457.13214"
+         x="144.91968"
+         style="font-weight:500;font-size:12.69999981px;line-height:125%;font-family:Inconsolata;-inkscape-font-specification:'Inconsolata, Medium';font-variant-ligatures:discretionary-ligatures historical-ligatures;font-variant-numeric:slashed-zero;letter-spacing:0px;word-spacing:0px;writing-mode:lr-tb;fill:none;stroke:#000000;stroke-width:0.26458332px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1"
+         xml:space="preserve"><tspan
+           style="fill:#ffff00;stroke:none;stroke-width:0.26458332px"
+           y="457.13214"
+           x="144.91968"
+           id="tspan2389"
+           sodipodi:role="line">Selecione o modo</tspan><tspan
+           id="tspan2393"
+           style="fill:#ffff00;stroke:none;stroke-width:0.26458332px"
+           y="473.00714"
+           x="144.91968"
+           sodipodi:role="line">&quot;Instrução única&quot;</tspan><tspan
+           id="tspan2395"
+           style="fill:#ffff00;stroke:none;stroke-width:0.26458332px"
+           y="488.88214"
+           x="144.91968"
+           sodipodi:role="line">para depuração de um</tspan><tspan
+           id="tspan2397"
+           style="fill:#ffff00;stroke:none;stroke-width:0.26458332px"
+           y="504.75714"
+           x="144.91968"
+           sodipodi:role="line">programa passo-a-passo.</tspan></text>
+    </g>
+  </g>
+  <g
+     style="display:none"
+     inkscape:label="Tutorial Reset"
+     id="g2525"
+     inkscape:groupmode="layer">
+    <g
+       id="g2523"
+       transform="translate(0,1.1599803e-6)"
+       inkscape:export-xdpi="89.959358"
+       inkscape:export-ydpi="89.959358">
+      <path
+         style="fill:#000000;fill-opacity:0.5702757;fill-rule:evenodd;stroke-width:17.37555504;stroke-linecap:round;stroke-linejoin:round"
+         d="m 0.37890625,1335.4448 v 974.3066 H 1398.4258 V 1335.4448 Z M 1226.6505,2116.2128 c 45.3865,1e-4 82.1797,36.7931 82.1797,82.1797 0,45.3865 -36.7932,82.1796 -82.1797,82.1797 -45.3866,-1e-4 -82.1796,-36.7932 -82.1797,-82.1797 10e-5,-45.3866 36.7931,-82.1796 82.1797,-82.1797 z"
+         transform="scale(0.26458333)"
+         id="path2509"
+         inkscape:connector-curvature="0"
+         sodipodi:nodetypes="ccccccsccc" />
+      <rect
+         style="fill:#000000;fill-opacity:0.81638399;fill-rule:evenodd;stroke-width:4.90060234;stroke-linecap:round;stroke-linejoin:round"
+         id="rect2511"
+         width="248.46127"
+         height="94.07209"
+         x="14.204839"
+         y="387.2872"
+         ry="3.5005043"
+         rx="3.5005043" />
+      <text
+         xml:space="preserve"
+         style="font-weight:500;font-size:12.69999981px;line-height:125%;font-family:Inconsolata;-inkscape-font-specification:'Inconsolata, Medium';font-variant-ligatures:discretionary-ligatures historical-ligatures;font-variant-numeric:slashed-zero;letter-spacing:0px;word-spacing:0px;writing-mode:lr-tb;fill:none;stroke:#000000;stroke-width:0.26458332px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1"
+         x="22.88027"
+         y="407.16171"
+         id="text2521"><tspan
+           sodipodi:role="line"
+           x="22.88027"
+           y="407.16171"
+           style="fill:#ffff00;stroke:none;stroke-width:0.26458332px"
+           id="tspan2536">Após ligar o computador</tspan><tspan
+           sodipodi:role="line"
+           x="22.88027"
+           y="423.03671"
+           style="fill:#ffff00;stroke:none;stroke-width:0.26458332px"
+           id="tspan2540">o primeiro passo é</tspan><tspan
+           sodipodi:role="line"
+           x="22.88027"
+           y="438.91171"
+           style="fill:#ffff00;stroke:none;stroke-width:0.26458332px"
+           id="tspan2542">colocar a CPU em um estado</tspan><tspan
+           sodipodi:role="line"
+           x="22.88027"
+           y="454.78671"
+           style="fill:#ffff00;stroke:none;stroke-width:0.26458332px"
+           id="tspan2544">inicial conhecido pressionando</tspan><tspan
+           sodipodi:role="line"
+           x="22.88027"
+           y="470.66171"
+           style="fill:#ffff00;stroke:none;stroke-width:0.26458332px"
+           id="tspan2546">o botão &quot;Preparação&quot;.</tspan></text>
+    </g>
   </g>
 </svg>
