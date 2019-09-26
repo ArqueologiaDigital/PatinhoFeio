@@ -11,6 +11,10 @@ Para uma introdução mais direta ao projeto de desenvolvimento do "Patinho Feio
 * Disponível em https://archive.org/details/ProjetoLogicoDaUnidadeDeControleDeUmMinicomputador
 * Arquivos originais do escaneamento (para gerar imagens de maior resolução) disponíveis em: https://github.com/felipesanches/Projeto_Logico_da_Unidade_de_Controle_de_um_Minicomputador__EFregni_1972
 
+## 1973: MARIA ALICE GRIGAS VARELLA FERREIRA. "Anexo 21: Sistema Cross Montador"
+
+## 1973: MARIA ALICE GRIGAS VARELLA FERREIRA. "Anexo 22: Sistema Cross Carregador"
+
 ## 1974-DEZ-26: Relatório nº 1 - JJN e Eloah
 * Relatório sobre representação de notação musical para armazenar partituras a serem tocadas no sintetizador do Guido Stolfi
 * Autores: João José Neto e Eloah
