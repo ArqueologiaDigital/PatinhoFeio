@@ -1,0 +1,1452 @@
+* COMPILADOR PATOL PARA O PATO FEIO - PASSO 2
+* AUTORES CHARLIE LIN E SEBASTIAO S. BARRETTO
+* VERSAO 1.0 - FEVEREIRO 1975
+
+* TABELA DE ERROS:
+* 
+* 0-CAMPO ESPERADO,MAS NAO FOI ENCONTRADO;OU
+*   INSTRUCAO INVALIDO. 
+* 1-ESTOURO DA TABELA. ESTOURO DA PILHA.
+* 2-INSTRUCAO INICIAL OU FINAL INVALIDA.
+* 3-ERRO EM DIMENSAO,OU FALTA VIRGULA.
+* 4-DUPLA DEFINICAO,OU SIMBOLO INDEFINIDO.
+* 5-SIMBOLO INVALIDO,SIMBOLO IGUAL A PALAVRA RESERVADA. 
+* 6-NAO FECHOU COLCHETE,OU DIGITO INVALIDO. 
+* 7-REFERENCIA A SIMBOLO NAO DECLARADO. 
+* 8-PARENTISIS ESPERADO.
+* 9-ENTAO FALTANDO. 
+* A-CARATER INVALIDO. 
+* B-FALTANDO OPERADOR.
+* C-FALTANDO OPERANDO.
+* D-INDEXACAO DE VARIAVEL SIMPLES 
+* E-FALTA SINAL DE =
+* F-ELEMENTO INVALIDO EM EXPRESSAO ARITMETICA 
+      ORG /006
+      PLA  FAZTU
+IPRO  BLOC 1
+TSBU  BLOC 100
+TSBD  BLOC 100
+TENU  BLOC 100
+TEND  BLOC 100
+AU    BLOC 1
+AD    BLOC 1
+INDCM BLOC 1
+INDEX BLOC 1
+INDIN BLOC 1
+INDLA BLOC 1
+INDDI BLOC 1
+QUEFI BLOC 1
+BLOCO BLOC 80 
+SUS  DEFC 0 
+* 
+*ROTINA GERAL DO PASSO LOGICO DOIS
+* 
+* 
+* ROTINA QUE TRATA DO LABEL QUANDO APARECER.
+* 
+RNIC  PUG LELIN 
+      PUG ESCR
+FAZTU CAR  SPONT
+      TRI          TESTO SE O PRIMEIRO
+      CARX BLOCO   CARATER E NUMERICO.
+      SOMI -58
+      PLAN .+1
+      PLA  .+5     NAO E LABEL. 
+.     SOMI 9
+      PLAN .+4     NAO E ROTULO.
+      PUG  DECBI   CONVERTO DO DECIMAL PARA 
+BUU   CARI  0 
+BU    EQU BUU+1 
+      ARM  COMPD
+BDU   CARI 0
+BD    EQU  BDU+1
+      ARM  COMPU
+      CAR  INDIN
+      TRI 
+      CAR  INDLA
+      PUG  PROC    TESTO SE ESTA NA 
+      PLAN .+1     TABELA,OU SEJA SE
+      PLA  SETE    FOI DECLARADO. 
+.     CARX TSBU 
+      PLAN .+1
+      PLA  .+2
+.     CARI 4       DUPLA DEFINICAO. 
+      PLA  ERRO 
+.     SOMI /80     DEFINO O SIMBOLO.
+      ARMX TSBU 
+      CAR  AD      TROCO O ENDERECO DO
+      ARMX TENU    LINK PELO ENDERECO 
+      CAR  AU      RELOCAVEL. 
+      ARMX TEND 
+      PUG TUT 
+.     PUG  PROCM
+      PLAN ARITH
+*NAO E MNEMONICO DE COMANDO,
+* DEVE SER EXPRESSAO ARITMETICA.
+* 
+.     DE   1
+      TRI 
+      PLAX .+1
+.     PLA  PLA
+      PLA  SE 
+      PLA  PUG
+      PLA  ESA
+      PLA  LEA
+      PLA  REO
+      PLA  /F80    TRAZ NOVO BLOCO PARA TRATAR O FIM. 
+* 
+*ROTINA QUE GERA O PLA
+* 
+PLA   CAR  AU 
+      ARM  PLAT+3 
+      CAR  AD 
+      ARM  PLAT+4 
+      PUG  PROX 
+      PUG  DECBI
+      CAR  INDIN
+      TRI 
+      CAR INDLA 
+      PUG  PROC 
+      PLAN .+1
+      PLA SETE
+.     TRI 
+      CARX TENU 
+      NAND /0F
+      ARM  PLAT 
+      CARX TEND 
+      ARM  PLAT+1 
+      CARI 6
+    TRI 
+.     CARX PLAT 
+      PUG  PERF 
+      SUS  0
+      PLA  .-1
+      PUG  GCKS 
+      LIMP0 
+     TRE
+      CARI 2
+      PUG  SOMA    INCREMENTO CI DE 2.
+      PLA  RNIC 
+PLAT  DEFC 0
+      DEFC 0       ENDERECO.
+      DEFC 0       PLA RELOCAVEL
+      DEFC 0       CI EM DUPLA PRECISAO 
+      DEFC 0
+      DEFC /A 
+      DEFC /6 
+* 
+*ROTINA QUE TRATA DO PUG
+* 
+PUG   PUG  TUT
+      CARI 3
+      ARM  CYC+1
+      CAR  PUZ
+      TRI 
+      ARMX SET
+      TRI 
+      SOMI 3
+      ARM  PUZ
+      SUS  SUS
+      PLA  .-2
+      CAR  AU 
+      ARM  SET+9
+      CAR  AD 
+      ARM  SET+10 
+      CARI 15 
+      TRI 
+.     CARX SET
+      PUG  PERF 
+      SUS  0
+      PLA  .-1
+      LIMP0 
+      TRE          INCREMENTO CI
+      CARI 8       DE 8 
+      PUG  SOMA 
+      PLA  FSE     FIM DO SE
+SET   DEFE 0
+      DEFC 0       PLA
+      DEFE 0
+      DEFC /0B     PLAZ 
+      DEFE 0
+      DEFC /0A     PLAN 
+      DEFC /7B     PUG [CAR 
+      DEFC /48
+      DEFC /4F
+      DEFE 0       CI 
+      DEFC 10 
+      DEFC 15 
+PUGT  DEFC 0
+      DEFC 10 
+      DEFE 0       CI.
+      DEFC /4F     PUG. 
+      DEFE 0       SIMBOLO. 
+      DEFC 0       NUMERO DE PARAMETROS 
+.     UNEG
+      ARM  SEB+6
+      PLA  .+3
+.     UM
+      ARM  SEB+6
+      PLA  .+2
+.     LIMP0 
+      ARM  SEB+6       =
+.     PUG  EARIT   SE(A>B)ENTAO N 
+      PUG CARXB 
+      SOMI -41
+      PLAZ *+4
+      PLA  OITO 
+      PUG TUT 
+      PUG  PROCM
+      SOMI -7 
+      PLAZ .+1
+      CARI 9
+      PLA  ERRO 
+.     PUG  PROX 
+      PLAZ ERRO 
+      PUG  DECBI
+      CAR  INDEX
+   TRI
+      CAR  INDLA
+      PUG  PROC 
+      PLAN .+1
+      PLA  SETE 
+.     CARX TEND 
+      ARM  SEB
+      CARX TENU 
+      ARM  SEB+1
+      CAR  AU 
+      ARM  SEB+11 
+      CAR  AD 
+      ARM  SEB+10 
+      CARI 13 
+      TRI 
+.     CARX SEB
+      PUG  PERF 
+      SUS  0
+      PLA  .-1
+      LIMP0 
+      TRE 
+      CARI 6
+      PUG  SOMA 
+FSE   PUG  GCKS 
+      PLA  RNIC 
+SEB   DEFE 0
+      DEFC /0B
+      DEFC /7B     P@AZ 
+      DEFC /40
+      DEFC /4F
+      DEFC 0
+      DEFC /10     CARI 
+      DEFC /DA
+      DEFC /10
+      DEFE 0
+      DEFC 10 
+      DEFC 13 
+* 
+* TRATAMENTO DO RETORNO 
+* 
+REO   CAR  TSBU 
+      PLAN .+1
+      CARI 2
+      PLA  ERRO 
+.     CAR  AU 
+      ARM  PLAT+3 
+      CAR  AD 
+      ARM  PLAT+4 
+      CAR  TENU 
+      ARM  PLAT 
+      CAR  TEND 
+      ARM  PLAT+1 
+      CARI 6
+      TRI 
+.     CARX PLAT 
+      PUG  PERF 
+      SUS  0
+      PLA  .-1
+      PUG  GCKS 
+      PLA  RNIC 
+* 
+* TRATAMENTO DA LEITURA 
+* 
+LEA   PUG  CONTV
+      TRE 
+      INC 
+      ARM  LERT+3  NUMERO DE PARAMETROS 
+      ARM  PUGT+7  A SER LIDOS. 
+      DE   1
+      SOM  PUGT+7  NUMERO DE DADOS
+      SOMI 10      DO BLOCO 
+      ARM  LERT+10
+      CAR  AU 
+      ARM  LERT+7 
+      CAR  AD 
+      ARM  LERT+8 
+      CARI 4
+      ARM  CYC+1
+      CARI 10 
+      TRI 
+      CAR  INDCM   PROCURA SE FOI 
+      TRI          DECLARADO EXTERNO. 
+      CAR  INDEX
+      PUG  PROC 
+      PLAN .+1
+SETE  CARI 7
+      PLA  ERRO 
+* E EXTERNO E
+* FOI DECLARADO.
+      CARX TSBU 
+      ARM  PUGT+5 
+      CARX TSBD 
+      ARM PUGT+6
+     CAR  AD
+      ARM  PUGT+2 
+      CAR  AU 
+      ARM  PUGT+3 
+      PUG CARXB 
+      SOMI -40
+      PLAZ .+1
+      LIMP0 
+      ARM  PUGT+7 
+      CARI 6       NAO TEM PARAMETROS 
+      ARM  PUGT 
+      PLA  .+2
+.     PUG  CONTV
+      TRE 
+      INC 
+      ARM PUGT+7
+      DE   1       MULTIPLICO POR 3 E SOMO
+      SOM  PUGT+7  COM 7
+      SOMI 7
+      ARM  PUGT 
+      CARI 7
+      ARM  SUS
+      LIMP0 
+.     TRI 
+      CARX PUGT 
+      PUG  PERF 
+      TRI 
+      INC 
+      SUS  SUS
+      PLA  .-1
+      CARI -6 
+      SOM  PUGT 
+      PLAZ PF      FIM DO PUG.
+DZT   UNEG         GERACAO DOS DEFE 
+      SOM  PUGT+7  PARA DUMMY,GUARDO INDIRETO.
+      ARM  AUX
+.     PUG TUT 
+      CAR  INDEX
+      TRI 
+      CAR  INDIN
+      PUG  PROC 
+      INC          E INTEIRO
+      PLAZ .+3
+      TRI 
+      CAR  INDCM
+      PUG  PROC 
+      PLAN .+1     E DUMMY OU COMUM 
+      CARI 7
+      PLA  ERRO 
+.     CARX TENU 
+      PLAN .+1     E DUMMY,SETO O BIT 5 
+      CARI /20     E COMUM
+      PLA  .+2
+.     UM
+.     PUG  PERF 
+      CARX TENU 
+      NAND /0F
+      CMP1
+      PUG  PERF 
+      CARX TEND 
+      PUG  PERF 
+      SUS  AUX
+      PLA  .-4
+PF    LIMP0 
+      TRE 
+      CAR  PUGT+7 
+      DE   1
+CYC   SOMI 3
+      PUG  SOMA 
+      PUG  GCKS 
+      PLA  RNIC 
+* 
+* ROTINA QUE CONTA AS VIRGULAS
+* 
+CONTV PLA  0
+      LIMP0 
+      TRE 
+      CAR  PPONT
+.     ARM  0
+      SOM  UPONT
+      PLAZ CONTV
+      CARX BLOCO
+      SOMI -44     TESTO SE E VIRGULA.
+      PLAZ .+2
+.     TRI 
+      INC 
+      PLA  .-2
+.     TRE 
+      INC 
+      TRE 
+      PLA  .-2
+* 
+* ROTINA QUE TRATA DO SE
+* 
+SE    PUG  TIRBR   TRATA DA EXPRESSAO ARIT. 
+      CARX BLOCO
+      SOMI -40
+      PLAZ .+1
+OITO  CARI 8
+      PLA  ERRO 
+.     PUG  EARIT
+      PUG CARXB 
+      SOMI -35     # -1 
+      PLAZ .+4
+      SOMI -25     <  1 
+      PLAZ .+5
+      SOMI -1      =  0 
+      PLAZ .+6
+      SOMI 21      )
+      PLAZ .+1
+      PLA  OITO 
+      LIMP0 
+      ARM  PUZ
+      CARI 2
+      ARM  SUS
+.     PUG  PROX 
+      PLAZ ERRO 
+      PUG  DECBI
+      CAR  INDIN
+      TRI 
+      CAR  INDLA
+      PUG  PROC 
+      PLAN .+1
+      PLA  SETE 
+.     CARX TENU 
+      TRI 
+      DEFC /DA
+PUZ   DEFC 0
+      TRI 
+      ARMX SET+1
+      CAR  IPRO 
+      TRI 
+      CARX TEND 
+      TRI 
+.     CARX LERT 
+      PUG  PERF 
+      SUS  0
+      PLA  .-1
+      PLA  DZT     GERACAO DOS DEFE.
+LERT  DEFC /9B     [LER 
+      DEFC /49
+      DEFC /4F
+      DEFC 0
+      DEFC /10
+      DEFC /DA
+      DEFC /10
+      DEFE 0
+      DEFC 10 
+      DEFC 0
+ESA   PUG  TIRBR
+      CARX BLOCO
+      SOMI -34
+      PLAZ ASC
+      PUG TUT 
+      CAR  INDEX
+      TRI 
+      CAR  INDIN
+      PUG  PROC 
+      PLAN .+1
+      UM
+      TRI 
+      CAR  INDCM
+      PUG  PROC 
+      PLAN .+1
+      PLA  SETE 
+.     CARX TENU 
+      PLAN .+1
+      CARI /80     COLOCO LIMP0 
+      PLA  .+2
+.     CARI +9F     E DUMMY,COLOCO IND 
+.     ARM  ESAT+6 
+      CARX TENU 
+      NAND /0F
+      CMP1
+      ARM  ESAT+4 
+      CARX TEND 
+      ARM  ESAT+3 
+      CAR  AU 
+      ARM  ESAT+8 
+      CAR  AD 
+      ARM  ESAT+9 
+      CARI 11 
+      TRI 
+.     CARX ESAT 
+      PUG  PERF 
+      SUS  0
+      PLA  .-1
+      LIMP0 
+      TRE 
+      CARI 5
+REP   PUG  SOMA 
+      PUG  GCKS 
+      PUG  TIRBR
+      CARX BLOCO
+      SOMI -44
+      PLAZ .+1     NAO E VIRGULA
+      SOMI 31      ENTAO TESTO SE E CR
+      PLAZ RNIC 
+      CARI 3
+      PLA  ERRO 
+.     TRI 
+      INC 
+      ARM  PPONT
+      PUG  TIRBR
+      PLAZ ERRO 
+      CARX BLOCO
+     SOMI -34
+      PLAZ ASC
+      PUG  PROX 
+      PLAZ RNIC 
+      PLA  ESA+12 
+ASC   CAR  PPONT
+      INC 
+      ARM  SPONT
+      CAR  PPONT
+.     TRI 
+      CARX BLOCO
+      SOMI -34
+      PLAZ .+1
+      TRI 
+      INC 
+      PLA  .-1
+.     TRI 
+      ARM  PPONT
+      CMP2
+      SOM  SPONT
+      CMP2
+      ARM  ASCT    NUMERO DE PARAMETROS 
+      ARM  SUS
+      DE   1
+      SOMI 7
+      ARM  ASCT+7 
+      CAR AU 
+      ARM  ASCT+4 
+      CAR  AD 
+      ARM  ASCT+5 
+      CARI 7
+     TRI 
+.     CARX ASCT 
+     PUG  PERF 
+      SUS  0
+      PLA  .-1
+      CAR  SPONT
+.     TRI 
+      CARI /11
+      PUG  PERF 
+      CARX BLOCO
+     PUG  PERF 
+      TRI 
+      INC 
+      SUS  SUS
+      PLA  .-1
+      LIMP0 
+      TRE 
+      CARI 3
+      SOM  ASCT 
+* INCREMENTO O CI 
+      PLA  REP
+ASCT  DEFC 0
+      DEFC /8B     [ESC 
+      DEFC /0C
+      DEFC /4F
+      DEFE 0
+      DAFC 10 
+      DEFC 7
+ESAT  DEFC /5B
+      DEFC /0C
+      DEFE 0
+      DEFC /04     CAR
+      DEFC 0
+      DEFC /10
+      DEFE 0
+      DEFC 10 
+      DEFC 11 
+* 
+* ROTINA QUE TIRA BRANCO
+* 
+TIRBR PLA  0
+      CAR  PPONT
+.     ARM  0
+      SOM  UPONT
+      PLAZ TIRBR
+      CARX BLOCO
+      SOMI -32
+      PLAZ .+1
+      CAR  0
+      ARM  PPONT
+      PLA  TIRBR
+.     TRI 
+      INC 
+     PLA  .-2
+* 
+*ROTINA TRATA DA EXPRESSAO ARITIMETICA, 
+*TRATA DA NOTACAO POLONESA. 
+* 
+EARIT PLA  0
+      LIMP0 
+      ARM  POINP   FLAG=0_ O ULTIMO FOI ( OU =
+      ARM  FLAG        =-1  O ULTIMO FOI VAR,) OU]
+      CAR  PPONT       =1   O ULTIMO FOI OPERANDO 
+      INC 
+      ARM  PPONT
+PUTNI PUG TIRBR  TIRA BRANCO,PONTEIRO 
+      CARX BLOCO   JA ESTA NO INDICE. 
+      SOMI -@0
+      PLAN EOPER   E OPERADOR 
+      SOMI -10
+      PLAN DCI     E DECIMAL
+      SOM-7 
+      P@AN INVAL
+      SOMI -26
+      PLAN VARIV   EOPERANDO 
+      SOMI -2 
+      PLAZ FECOL   E FECHA COLCHETE.
+INVAL UNEG
+      SOM  POINT
+      ARM 1 
+.     PUG  PITIR   TIRA DA PILHA
+      SOMI -@(
+      PLAZ ERRO 
+      SOMI -51     TESTA SE E [ 
+      PLAZ ERRO 
+      SOMI @[ 
+      PUG  GERAO   GERA TODOS OS
+      SUS  1       ELEMENTOS DA PILHA 
+      PLA  .-1
+      PLA  EARIT
+* 
+*  TRATAMENTO DE NUMEROS
+* 
+DCI   PUG  PROX 
+      PUG  DECBI   TRANSFORMA EM BINARIO
+      CARI /DA     E GERA UM CARI 
+      PUG  YGER 
+      CAR  BU 
+      PUG  YGER 
+XX    CARI 4
+      PUG  GERAO   GERA PUG [ARM
+      CAR  FLAG 
+      PLAN ERROB
+      UNEG
+      ARM  FLAG 
+      PLA PUTNI 
+ERROB CARI 18 
+      PLA  ERRO 
+* 
+*  TRATAMENTO DAS VARIAVEIS 
+* 
+VARI" PUG TUT 
+      CAR  INDEX
+      TRI 
+      CAR  INDIN
+      PUG  PROC    E DIMENSAO OU INTEIRO
+      PLAN .+1
+      UM
+      TRI 
+      CAR  INDCM
+      PUG  PROC 
+      PLAZ SETE 
+      PUG CARXB 
+      SOMI -@[
+      PLAZ .+1
+     CARI 4       VAI GERAR UM 
+      PUG  GERAV   CARVARIAVEL 
+      PLA  XX      VAI GERAR O RESTO (VER DCI)
+.     CAR  INDDI
+      CMP2
+      SOM  IPRO 
+      PLAN OKN
+      CARI 20      NAO E DIMENSAO 
+      PLA  ERRO 
+OKN   CAR  IPRO    COLOCA O INDICE DA 
+      PUG  PIPOE   VARIAVEL NA PILHA
+      CARI @[ 
+      PUG  PIPOE   COLOCA [ NA PILHA
+.     CARI 0
+FLAG EQU .-1+1
+      PLAN ERROB
+      LIMP0 
+      PLA  EARIT+5
+* 
+*  E FECHA COLCHETE 
+* 
+*  TIRA DA PILHA ATE
+*  ENCONTRAR UM [ 
+*  SE ENCONTRAR (, ENTAO ERRO 
+*
+FECOL PUG  PITIR
+      SOMI -@[
+      PLAZ .+1
+      SOMI 51 
+      PLAZ OITO 
+      SOMI @( 
+      PUG  GERAO      PLA  FECOL
+.     PUG  PITIR
+      ARM  IPRO 
+      CARI 5       GERA UM PUG [CAB 
+     PUG  GERAO
+     CARI /9E     CARREGA CODIGO DO TRI
+      PUG  YGER    E GERA UM TRI
+      CARI 5       GERA UMA INSTRUCAO 
+      PUG  GERAV   CARX VARIAVEL
+      PLA  KKK
+* 
+*  TRATAMENTO DE OPERANDOS
+* 
+EOPER SOMI 8
+      PLAZ EABRP   E ABRE PARENTESIS
+      SOMI -1 
+      PLAZ EFECP   E FECHA PARENTESIS 
+      SOMI @) 
+      TRE 
+      CARI 3
+      TR 
+.     CAR  1       TESTA SE O OPERADOR E VALIDO 
+      SOMX TABUM   SE FOR,CODIFICA
+      PLAZ .+1     /=0
+      CUS  0       *=1
+     PLA  .-1     -=2
+      PLA  INVAL   +=3
+.     TRI 
+      ARM  1
+      SOMI -2 
+      PLAN .+1     E * OU / 
+REY   PUG  PITIR   E + OU - 
+      SOMI -4 
+      PLAN .+6     TIRA +-/* DA PILHA 
+      SOMI 4       ERA [ 
+      PLA  .+2
+.     PUG  PITIR
+      SOMI -2 
+     PLAN .+6     TIRA */ DA PILHA 
+      SOMI 2       ERA ([ 
+.     PUG  PIPOE   ENTAO RECOLOCA NA PILHA
+      TRE 
+      PUG  PIPOE
+      CAR FLAG
+      PLAN .+3
+      PLAZ .+1     ULTIMO ERA =([ 
+      PLA  ERROC
+.    TRI 
+      SOMI -2 
+      PLAZ .+1     E SINAL - (MENOS)
+      PLA  ERROC
+.     CARI /80     GERA UM LIMP0
+      PUG  YGER 
+      CARI 4
+      PUG  GERAO   GERA UM PUG [ARM 
+.     UM
+      PLA  EARIT+5
+.     SOMI 4
+      PUG  GERAO   GERA OPERACAO
+      PLA  REY
+.     SOMI 2
+      PUG  GERAO   GERA OPERACAO
+      PLA  .-7
+* 
+*  E ABRE PARENTESIS
+* 
+EABRP CARI @( 
+      PUG  PIPOE
+      CAR  FLAG 
+      PLAN ERROB
+      LIMP0 
+      PLA EARIT+5 
+ 
+*  E FECHA PARENTESIS 
+* 
+EFECP PUG PITIR 
+      SOMI -@(
+      PLAZ KKK
+      SOMI -51
+      PLAZ SEIS 
+     SOMI @[ 
+      PUG  GERAO
+     PLA EFECP 
+SEIS  CARI 6
+      PLA  ERRO 
+KKK   CAR  FLAG 
+      PLAN EARIT+5
+ERROC CARI 19 
+      PLA  ERRO 
+* 
+TABUM DEFC -@/
+      DEFC -@*
+      DEFC -@-
+      DEFC -@+
+* 
+* ROTINA QUE POEM UM VALOR NO TOPO DA PILHA DE
+* COMPILACAO. 
+PIPOE PLA  0
+      TRI 
+      DEFC /DA
+POINT DEFC 0
+      INC 
+      ARM  POINT
+      TRI 
+      ARMX PILHA
+      TRI 
+      SOMI -31
+      PLAN PIPOE
+      CARI 1
+      PLA  ERRO 
+* 
+* ROINA QUE TIRA DA PILHA
+* 
+PITIR PLA  0
+      CAR  POINT
+      TRI 
+      CARX PILHA
+      SUS  POINT
+      PLA  PITIR
+      PLA  EARIT
+PILHA BLOC 30 
+* 
+*ROTINA QUE GERA IND,TRI,LIMP0;O OPCODE VEM NO ACC. 
+* 
+YGER  PLA  0
+      ARM  TGER+ 
+      LIMP0 
+      PUG  DUMP 
+      PLA  YGER 
+* 
+*ROTINA QUE GERA OPERADOR,[ARM,[CAR 
+* 
+GERAO PLA  0
+      TRI 
+      CARX TDU
+      ARM  TGER+5 
+      CARX TDD
+      ARM  TGER+6 
+      CARI 3
+      PUG  DUM 
+      PLA  GERAO
+TDU   DEFC /58     /
+      DEFC /35     *
+      DEFC /0A     -
+      DEFC /36     +
+     DEFC /34     [ARM 
+      DEFC /48     [CA 
+TDD   DEFC /9B
+      DEFC /BB
+      DEFC /7B
+      DEFC /7B
+      DEFC /3B
+      DEFC /7B
+* 
+* ROTINA DE GERACAO DOS VARIAVEIS.
+* 
+GERAV PLA  0
+      ARM  TGER+8 
+      CAR  IPRO 
+      TRI 
+      CARX TEND 
+      ARM  TGER+10
+      CARX TENU 
+      PLAN .+3
+      ARM  TGER+9 
+      CAR  INDCM
+      CMP2
+      SOM  0
+      PLAN .+1
+      PLA  .+2
+.    CARI /20
+      SOM  TGER+8 
+    ARM  TGER+8
+.     CARI 7
+      PU DUMP 
+      PLA CERAV
+     XOR  8
+      ARM  TGER+9 
+      CARI /9F
+      PUG  YGER 
+      PLA  .-2
+* 
+*ROTINA QUE DUMPA EM FITA A GERACAO 
+* E INCREMENTA O CI.
+* 
+DUMP  PLA  0
+      TRI 
+      CARX TGER 
+      PUG  PERF 
+      CAR  AD 
+      PUG  PERF 
+      CAR  AU 
+      PUG  PERF 
+      LIMP0       O NUMERO DE DADO MENOS 3 
+      TRE          E O INCRAMENTA NO CI.
+      CARX TGER 
+      SOMI -3 
+      ARM  SUS
+      PUG  SOMA 
+.     TRI 
+     INC 
+      TRI       CARX TGER 
+      PUG  PERF 
+      SUS  SUS
+      PLA  .-1
+      PUG  GCKS 
+      PLA  DUMP 
+TGER EFC /4 
+      DEB /10     TAB. DO YGER 
+      DEFC 0
+      DEFC 5
+      DFC/4F     TAB.DOAARAO
+      DEFC 0
+      DEFC 0
+      DEFC 5
+      DEFC        TAB. DO GERAV
+      DEFC 0
+      DEFC 0
+* 
+* TRATAMENTO DA DESIGNACAO
+* 
+ARITH CAR  INDEX
+      TRI 
+      CAR  INDIN
+      PUG  PROC 
+      PLAN .+1
+      UM
+      TRI 
+      CAR  IFDCM
+      PUG  PROC 
+      PLAN .+1
+      PLA  SETE 
+.     PUG CARXB 
+     SOMI -@[
+     ARM  KWW+1
+      PLAZ .+1
+      PLA  .+3
+.     CAR  INDDI
+      CMP2
+      SOM  IPRO 
+     PLAN .+1
+      PLA  ERROC
+.     CAR  IPRO 
+      ARM  KYW+1
+      PUG  EARIT
+      PUG CARXB 
+      SOMI -@]
+      PLAZ .+1
+      PLA  SEIS 
+.     TRI 
+      INC 
+      ARM  PPONT
+      PUG  TIRBR
+      PUG CARXB 
+     SOMI -@=
+      PLAZ .+1
+ERROE CARI 21 
+      PLA  ERRO 
+.     PUG  EARIT
+      PUG CARXB 
+      SOMI -/D
+      PLAZ .+1
+     CARI 22 
+ERROF PLA  ERRO 
+.     CA@I 5
+      PUG  GARAO   GERA UM PUG [CAR 
+KYW   CARI 0
+      ARM  IPRO 
+KWW   CARI 0
+      PLAZ .+2     E DIMENSAO OU COMUM
+      CARI 2
+.     PUG  GERAV   SE FOR DUMMY,O GERAV 
+      PLA  RNIC    TRATA ERANDO O IND 
+.    CARI /9E     E DIMENSAO,TENHO QUE COLOCAR 
+      PUG  YGER    O TOPO-1 NO INDICE.
+      CARI 5
+      AC  GERAO
+      CARI /9E
+      PUG  YGER 
+      CARI 3
+      PLA  .-2
+* 
+* ROTIA DE PROCURA MNEMONICO. -1)NAO ENCONTROU
+* 
+PROCM PLA  0
+      CARI 7
+      TRI 
+.     CAR  COMPU
+* 
+      SOMX TMU
+     PLAZ .+1
+      SUS  0
+      PLA  .-1
+      UNEG
+      PLA PROCM 
+.     CAR  COMPD
+* 
+      SOMX TMD
+      PLAZ .+1
+      PLA .-2+6 
+.     TRI 
+      PLA  PROCM
+TMU   DEFC -/05    ALP 1
+      DEFC -/00     ES 2
+      DEFC -/1E    P 3
+      DEFC -/06 ASE 4 
+      DEFC -/04    AEL 5
+      DEFC -/3C 
+     DABC -/3D   ONE 	
+     DEFC -/35    IF 7
+TMD   DEFC -/90 
+      DEFC -/B3 
+      DEFC -/B0 
+      DEFC )/65       DEFC -/AC 
+      DEFC -/BC 
+      DEFC -/C5 
+      DEFC -/26 
+* 
+*ROTINA QUE SOMA ACC,EXT COM AU E AD. 
+* 
+SOMA  PLA  0
+     LIM 
+      SOM  AU 
+      ARM  AU 
+      TRE 
+      SV   0
+      SMI 1
+      SOM  AD 
+      ARM  AD 
+      PLA  SOMA 
+* 
+* GERA CHECKSUM E 4 FEED FRAMES 
+* 
+GCKS  PLA  0
+      CAR  CKS
+     CMP2
+      PQG  PERF 
+      CARI 3
+      PUG  FEED 
+      PLA  GCKS 
+* 
+*ROTINA DE LEITURA DO TTY.
+* 
+LER   PLA  0
+     FBC  /31
+      FNC  /36
+.     SAL  /31
+      PLA  .-1
+      ENTR /30
+     CMP1
+      NAND /7F
+      CMP1
+      PLA  LER
+* 
+*LE UMA LINHA PELO TTY,ATE ENCONTRAR CR.CONTINUA
+*LENDO ATE ENCONTRAR LF
+* 
+LELIN PLA  0
+     LIMP0        ZERO O INDICE,PARA 
+      ARM  PPONT   INICIALIZA OS
+      ARM  SPONT   PONTEIROS. 
+.    TRI       QUE SIRVA DE CONTADOR. 
+.     PUG  LER     PIRO OS FEED-FRAMES. 
+      PLAZ .-1     ZERO OS PONTEIRCS. 	
+ QRMX BLOCO 
+ SOMI -13 
+ PLAZ .+1 
+ SOMI -/72
+ PLAZ .+5 
+ SOMI /20
+ PLAZ .+6 
+ TRI
+ INC PLA .-2
+. TRI 
+      CMP2
+      ARM  UPONT   PONTEIRO PARA A ULTIMA 
+.     PUG  LER     POSICAO QUE FOI LIDO.
+      SOMI 10 LEIO ATE ENCONTBAR LF
+ PLAZ .+1 
+      PLA  .-1
+. CAR BLOCO 
+ SOMI -@* 
+ PLAZ .+1 
+ PLA LELAN
+. PUG ESCR
+ PLA LELIN+2
+. PUG LER 
+ SOMI -10 
+ PLZLELIN+2 
+ PLA .-1
+. SUS 0 
+ PLA .-7
+ PLA LELIN+2
+* 
+*DELIMITA O PROXIMO CAMPO SEPARADO POR BRANCO OU
+* VIRGULA.
+PROX PLA  0
+      DEFC /DA     CARREGA O PRIMEIRO 
+PPONT DEFC 0       PONTEIRO.
+. ARM 0 
+      DEFC /D8
+UPONT DEFC 0       APONTA O ULTIMO GUARDADO.
+      PAZ PROX    SE VOLTAR COM 0,FOI O
+      CARX BLOCO   ULTIMO CARATER.
+    SOMI -@0
+      PLAN .+1     TESTA SE E BRANCO
+      SOMI -43     OU VIRGULA,SE FOR, 
+      PLAN .+2     CONTINUA NA PROCURA
+*@STA FORA DO LIMITE, CONTINUO.
+.     TRI 
+      INC 
+     PLA  .-2
+.     CAR  0
+      ARM  SPONT
+.     TRI 
+      CAR  0
+      SOM  UPONT
+      PLAZ .+2     SE VOLTA COM ZERO, 
+      CARX BLOCO   FOI O ULTIMO CARATER 
+      SOMI -@0
+      PLAN .+2     TESTA SE E BRANCO
+      SOM-43     OU VIRGULA,SE FOR, 
+      PLAN .+1     PARA A PROCURA.
+      PLA  .+2
+.     TRI 
+     INC 
+ PLA .-2
+.     TRI 
+      ARM  PPONT
+      PLA  PROX 
+* 
+*IMPRIME O PROGRAMA FONTE NO CANAL B
+ESCR  PLA  0
+ DEBC /DA 
+LINHA DEFC -1 
+ INC
+ ARM LINHA
+     TRI 
+      LIMP0        IMPRIMO A LINHA. 
+    TRI
+      ARM  AU
+      SOMI /9C   SOO -100
+      PLAN .+1
+      TRI 
+      INC 
+      PLA  .-1
+.    PRI 
+      SOMI @0 
+      PUG  ESC
+      DEFC /DA
+AUX   DEFC 0
+      TRI 
+      LIMP0 
+.     TRI 
+ ARM AUX
+      SOMI /F6     SOMO -10.
+     PLAN .+1
+      TRI 
+      INC 
+      PA  .-1
+.     TRI 
+      SOMI @0 
+     PUG  ESC
+      CAR  AUX
+      SMI @0 
+      PUG  ESC
+      UM
+      PUG  SPACE
+ CAR AD 
+      PUG  HEXAC 
+ CAR AU 
+      DD   4
+      PUG  HEXASC 
+ CAR AU 
+      PUG  HEXASC 
+      UM
+      PUG  SPACE
+      LIMP0 
+ TRI
+. CARX BLOCO
+      PUG  ESC
+ TRI
+ INC
+ AR 0
+ SOM UPONT
+ PLAZ .+1 
+      PLA  .-1
+.     PQC  VOLTA
+      PLA  ESCR 
+* 
+*ROTINA DE CONVERSAO BINARIO EM HEXA-ASC
+* 
+HEXASC PLA 0
+      NAND /0F
+     CMP1
+      ARM  AUX
+      SOMI /F6
+      PLAN .+2
+      SOMI @A 
+.     PUG  ESC
+      PLA  HEXASC 
+.     CAR AUX
+      SOMI @0 
+      PLA  .-2
+* 
+* ROTINA DE SAIDA NOCANAL B
+* 
+ESC   PLA  0
+      SAI  /B0
+.     SAL  /B1
+      PLA  .-1
+      PLA  ESC
+* 
+*FAZ RETURN LINEFEE
+* 
+VOLTA PLA  0
+      CARI 0D
+      PUG  ESC
+      CARI /0A
+      PUG  ESC
+      PLA  VOLTA
+* 
+*ROTINA QUE COMPACTA 3 CARACTERES 
+* 
+CPAC  PLA  0
+      DEFC /DA
+TT    DEFC 0      DE   2
+     ARM  COMPU
+    @EFC /DA
+TD  AFC 0
+      D@  3
+      NAND /0
+      CMP1
+     DEFC /D8
+COMPU DEFC 0
+      ARM  COMPU
+      CAR  TD 
+      DE   4
+      DE   1
+      ARM  COMPD
+      DEFC /DA
+TU    DEFC 0
+      NAND /1F
+     CMP1
+      DEFC /D8
+COMPD DEC 0
+      ARM  COMPD
+      PLA  CPAC 
+* 
+*EMPACOTA  @RCTRES,OS 2 PRIMEIROS E O ULTIMO. 
+* 
+EMPAC PLA  0
+ L	MP0
+      ARM  TT 
+      ARM  TD 
+ DEFC /DA 
+SPONT DEFC 0
+      TRI 
+      CARX BLOCO
+ SOMI -@[ 
+ PLAN +2 
+. PLA SEIS
+. SOMI 27 
+ PLAN .-2 
+ CAB@ BLOCO 
+      ARM  TU 
+      TRI 
+      INC 
+     ARM  0
+* INCREMENTA A INDICE 
+      CM2
+      SOM  PPONT
+      PLAZ EMPAC
+      CARX BLOCO
+     ARM  TD
+SOMI -@[ 
+ PLA .+2 
+. PLA SEIS
+. SOMI 26 
+ PLAN .-2 
+      TRI 
+      INC 
+      ARM  0
+      CMP2
+ SOM PPONT
+      PLAZ EMPAC
+      CAR PPONT
+      TRI 
+      CARX BLOCO-1
+     ARM  TT 
+SOMI -@[ 
+ PLAN .+ 
+. PLA SEIS
+. SOMI 2 
+ PLAN .-2 
+      PLA  EMPAC
+* 
+*ROTINA QUE IMPBIME ERRO
+* 
+ERR  ARM  AUX
+     CABI 3
+      TRI 
+.     CARX .+1
+      PUG  ESC
+      SUS  0
+      PLA  .-1
+      UM
+     PUG  SPACE
+      CAR  AUX
+      SOMI @0 
+      PUG  ESC
+     PDA RNIC
+ LIMP0
+ ARM QUEFI
+.     DEFC @O 
+      DEFC @R 
+      DEFC @R 
+      DAC @E 
+* 
+* DA N+1 ESPACOS
+* 
+SPACE PLA  0
+      TRI 
+      CARI /20
+.     PUG  ESC
+      SUS  0
+      PLA .-1
+      PLA  SPACE
+* 
+*ROTINA QUE PROCURA NAS TABELAS DE SIMBOLO.VALOR PROCURADO EM 
+*O INICIO DA TABELA ESTA NO INDICE  ,O FAA BOACC.
+* 
+PROC  PLA  0
+      CMP2
+      ARM  SALV 
+.     CA"  0     COMPLEMENTA OS VLORES 
+      DEFC /D8     COMPACTADOS PROCURADOS.
+SALV  DEFC 0
+      PLAZ PROC 
+     CARX TSBU 
+ NAND /7F 
+ INC @IREI O BIT DE SINAL E CMP2. 
+      SOM  COMPU
+      PLAZ .+1
+      PLA  "+2
+.     CAR@TSBD 
+      CMP2
+      SOM  COMPD
+      PLAZ .+2
+.     TRI 
+      INC 
+      TRI 
+     PLA  .-3
+. CAR 0 
+      ARM  IPRO 
+     UNEG
+      P@A  PROC 
+* 
+*  ESTA ROTINA EXECUTAQM CARX BLOCO
+* 
+CARXB PLA 0 
+      CAR PPONT 
+      TRI 
+      CARX BLOCO
+      PLA CARXB 
+* *  ROTINA QUE DELIMITA,EMPACOTA,COMPACTA
+* 
+TUT   PLA 0 
+      PUG  PROX
+      PLAZ ERRO 
+      PUG  EMPAC
+      PUG  CAC 
+      PLA  TUT
+* 
+*ROTINA QUE CONVERTE DECIMAL-ASC EM BINARIO,EM DUPLA PRECISAO 
+* 
+DECBI PLA 0 
+ LIMP0
+ ARM BU 
+ ARM BD 
+ CAR SPONT
+ ARM  INC
+ CMP2 
+ SOM PPONT
+ ARM AUX
+. CARI 1
+ ARM XPU
+ CARI 2 
+ ARM APZ
+ CAR BD 
+ TRE
+ CAR B 
+. LIM 
+ GEV 1
+ TRE
+ GEV 1
+TRE
+ SUS APZ
+ PLA .-1
+. LIM 
+ SOM BU 
+ TRE
+ SV 0 
+ SOMI 1 
+ SOM BD
+ TRE
+ SUS XPU
+ PLA .-1
+ ARM BU 
+ LIM
+ CARX BLOCO 
+ SOMI -58 
+ PLAN .+2 
+. PLA SEIS
+. SCM	 10 
+ PLAN .-2	
+ CARX BLOCO 
+ NAND /0F 
+ CMP1 
+ SOM BU 
+ ARM BU 
+ TRE
+ SV 0 
+ SOMI  
+ ARM BD 
+ TRI
+ INC
+ TRI
+ SUS AU@
+ PLA .-5
+ PLA DECBI
+XPU DEFC 0
+PZ DEFC 0
+* 
+*PERFURA FEED FRAME 
+
+ 
+FEED  PLA  0
+    TRE 
+      LIMP0 
+.     PUG  PERF 
+      SUS  1
+    PLA  .-1
+      PLA  FEED 
+* 
+*ROTINA DE PERFURACAO.
+* 
+PERF  PLA  0
+ ARM YYY+1
+ CAQEFI
+ PLAZ PERF
+AY CARI 0
+      SAI  /0
+.     SAL  /81
+      PLA  .-1
+      DEFC /D8
+CKS   DEFC 0
+      ARM  CKS
+      PLA  PERF
+ FIM 0

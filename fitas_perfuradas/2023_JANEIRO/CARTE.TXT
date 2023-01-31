@@ -1,0 +1,32 @@
+FTN4,L
+      PROGRAM CARTE
+      INTEGER A(13,80),X,Y,C(80)
+      READ(8,1) (A(13,I),I=1,80)
+      J=13
+      Y=1H
+      X=1H 
+      DO 15 JK=1,80
+      WRITE(4,1) (A(J,I),I=1,40),A(J,56),(A(J,N),N=66,80)
+      WRITE(6,2) (A(J,I),I=1,80)
+      READ(8,1) C
+      WRITE(4,1) (C(I),I=1,64)
+      WRITE(6,2) C
+      DO  9 J=1,13
+      READ(8,1) (A(J,I),I=1,80)
+      DO 9 L=66,80
+      IF(A(J,L).EQ.X)GOTO 9
+      GOTO 5
+9     CONTINUE
+5     M=J-1
+      WRITE(4,3) M,Y
+      WRITE(6,2) M
+      DO 8 K=1,M
+      WRITE(6,2) (A(K,N),N=1,64)
+8     WRITE(4,1) (A(K,N),N=1,64),Y
+15    CONTINUE
+      STOP
+1     FORMAT(80A1)
+2     FORMAT(1X,80A1)
+3     FORMAT(I2,A1)
+      END
+      END$

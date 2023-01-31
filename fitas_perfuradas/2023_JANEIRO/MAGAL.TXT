@@ -1,0 +1,207 @@
+
+ASMB,R,L
+******************************************* 
+*                                         * 
+*  ROTINA PARA PERMITIR O USO DE TRES     * 
+*  UNIDADES DE FITA MAGNETICA NO DOS.     * 
+*                                         * 
+*  PARA ISSO CHAMAR A ROTINA - MAGAL      * 
+*                                         * 
+*  APOS ESSA CHAMADA, QUANDO SE USAR      * 
+*  LOGICAL UNIT #8 SERA USADO SUBCANAL 0  * 
+*  LOGICAL UNIT #9 SERA USADO SUBCANAL 1  * 
+*  LOGICAL UNIT #10 SERA USADO SUBCANAL2  * 
+*                                         * 
+*  ANTES DO FIM DO PROGAMA DEVE-SE        * 
+*  CHAMAR A ROTINA - MAGRE , PARA         * 
+*  RESTAURAR AS MODIFICACOES NO SISTEMA.  * 
+*                                         * 
+*  AUTOR-SEBASTIAO SANTIAGO BARRETTO      * 
+*                                         * 
+*  VERSAO-0 MODIFICACAO-0  MAIO/1974      * 
+*  LABORATORIO DE SISTEMAS DIGITAIS-EPUSP * 
+*                                         * 
+******************************************* 
+      SPC 5 
+      ENT MAGAL 
+      ENT MAGRE 
+      SPC 3 
+      EXT EXEC
+      SPC 5 
+*********** 
+*  MAGAL  * 
+*********** 
+      SPC 2 
+MAGAL NOP 
+      LDB 117B     CALCULA O ENDERECO DA
+      ADB D121     TERCEIRA PALAVRA DA EQT8 
+      STB EP3E8    E ARMAZENA 
+      SPC 1 
+      LDA B,I      CARREGA A TERCEIRA POSICAO 
+      AND =B177077 LIMPA A AREA DO SUBCANAL 
+      STA P3E8     E GUARDA A PALAVRA MODIFICADA
+      JSB DESPR    E MODIFICA A EQT8
+      SPC 1 
+      INB          CALCULA ENDEREDO DA QUARTA 
+      STB EP4E8    PALAVRA DA EQT8 E GUARDA 
+      SPC 1 
+      ADB D14      CALCULA O ENDERECO DA PRIMEIRA 
+      LDA B,I      PALAVRA DA EQT9,CARREGA ESSA 
+      STA P1E9     POSICAO,SALVA E COLOCA NO LUGAR
+      LDA EINI9    O ENDERECO DO NOVO DRIVER
+      JSB DESPR 
+      SPC 1 
+      ADB 55B      SOMA B COM 2 PARA OBTER ENDERECO 
+      LDA B,I      DA TERCEIRA PALAVRA DA WQT9,CARREGA
+      STA P3E9     ESSA POSICAO, SALVA, 
+      IOR =B40000  ALTERA PARA FICAR CORE-RESIDENT
+      JSB DESPR    E MODIFICA A EQT 
+      SPC 1 
+      ADB 70B      SOMA COM 15 PARA OBTER ENDERECO DA 
+      LDA B,I      PRIMEIRA PALAVRA DA EQT10,CARREGA
+      STA P1E10    ESSA POSICAO,SALVA E COLOCA NO LUGAR 
+      LDA EIN10    O ENDERECO DO NOVO DRIVER
+      JSB DESPR 
+      SPC 1 
+      ADB 55B      SOMA B COM 2 PARA OBTER ENDERECO 
+      LDA B,I      DA TERCEIRA PALAVRA DA EQT10,
+      STA P3E10    CARREGA ESSA POSICAO,SALVA,
+      IOR =B40000  ALTERA PARA FICAR CORE-RESIDENT
+      JSB DESPR    E MODIFICA A EQT 
+      SPC 1 
+      JMP MAGAL,I  RETORNA
+      SPC 3 
+D121  DEC 121 
+D14   DEC 14
+EP3E8 NOP 
+P3E8  NOP 
+EP4E8 NOP 
+P1E9  NOP 
+P3E9  NOP 
+P1E10 NOP 
+P3E10 NOP 
+EINI9 DEF INI9
+EIN10 DEF INI10 
+      SPC 5 
+*********** 
+*  MAGRE  * 
+*********** 
+      SPC 2 
+MAGRE NOP 
+      LDB EP4E8 
+      ADB D14 
+      LDA P1E9     RESTAURA A PRIMEIRA
+      JSB DESPR    PALAVRA DA EQT9
+      ADB 55B 
+      LDA P3E9     RESTAURA A TERCEIRA
+      JSB DESPR    PALAVRA DA EQT9
+      ADB 70B 
+      LDA P1E10    RESTAURA A PRIMEIRA
+      JSB DESPR    PALAVRA DA EQT10 
+      ADB 55B 
+      LDA P3E10    RESTAURA A TERCEIRA
+      JSB DESPR    PALAVRA DA EQT10 
+      JMP MAGRE,I 
+      SPC 5 
+DESPR NOP          ESTA SUBROTINA O 
+      JSB EXEC     CONTEUDO DO ACUMULADOR A 
+      DEF *+2      NO ENDERECO QUE ESTA 
+      DEF N19      NO ACUMULADOR B
+      JMP DESPR,I 
+      SPC 2 
+N19   DEC -19 
+      SPC 5 
+******************************* 
+*                             * 
+*  PARTE INICIAL DOS DRIVES   *
+*                             * 
+******************************* 
+      SPC 2 
+INI10 NOP 
+      LDA INI10 
+      STA INI9
+      LDB SUBC2 
+      JMP VAI      CONTINUACAO DO DRIVER 10 
+      SPC 1 
+INI9  NOP 
+      LDB SUBC1 
+VAI   STB INI10 
+      LDB ENCON 
+      STO 436B     DO DRIVER 9 E ARMAZENA NA POSICAO 436B 
+      LDA 211B,I
+      LDB A,I      SALVA O CONTEUDO DO PONTO
+      STB SALVO    DE RETORNO AO PROGAMA E
+      LDB PULO     COLOCA AI UM JSB 436B,I
+      STB A,I 
+      STA ENSAL 
+      SPC 1 
+      LDA 212B,I   OBTEM O REQUEST CODE,
+      SPC 1 
+      STA RCODE 
+      SPC 1 
+      SDA 214B,I   BUFFER ADDRESS 
+      STA BUFAD 
+      SPC 1 
+      LDA 215B,I   E BUFFER LENGHT
+      STA BUFL
+      SPC 1 
+      LDA 57B      CARREGA A COM 4 PARA INDICAR 
+      JMP INI9,I   OPERACAO COMPLETA E RETORNA
+      SPC 2 
+SALVO NOP 
+SUBC1 OCT 100 
+SUBC2 OCT 200 
+ENCON DEF CON 
+PULO  JSB 436B,I
+ENSAL NOP 
+RCODE NOP 
+BUFL  NOP 
+      SPC 5 
+***************************** 
+*                           * 
+*  CONTINUACAO DOS DRIVERS  * 
+*                           * 
+***************************** 
+      SPC 5 
+CON   NOP 
+      STA SVA      SALVA ACUMULADOR A 
+      STB SVB            ACUMULADOR B 
+      ERA,ALS            REGISTRADORES
+      SOC                E,O
+      INA 
+      STA SVEO
+      SPC 1 
+WAIT  LDA EP4E8,I  TESTA SE O DRIVER8 
+      AND =B140000 ESTA DISPONIVEL
+      SZA          E NAO EM USO 
+      JMP WAIT     ESPERA SE ESTIVER
+      SPC 1 
+      LDA P3E8     ALTERA O SUBCANAL
+      IOR INI10    DA EQT8 PARA 1 OU 2, 
+      LDB EP3E8    CONFORME SEJA
+      JSB DESPR    UNIDADE 9 OU 10
+      SPC 1 
+      JSB EXEC     EXECUTA A
+      DEF *+5     2FUNCAO PEDIDA
+      DEF RCODE 
+      DEF CONWD 
+BUFAD NOP 
+      DEF BUFL
+      SPC 1 
+      LDA P3E8     RESTAURA A 
+      JSB DESPR    EQT8 
+      SPC 1 
+      LDA SVEO     RESTAURA 
+      CLO          E, 
+      SLA,ELA      O, 
+      STO 
+      LDA SVA      A, 
+      LDB SVB      B
+      JMP ENSAL,I  RETORNA
+      SPC 1 
+      SPC 1 
+SVA   NOP 
+SVB   NOP 
+SVEO  NOP 
+CONWD OCT 110 
+      END 

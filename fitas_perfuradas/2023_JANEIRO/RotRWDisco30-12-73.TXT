@@ -1,0 +1,374 @@
+
+ASMB,R,L
+      NAM SEBA1,7 
+* 
+* 
+*   ROTINA PARA PERMITIR O USO DE READ-WRITE EM DISCO 
+* 
+*   ESTA ROTINA E COMPOSTA DE CINCO PARTES
+* 
+*  1-OPEN  DECLARA A LU QUE SERA USADA NO READ.WRITE
+*  2-DFILE DECLARACAO DOS ARQUIVOS
+*  3-FILEL DECLARA O ESPACO OCUPADO PELOS ARQUIVOS
+*  4-CLOSE RESTAURA A LU
+*  5-DRIVER PARA TRATAMENTO DO READ-WRITE 
+* 
+      ENT OPEN
+      ENT FILEL 
+      ENT DFILE 
+      ENT CLOSE 
+* 
+      EXT EXEC
+      EXT .ENTR 
+* 
+* 
+*  ***  OPEN  *** 
+* 
+PARAM NOP 
+OPEN  NOP 
+      JSB .ENTR 
+      DEF PARAM 
+      LDA DETEC   TESTA SE JA FOI DADO
+      SZA         UM CALL OPEN
+      JMP ERRO1 
+      LDA PARAM,I  CARREGA A COM LU 
+      AND 72B 
+      SZA,RSS 
+      JMP ERRO2 
+      CCB 
+      ADB A 
+      CMA,INA 
+      ADA 122B
+      SSA 
+      JMP ERRO2 
+      ADB 121B
+      LDA B,I 
+      SZA,RSS 
+      JMP ERRO2 
+      ADA 52B 
+      STA LA
+      ALF 
+      ADA LA
+      ADA 117B
+      STA X1
+      LDB A,I 
+      STB X2
+      LDB A 
+      LDA INI 
+      JSB EXEC
+      DEF *+2 
+      DEF N19 
+      INB 
+      LDA B,I 
+      STA X3
+      IOR =B40000 
+      JSB EXEC
+      DEF *+2 
+      DEF N19 
+      JSB EXEC
+      DEF *+5 
+      DEF RCODE 
+      DEF FTRAK 
+      DEF LTRAK 
+      DEF SIZE
+      LDA FTRAK 
+      CMA,INA 
+      ADA LTRAK  CALCULA O NUMERO 
+      INA        DE SETORES QUE 
+      MPY SIZE   EXISTEM NA WORK AREA 
+      STA LTRAK 
+      ISZ DETEC 
+      JMP OPEN,I
+* 
+*  ***  FILEL  ***
+* 
+ENDRE NOP 
+FILEL NOP 
+      JSB .ENTR 
+      DEF ENDRE 
+      LDA AREAU 
+      STA ENDRE,I 
+      JMP FILEL,I 
+* 
+*  ***  DFILE  ***
+* 
+PARA1 NOP 
+PARA2 NOP 
+PARA3 NOP 
+DFILE NOP 
+      JSB .ENTR 
+      DEF PARA1 
+      LDA DETEC  TESTA SE JA FOI
+      SZA,RSS    DADO CALL OPEN 
+      JMP ERRO3 
+      ISZ DFILE 
+      LDA CONT    TESTA SE ESTA 
+      CPA 65B     TESTA SE JA TEM 
+      JMP ERRO5   10 ARQUIVOS 
+      INA         NA ORDEM CERTA
+      CPA PARA1,I 
+      JMP *+3 
+      LDA 56B 
+      JMP IMP 
+      LDB CONT
+      BLS         MULTIPLICA POR 3
+      ADB CONT
+      ADB ENTAB 
+      LDA PARA2,I 
+      STA LABEL 
+      STA B,I     TABELA
+      LDA AREAU   PREENCHE
+      INB 
+      STA B,I 
+      LDA PARA3,I 
+      INB 
+      STA B,I 
+      MPY LABEL   CALCULA A 
+      ADA 72B     NOVA AREA USADA 
+      DIV 67B 
+      ADA AREAU 
+      STA AREAU 
+      CMA,INA 
+      ADA LTRAK  TESTA SE AINDA TEM 
+      SSA        AREA  DISPONIVEL 
+      JMP ERRO6 
+      ISZ CONT
+      JMP DFILE,I 
+* 
+*  ***  CLOSE  ***
+* 
+CLOSE NOP 
+      ISZ CLOSE 
+      LDA DETEC 
+      SZA,RSS 
+      JMP ERRO3 
+      LDA X1
+      LDB X2
+      STB A,I 
+      INA 
+      INA 
+      LDB X3
+      STB A,I 
+      CLA 
+      STA DETEC 
+      STA CONT
+      STA AREAU 
+      JMP CLOSE,I 
+ERRO1 LDA 53B 
+      JMP IMP 
+ERRO2 LDA 54B 
+      JMP IMP 
+ERRO3 LDA 55B 
+      JMP IMP 
+ERRO5 LDA 57B 
+      JMP IMP 
+ERRO6 LDA 60B 
+      JMP IMP 
+ERRO7 LDA 61B 
+      JMP IMP 
+ERRO8 LDA 62B 
+IMP   MPY 64B 
+      ADA CBS 
+      STA ADDR
+      JSB EXEC   IMPRIME
+      DEF *+5    MENSAGEM 
+      DEF CODE   DE ERRO
+      DEF SEIS
+ADDR NOP
+      DEF BUFFL 
+      JSB EXEC   PARA 
+      DEF *+2 
+      DEF SEIS
+A     EQU 0 
+B     EQU 1 
+LA    NOP 
+INI   DEF INIC
+ENTAB DEF TABEL 
+X1    NOP 
+X2    NOP 
+X3    NOP 
+CBS   DEF MEN1
+DETEC DEC 0 
+RCODE DEC 17
+FTRAK NOP 
+LTRAK NOP 
+SIZE  NOP 
+AREAU DEC 0 
+CONT DEC 0
+LABEL NOP 
+TABEL BSS 30
+CODE  DEC 2 
+SEIS DEC 6
+BUFFL DEC 9 
+MEN1  ASC 9,  TWO OPEN CALL 
+MEN2 ASC 9,  INVALID LU CODE
+MEN3  ASC 9,  NO OPEN CALL
+MEN4  ASC 9,  NO FILE SEQUENCE
+MEN5  ASC 9,  TOO MANY FILES
+MEN6  ASC 9,  WORK AREA FULL
+MEN7  ASC 9,  UNDEFINED FILE
+MEN8  ASC 9,  END OF FILE 
+* 
+*  ***  INIC
+* 
+INIC NOP
+      LDA 214B,I
+      STA BUFAD 
+      LDA 215B,I
+      STA BUFL
+      LDA 212B,I
+      STA RCODB 
+      LDA 211B,I
+      LDB ENCON 
+      STB 436B
+      LDB A,I     SALVA POSICAO DE RETORNO
+      STB SALVO   NO PROGRAMA PRINCIPAL 
+      LDB PULO    POSICAO 204B PARA A 
+      STB A,I     CONTINUACAO DO DRIVER 
+      LDA 57B 
+      JMP INIC,I
+* 
+*  CONTINUACAO DO DRIVER
+* 
+CON   NOP 
+      LDA BUFAD,I  TESTA SE O NUMERO
+      SSA         DO ARQUIVO E
+      JMP ERRO7   NEGATIVO
+      SZA,RSS 
+      JMP ERRO7  ZERO 
+      CMA,INA 
+      ADA CONT
+      SSA         MAIOR QUE O NUMERO
+      JMP ERRO7   TOTAL DE ARQUIVOS 
+      LDA BUFAD,I  CARREGA NUMERO DO ARQUIVO
+      ALS 
+      ADA BUFAD,I  MULTIPLICA POR 3 
+      ADA 50B      SUBTRAI 3
+      ADA ENTAB    SOMA COM ENDERECO DA TABELA
+      ISZ BUFAD 
+      LDB BUFAD,I  CARREGA NUMERO DO REGISTRO 
+      SSB 
+      JMP ERRO8    TESTA SE E NEGATIVO
+      SZB,RSS 
+      JMP ERRO8    TESTA SE E ZERO
+      CMB,INB 
+      ADB A,I      TESTA SE E MAIOR 
+      SSB          QUE O NUMERO MAXIMO
+      JMP ERRO8 
+      INA 
+      LDB A,I   CARREGA EM E
+      STB E     O ENDERECO DO DISCO 
+      INA 
+      LDB BUFL  DESCOBRE
+      CMB,INB   O NUMERO DE 
+      INB       PALAVRAS A SEREM
+      ADB A,I   TRANSFERIDAS
+      SSB,RSS   E GUARDA
+      JMP *+3   EM P,N
+      LDB A,I 
+      JMP *+3 
+      LDB BUFL
+      ADB 51B 
+      STB P 
+      STB N 
+      LDA A,I 
+      MPY BUFAD,I 
+      CLE 
+      ADA 52B 
+      SEZ 
+      INB 
+      DIV 67B 
+      STA R 
+      STB S 
+VOLTA ADA E 
+      CLB 
+      DIV SIZE
+      STB NREG
+      ADA FTRAK 
+      STA NTR 
+      JSB EXEC   LE UM SETOR
+      DEF *+7 
+      OCT 54
+      OCT 55
+BB    DEF BLOCO 
+      OCT 67
+      DEF NTR 
+      DEF NREG
+      LDA S 
+      CMA,INA 
+      INA 
+      ADA 67B 
+      CMA,INA 
+      STA D 
+      ADA N 
+      SSA,RSS 
+      JMP GG
+      LDA N 
+      CMA,INA 
+      STA D 
+GG    LDA BUFAD 
+      INA 
+      STA LABEL 
+      LDB BB
+      ADB S 
+      LDA 54B 
+      CPA RCODB 
+      JMP LOP1
+LOP2  LDA LABEL,I   LOP PARA WRITE
+      STA B,I 
+      INB 
+      ISZ LABEL 
+      ISZ D 
+      JMP LOP2
+      JSB EXEC      GRAVA 1 SETOR 
+      DEF *+7       NO DISCO
+      OCT 55
+      OCT 55
+      DEF BLOCO 
+      OCT 67
+      DEF NTR 
+      DEF NREG
+      JMP WW
+LOP1  LDA B,I      LOOP PARA READ 
+      STA LABEL,I 
+      INB 
+      ISZ LABEL 
+      ISZ D 
+      JMP LOP1
+WW    LDA BUFAD 
+      CMA 
+      ADA LABEL 
+      CPA P    TESTA SE ACABOU
+      JMP SIM 
+     ISZ R
+      LDA 67B 
+      CMA,INA 
+      ADA 5 
+      ADA N 
+      STA N 
+      CLA 
+      STA S 
+      LDA R 
+      JMP VOLTA 
+SIM   LDA CON  SALVA POSICAO
+      ADA 52B   DO PROGRAMA 
+      LDB SALVO QUE CHAMOU
+      STB A,I 
+      JMP A,I   E VOLTA PARA O PROGRAMA 
+RCODB NOP 
+BUFAD NOP 
+BUFL  NOP 
+SALVO NOP 
+ENCON DEF CON 
+PULO  JSB 436B,I
+NTR   NOP 
+NREG  NOP 
+N     NOP 
+R     NOP 
+S     NOP 
+E     NOP 
+P     NOP 
+D     NOP 
+N19   DEC -19 
+BLOCO BSS 64
+      END  

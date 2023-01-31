@@ -1,0 +1,61 @@
+@BLT
+ SUBR BIDEC
+*
+*  ROTINA PARA IMPRIMIR UM NUMERO
+*  EM FORMATO LIVRE (6 CAMPOS)
+*
+ ENT  [BIDEC
+ EXT [CAR
+ EXT [ARM
+ EXT [DIV
+[BI
+ EXT [ESC
+[BIDEC PLA 0
+ PLAN .+1
+ TRE
+ CARI @ 
+ PLA .+2
+ TRE
+ CMP2
+ .
+. CMP2
+ TRE
+ CARI @-
+. ARM SINAL+1
+ CARI 3
+ ARM SUS
+ TRE
+. ARM BL
+ PUG [ARM
+ CARI 10
+ PUG [ARM
+ PUG [DIV
+ PUG [CAR
+ ARM BL+1
+ DE 3
+ SOM BL+1
+ SOM BL+1
+ CMP2
+ SOM BL
+ TRI
+ CARI 0
+SUS EQU *-1
+ TRI
+ SOMI @0
+ ARMX BL+2
+ CAR BL+1
+ PLAZ SINAL
+ SUS SUS
+ PLA .-1
+SINAL CARI 0
+ ARMX BL+1
+ CARI @ 
+. ARMX BL
+ SUS 0
+ PLA .-1
+ PUG [ESC
+ DEFC 6
+BL BLOC 6
+PL
+ PLA [BIDEC
+ FIM [BIDEC

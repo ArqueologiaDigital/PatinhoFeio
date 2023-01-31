@@ -1,0 +1,2499 @@
+      HED *** JOB PROCESOR REV-C MODIFICADO ***
+        NAM JOBPR     
+      SPC 3 
+******************************
+*                            *
+*  JOB STATEMENT PROCESSOR.  *
+*                            *
+*  AS MODIFICACOES EFETUADAS *
+*  SAO PARA MELHORAR O       *
+*  PROCESSAMENTO EM "BATCH"  *
+*  E PARA PERMITIR A         *
+*  CONTABILIZACAO DOS JOBS   *
+*                            *
+* SEBASTIAO SANTIAGO BARRETTO*
+*  LSD-EPUSP-DEE     NOV-75  *
+*                            *
+******************************
+      SPC 6 
+        ENT JOBPR     
+        EXT EXEC    
+AAA00   JMP AAA04     
+        LDA 0126B     
+        STA ADC24     
+        JMP AHB66     
+AAA04   STB AFC63     
+        CLB     
+        STB AAG60     
+        STB AFH64     
+        STB AHB10     
+AAA11   LDA ABB07     
+        IOR 0106B     
+        LDB ABA63     
+        JSB ABH46     
+        JSB ACD57     
+        LDA 0123B,I     
+        AND 0075B     
+        CPA AHB20     
+        RSS     
+        STA ACE63,I     
+        LDA ACE63,I     
+        CPA AAH46     
+        JMP AAB00     
+        CPA ABA73     
+        JMP AAA72     
+        LDA 0111B     
+        CPA 0112B     
+        JMP AAA36     
+* 
+*  IMPRIME NA PRINTER SE ESTAVA EM BATCH
+* 
+      LDA AFC63 
+      JSB IMPRM 
+      DEF 123B,I
+AAA36   LDB AAH76     
+        LDA ABA31     
+        STA AAG57     
+        LDA ABA30     
+        STA ADD30     
+        LDA ACE63,I     
+AAA44   CPA AAG57,I     
+        JMP 0001B,I     
+        ISZ AAG57     
+        INB     
+        ISZ ADD30     
+        JMP AAA44     
+AAA52   LDA AAA54     
+        JMP ADF42     
+AAA54   DEF AAA55     
+AAA55   ADA 1101B     
+        OCT 042040    
+        ADA 1517B     
+        OCT 047124    
+        CPA 1117B     
+        OCT 046040    
+        CPA 1524B     
+        ADA 0524B     
+        OCT 042456    
+AAA66   JSB EXEC    
+        DEF AAA71     
+        OCT 000044    
+AAA71   JMP AAC25     
+* 
+* EJOB
+* 
+AAA72   LDA 0051B     
+        STA AAG61     
+        LDA 0054B     
+        LDB ABA64     
+        JSB ABH46     
+        JMP AAB03     
+* 
+*  JOB
+* 
+AAB00   LDA AAG61     
+        SZA     
+        JMP AAC20     
+AAB03   LDA 0120B     
+        CMA,INA     
+        STA ABD54     
+        LDB 0117B     
+        ADB 0056B     
+AAB10   LDA 0001B,I     
+        SSA,RSS     
+        JMP AAB33     
+        AND AFH54     
+        ALF,SLA     
+        JMP AAB10     
+        ALF,SLA     
+        RSS     
+        JMP AAB10     
+        LDA 0001B     
+        ADA 0052B     
+        LDA 0000B,I     
+        AND 0072B     
+        IOR ABB10     
+        STB ADD30     
+        JSB EXEC    
+        DEF AAB32     
+        DEF AAD76     
+AAB32   LDB ADD30     
+AAB33   LDA 0001B,I     
+        AND AFH54     
+        CPA ABB03     
+        IOR ACF52     
+        JSB ABH46     
+        ADB 0052B     
+        ADB 0066B     
+        ISZ ABD54     
+        JMP AAB10     
+* 
+*  LE BUFFER DO SISTEMA E RESETA 9 LUN'S
+* 
+        JSB ACH33     
+        JSB AAD77     
+        LDA AHH41     
+        CMA,INA     
+        ADA 0104B     
+        LDB AHH42     
+        CMB,INB     
+        ADB 0105B     
+        SSB,RSS     
+        JMP AAB60     
+        ADA 0052B     
+        ADB ABB00     
+* 
+* EM A-MIN. DO JOB ;EM B-DECIMOS DE SEG.
+* 
+AAB60 DST SV2      SALVA TEMPO
+* 
+*  CONVERTE TEMPO DO JOB (RUN TIME) 
+* 
+      STB AHH42    SALVA SEGUNDOS+.10S
+      JSB CNDEC 
+      STB BUFRT+10
+      STA BUFRT+11
+      LDA AHH42 
+      JSB CNSEC 
+      STB BUFRT+15
+      STA BUFRT+16
+* 
+*  MUDA DE FOLHA NA LISTADORA 
+* 
+      LDA DM66
+      JSB FUNCP 
+* 
+*     A ROTINA FUNCP EXECUTA
+*     CONTROLE DA PRINTER 
+* 
+*  IMPRIME TEMPO DO JOB 
+* 
+      LDA P19 
+      JSB IMPRM 
+      DEF BUFRT 
+* 
+*  CONVERTE TEMPO DE EXECUCAO (EXEC.TIME).
+* 
+      LDA CLEX
+      ELA,CLE,ERA 
+      JSB CNDEC 
+      STB BUFET+10
+      STA BUFET+11
+      LDA CLEX+1
+      ADA D600
+      JSB CNSEC 
+      STB BUFET+15
+      STA BUFET+16
+* 
+*  IMPRIME TEMPO DE EXECUCAO
+* 
+      LDA P19      A=# DE CARACTERES
+      JSB IMPRM 
+      DEF BUFET    ENDERECO DO BUFFER 
+* 
+*  CONVERTE TEMPO DO JOB PARA CR$ 
+* 
+      DLD SV2 
+      JSB CONV$ 
+      DEF BUFVP+13
+* 
+*  IMPRIME VALOR DO PROCESSAMENTO 
+*  ANTES,PULA LINHA 
+*  (2 LINHAS) 
+* 
+* 
+      LDA .+2 
+      JSB FUNCP 
+* 
+      LDA P18 
+      JSB IMPRM 
+      DEF BUFVP 
+* 
+*  TESTA SE O USUARIO TEM CODIGO
+* 
+      LDA ENCOD 
+      SZA,RSS 
+      JMP NOCOD    NAO TEM
+      JSB LDISC    SIM-ENTAO LE SETOR DO ARQUIVO
+*     ONDE ESTA' O CODIGO P/ INBUF
+*     EM ENCOD+1 ,O ENDERECO DO TEMPO DO CODIGO.
+      DLD ENCOD+1,I CALCULA O TEMPO 
+      ADB SV2+1    ACUMULADO
+      ADB .-1 
+      ADB DM600 
+      SSB,RSS 
+      INA,RSS 
+      ADB D600
+      INB 
+      ADA SV2 
+      DST ENCOD+1,I CONVERTE EM CR$ 
+      JSB CONV$ 
+      DEF BUFVT+13
+      DLD ENCOD+1,I CALCULA 
+      CMB,INB      QUANTO 
+      ADB D600     TEMPO
+      CMA          SOBROU 
+      ISZ ENCOD+1 
+      ISZ ENCOD+1 
+      ADA ENCOD+1,I 
+      SSA          AINDA TEM CREDITO ?
+      CLB          NAO
+      SSA 
+      CLA          NAO
+      JSB CONV$ 
+      DEF BUFCA+13
+* 
+*  INCREMENTA NUMERO DE JOBS
+* 
+      ISZ ENCOD+1 
+      ISZ ENCOD+1,I 
+* 
+*  IMPRIME VALOR ACUMULADO
+*  E CREDITO ATUAL
+* 
+      LDA P18 
+      JSB IMPRM 
+      DEF BUFVT 
+      LDA P18 
+      JSB IMPRM 
+      DEF BUFCA 
+* 
+*  GRAVA SETOR DO ARQUIVO 
+* 
+      LDA ENCOD 
+      JSB GDISC 
+* 
+*  TESTA SE ERA JOB-TEMPORARIO
+*  ISTO E':SE ENTROU JOB EM BATCH.
+* 
+      LDA TSJOB 
+      SZA,RSS 
+      JMP NOCOD    NAO E' 
+      STA BUFFR    E' TEMPORARIO, 
+      LDB MTABL    ENTAO DELETA OS ARQUIVOS.
+      JSB EXSET    NO DISCO E NA MEMORIA. 
+      LDB UDIRT     ATUALIZA DIRETORIO
+      LDA SPUPD    COLOCANDO UM ZERO (FIM)
+      BLF,BLF      NA MESMA POSICAO DO INICIO 
+      RRR 8 
+      STA LIXO
+      JSB LDISC    LE DIRETORIO 
+      LDA SPUPD 
+      AND B377
+      ADA DEFIN 
+      CLB          ZERA 
+      STB A,I      POSICAO
+      LDA LIXO
+      JSB GDISC    E GRAVA
+* 
+*  IMPRIME NA TTY E PULA 5 LINHAS NA PRINTER
+* 
+NOCOD JSB EXEC
+      DEF *+5 
+      DEF .-2 
+      DEF .+1 
+      DEF BEOJ+1
+      DEF .-7 
+      LDA .+5 
+      JSB FUNCP 
+* 
+*  IMPRIME END JOB NA PRINTER E MUDA DE FOLHA 
+* 
+      JSB LETRA 
+      DEF *+2 
+      DEF BEOJ
+      LDA DM66
+      JSB FUNCP 
+AAC20   LDA AAG61     
+        SSA,RSS     
+        JMP AAD07     
+        CMA,INA     
+        STA AAG61     
+AAC25   LDA AAH43     
+        LDB 0111B     
+        CMB     
+        CPB 0051B     
+        JSB ACC47     
+AAC32   LDA 0111B     
+        ADA ABB03     
+        STA AAG62     
+        CLB,INB     
+        JSB AFH76     
+        JSB EXEC    
+        DEF AAC45     
+        OCT 000052    
+        DEF AAG62     
+        OCT 100123    
+        DEF AFB23     
+AAC45   STB AFC63     
+        SZB,RSS     
+        JMP AAC32     
+        LDA AAG60     
+        SZA     
+        JMP AGH60     
+        CPB 0054B     
+        JMP AAA52     
+        LDA AAG61     
+        CPA AHE17     
+        JMP AAF14     
+        SZA,RSS     
+        JMP AAA00     
+        LDA 0123B,I     
+        LDB 0123B     
+        INB     
+        LDB 0001B,I     
+        RRR 08    
+        AND 0074B     
+        CPA ABB02     
+        RSS     
+        JMP AAD03     
+        CPB AAH46     
+        JMP AAA11     
+        CPB ABA47     
+        JMP AAA11     
+        CPB ABA50     
+        JMP AAA11     
+        CPB ABA51     
+        JMP AAF64     
+AAD03   LDA 0111B     
+        CPA 0112B     
+        JMP AAF17     
+        JMP AAC25     
+AAD07   JSB ACH33     
+        JSB AAD77     
+        CLA     
+        STA AAG61     
+        STA AHH53     
+        STA AHH54     
+        STA AHH55     
+        STA AHH56     
+        STA AHH57     
+        STA AHH60     
+        STA AHH61     
+        STA AHH62     
+        LDB ABA65     
+        JSB ABH46     
+        JSB ABH46     
+        LDB ABA66     
+        JSB ABH46     
+        JSB ABH46     
+        JSB ABH46     
+        ADB 0057B     
+        JSB ABH46     
+        LDB ABA67     
+        JSB ABH46     
+        LDB ABA70     
+        JSB ABH46     
+        LDB ABA71     
+        JSB ABH46     
+        LDB ABA72     
+        JSB ABH46     
+* 
+*  IMPRIME: *LSD-EPUSP* 
+* 
+      JSB LETRA 
+      DEF *+2 
+      DEF LSD 
+* 
+* TESTA SE TEM NOME; SE TIVER IMPRIME 
+*  JOB-XXXXX, ANTES PULA 4 LINHAS 
+* 
+      LDA .+4 
+      JSB FUNCP    PULA 4 
+      ISZ PMLOC 
+      LDA PMLOC,I 
+      STA JOB16 
+      SZA,RSS      TEM NOME ? 
+      JMP NNOME    NAO
+      ISZ PMLOC 
+      LDA PMLOC,I 
+      ISZ PMLOC 
+      ELA,CLE,ERA  LIMPA BIT NUMERICO (SE FOR)
+      SZA,RSS 
+      JMP NNOME    NAO TEM NOME 
+      LDB BLNKS 
+      STB BUFJM+2 
+      STB BUFJM+3  BRANQUEIA A
+      STB BUFJM+4  AREA DO NOME 
+      STB BUFJM+5 
+      LDB ENDJM 
+      RBL          JOGA BIT DE SINAL P/ MENOS SIGNIFICATIVO 
+      ADA .-8      TESTA SE TEM MAIS
+      SSA,RSS      DE 7 CARACTERES; 
+      CCA          SE TIVER, DESPREZA 
+      ADA .+8      OS OUTROS
+      JSB MOVE     MOVE O NOME P/ BUFFER
+JOB16 NOP          DE IMPRESSAO 
+      JSB LETRA 
+      DEF *+2 
+      DEF BUFJM 
+* 
+*  IMPRIME ************ 
+* 
+NNOME LDA .+4      PULA 4 LINHAS
+      JSB FUNCP 
+      JSB LETRA 
+      DEF *+2 
+      DEF ASTER 
+      LDA .+5      PULA + 5 LINHAS
+      JSB FUNCP 
+* 
+*  IMPRIME O JOB NA CONSOLE E NA PRINTER
+* 
+      JSB EXEC     IMPRIME
+      DEF *+5      NA TTY 
+      DEF .-2      EM BINARIO 
+      DEF .+1 
+      DEF JBUFF,I  DE LINHA 
+      DEF AFC63 
+      LDA AFC63 
+      JSB IMPRM    IMPRIME NA PRINTER 
+      DEF JBUFF,I 
+      LDA P21 
+      JSB IMPRM    IMPRIME: LSD-EPUSP-DEE 
+      DEF BUFLA 
+* 
+*  OBTEM TEMPO E TRANSFORMA EM HS,MIN,SEG.
+* 
+      LDA ABB07    INICIALIZA 
+      LDB ABA63    TEMPO DE 
+      JSB EXSET    EXECUCAO 
+      LDA DM600    (CLEX=MINUTOS) 
+      JSB EXSET    (CLEX+1=DECIMOS) 
+      LDA CLOCK 
+      STA STIME    SALVA TEMPO
+      LDA CLOCK+1  DE INICIO
+      STA STIME+1  DO JOB 
+      ADA D600
+      CLB          CONVERTE TEMPO EM: 
+      DIV .+10
+      JSB CNDEC    SEGUNDOS 
+      STA SEG 
+      LDA CLOCK 
+      CLB 
+      DIV P60 
+      STB LIXO
+      JSB CNDEC    HORAS
+      STA HORAS 
+      LDA LIXO
+      JSB CNDEC    MINUTOS
+      STA MIN 
+*  MOVE DATA P/ BUFFER
+      LDA ABD57    A=ENDERECO DE ORIGEM 
+      LDB EBHP2    B=ENDERECO DE DESTINO
+      JSB WMOVE 
+      DEC 5       NUMERO DE PALVRAS.
+      LDA P23 
+      JSB IMPRM    NA PRINTER 
+      DEF BUFHP 
+      JSB EXEC     E NA TTY 
+      DEF *+5      (SO' A HORA) 
+      DEF .-2 
+      DEF .+1 
+      DEF BUFHP+15
+      DEF .+8 
+* 
+*  TESTA SE O USUARIO TEM CODIGO
+* 
+      LDA PMLOC,I 
+      SZA,RSS 
+      JMP NCODI    NAO TEM CODIGO 
+      JSB GETC     OBTEM PRIMEIRO CARACTER
+      CLB 
+      RRL 11
+      ALF,RAL      ENCOSTA 'A DIREITA 
+      STA SV2      5 BITS -SIGNIFIC. EM SV2 
+      SLB,RSS      TESTA SE ERA LETRA 
+      BLS,SLB      BITS 6 E 7 =10 
+      JMP ERROC    NAO
+      LDA PMLOC,I  SIM
+      ISZ PMLOC 
+      LDB PMLOC,I  TESTA SE TEM 4 CARACTERES
+      CPB .+4      NA PRIMEIRA PARTE: A000
+      INA,RSS 
+      JMP ERROC    NAO
+      STA SV2+1    EM SV2+1 ENDERECO DA PARTE DECIMAL 
+      LDB .-3 
+      STB LIXO     XONTADOR NUMERO DE DIGITOS 
+LUP   LDA SV2      MULTIPLICA 
+      MPY .+10     TOTAL POR 10 
+      STA SV2 
+      LDA SV2+1 
+      JSB GETC     OBTEM 1 DIGITO 
+      ADA N58      TESTA SE E'
+      SSA,RSS      NUMERICO 
+      JMP ERROC 
+      ADA .+10
+      SSA 
+      JMP ERROC 
+      ADA SV2      SOMA COM TOTAL 
+      STA SV2 
+      ISZ SV2+1 
+      ISZ LIXO
+      JMP LUP 
+      ISZ PMLOC 
+      LDA PMLOC,I 
+      STA Z 
+      ISZ PMLOC 
+*  BRANQUEIA A AREA ONDE VAI FICAR A SEGUNDA PARTE
+      LDB BLNKS    DO CODIGO
+      STB BUFJM+2 
+      STB BUFJM+3 
+      STB BUFJM+4 
+      LDA PMLOC,I  OBTEM NUMERO 
+      ELA,CLE,ERA  DE CARACTERES E
+      ADA .-7      FAZ-6 SE FOR 
+      SSA,RSS      MAIOR QUE 6
+      CCA 
+      ADA .+7 
+      LDB EXX 
+      RBL          MOVE OS CARACTERES DO
+      JSB MOVE     CODIGO P/ SALVA-LOS
+Z     NOP 
+* 
+*  VAI PROCURAR CODIGO DO USUARIO NO ARQUIVO
+* 
+      LDA TSARQ 
+LUP9  STA ENCOD 
+      JSB LDISC    LE UM SETOR DO ARQUIVO 
+      STA LIXO     SALVA ENDERECO DO PROXIMO T/S
+      LDA .-8 
+      STA SV2+1    CONTADOR # DE CODIGOS P/ SETOR 
+      LDB DEFIN 
+LOOP  LDA B,I 
+      SSA          ACABOU O ARQUIVO ? 
+      JMP NOEXT    SIM
+      CPA SV2      NAO,COMPARA C/ O CODIGO
+      JMP IGUAL    IGUAL
+      ADB .+8 
+      ISZ SV2+1 
+      JMP LOOP
+      LDA LIXO
+      JMP LUP9
+      SPC 3 
+IGUAL INB          TESTA SE 
+      LDA B,I      O RESTO
+      CPA BUFJM+2  DO CODIGO
+      RSS          CONFERE
+      JMP T        COM O
+      INB          DO ARQUIVO 
+      LDA B,I 
+      CPA BUFJM+3 
+      RSS 
+      JMP T 
+      INB 
+      LDA B,I 
+      CPA BUFJM+4 
+      JMP ACHOU    CONFERE
+T     LDA P16      IMPRIME MENSAGEM 
+      JSB IPT      NA PRINTER E TTY 
+      DEF BCNC
+      JMP ABORT 
+NOEXT LDA P14 
+      JSB IPT 
+      DEF BNCA
+      JMP ABORT 
+ERROC LDA .+8 
+      JSB IPT 
+      DEF BFI 
+ABORT LDA .-2      ABORTA O JOB 
+      STA EJOBF 
+      JMP NOCOD 
+* 
+*  SALVA T/S E POSICAO DENTRO DO SETOR E TESTA SE TEM TEMPO 
+* 
+ACHOU INB          SALVA ENDERECO DO TEMPO
+      STB ENCOD+1  DO CODIGO E TESTA SE 
+      LDA B,I      AINDA TEM
+      CMA          TEMPO
+      ADB .+2      DISPONIVEL 
+      ADA B,I 
+      SSA,RSS 
+      JMP TEM 
+      LDA P14 
+      JSB IPT 
+      DEF ULT 
+      JMP ABORT 
+TEM   INB 
+      LDA B,I 
+* 
+*  TESTA SE ULTRAPASSOU LIMITE DE JOBS
+* 
+      STB LIXO
+      SSA 
+      JMP CONTI    NAO TEM LIMITE 
+      CLB 
+      RRL 8 
+      ALF,ALF 
+      CMA 
+      ADA B        TESTA SE ULTRAPASSOU 
+      SSA,RSS      LIMITE DE JOBS 
+      JMP NOU      NAO
+      LDA P14      SIM,ENTAO IMPRIME
+      JSB IPT      MENSAGEM E ABORTA
+      DEF ULJ 
+      JMP ABORT 
+NOU   JSB CNDEC    CONVERTE NUMERO DE VEZES 
+      STA BNV+10   QUE AINDA PODE PROCESSAR 
+      LDA P14      E IMPRIME. 
+      JSB IMPRM 
+      DEF BNV 
+      JMP CONTI 
+* 
+*  SE O USUARIO NAO TEM CODIGO, DEVE TER ENTRADO PELA TTY 
+* 
+NCODI LDA BATCH 
+      CPA SYSTY 
+      RSS 
+      JMP NOEXT    NAO E' TTY 
+      CLA 
+      STA ENCOD 
+CONTI JSB WRSYS    GRAVA SETOR DO SISTEMA 
+* 
+*  PURGE P'FILES
+* 
+      CLA,INA 
+      JSB AGB54 
+* 
+*  LE SETOR DO SISTEMA E GRAVA T/S INICIO DO JOB SE ESTA' EM BATCH
+      JSB RDSYS 
+      LDA SNXTS 
+      LDB BATCH 
+      CPB SYSTY 
+      CLA 
+      STA TSJOB 
+      SZA,RSS 
+      JMP NOC 
+* 
+*  PROCURA FIM DO DIRETORIO 
+* 
+      LDA UDIRT 
+KK    JSB LDISC 
+      STA SV2 
+      LDB DEFIN 
+LL    LDA B,I 
+      SZA,RSS 
+      JMP EESSE 
+      INA,SZA,RSS 
+      JMP OTS 
+      INB 
+      JMP LL
+OTS   LDA SV2 
+      JMP KK
+EESSE CMB,INB      OBTEM POSICAO DA 
+      ADB DEFIN    ULTIMA PALAVRA 
+      CMB,INB      DO DIRETORIO 
+      CCA          E SETOR DA MESMA 
+      ADA SV2      E
+      BLF,BLF      GUARDA NO BUFFER 
+      RRL 8        DO 
+      STA SPUPD    SISTEMA
+NOC   LDA .+5 
+      JSB FUNCP    PULA 5 LINHAS
+      JSB WRSYS    GRAVA BUFFER DO SISTEMA
+      JMP RNS      E VAI PEDIR OUTRA DIRETIVA 
+      SPC 3 
+* 
+*     ROTINAS AUXILIARES
+* 
+      SPC 1 
+*  IMPRM-IMPRIME MENSAGEM NA PRINTER
+*        A=NUMERO DE PALAVRAS 
+*        P+1=ENDERECO DO BUFFER 
+IMPRM NOP 
+      STA IAUX
+      LDA IMPRM,I 
+      STA IEN 
+      JSB EXEC
+      DEF *+5 
+      DEF .-2 
+      DEF .+6 
+IEN   NOP 
+      DEF IAUX
+      ISZ IMPRM 
+      JMP IMPRM,I 
+      SPC 1 
+**  IPT-IMPRIME NA TTY E PRINTER
+*     A=NUMERO DE CARACTERES
+*      B=ENDERECO DO BUFFER 
+IPT   NOP 
+      LDB IPT,I 
+      STB IEPTX 
+      JSB IMPRM 
+IEPTX NOP 
+      JSB EXEC
+      DEF *+5 
+      DEF .-2 
+      DEF .+1 
+      DEF IEPTX,I 
+      DEF IAUX
+      ISZ IPT 
+      JMP IPT,I 
+* 
+IAUX  NOP 
+      SPC 1 
+*  FUNCP-REALIZA CONTROLE DA PRINTER
+*        A=PARAMETRO:>0=# DE LINHAS A PULAR 
+*                    <0=MUDA DE FOLHA 
+FUNCP NOP 
+      STA IAUX
+      JSB EXEC
+      DEF *+4 
+      DEF .-3 
+      DEF B1106 
+      DEF IAUX
+      JMP FUNCP,I 
+      SPC 1 
+*  LDISC-LE UM SETOR EM INBUF 
+*        A=TRACK/SETOR
+*  RETORNO:A=PROXIMO T/S
+LDISC NOP 
+      CLB,INB      1 SETOR
+      JSB RDISC 
+      DEF INBUF 
+      JMP PARTY    ERRO DE PARIDADE 
+      JMP LDISC,I 
+      SPC 1 
+*  GDISC-GRAVA UM SETOR-DADOS EM INBUF
+*        A=TRACK/SETOR
+*    RETORNO:A=PROXIMO T/S
+GDISC NOP 
+      CLB,INB      1 SETOR
+      JSB WDISC 
+      DEF INBUF 
+      JMP GDISC,I 
+      SPC 1 
+*  CONV$-CONVERTE MINUTOS E SEGUNDOS EM CRUZEIROS 
+*        A=MINUTOS
+*        B!DECIMOS DE SEGUNDOS
+*        P+1=ENDERECO DO BUFFER DE RETORNO
+CONV$ NOP 
+      STA IAUX     SALVA MINUTOS
+      LDA CONV$,I  SALVA ENDERECO 
+      STA IEN      DO BUFFER
+      LDA B 
+      MPY CR$MI    MULTIPLICA DECIMOS POR 
+      DIV D600     CENTAVOS/MINUTOS E 
+      STA IEPTX    DIVIDE POR 600 
+      LDA IAUX     MULTIPLICA MINUTOS POR 
+      MPY CR$MI    CENTAVOS/MINUTO E SOMA 
+      CLE 
+      ADA IEPTX    COM PARCELA ANTERIOR 
+      SEZ          EM DUPLA PRECISAO
+      INB 
+      DIV D10E4    DIVIDE POR 10000 P/ SEPARAR
+      STB IEPTX    4+SIGNF. EM A, 4 MENOS EM B
+      JSB CNDEC    TRANSFORMA 4 + SIGNIF. 
+      STA IAUX     SALVA DIGITO MENOS SIGNIF. 
+      RRL 8        ISOLA DIGITO 
+      AND B377     +SIGNIFICATIVO 
+      IOR $        FAZ OR COM '$' 
+      STA IEN,I    E JOGA NO BUFFER 
+      ISZ IEN 
+      STB IEN,I    JOGA MAIS 2 DIGITOS
+      ISZ IEN 
+      LDA IEPTX 
+      JSB CNDEC 
+      STA FUNCP 
+      LDA IAUX
+      RRR 8 
+      STB IEN,I 
+      ISZ IEN 
+      AND B1774 
+      IOR VIRGU 
+      STA IEN,I 
+      ISZ IEN 
+      LDA FUNCP 
+      STA IEN,I 
+      ISZ CONV$ 
+      JMP CONV$,I 
+$     OCT 022000
+      HED *** ROTINA P/ IMPRIMIR MENSAGENS ***
+VIRGU OCT 54
+LETRA NOP 
+      LDA LETRA,I 
+      STA VOL94 
+      ISZ LETRA 
+      LDA .-7 
+      STA C194
+LOP94 LDB ENDB9 
+      BLS 
+      STB CEN94 
+      LDA LETRA,I 
+      STA END94 
+      LDB N11 
+L294  LDA END94,I 
+      SLB 
+      ALF,ALF 
+      SLB,RSS 
+      ISZ END94 
+      STB C294
+      AND B177
+      ADA N64 
+      SSA 
+      ADA P64 
+      ALS,ALS 
+      ADA ENT94 
+      ALS 
+      INA 
+      ADA C194
+      CLE,ERA 
+      LDB 0,I 
+      SEZ 
+      BLF,BLF 
+      LDA .-7 
+      STA C394
+L394  LDA P32 
+      SSB 
+      ADA P32 
+      STB S94 
+      LDB CEN94 
+      CLE,ERB 
+      SEZ 
+      IOR 1,I 
+      SEZ,RSS 
+      ALF,ALF 
+      STA 1,I 
+      LDB S94 
+      RBL 
+      ISZ CEN94 
+      ISZ C394
+      JMP L394
+      LDB C294
+      INB,SZB 
+      JMP L294
+      JSB EXEC
+      DEF *+5 
+      DEF .+2 
+      DEF .+6 
+      DEF BU94
+      DEF N79 
+      ISZ C194
+      JMP LOP94 
+      JMP VOL94,I 
+      SPC 3 
+VOL94 NOP 
+C194  NOP 
+C294  NOP 
+C394  NOP 
+CEN94 NOP 
+END94 NOP 
+S94   NOP 
+ENT94 DEF TA94+3
+ENDB9 DEF BU94+2
+N11   DEC -11 
+P32   DEC 32
+N64   DEC -64 
+P64   DEC 64
+N79   DEC -79 
+B177  OCT 177 
+BU94  ASC 3,
+      BSS 37
+      SPC 1 
+*        @
+TA94  OCT 070210,134250,134200,070000  @
+*        A
+      OCT 070210,104370,104210,10400  A
+*        B
+      DEC  -4024
+     DEC  18544
+      DEC  18504
+      DEC  -4096
+*        C
+      DEC  28808
+      DEC -32640
+      DEC -32632
+      DEC  28672
+*        D
+      DEC  -4024
+      DEC  18504
+      DEC  18504
+      DEC  -4096
+*        E
+      DEC  -1920
+      DEC -32544
+      DEC -32640
+      DEC  -2048
+*        F
+      DEC  -1920
+      DEC -32544
+      DEC -32640
+      DEC -32768
+*        G
+      DEC  30848
+      DEC -32616
+      DEC -30584
+      DEC  28672
+*        H
+      DEC -30584
+      DEC -30472
+      DEC -30584
+      DEC -30720
+*        I
+      DEC  28704
+      DEC   8224
+      DEC   8224
+      DEC  28672
+*       J
+      DEC   2056
+      DEC   2056
+      DEC   2184
+      DEC  28672
+*        K
+      DEC -30576
+      DEC -24432
+      DEC -24384
+      DEC -30720
+*        L
+      DEC -32640
+      DEC -32640
+      DEC -32640
+      DEC  -2048
+*        M
+      DEC -30504
+      DEC -22360
+      DEC -30584
+      DEC -30720
+*        N
+      DEC -30520
+      DEC -22376
+      DEC -30584
+      DEC -30720
+*        O
+      DEC  -1912
+      DEC -30584
+      DEC -30584
+      DEC  -2048
+*        P
+      DEC  -3960
+      DEC -30480
+      DEC -32640
+      DEC -32768
+*        Q
+      DEC  28808
+      DEC -30584
+      DEC -22384
+      DEC  26624
+*        R
+      DEC  -3960
+      DEC -30480
+      DEC -24432
+      DEC -30720
+*        S
+      DEC  28808
+      DEC  16416
+      DEC   4232
+      DEC  28672
+*        T
+      DEC  -2016
+      DEC   8224
+      DEC   8224
+      DEC   8192
+*        U
+      DEC -30584
+      DEC -30584
+      DEC -30584
+      DEC  28672
+*        V
+      DEC -30584
+      DEC -30584
+      DEC -30640
+      DEC   8192
+*        W
+      DEC -30584
+      DEC -30584
+      DEC -22312
+      DEC -30720
+*        X
+      DEC -30584
+      DEC  20512
+      DEC  20616
+      DEC -30720
+*        Y
+      DEC -30584
+      DEC  20512
+      DEC   8224
+      DEC   8192
+*        Z
+      DEC  -2040
+      DEC   4128
+      DEC  16512
+      DEC  -2048
+*        [
+      DEC -32640
+      DEC  16416
+      DEC   4104
+      DEC   2048
+*        \
+      DEC  28688
+      DEC   4112
+      DEC   4112
+      DEC  28672
+*        ]
+      DEC  28736
+      DEC  16448
+      DEC  16448
+      DEC  28672
+*        ^
+      OCT 020160,124040,020040,020000 
+*        _
+      OCT 000040,040370,040040,000000 
+*        ESPACO 
+      DEC      0
+      DEC      0
+      DEC      0
+      DEC      0
+*        !
+      DEC   8224
+      DEC   8224
+      DEC   8192
+      DEC   8192
+*        "
+      DEC  20560
+      DEC  20480
+      DEC      0
+      DEC      0
+*        #
+      DEC  20560
+      DEC  -1968
+      DEC  -1968
+      DEC  20480
+*        $
+      DEC   8312
+      DEC -24464
+      DEC  10480
+      DEC   8192
+*        %
+      DEC -14136
+      DEC   4128
+      DEC  16536
+      DEC -26624
+      DEC  16544
+      DEC -24512
+      DEC -22384
+      DEC  26624
+*        '
+      DEC  24672
+      DEC     0
+      DEC      
+      DEC      0
+*        (
+      DEC   4128
+      DEC  16448
+      DEC  16416
+      DEC   4096
+*        )
+      DEC  16416
+      DEC   4112
+      DEC   4128
+      DEC  16384
+*        *
+      DEC     32
+      DEC -22416
+      DEC -22496
+      DEC      0
+*        +
+      DEC     32
+      DEC   8440
+      DEC   8224
+      DEC      0
+*        ,
+      DEC      0
+      DEC     48
+      DEC  12304
+      DEC   8192
+*        -
+      DEC      0
+      DEC    248
+      DEC      0
+      DEC      0
+*        .
+      DEC      0
+      DEC      0
+      DEC     48
+      DEC  12288
+*        /
+      DEC   2056
+      DEC   4128
+      DEC  16512
+      DEC -32768
+*        0
+      DEC  12360
+      DEC  18504
+      DEC  18504
+      DEC  12288
+*        1
+      DEC   8288
+      DEC   8224
+      DEC   8224
+      DEC  28672
+*        2
+      DEC  28808
+      DEC   2160
+      DEC -32640
+      DEC  -2048
+*        3
+      DEC  28808
+      DEC   2096
+      DEC   2184
+      DEC  28672
+*        4
+      DEC   4144
+      DEC  20624
+      DEC  -2032
+      DEC   4096
+*        5
+      DEC  -1920
+      DEC  -4088
+      DEC   2184
+      DEC  28672
+*        6
+      DEC  12352
+      DEC -32528
+      DEC -30584
+      DEC  28672
+*        7
+      DEC  -2040
+      DEC   4128
+      DEC  16448
+      DEC  16384
+*        8
+      DEC  28808
+      DEC -30608
+      DEC -30584
+      DEC  28672
+*        9
+      DEC  28808
+      DEC -30600
+      DEC   2064
+      DEC  24576
+*        :
+      DEC      0
+      DEC  12336
+      DEC     48
+      DEC  12288
+*        ;
+      DEC      0
+      DEC   8192
+      DEC   8224
+      DEC  16384
+*        >
+      DEC   2064
+      DEC   8256
+      DEC   8208
+      DEC   2048
+*        =
+      DEC      0
+      DEC    248
+      DEC    248
+      DEC      0
+*        <
+      DEC  16416
+      DEC   4104
+      DEC   4128
+      DEC  16384
+*        ?
+      DEC  24720
+      DEC   4128
+      DEC   8192
+      DEC   8192
+      HED *** JOB PROCESSOR REV-C MODIFICADO ***
+AAD71   JMP 1111B     
+        OCT 043516    
+        OCT 047522    
+        OCT 042504    
+AAD75   DEF AAD71     
+AAD76   OCT 177752    
+AAD77   NOP     
+        LDA 0042B     
+        STA ADD30     
+        LDA AHE15     
+        STA ACH33     
+        LDB 0121B     
+AAE05   LDA ACH33,I     
+        JSB ABH46     
+        ISZ ACH33     
+        ISZ ADD30     
+        JMP AAE05     
+        JMP AAD77,I     
+AAF05   NOP     
+        JSB ACA32     
+        ADB ABB05     
+        RRL 08    
+        ALF,ALF     
+        JMP AAF05,I     
+AAF13   OCT 000027    
+AAF14   LDA 0105B     
+        SZA,RSS     
+        JMP AHE20     
+AAF17   LDB 0057B     
+        LDA AAD75     
+        JSB ACC47     
+        JMP AAC25     
+AAF23   LDA 0122B     
+        JSB ABC10     
+        JMP ADF41     
+        LDA ABD53     
+        CPA 0055B     
+        JMP AGA47     
+        CPA 0056B     
+        JMP AGA47     
+        JSB AAF52     
+        LDA ABD53     
+        LDB 0121B     
+        ADB 0052B     
+        ADB 0000B     
+        LDB 0001B,I     
+        SZB     
+        JMP AAF47     
+AAF43   LDA AAF45     
+        JMP ADF42     
+AAF45   DEF ADF63     
+AAF46   LDA 0054B     
+AAF47   LDB ABA64     
+        JSB ABH46     
+        JMP AAC25     
+AAF52   NOP     
+        SZA,RSS     
+        JMP AAF52,I     
+        IOR ABB04     
+        STA ADD30     
+        JSB EXEC    
+        DEF AAF63     
+        CLE,SLA     
+        DEF ADD30     
+AAF63   JMP AAF52,I     
+AAF64   JSB ACD57     
+        JSB ACH33     
+        LDA AHH43     
+        SZA,RSS     
+AAF70   JSB ACA21     
+        JMP AAF75     
+        JSB ACF53     
+        ISZ ACF25     
+        JMP AAF70     
+AAF75   LDA 0160B     
+        CLB     
+        STB AAG56     
+        RRR 08    
+        SZB     
+        INA     
+        JSB ACG27     
+        JMP AAG53     
+        JSB ACA32     
+AAG06   STA AAG75     
+        STB AAG74     
+        LDA AAG63     
+        LDB 0065B     
+        JSB ACC47     
+        LDA 0115B     
+        ALF,ALF     
+        AND 0074B     
+        STA AAG57     
+AAG17   ISZ AAG57     
+AAG20   LDA AAG57     
+        JSB ACG27     
+        JMP AAG50     
+        CPA AAG57     
+        JMP AAG17     
+AAG25   LDB AAG56     
+        STA AAG56     
+        SZB     
+        JMP AAG34     
+        LDB 0055B     
+        LDA AAG77     
+        JSB ACC47     
+AAG34   LDA AAG57     
+        JSB ACA32     
+        STB AAG74     
+        STA AAG75     
+        LDA AAG76     
+        LDB 0055B     
+        JSB ACC47     
+        ISZ AAG57     
+        LDA AAG57     
+        CPA AAG56     
+        JMP AAG20     
+        JMP AAG34     
+AAG50   SZB     
+        JMP AAG25     
+        JMP AAC25     
+AAG53   LDB ABA74     
+        LDA ABA75     
+        JMP AAG06     
+AAG56   BSS 0001    
+AAG57   BSS 0001    
+AAG60   NOP     
+AAG61   NOP     
+AAG62   NOP     
+AAG63   DEF AAG64     
+AAG64   IOR 0523B     
+        OCT 052040    
+        OCT 053517    
+        CPA 1113B     
+        XOR 0124B     
+        CPA 1101B     
+        ADA 1513B     
+        XOR 0075B     
+AAG74   XOR 0040B     
+AAG75   XOR 0040B     
+AAG76   DEF AAG74     
+AAG77   DEF AAH00     
+AAH00   ADA 1101B     
+        OCT 042075    
+* 
+*  MENSAGENS E POSICOES AUXILIARES
+* 
+* 
+      SPC 1 
+SV2   BSS 2 
+N58   DEC -58 
+P14   DEC 14
+P16   DEC 16
+P18   DEC 18
+P19   DEC 19
+P21   DEC 21
+P23   DEC 23
+P60   DEC 60
+D10E4 DEC 10000 
+DEFIN DEF INBUF 
+ENDJM DEF BUFJM+2 
+EBHP2 DEF BUFHP+9 
+EXX   DEF BUFJM+2 
+* 
+      SPC 2 
+* 
+BUFRT ASC 19,TEMPO TOTAL DO JOB =XXXX MIN. XX.X SEC 
+BUFET ASC 19,TEMPO DE EXECUCAO  =XXXX MIN. XX.X SEC 
+BUFVP ASC 18,VALOR DO PROCESSAMENTO: CR$999999,99 
+BUFVT ASC 18,VALOR TOTAL ACUMULADO : CR$999999,99 
+BUFCA ASC 18,CREDITO DISPONIVEL    : CR$999999,99 
+* 
+BEOJ  ASC 6,  END JOB 
+LSD   ASC 6,*LSD-EPUSP* 
+BUFJM ASC 6,JOB-XXXXXXX 
+ASTER ASC 6,*********** 
+BUFLA ASC 21,LABORATORIO DE SISTEMAS DIGITAIS-EPUSP-DEE 
+BUFHP ASC 15,SISTEMA HP-2000A  NN/NN/NNNN 
+HORAS ASC 2,XXH 
+MIN   ASC 3,XXMIN 
+SEG   ASC 3,XXSEG 
+BFI   ASC  8,FORMATO INVALIDO 
+BNCA  ASC 14,NUMERO NAO CONSTA DO ARQUIVO 
+BCNC  ASC 16,CODIGO NAO CORRESPONDE AO NUMERO 
+ULT   ASC 14,ULTRAPASSOU LIMITE DE TEMPO
+ULJ   ASC 14,ULTRAPASSOU LIMITE DE JOBS 
+BNV   ASC 14,PODE PROCESSAR MAIS XX VEZES 
+AAH43   DEF AAH44     
+AAH44   ADA 0007B     
+AAH76   DEF AAH77,I     
+AAH77 DEF COMNT 
+        DEF ADB20     
+        DEF AAF14     
+        DEF ABB11     
+        DEF ABD05     
+        DEF ABD05     
+        DEF ABC33     
+        DEF AAA66     
+        DEF ABF47     
+        DEF ABH57     
+        DEF ABE20     
+        DEF ABE23     
+        DEF ABG52     
+        DEF AAF23     
+        DEF AAF46     
+        DEF AAF75     
+        DEF ADE73     
+        DEF AEG01     
+        DEF AFE00     
+      DEF PURGE 
+        DEF AGF12     
+        DEF AGB16     
+        DEF AGB16     
+        DEF AHA14     
+        DEF AFH43     
+ABA30   OCT 177747    
+ABA31   DEF ABA32     
+ABA32   ADA 1517B     
+ABA33   ADA 0502B     
+        OCT 042101    
+        OCT 042521    
+        OCT 042116    
+        OCT 052520    
+        OCT 046125    
+        CPA 0101B     
+        ADB 1106B     
+        CPA 0122B     
+        CPA 0104B     
+        ADA 0504B     
+        CPA 1125B     
+ABA47   ADA 1101B     
+ABA50   OCT 052131    
+ABA51   OCT 052122    
+        CPA 1524B     
+        OCT 046111    
+        OCT 042125    
+ABA55   CPA 0125B     
+        OCT 042504    
+ABA57   CPA 1517B     
+        CPA 1501B     
+ABA61   OCT 047506    
+        CLA,INA,SZA     
+ABA63   OCT 000106    
+ABA64   OCT 000111    
+ABA65   OCT 000101    
+ABA66   OCT 000124    
+ABA67   OCT 000110    
+ABA70   OCT 000113    
+ABA71   OCT 000267    
+ABA72   OCT 000236    
+ABA73   OCT 042512    
+ABA74   OCT 047117    
+ABA75   OCT 047105    
+ABA76   OCT 177676    
+ABA77   OCT 000015    
+ABB00   ARS,SLA,ALS     
+ABB01   OCT 176650    
+ABB02   CLE,SLA,RAL     
+ABB03   OCT 000400    
+ABB04   OCT 000700    
+ABB05   OCT 177000    
+ABB06   OCT 001106    
+ABB07   OCT 100000    
+ABB10   CLC 00B     
+* 
+*  COMENTARIO (COMMENT) 
+* 
+COMNT LDB END.     IMPRIME NA TTY SE
+      LDA BATCH    ESTAVA EM DATCH E
+      CPA SYSTY    NA PRINTER SE
+      ADB .+5      ESNTROU PELA TTY.
+      STB LU
+      JSB EXEC
+      DEF *+5 
+      DEF .-2 
+LU    NOP 
+      DEF 123B,I
+      DEF AFC63 
+      JMP RNS 
+END.  OCT 54
+ABB11   LDA 0120B     
+        JSB ABC10     
+        NOP     
+ABB14   LDA ABD53     
+        ADA 0052B     
+        MPY 0066B     
+        ADA 0117B     
+        ADA 0055B     
+        STA ABD55     
+        LDA ABD53     
+        JSB ACA32     
+        STA ABB74     
+        LDA ABD55,I     
+        LDB ABD61     
+        SSA     
+        LDB ABD60     
+        STB ABC03     
+        RAL,RAL     
+        LDB ABD61     
+        SLA     
+        LDB ABD62     
+        STB ABC04     
+        AND ABD66     
+        ADA ABD63     
+        STA ABC06     
+        LDA ABD55,I     
+        AND 0072B     
+        JSB ACA36     
+        STA ABB77     
+        ISZ ABD55     
+        LDA ABD55,I     
+        RAL,RAL     
+        AND 0056B     
+        ADA ABD64     
+        STA ABC07     
+        LDA ABD55,I     
+        AND AFH54     
+        ALF,ALF     
+        JSB ACA36     
+        STA ABC02     
+        LDA ABB71     
+        LDB ABD67     
+        JSB ACC47     
+        ISZ ABD53     
+        ISZ ABD54     
+        JMP ABB14     
+        JMP AAC25     
+ABB71   DEF ABB72     
+ABB72   OCT 042521    
+        OCT 052040    
+ABB74   CPB 0130B     
+        XOR 0103B     
+        ADB 0040B     
+ABB77   CPB 0130B     
+        XOR 0104B     
+        OCT 053122    
+ABC02   CPB 0130B     
+ABC03   XOR 0104B     
+ABC04   XOR 0122B     
+        XOR 0125B     
+ABC06   CPB 0040B     
+ABC07   CPA 1530B     
+ABC10   NOP     
+        CMA,INA     
+        STA ABD54     
+        CLA,INA     
+        STA ABD53     
+        JSB ACA21     
+        JMP ABC10,I     
+        ISZ ABC10     
+        STA ABD53     
+        SZA,RSS     
+        JMP AAF43     
+        ADA ABD54     
+        SZA,RSS     
+        JMP ABC30     
+        SSA,RSS     
+        JMP AAF43     
+ABC30   CCA     
+        STA ABD54     
+        JMP ABC10,I     
+ABC33   LDA 0121B     
+        STA ABD55     
+        LDA 0122B     
+        JSB ABC10     
+        JMP ABC67     
+        LDA ABD53     
+        ADA 0121B     
+        ADA 0052B     
+        STA ABD55     
+        ISZ ACF25     
+        JSB ACA21     
+        JMP ABC67     
+        JSB ABC57     
+        LDB ABD53     
+        ADB 0047B     
+        SSB     
+        JMP AAF43     
+        LDB ABD55     
+        JSB ABH46     
+        JMP AAC25     
+ABC57   NOP     
+        CMA,INA     
+        ADA 0120B     
+        SSA     
+        JMP AAF43     
+        CMA,INA     
+        ADA 0120B     
+        JMP ABC57,I     
+ABC67   LDA ABD53     
+        JSB ACA32     
+        STA ABD47     
+        LDA ABD55,I     
+        JSB ACA32     
+        STA ABD52     
+        ISZ ABD53     
+        ISZ ABD55     
+        LDA ABD45     
+        LDB 0060B     
+        JSB ACC47     
+        ISZ ABD54     
+        JMP ABC67     
+        JMP AAC25     
+ABD05   LDA 0120B     
+        JSB ABC10     
+        JMP ADF41     
+        LDA ABD53     
+        CPA 0121B,I     
+        JMP AAF43     
+        JSB ABC57     
+        ADA 0052B     
+        MPY 0066B     
+        ADA 0117B     
+        ADA 0056B     
+        STA ABD55     
+        ADA 0052B     
+        LDA 0000B,I     
+        AND 0072B     
+        STA 0001B     
+        LDA 0154B     
+        ALF,RAL     
+        AND 0071B     
+        CPA 0001B     
+        JMP AAF43     
+        LDA ACE65     
+        CLB     
+        CPA ABD65     
+        INB     
+        LDA ABD55,I     
+        RAL,RAL     
+        RRR 02    
+        LDB ABD55     
+        JSB ABH46     
+        JMP AAC25     
+ABD45   DEF ABD46     
+ABD46   OCT 046125    
+ABD47   XOR 0040B     
+        XOR 0105B     
+        CPA 0524B     
+ABD52   XOR 0040B     
+ABD53   NOP     
+ABD54   NOP     
+ABD55   NOP     
+ABD56   OCT 000126    
+ABD57 DEF AHH43+3 
+ABD60   XOR 0104B     
+ABD61   XOR 0060B     
+ABD62   XOR 0122B     
+ABD63   IOR 0040B     
+ABD64   CPA 1460B     
+ABD65   OCT 042116    
+ABD66   CCA     
+ABD67   OCT 000016    
+ABD70   NOP     
+        ISZ ACF25     
+        LDA ACF25,I     
+        SZA,RSS     
+        JMP ABD70,I     
+        ISZ ABD70     
+        LDB ACF25     
+        INB     
+        LDB 0001B,I     
+        SSB,RSS     
+        JMP ABE05     
+        ISZ ABD70     
+        JMP ABD70,I     
+ABE05   CPB 0054B     
+        RSS     
+        JMP AAF43     
+        JSB ACC62     
+        JMP ABD70,I     
+ABE12   NOP     
+        CCA     
+        STA ABD55,I     
+        ISZ ABD55     
+        JMP ABE12,I     
+ABE17   DEF AHH57     
+ABE20   LDA ABE17     
+        JMP ABE24     
+ABE22   DEF AHH53     
+ABE23   LDA ABE22     
+ABE24   STA ABD55     
+        JSB ACH33     
+        LDA ABD55     
+        CLB     
+        STB 0000B,I     
+        INA     
+        STB 0000B,I     
+        INA     
+        STB 0000B,I     
+        INA     
+        STB 0000B,I     
+        JSB ABD70     
+        JMP ABF40     
+        JMP ABF24     
+        LDB 0043B     
+        JSB ACB07     
+        STA ABD55,I     
+        CMA,INA     
+        STA ABB71     
+        ISZ ABD55     
+        CCA     
+        STA ABD55,I     
+        ISZ ACF25     
+        JSB ABD70     
+        JMP ABF11     
+        JMP ABE72     
+        LDB 0043B     
+        JSB ACB07     
+        STA ABD55,I     
+        ADA ABB71     
+        SSA     
+        JMP AFA04     
+        ISZ ABD55     
+        ISZ ACF25     
+        JSB ABD70     
+        JMP ABF11     
+        JMP ABE73     
+        JMP AAF43     
+ABE72   ISZ ABD55     
+ABE73   CPA ADC34     
+        JMP ABE77     
+        ISZ ABD55     
+        JMP ABF05     
+ABE77   JSB ABE12     
+        ISZ ACF25     
+        JSB ABD70     
+        JMP ABF11     
+        RSS     
+        JMP AAF43     
+ABF05   CPA ABF44     
+        RSS     
+        JMP AAF43     
+ABF10   JSB ABE12     
+ABF11   JSB ACH62     
+        CLA,INA     
+        LDB ABD55     
+        CMB,INB     
+        ADB ABE17     
+        SSB,RSS     
+        RAR     
+        IOR 0113B     
+        LDB ABA70     
+        JSB ABH46     
+        JMP AAC25     
+ABF24   CPA ABF44     
+        JMP ABF34     
+        CPA ADC34     
+        RSS     
+        JMP AAF43     
+        JSB ABE12     
+        JSB ABE12     
+        JMP ABE77     
+ABF34   LDA ABD55     
+        ADA 0056B     
+        STA ABD55     
+        JMP ABF10     
+ABF40   JSB ABE12     
+        JSB ABE12     
+        JSB ABE12     
+        JMP ABF10     
+ABF44   OCT 000114    
+ABF45   OCT 000116    
+ABF46   OCT 000454    
+ABF47   JSB ADE07     
+        JMP ADF41     
+        SZA,RSS     
+        JMP ABG16     
+        LDB 0000B     
+        ADB 0055B     
+        LDA 0001B,I     
+        AND 0073B     
+        CPA 0064B     
+        RSS     
+        JMP AAF43     
+        INB     
+        LDA 0001B,I     
+        LDB ABA66     
+        JSB ABH46     
+        JSB ABH46     
+        JMP AAC25     
+ABF70   NOP     
+        STA ABG05     
+        STB ABG13     
+        JSB ACH33     
+        ISZ ACF25     
+        LDB ACF25,I     
+        SZB,RSS     
+        JMP ADF41     
+        ISZ ACF25     
+        LDA ACF25,I     
+        STA ABD54     
+        STB ABD55     
+        JSB ADC35     
+ABG05   OCT 000115    
+        SZA     
+        JMP ABG20     
+        LDA ABD54     
+        LDB ABD55     
+        JSB ADC35     
+ABG13   OCT 000114    
+        SZA     
+        JMP ABG20     
+ABG16   JSB AED17     
+        JMP ADF44     
+ABG20   STA ADD30     
+        ADA 0055B     
+        LDA 0000B,I     
+        AND 0073B     
+        CPA 0056B     
+        JMP ABG31     
+        LDA ABG30     
+        JMP ADF42     
+ABG30   DEF ADF70     
+ABG31   LDB ABH56     
+        LDA ABG51     
+        STA ACD34     
+ABG34   LDA ADD30,I     
+        JSB ABH46     
+        ISZ ADD30     
+        ISZ ACD34     
+        JMP ABG34     
+        CLA     
+        LDB ABD56     
+        JSB ABH46     
+        JSB ABH46     
+        JSB ABH46     
+        JSB ABH46     
+        JSB ABH46     
+        JMP ABF70,I     
+ABG51   OCT 177765    
+ABG52   LDA ABH55     
+        LDB ABH54     
+        JSB ABF70     
+        ISZ ACF25     
+        LDA ACF25,I     
+        SZA     
+        JMP ABG63     
+ABG61   LDA 0046B     
+        JMP ABG72     
+ABG63   LDA ACF25     
+        INA     
+        LDA 0000B,I     
+        SSA,RSS     
+        JMP ABG61     
+        LDB 0041B     
+        JSB ACB07     
+ABG72   STA ADD30     
+        LDB ACF25,I     
+        SZB,RSS     
+        JMP ABH17     
+        SSA    
+        JMP ABH02     
+        ISZ ACF25     
+        ISZ ACF25     
+ABH02   LDA ACF25,I     
+        SZA,RSS     
+        JMP ABH17     
+        JSB ACC62     
+        ISZ ACF25     
+        CPA ABF45     
+        LDA 0051B     
+        ADA ACF25,I     
+        CPA 0052B     
+        RSS     
+        JMP AAF43     
+        LDB ABA72     
+        JSB ABH46     
+ABH17   LDA 0106B     
+        ELA,CLE,ERA     
+        LDB 0107B     
+        ADB ABF46     
+        SSB,RSS     
+        INA     
+        STA ABG05     
+        LDB ABA63     
+        INB     
+        LDA ABB01     
+        JSB ABH46     
+        LDA ADD30     
+        SSA     
+        CMA,INA     
+        ADA ABG05     
+        JSB ABH46     
+        LDA ABG05     
+        LDB ABA63     
+        JSB ABH46     
+ABH42   JSB EXEC    
+        DEF ABH45     
+        DEF ABH45     
+ABH45   OCT 177754    
+ABH46   NOP     
+        JSB EXEC    
+        DEF ABH52     
+        DEF ABH53     
+ABH52   JMP ABH46,I     
+ABH53   OCT 177755    
+ABH54   OCT 000114    
+ABH55   OCT 000115    
+ABH56   OCT 000141    
+ABH57   LDB ABH55     
+        LDA ABH54     
+        JSB ABF70     
+        LDB 0101B     
+        SZB     
+        JMP ACA03     
+        LDA 0160B     
+        RRL 08    
+        SZA     
+       INB     
+        CMB,INB     
+        LDA 0157B     
+        AND 0074B     
+        ADB 0000B     
+        SSB     
+        JMP ACA03     
+        ALF,ALF     
+        LDB ABA65     
+        JSB ABH46     
+        JSB ABH46     
+ACA03   LDA 0046B     
+        STA ABD54     
+        LDA ABD56     
+        STA ABD55     
+ACA07   JSB ACA21     
+ACA10   JMP ABH42     
+        LDB ABD55     
+        JSB ABH46     
+ACA13   ISZ ABD55     
+        ISZ ACF25     
+        ISZ ABD54     
+        JMP ACA07     
+        JMP ABH42     
+ACA20   XOR 0000B     
+ACA21   NOP     
+        ISZ ACF25     
+        LDA ACF25,I     
+        SZA,RSS     
+        JMP ACA21,I     
+        LDB 0041B     
+        JSB ACB07     
+        ISZ ACA21     
+        JMP ACA21,I     
+ACA32   NOP     
+        LDB 0065B     
+        JSB ACA42     
+        JMP ACA32,I     
+ACA36   NOP     
+        LDB 0063B     
+        JSB ACA42     
+        JMP ACA36,I     
+ACA42   NOP     
+        STB ACB02     
+        LDB ACB00     
+        STB ACB04     
+        STB ACB05     
+        STB ACB06     
+        LDB ACB03     
+        ADB 0056B     
+ACA52   ADB 0052B     
+        STB ACB01     
+        SZA,RSS     
+        JMP ACA75     
+        CLB     
+        DIV ACB02     
+        ADB ACB01,I     
+        STB ACB01,I     
+        SZA,RSS     
+        JMP ACA75     
+        CLB     
+        DIV AC02     
+        BLF,BLF     
+        ADB ACB01,I     
+        STB ACB01,I     
+        LDB ACB01     
+        JMP ACA52     
+ACA75   LDA ACB06     
+        LDB ACB05     
+        JMP ACA42,I     
+ACB00   IOR 0060B     
+ACB01   NOP     
+ACB02   NOP     
+ACB03   DEF ACB04     
+ACB04   NOP     
+ACB05   NOP     
+ACB06   NOP     
+ACB07   NOP     
+        STB ACC40     
+ACB11   LDA ACF25,I     
+        STA ACC42     
+        LDA ACF25     
+        INA     
+        LDA 0000B,I     
+        SSA,RSS     
+        JMP ACB76     
+        ELA,CLE,ERA     
+        CMA,INA     
+       STA ACC37     
+        CLA     
+ACB24   STA ACC43     
+        LDA ACC42     
+        JSB ACC62     
+        ISZ ACC42     
+        ADA ACC46     
+        LDB ACC40     
+        SSA     
+        JMP ACB76     
+        ADB 0000B     
+        SSB,RSS     
+        JMP ACB76     
+        STA ACC41     
+        LDA ACC43     
+        CLE,ELA     
+        ELA,SLA     
+        JMP ACB64     
+        SEZ     
+        JMP ACB64     
+        LDB ACC40     
+        CPB 0041B     
+        ADA ACC43     
+        ELA,SLA     
+        JMP ACB64     
+        ADA ACC41     
+        SEZ     
+        JMPACB64     
+        ISZ ACC37     
+        JMP ACB24     
+        STA ACC43     
+        SSA     
+        CPB 0043B     
+        JMP ACB07,I     
+ACB64   LDA ACB66     
+        JMP ACC02     
+ACB66   DEF ACB67     
+ACB67   OCT 047125    
+        OCT 046502    
+        OCT 042522    
+        XOR 0117B     
+        OCT 053105    
+        CPA 1106B     
+        OCT 046117    
+ACB76   LDA ACA21     
+        CPA ACC44     
+        JMP ACC15     
+ACC01   LDA ACC05     
+ACC02   LDB 0062B     
+        JSB ACC47    
+        JMP ADF44     
+ACC05   DEF ACC06     
+ACC06   ADB 0514B     
+        OCT 046105    
+        OCT 043501    
+        OCT 046040    
+        OCT 042111    
+        OCT 043511    
+        OCT 052040    
+ACC15   LDA ACF25,I     
+        JSB ACC62     
+        CPA ACF50     
+        RSS     
+        JMP ACC01     
+        ISZ ABD55     
+        LDA ACF25     
+        INA     
+        LDB 0000B,I     
+        CPB 0054B     
+        JMP ACC34     
+        ADB ACC45     
+       STB 0000B,I	     
+        ISZ ACF25,I     
+        JMP ACB11     
+ACC34   ISZ ABD54     
+        JMP ACA13     
+        JMP ABH42     
+ACC37   NOP     
+ACC40   NOP     
+ACC41   NOP     
+ACC42   NOP     
+ACC43   NOP     
+ACC44   DEF ACA10     
+ACC45   OCT 077777    
+ACC46   OCT 177720    
+ACC47   NOP     
+        STA ACC56     
+      STA BIP 
+        STB ACC61     
+        JSB EXEC    
+      DEF *+5 
+        OCT 000051    
+        OCT 000054    
+ACC56   DEF ACC56     
+        DEF ACC61     
+      LDA BATCH 
+      CPA SYSTY 
+      JMP ACC47,I 
+      LDA ACC61 
+      JSB IMPRM 
+BIP   NOP 
+ACC60   JMP ACC47,I     
+ACC61   NOP     
+ACC62   NOP     
+        CLE,ERA     
+        LDA 0000B,I     
+        SEZ,RSS     
+        ALF,ALF     
+        AND 0074B     
+        JMP ACC62,I     
+ACC71   NOP     
+        STB ACD32     
+        AND 0074B     
+        CMA,INA     
+        STA ACD33     
+        LDA ACC71,I     
+        STA ACD34     
+        ISZ ACC71     
+        LDB ACD33     
+        SZB,RSS     
+        JMP ACC71,I     
+ACD04   LDB ACD34     
+        CLE,ERB     
+        LDA 0001B,I     
+        SEZ,RSS     
+        ALF,ALF     
+        AND 0074B     
+        STA ADD30     
+        LDB ACD32     
+        CLE,ERB     
+        LDA 0001B,I     
+        SEZ,RSS     
+        ALF,ALF     
+        AND 0075B     
+        IOR ADD30     
+        SEZ,RSS     
+        ALF,ALF     
+        STA 0001B,I     
+        ISZ ACD32     
+        ISZ ACD34     
+        ISZ ACD33     
+        JMP ACD04     
+        JMP ACC71,I     
+ACD32   NOP     
+ACD33   NOP     
+ACD34   NOP     
+ACD35   NOP     
+        STA ACD34     
+        LDA ACD35,I     
+        ISZ ACD35     
+        SZA,RSS     
+        JMP ACD35,I     
+        CMA,INA     
+        STA ADD30     
+        ADA ABB03     
+        SSA     
+        JMP ACD35,I     
+ACD50   LDA ACD34,I     
+        STA 0001B,I     
+        INB     
+        ISZ ACD34     
+        ISZ ADD30     
+        JMP ACD50     
+        JMP ACD35,I     
+ACD57   NOP     
+        LDA AFC63     
+        ADA 0123B     
+        CLE,ELA     
+        STA ACF27     
+        CLA     
+        STA ACE64     
+        LDB ACE63     
+        STB ACF25     
+        CLE,ELB     
+        LDA 0123B     
+        CLE,ELA     
+        INA     
+        STA ACE00     
+        STA ACF26     
+        LDA 0055B     
+        JSB ACC71     
+ACE00   NOP     
+        JSB ACF33     
+ACE02   ISZ ACF25     
+        CPA ACF52     
+        JMP ACE44     
+        CPA ACF27     
+        JMP ACE44     
+ACE07   ISZ ACF26     
+        LDA ACF26     
+        CPA ACF27     
+        JMP ACE44     
+        STA ACF25,I     
+        JSB ACC62     
+        CPA ACF52     
+        JMP ACE07     
+        ISZ ACE64     
+        LDB ACE64     
+        CPB ACH32     
+        JMP ACE41     
+        ISZ ACF25     
+        LDB ACE62     
+        ADA ACF51     
+        SSA,RSS     
+        JMP ACE32     
+        ADA 0065B     
+        SSA     
+ACE32   ELB,CLE,ERB     
+        STB ACF25,I     
+        ISZ ACF26     
+        JSB ACF33     
+        ADB ACF25,I     
+        STB ACF25,I     
+        JMP ACE02     
+ACE41   LDB 0063B     
+        LDA ACE51     
+        JSB ACC47     
+ACE44   CLA     
+        STA ACF25,I     
+        LDA ACE63     
+        STA ACF25     
+        JMP ACD57,I     
+ACE51   DEF ACE52     
+ACE52   OCT 042530    
+        OCT 052122    
+        ADA 0440B     
+        CPA 0101B     
+        CPA 1101B     
+        OCT 046505    
+        OCT 052105    
+        CPA 1123B     
+ACE62   OCT 100001    
+ACE63   DEF ACE65     
+ACE64   BSS 0001    
+ACE65   BSS 0032    
+ACF25   NOP     
+ACF26   NOP     
+ACF27   NOP     
+ACF30   OCT 000160    
+ACF31   OCT 177760    
+ACF32   OCT 000161    
+ACF33   NOP     
+        CLB     
+ACF35   LDA ACF26     
+        CPA ACF27     
+        JMP ACF33,I     
+        JSB ACC62     
+        CPA ACF52     
+        RSS     
+        CPA ACF50     
+        JMP ACF33,I     
+        INB     
+        ISZ ACF26     
+        JMP ACF35     
+ACF50   OCT 000054    
+ACF51   OCT 177706    
+ACF52   CLE     
+ACF53   NOP     
+        STA ACF27     
+        JSB ACG27     
+        SZB     
+        RSS     
+        JMP ACF53,I     
+        LDA 0160B     
+        AND 0075B     
+        ALF,ALF     
+        CPA ACF27     
+        JMP ACG14     
+ACF66   LDA ACF27     
+        CLB     
+        RRR 04    
+        BLF     
+        ADA ACF32     
+        STA ACH26     
+        ADB ACF31     
+        CLA,INA     
+        RSS     
+ACF77   RAL     
+        ISZ 0001B     
+        JMP ACF77     
+        IOR ACH26,I     
+        LDB ACH26     
+        JSB ABH46     
+        JSB ACH33     
+        LDB ACH40     
+        LDA ACF30     
+        JSB ACD35     
+        OCT 000021    
+        JSB ACH62     
+        JMP ACF53,I     
+ACG14   INA     
+        JSB ACG27     
+        INA     
+        ALF,ALF     
+        STA 0001B     
+        LDA 0160B     
+        AND 0074B     
+        IOR 0001B     
+        LDB ACF30     
+        JSB ABH46     
+        JMP ACF66     
+ACG27   NOP     
+        STA ACH30     
+        CLB     
+        STB ACH31     
+        RRR 04    
+        BLF     
+        ADA ACF32     
+        STA ACH26     
+        ADB ACF31     
+        STB ACH27     
+        LDA 0157B     
+        AND 0074B     
+        CLB     
+        LSR 04    
+        ADA ACF32     
+        INA     
+        STA ACH25     
+        CMA,INA     
+        ADA ACH26     
+        SSA,RSS     
+        JMP ACH23     
+        LDA ACH26,I     
+        SZA,RSS     
+        JMP ACH06     
+        LDB ACH27     
+        ADB ACH32     
+        CMB,INB,SZB,RSS     
+        JMP ACG70     
+ACG63   RAL     
+        ISZ 0001B     
+        JMP ACG63     
+        RSS     
+ACG67   RAL     
+ACG70   CLB,INB     
+        SSA,RSS     
+        JMP ACH06     
+        ISZ ACH30     
+        ISZ ACH27     
+        JMP ACG67     
+        ISZ ACH26     
+        LDA ACH26     
+        CPA ACH25     
+        JMP ACH23     
+        LDA ACF31     
+        STA ACH27     
+        LDA ACH26,I     
+        JMP ACG70     
+ACH06   LDA 0102B     
+        SZA,RSS     
+        JMP ACH22     
+        ALF,ALF     
+        AND 0074B     
+        CMA,INA     
+        ADA ACH30     
+        SSA     
+        JMP ACH22     
+        LDA ACH30     
+        STA ACH31     
+        CLB,RSS     
+ACH22   ISZ ACG27     
+ACH23   LDA ACH30     
+        JMP ACG27,I     
+ACH25   NOP     
+ACH26   NOP     
+ACH27   NOP     
+ACH30   NOP     
+ACH31   NOP     
+ACH32   OCT 000020    
+ACH33   NOP     
+        LDA 0115B     
+        AND 0075B     
+        CLB,INB     
+        JSB ACH71     
+ACH40   DEF AHH20     
+        JMP ACH43     
+        JMP ACH33,I     
+ACH43   LDB AFH62     
+        LDA ACH46     
+        JMP ADB17     
+ACH46   DEF ACH47     
+ACH47   ADA 1101B     
+        OCT 042040    
+        OCT 042111    
+        CPA 1105B     
+        ADA 1524B     
+        CPA 1131B     
+        XOR 0117B     
+        CPA 1040B     
+        CPA 1531B     
+        CPA 1524B     
+        OCT 042515    
+ACH62   NOP     
+        LDA 0115B     
+        AND 0075B     
+        CLB,INB     
+        JSB ACH77     
+        DEF AHH20     
+        JMP ACH62,I     
+ACH71   NOP     
+        STA ADC24     
+        LDA ACH71     
+        STB ADC31     
+        LDB 0052B     
+        JMP ADA04     
+ACH77   NOP     
+        STA ADC24     
+        LDA ACH77     
+        STB ADC31     
+        LDB 0051B     
+ADA04   STA ADC30     
+        STB ADC27     
+        ISZ ADC30     
+        LDA 0000B,I     
+        STA ADA52     
+        LDA ADC24     
+        CLB     
+        LSL 08    
+        ALF,ALF     
+        STB ADC24     
+ADA16   STA ADC25     
+        ADA ADC31     
+        CMA,INA     
+        ADA 0116B     
+        SSA,RSS     
+        JMP ADA33     
+        LDA ADC25     
+        CMA,INA     
+        ADA 0116B     
+        STA ADC32     
+        CMA,INA     
+        ADA ADC31     
+        JMP ADA36     
+ADA33   LDA ADC31     
+        STA ADC32     
+        CLA     
+ADA36   STA ADC31     
+        LDA ADC24     
+        JSB ACG27     
+        JSB ADB12     
+        LDA ADC32     
+        ALF     
+        RAL,RAL     
+        STA ADC26     
+        JSB EXEC    
+        DEF ADA56     
+        DEF ADC27     
+        DEF ADC34     
+ADA52   NOP     
+        DEF ADC26     
+        DEF ADC24     
+        DEF ADC25     
+ADA56   RAR     
+        AND ADC27     
+       SLA     
+        JMP ADB61     
+        LDA ADC26     
+        ADA ADA52     
+        STA ADA52     
+        LDA ADC25     
+        ADA ADC32     
+        CPA 0116B     
+        RSS     
+        JMP ADB00     
+        ISZ ADC24     
+        LDA ADC24     
+        JSB ACG27     
+        JSB ADB12     
+        STA ADC24     
+        CLA     
+ADB00   LDB ADC31     
+        SZB     
+        JMP ADA16     
+        LDB ADC24     
+        BLF,BLF     
+        ADA 0001B     
+        LDB ADC27     
+        CPB 0052B     
+        ISZ ADC30     
+        JMP ADC30,I     
+ADB12   NOP     
+        LDA ADB33     
+        SZB,RSS     
+        JMP ADB76     
+        LDB 0065B     
+ADB17   JSB ACC47     
+ADB20   LDB 0061B     
+        LDA ADB24     
+        JSB ACC47     
+        JMP AAA72     
+ADB24   DEF ADB25     
+ADB25   ADB 1117B     
+        ADA 1040B     
+        ADA 0502B     
+        OCT 047522    
+        OCT 052105    
+        OCT 042041    
+ADB33   DEF ADB34     
+ADB34   OCT 047117    
+        XOR 0124B     
+        CPA 1101B     
+        ADA 1513B     
+        CPA 1440B     

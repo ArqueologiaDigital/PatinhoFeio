@@ -1,0 +1,1023 @@
+* COMPILADOR PATOL PARA O PATO FEIO - PASSO 1
+* AUTORES CHARLIE LIN E SEBASTIAO S. BARRETTO
+* VERSAO 1.0 - FEVEREIRO 1975
+@BLTC 
+ ORG /006 
+ PLA FAZTD
+IPRO DEFC 0 
+TSBU BLOC 100 
+TSBD BLOC 100 
+TENU BLOC 100 
+TEND BLOC 100 
+AU DEFC 0 
+AD DEFC 0 
+INDCM DEFC 0
+INDEX DEFC 0
+INDIN DEFC 0
+INDLA DEFC 0
+INDDI DEFC 0
+QUEFI DEFC 0
+BLOCO BLOC 80 
+* 
+*ROTINA QUE TRATA DO NOME,COMUN,EXTERNO,DIMENSAO,INTEIRO,ROTULO,
+* NA SEQUENCIA INDICADA 
+* 
+FAZTD PUG TUT 
+ CAR COMPU
+ SOMI -/0E TESTO
+ PLAZ .+2 SE
+. CARI 2 FOI
+ PLA ERRO DECLARADO 
+. CAR COMPD @QUAC 
+ SOMI -/20
+ PLAZ .+1 
+ PLA .-2
+. PUG TUT 
+      CAR  COMPU   TESTA SE MNEMONICO EXISTE. 
+      SOMI /FA
+      PLAZ .+1
+      PLA  .+2
+.     CAR  COMPD
+      SOMI /B0
+      PLAZ PROG 
+.     CAR  COMPU
+      SOMI /FA
+      PLAZ .+1
+      PLA  .+2
+.     CAR  COMPD
+      SOMI /4D
+      PLAZ SUBR 
+.     CAR  COMPU
+      SOMI /C4
+      PLAZ .+1
+      PLA  .+2
+.     CAR  COMPD
+      SOMI /4D
+      PLAZ SEGM 
+.     CARI 2
+      PLA  ERRO 
+PROG  CARI 5
+      PUG  PERF 
+      CAR  AUX
+      PUG  PERF 
+      PUG  PROX 
+      PLAZ ERRO 
+      PUG  EMPAC
+      PUG  CPAC 
+      PUG  COLOC
+ UM 
+ PUG INCP 
+      CAR  COMPU
+      PUG  PERF 
+      CAR  COMPD
+      PUG  PERF 
+      PLA  XCOM 
+SEGM  CARI 2
+      ARM  AUX
+      PLA  PROG 
+SUBR  CARI 5
+      PUG  PERF 
+      CARI 4
+      PUG  PERF 
+      PUG  PROX 
+      PLAZ ERRO 
+      PUG  EMPAC
+      PUG  CPAC 
+      PUG  COLOC
+ UM 
+ PUG INCP 
+ CARI /80 DEFINO QUE E  
+ SOM TSBU SUBROTINA 
+ ARM TSBU 
+      CAR  COMPU
+      PUG  PERF 
+      CAR  COMPD
+      PUG  PERF 
+      LIMP0 
+      ARM  CONT 
+.     PUG  PROX 
+ PLAZ .+1 
+      PUG  EMPAC
+      PUG  CPAC 
+      PUG  COLOC
+ UM 
+      PUG  INCP 
+      DEFC /DA
+CONT DEFC -1
+      INC 
+      ARM  CONT 
+      PLA  .-1
+. CAR CONT
+ SOMI -1
+ PLAN XCOM
+ CAR PPONT
+ TRI
+ CARX BLOCO 
+ SOMI -41 
+ PLAZ XCOM
+SEIS CARI 6 
+ PLA ERRO 
+* 
+*PARTE QUE TRATA DO COMUM  SE TIVER ALGUM.
+* 
+XCOM PUG TUT
+      CAR  COMPU
+      SOMI /CB
+      PLAZ .+1
+      PLA  XEXT 
+.     CAR  COMPD
+      SOMI /1D
+      PLAZ .+1
+      PLA  XEXT 
+.     PUG  PROX 
+      PLAZ ERRO 
+      PUG  EMPAC
+      PUG  CPAC 
+      PUG  COLOC
+      CAR  PPONT
+      TRI 
+      CARX BLOCO
+ SOMI -91 
+      PLAZ .+1
+      LIMP0 
+      TRE 
+      UM
+      PUG  SOMD    SOMA 1 AO CONTADOR.
+      PLA  .+2
+.     PUG  PROX 
+      PLAZ ERRO 
+ CAR PPONT
+ TRI
+ CARX BLOCO 
+ SOMI -93 
+ PLAZ *+4 
+ PLA SEIS 
+      PUG  DECBI   CONVERTE EM DUPLA PRECISAO.
+      DEFC /DA
+BD    DEFC 0
+      TRE 
+      DEFC /DA
+BU    DEFC 0
+      PUG  SOMD 
+.     ARM  AD 
+      TRE 
+      ARM  AU 
+      PUG  PROX 
+ PLAZ XCOM
+      PLA  .-3+4   NAO ACABOU A DECL. COM.
+* 
+*ROTINA DE TRATAMENTO DE EXTERNO .
+* 
+XEXT CAR AD 
+      PUG  PERF 
+ CAR AU 
+      PUG  PERF 
+ LIMP0
+ ARM AU 
+ ARM AD 
+* 
+*  GERA CHECKSUM E 4 FEED-FRAMES
+      PUG  GCKS 
+.     CAR  COMPU
+      SOMI /C1
+      PLAZ .+1
+      PLA  XDIM 
+.     CAR  COMPD
+      SOMI /FB
+      PLAZ .+1
+      PLA  XDIM 
+.     PUG  PROX 
+      PLAZ ERRO 
+      PUG  EMPAC
+      PUG  CPAC 
+      PUG  COLOC
+      UNEG
+      PUG  INCP 
+      PUG  PROX 
+      PLAZ .+1
+      PLA  .-1+4
+. PUG TUT 
+      PLA  .-4
+* 
+*ROTINA QUE TRATA DA DIMENSAO.
+* 
+XDIM CAR COMPU
+      SOMI -/3D 
+      PLAZ .+1
+      PLA  XINT 
+.     CAR  COMPD
+      SOMI -/24 
+      PLAZ .+1
+      PLA  XINT 
+.     PUG  PROX 
+      PLAZ ERRO 
+      PUG  EMPAC
+      PUG  CPAC 
+      PUG  COLOC
+      CAR  PPONT
+      TRI 
+      CARX BLOCO
+ SOMI -91 
+      PLAZ .+1
+      CARI 3
+      PLA  ERRO 
+.     PUG  PROX 
+      PLAZ ERRO 
+      PUG  DECBI
+      PUG  COLOE   COLOCO ENDERECO ANTIGO.
+ CARI 3 
+      PUG  INCP 
+      CAR  BD 
+      TRE 
+      CAR  BU 
+      PUG  SOMD 
+      ARM  AD      ACUMULANDO O CI, 
+      TRE          PARA O ENDERECO. 
+      ARM  AU 
+      PUG  PROX 
+      PLAZ .+1
+      PLA  .-2+4
+. PUG TUT 
+ PLA XDIM 
+* 
+*TRATA DO INTEIRO.
+* 
+XINT  CAR  COMPU
+      SOMI -/3D 
+      PLAZ .+1
+      PLA  XLAB 
+.     CAR  COMPD
+      SOMI -/C9 
+ PLAZ .+1 
+      PLA  XLAB 
+.     PUG  PROX 
+      PLAZ ERRO 
+      PUG  EMPAC
+      PUG  CPAC 
+      PUG  COLOC
+      PUG  COLOE
+      LIMP0 
+      PUG  INCP 
+      LIMP0 
+      TRE 
+      UM
+      PUG  SOMD 
+      ARM  AD 
+      TRE 
+      ARM  AU 
+      PUG  PROX 
+      PLAZ .+1
+      PLA  .-1+4
+. PUG TUT 
+      PLA  XINT 
+* 
+*TRATA DO ROTULO. 
+* 
+XLAB  CAR  COMPU
+      SOMI -/3D 
+      PLAZ .+1
+      PLA  FDD     FIM DOS DECLARACOES. 
+.     CAR  COMPD
+      SOMI -/F2 
+      PLAZ .+1
+      PLA  FDD
+.     PUG  PROX 
+      PLAZ ERRO 
+      PUG  DECBI
+      CAR  BU 
+      ARM  COMPD
+      CAR  BD 
+      ARM  COMPU
+      CAR  INDIN
+      TRI 
+      CAR  INDLA
+      PUG  PROC 
+      PLAZ .+1
+      CARI 4
+      PLA  ERRO 
+.     CAR  INDLA
+      TRI 
+      CAR  COMPU
+      ARMX TSBU 
+      CAR  COMPD
+      ARMX TSBD 
+ PUG COLOE
+ LIMP0
+ TRE
+ CARI 2 
+ PUG SOMD 
+ ARM AD 
+ TRE
+ ARM AU 
+ CARI 2 
+ PUG INCP 
+      PUG  PROX 
+      PLAZ .+1
+      PLA  .-2+4
+. PUG TUT 
+      PLA  XLAB 
+* 
+* FIM DOS DECLARACOES,GERACAO DOS BLOCOS. 
+* 
+FDD   CAR  CONT 
+ PLAN .+3 
+      CARI 5
+      PUG  PERF    GERACAO
+      CARI 6       DO 
+      PUG  PERF    BLOCO
+*                  DE 
+*          ENTRY- 
+      CAR  TSBU    POINT
+ NAND /7F 
+ CMP1 
+      PUG  PERF 
+      CAR  TSBD 
+      PUG  PERF 
+      CAR  CONT 
+      SOMI -1 
+      PLAN .+2
+      ARM  AUX
+      CAR  AU 
+      ARM  TZY+13 
+      CAR  AD 
+      ARM  TZY+12 
+      UM
+.     TRI 
+      CAR  AU 
+      ARMX TEND 
+      CAR  AD 
+ SOMI /80 DEFINE DUMMY
+      ARMX TENU 
+      LIMP0 
+      TRE 
+      CARI 2
+      PUG  SOMD 
+      ARM  AD 
+      TRE 
+      ARM  AU 
+      TRI 
+      INC 
+      SUS  AUX
+      PLA  .-1
+      CAR  AU 
+      ARM  TEND 
+      CAR  AD 
+      ARM  TENU 
+.     CAR  AD 
+      PUG  PERF 
+      CAR  AU 
+      PUG  PERF 
+      PUG  GCKS 
+ CARI 23
+      PLA  .+1+2   DE 
+. CARI 21 BLOCO DE EXTERNOS 
+      ARM  TEP     PRIMEIRO 
+      ARM  AUX     AS 
+      LIMP0        ROTINAS
+.     TRI          DO 
+      CARX TEP     SISTEMA. 
+      PUG  PERF    ROTINAS
+      TRI          NECESSARIAS
+      INC          PARA EXECUCAO
+      SUS  AUX     DAS
+      PLA  .-1     EXPRESSOES 
+      PUG  GCKS 
+      CAR  INDCM
+      CMP2
+      SOM  INDEX
+      PLAZ .+2
+      ARM  AUX     GERACAO
+      DE   1       DOS EXTERNOS DAS 
+      INC          ROTINAS
+      PUG  PERF    DO 
+ CARI 8 
+      PUG  PERF 
+      SUS  AUX
+      CAR  INDCM
+.     TRI 
+      CARX TSBU 
+      PUG  PERF 
+      CARX TSBD 
+      PUG  PERF 
+      TRI 
+      INC 
+      SUS  AUX
+      PLA  .-1
+ PUG GCKS 
+.     CAR  CONT 
+      PLAN .+3
+      PLAZ .+1
+      CARI 13 
+      PLA  .+1+2
+.     CARI 7
+      ARM  TZY
+      ARM  AUX
+      CAR  AU 
+      ARM  TZY+3
+      CAR  AD 
+      ARM  TZY+2
+      LIMP0 
+.     TRI 
+      CARX TZY
+      PUG  PERF 
+      TRI 
+      INC 
+      SUS  AUX
+      PLA  .-1
+      PLA  .+2
+. CARI 3
+      PUG  PERF 
+      CARI 10 
+      PUG  PERF 
+      CAR  AD 
+      PUG  PERF 
+      CAR  AU 
+      PUG  PERF 
+.     PUG  GCKS 
+ PLA /F80 
+* 
+* GERA CHECKSUM E 4 FEED FRAMES 
+* 
+GCKS  PLA  0
+      CAR  CKS
+      CMP2
+      PUG  PERF 
+      CARI 3
+      PUG  FEED 
+      PLA  GCKS 
+* 
+*TABELA DOS ENTRY-POINT 
+* 
+TEP   DEFC 0
+      DEFC 8
+ DEFC /0C CB[ 
+ DEFC /5B 
+ DEFC /0C CE[ 
+ DEFC /BB 
+ DEFC /49 RL[ 
+ DEFC /9B 
+      DEFC /48     RC[
+      DEFC /7B
+      DEFC /34     MA[
+      DEFC /3B
+      DEFC /36     MS[
+      DEFC /7B
+      DEFC /0A     BS[
+      DEFC /7B
+      DEFC /58     VD[
+      DEFC /9B
+      DEFC /35     LM[
+      DEFC /BB
+      DEFC /40     PC[
+      DEFC /7B
+      DEFC /48     RE[
+      DEFC /BB
+* 
+*BLOCO DE DADO SE FOR SUBROUTINA
+* 
+TZY   DEFC 0
+      DEFC 10 
+      DEFC 0
+      DEFC 0
+      DEFC /10
+      DEFC 0
+      DEFC /10
+      DEFC 0
+      DEFC /4F
+      DEFC /48     RE[
+      DEFC /BB
+      DEFC 0
+      DEFC 0
+      DEFC 0
+* 
+*ROTINA DE LEITURA DO TTY.
+* 
+LER   PLA  0
+      FNC  /31
+      FNC  /36
+.     SAL  /31
+      PLA  .-1
+      ENTR /30
+      CMP1
+      NAND /7F
+      CMP1
+      PLA  LER
+* 
+*LE UMA LINHA PELO TTY,ATE ENCONTRAR CR.CONTINUA
+*LENDO ATE ENCONTRAR LF.
+* 
+LELIN PLA  0
+      LIMP0        ZERO O INDICE,PARA 
+      ARM  PPONT   INICIALIZA OS
+      ARM  SPONT   PONTEIROS. 
+.     TRI          QUE SIRVA DE CONTADOR. 
+.     PUG  LER     TIRO OS FEED-FRAMES. 
+      PLAZ .-1     ZERO OS PONTEIROS. 
+ ARMX BLOCO 
+ SOMI -13 
+ PLAZ .+1 
+ SOMI -/72
+ PLAZ .+5 
+ SOMI /20 
+ PLAZ .+6 
+ TRI
+ INC
+ PLA .-2
+. TRI 
+      CMP2
+      ARM  UPONT   PONTEIRO PARA A ULTIMA 
+.     PUG  LER     POSICAO QUE FOI LIDO.
+      SOMI -10 LEIO ATE ENCONTRAR LF
+ PLAZ .+1 
+      PLA  .-1
+. CAR BLOCO 
+ SOMI -@* 
+ PLAZ .+1 
+ PLA LELIN
+. PUG ESCR
+ PLA LELIN+2
+. PUG LER 
+ SOMI -10 
+ PLAZ LELIN+2 
+ PLA .-1
+. SUS 0 
+ PLA .-7
+ PLA LELIN+2
+* 
+*DELIMITA O PROXIMO CAMPO SEPARADO POR BRANCO OU
+* VIRGULA.
+PROX  PLA  0
+      DEFC /DA     CARREGA O PRIMEIRO 
+PPONT DEFC 0       PONTEIRO.
+. ARM 0 
+      DEFC /D8
+UPONT DEFC 0       APONTA O ULTIMO GUARDADO.
+      PLAZ PROX    SE VOLTAR COM 0,FOI O
+      CARX BLOCO   ULTIMO CARATER.
+      SOMI -@0
+      PLAN .+1     TESTA SE E BRANCO
+      SOMI -43     OU VIRGULA,SE FOR, 
+      PLAN .+2     CONTINUA NA PROCURA
+* ESTA FORA DO LIMITE, CONTINUO.
+.     TRI 
+      INC 
+      PLA  .-2
+.     CAR  0
+      ARM  SPONT
+.     TRI 
+      CAR  0
+      SOM  UPONT
+      PLAZ .+2     SE VOLTA COM ZERO, 
+      CARX BLOCO   FOI O ULTIMO CARATER 
+      SOMI -@0
+      PLAN .+2     TESTA SE E BRANCO
+      SOMI -43     OU VIRGULA,SE FOR, 
+      PLAN .+1     PARA A PROCURA.
+      PLA  .+2
+.     TRI 
+      INC 
+ PLA .-2
+.     TRI 
+      ARM  PPONT
+      PLA  PROX 
+* 
+*IMPRIME O PROGRAMA FONTE NO CANAL B
+ESCR  PLA  0
+ DEFC /DA 
+LINHA DEFC -1 
+ INC
+ ARM LINHA
+      TRI 
+      LIMP0        IMPRIMO A LINHA. 
+.     TRI 
+      ARM  AUX
+      SOMI /9C     SOMO -100
+      PLAN .+1
+      TRI 
+      INC 
+      PLA  .-1
+.     TRI 
+      SOMI @0 
+      PUG  ESC
+      DEFC /DA
+AUX   DEFC 0
+      TRI 
+      LIMP0 
+.     TRI 
+ ARM AUX
+      SOMI /F6     SOMO -10.
+      PLAN .+1
+      TRI 
+      INC 
+      PLA  .-1
+.     TRI 
+      SOMI @0 
+      PUG  ESC
+      CAR  AUX
+      SOMI @0 
+      PUG  ESC
+      UM
+      PUG  SPACE
+ CAR AD 
+      PUG  HEXASC 
+ CAR AU 
+      DD   4
+      PUG  HEXASC 
+ CAR AU 
+      PUG  HEXASC 
+      UM
+      PUG  SPACE
+      LIMP0 
+ TRI
+. CARX BLOCO
+      PUG  ESC
+ TRI
+ INC
+ ARM 0
+ SOM UPONT
+ PLAZ .+1 
+      PLA  .-1
+.     PUG  VOLTA
+      PLA  ESCR 
+* 
+*ROTINA DE CONVERSAO BINARIO EM HEXA-ASC
+* 
+HEXASC PLA 0
+      NAND /0F
+      CMP1
+      ARM  AUX
+      SOMI /F6
+      PLAN .+2
+      SOMI @A 
+.     PUG  ESC
+      PLA  HEXASC 
+.     CAR  AUX
+      SOMI @0 
+      PLA  .-2
+* 
+* ROTINA DE SAIDA NO CANAL B
+* 
+ESC   PLA  0
+      SAI  /B0
+.     SAL  /B1
+      PLA  .-1
+      PLA  ESC
+* 
+*FAZ RETURN LINEFEED
+* 
+VOLTA PLA  0
+      CARI /0D
+      PUG  ESC
+      CARI /0A
+      PUG  ESC
+      PLA  VOLTA
+* 
+*ROTINA QUE COMPACTA 3 CARACTERES 
+* 
+CPAC  PLA  0
+      DEFC /DA
+TT    DEFC 0
+      DE   2
+      ARM  COMPU
+      DEFC /DA
+TD    DEFC 0
+      DD   3
+      NAND /03
+      CMP1
+      DEFC /D8
+COMPU DEFC 0
+      ARM  COMPU
+      CAR  TD 
+      DE   4
+      DE   1
+      ARM  COMPD
+      DEFC /DA
+TU    DEFC 0
+      NAND /1F
+      CMP1
+      DEFC /D8
+COMPD DEFC 0
+      ARM  COMPD
+      PLA  CPAC 
+* 
+*EMPACOTA 3 CARACTERES,OS 2 PRIMEIROS E O ULTIMO. 
+* 
+EMPAC PLA  0
+ LIMP0
+      ARM  TT 
+      ARM  TD 
+ DEFC /DA 
+SPONT DEFC 0
+      TRI 
+      CARX BLOCO
+ SOMI -@[ 
+ PLAN .+2 
+. PLA SEIS
+. SOMI 27 
+ PLAN .-2 
+ CARX BLOCO 
+      ARM  TU 
+      TRI 
+      INC 
+      ARM  0
+* INCREMENTA O INDICE 
+      CMP2
+      SOM  PPONT
+      PLAZ EMPAC
+      CARX BLOCO
+      ARM  TD 
+ SOMI -@[ 
+ PLAN .+2 
+. PLA SEIS
+. SOMI 26 
+ PLAN .-2 
+      TRI 
+      INC 
+      ARM  0
+      CMP2
+ SOM PPONT
+      PLAZ EMPAC
+      CAR  PPONT
+      TRI 
+      CARX BLOCO-1
+      ARM  TT 
+ SOMI -@[ 
+ PLAN .+2 
+. PLA SEIS
+. SOMI 26 
+ PLAN .-2 
+      PLA  EMPAC
+* 
+*COMPACTA 1 CARATER ALFABETICO E 1 NUMERICO EM 1 PALAVRA. 
+* 
+* 
+*COLOCA O SIMBOLO COMPACTADO NA TABELA
+* 
+COLOC PLA  0
+ LIMP0
+      TRI 
+      CAR  INDLA
+      PUG  PROC 
+      PLAZ .+1
+      CARI 4
+      PLA  ERRO 
+. PUG PROCM 
+ PLAN .+1 
+ CARI 5 
+ PLA ERRO 
+.     CAR  INDLA
+      TRI 
+      CAR  COMPU
+      ARMX TSBU 
+      CAR  COMPD
+      ARMX TSBD 
+      PLA  COLOC
+* 
+*INCREMENTA OS PONTEIROS ADEQUADOS -1-EXTERNAL 1-COMUM 0-INT  2-LABEL.
+* 
+INCP  PLA  0
+      PLAN .+1
+      PLAZ .+2
+ SOMI -2
+ PLAZ .+3 
+ SOMI -1
+ PLAZ YPY 
+      UM
+ SOM INDCM INCREMENTA O PONTEIRO DE COMUM 
+      ARM  INDCM
+.     UM
+ SOM INDEX INC. O PONTEIRO DE EXTERNO 
+      ARM  INDEX
+YPY UM
+ SOM INDDI
+ ARM INDDI
+.     UM
+ SOM INDIN INC. PONT. DE INTEIRO
+      ARM  INDIN
+. UM
+ SOM INDLA INC. PONT. ROTULO
+      ARM  INDLA
+      SOMI -100    TESTO SE ESTOUROU A TABELA.
+      PLAZ .+1
+      PLA  INCP 
+      UM
+      PLA  ERRO 
+* 
+*ROTINA QUE IMPRIME ERRO
+* 
+ERRO  ARM  AUX
+      CARI 3
+      TRI 
+.     CARX .+1
+      PUG  ESC
+      SUS  0
+      PLA  .-1
+      UM
+      PUG  SPACE
+      CAR  AUX
+      SOMI @0 
+      PUG  ESC
+ PLA FAZTD
+ LIMP0
+ ARM QUEFI
+.     DEFC @O 
+      DEFC @R 
+      DEFC @R 
+      DEFC @E 
+* 
+* DA N+1 ESPACOS
+* 
+SPACE PLA  0
+      TRI 
+      CARI /20
+.     PUG  ESC
+      SUS  0
+      PLA  .-1
+      PLA  SPACE
+* 
+*ROTINA DE PROCURA NAS TABELAS DE SIMBOLO.VALOR PROCURADO EM 
+*O INICIO DA TABELA ESTA NO INDICE  ,O FIM NO ACC.
+* 
+PROC  PLA  0
+      CMP2
+      ARM  SALV 
+.     CAR  0       COMPLEMENTA OS VALORES 
+      DEFC /D8     COMPACTADOS PROCURADOS.
+SALV  DEFC 0
+      PLAZ PROC 
+      CARX TSBU 
+ NAND /7F 
+ INC TIREI O BIT DE SINAL E CMP2. 
+      SOM COMPU
+      PLAZ .+1
+      PLA  .+2
+.     CARX TSBD 
+      CMP2
+      SOM  COMPD
+      PLAZ .+2
+.     TRI 
+      INC 
+      TRI 
+      PLA  .-3
+. CAR 0 
+      ARM  IPRO 
+      UNEG
+      PLA  PROC 
+* 
+*ROTINA QUE LE,DELIMITA,EMPACOTA,COMPACTA.
+* 
+TUT   PLA  0
+      PUG  LELIN
+ PUG ESCR 
+      PUG  PROX 
+      PLAZ ERRO 
+      PUG  EMPAC
+      PUG  CPAC 
+      PLA  TUT
+* 
+*ROTINA QUE SOMA EM DUPLA PRECISAO,PARTE MENOS SIGNIFICATIVO
+* NO  ACC. VOLTA COM PARTE MENOS SIGNIFICATIVO NO EXT.
+* 
+SOMD  PLA  0
+      LIM 
+ SOM AU 
+      TRE 
+      SV   0
+      SOMI 1
+ SOM AD 
+      PLA  SOMD 
+* 
+*ROTINA QUE CONVERTE DECIMAL-ASC EM BINARIO,EM DUPLA PRECISAO 
+* 
+DECBI PLA 0 
+ LIMP0
+ ARM BU 
+ ARM BD 
+ CAR SPONT
+ ARM 0
+ INC
+ CMP2 
+ SOM PPONT
+ ARM AUX
+. CARI1
+ ARM XPU
+ CARI 2 
+ ARM APZ
+ CAR BD 
+ TRE
+ CAR BU 
+. LIM 
+ GEV 1
+ TRE
+ GEV 1
+ TRE
+ SUS APZ
+ PLA .-1
+. LIM 
+ SOM BU 
+ TRE
+ SV 0 
+ SOMI 1 
+ SOM BD 
+ TRE
+ SUS XPU
+ PLA .-1
+ ARM BU 
+ LIM
+ CARX BLOCO 
+ SOMI -58 
+ PLAN .+2 
+. PLA SEIS
+. SOMI 10 
+ PLAN .-2 
+ CARX BLOCO 
+ NAND /0F 
+ CMP1 
+ SOM BU 
+ ARM BU 
+ TRE
+ SV 0 
+ SOMI 1 
+ ARM D 
+ TRI
+ INC
+ TRI
+ SUS AUX
+ PLA .-5
+ PLA DECBI
+XPU DEFC 0
+APZ DEFC 0
+* 
+*PERFURA FEED FRAME 
+* 
+FEED  PLA  0
+      TRE 
+      LIMP0 
+.     PUG  PERF 
+      SUS  1
+      PLA  .-1
+      PLA  FEED 
+* 
+*ROTINA DE PERFURACAO.
+* 
+PERF  PLA  0
+ ARM YYY+1
+ CAR QUEFI
+ PLAZ PERF
+YYY CARI 0
+      SAI  /80
+.     SAL  /81
+      PLA  .-1
+      DEFC /D8
+CKS   DEFC 0
+      ARM  CKS
+      PLA  PERF 
+* 
+* ROTINA QUE COLOCA O ENDERECO NA TAB.
+* 
+COLOE PLA  0
+      CAR  INDLA
+      TRI 
+      CAR  AU 
+      ARMX TEND 
+      CAR  AD 
+      ARMX TENU 
+      PLA  COLOE
+* 
+* ROTINA DE PROCURA MNEMONICO. -1-NAO ENCONTROU
+* 
+PROCM PLA  0
+      CARI 7
+      TRI 
+.     CAR  COMPU
+* 
+      SOMX TMU
+      PLAZ .+1
+      SUS  0
+      PLA  .-1
+      UNEG
+ PLA PROCM
+.     CAR  COMPD
+* 
+      SOMX TMD
+      PLAZ .+1
+   PLA .-2+6
+.     TRI 
+      PLA  PROCM
+TMU   DEFC -/05    ALP 1
+      DEFC -/00     ES 2
+      DEFC -/1E    GUP 3
+ DEFC -/06  ASE 4 
+      DEFC -/04    AEL 5
+      DEFC -/3C 
+ DEFC -/3D  ONE 
+      DEFC -/35    MIF 7
+TMD   DEFC -/90 
+      DEFC -/B3 
+      DEFC -/B0 
+      DEFC -/65 
+      DEFC -/AC 
+      DEFC -/BC 
+      DEFC -/C5 
+      DEFC -/26 
+ FIM 0

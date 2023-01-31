@@ -1,0 +1,139 @@
+ 1    
+ 50   
+ 2    
+SPI - SISTEMAS DE POTENCIA (REDES ELETRICAS DE POTENCIA)
+ 4    
+ 2    
+CEI - CIRCUITOS ELETRONICOS
+ 4    
+ 2    
+SCI - SISTEMAS DE COMUNICACAO
+ 4    
+ 2    
+SNI - SISTEMAS DE CONTROLE (AUTOMATICO)
+ 4    
+ 2    
+SAI - SISTEMAS ADMINISTRATIVOS (ORGANIZACAO E CONTABILIDADE)
+ 4    
+ 2    
+SMI - SISTEMAS DE ENGENHARIA MECANICA
+ 4    
+ 2    
+SDI - SISTEMAS DE ENGENHARIA DE PRODUCAO
+ 4    
+ 2    
+PVI - PROGRAMAS DIVERSOS
+ 4    
+ 2    
+MCI - MICROCIRCUITOS
+ 4    
+ 2    
+DEI - DISPOSITIVOS E EQUIPAMENTOS
+ 4    
+ 2    
+PCI - ENGENHARIA CIVIL
+ 4    
+ 2    
+SLI - LINGUAGENS (SIMULADORES)
+ 4    
+ 2    
+PMI - ENGENHARIA DE MINAS E PETROLIFERA
+ 4    
+ 4    
+ 4    
+ 4    
+ 4    
+ 4    
+ 4    
+ 4    
+ 1    
+ 13   
+ 1    
+ 0    
+ 4    
+ 2    
+CEI001
+ 1    
+ 2    
+ 1    
+ 37   
+ 2    
+CEI003
+ 1    
+ 2    
+ 1    
+ 37   
+ 2    
+DEI002
+ 1    
+ 2    
+ 1    
+ 25   
+ 2    
+DEI003
+ 1    
+ 2    
+ 1    
+ 20   
+ 2    
+PVI001
+ 1    
+ 2    
+ 1    
+ 5    
+ 2    
+PVI002
+ 1    
+ 2    
+ 1    
+ 7    
+ 2    
+PVI003
+ 1    
+ 2    
+ 1    
+ 1    
+ 2    
+PVI013
+ 1    
+ 2    
+ 1    
+ 11   
+ 4    
+ 2    
+SLI001
+ 1    
+ 2    
+ 1    
+ 30   
+ 4    
+ 4    
+ 4    
+ 4    
+ 4    
+ 4    
+ 4    
+ 4    
+ 4    
+ 4    
+ 4    
+ 4    
+ 4    
+ 4    
+ 4    
+ 4    
+ 4    
+ 4    
+ 4    
+ 4    
+ 4    
+ 4    
+ 4    
+ 4    
+ 4    
+ 4    
+ 4    
+ 3    
+
+DONE
+~

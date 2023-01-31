@@ -1,0 +1,1117 @@
+@BLTC
+*************************************
+*                                   *
+*                                   *
+*   CARREGADOR  RELOCAVEL DO        *
+*   COMPUTADOR  PATINHO  FEIO       *
+*                                   *
+*                                   *
+*     VERSAO - 1 JULHO/1975         *
+*                                   *
+* AUTOR-SEBASTIAC SANTIAGO BARRETTO *
+*                                   *
+*                                   *
+*************************************
+      ORG  /4
+      PLA  INTER
+      PLA  INIC
+*
+*  AREA DE VARIAVEIS
+*
+ENDC  DEFE 0    ENDERECO DE CARGA
+ENDEX DEFE 0    ENDERECO DE EXECUCAO
+COMOM DEFE 0    TAMANHO DA AREA DE COMMON
+TAM   DEFE 0    TAMANHO DO PROGRAMA
+EDB   DEFE 0    ENDERECO DO BLOCO ATUAL
+PEL   DEFE 0    PRIMEIRO ENDERECO LIVRE
+CKSUM DEFC 0    CHECKSUM DE LEITURA
+CONT  DEFC 0    NUMERO DE PAL./BLOCO
+CNP   DEFC 0    CONTADOR DE NUMERO DE ROTINAS
+*
+*  TABELAS
+*
+* 1- TABELA DE EXTERNOS
+TXU   BLOC 100  NUMERO DO PROGRAMA.
+TXD   BLOC 100  SIMBOLO
+TXT   BLOC 100  COMPACTACO.
+*
+* 2- TABELA DE ENTRY=POINTS
+TYU   BLOC 50   NUMERO DA ROTINA,
+TYD   BLOC 50   SIMBOLO
+TYT   BLOC 50   COMPACTADO.
+TYQ   BLOC 50   ENDERECO DO
+TYC   BLOC 50   ENTRY POINT.
+*
+* 3- TABELA DE NOMES DOS PROGRAMAS E ROTINAS.
+TNU   BLOC 30   NOME
+TND   BLOC 30   COMPACTADO.
+TNT   BLOC 30   NUMERO DE PALAVRAS
+TNQ   BLOC 30   DO PROGRAMA,
+*
+* BLOCO DE ARMAZENAMENTO
+* DO PROGRAMA ABSOLUTO
+*
+BLOCO BLOC 128
+*
+* BUFER DE PERFURACAO
+*
+BUFER BLOC 256
+*
+* MENSAGENS
+*
+BUF   DEFC 6
+      DEFC @E
+      DEFC @R
+      DEFC @R
+      DEFC @O
+      DEFC @ 
+      DEFC 10
+      DEFC @E
+      DEFC @N
+      DEFC @D
+      DEFC @.
+      DEFC @C
+      DEFC @A
+      DEFC @R
+      DEFC @G
+      DEFC @A
+      DEFC 13
+      DEFC @P
+      DEFC @R
+      DEFC @.
+      DEFC @P
+      DEFC @R
+      DEFC @I
+      DEFC @N
+      DEFC @C
+      DEFC @I
+      DEFC @P
+      DEFC @A
+      DEFC @L
+      DEFC 8
+      DEFC @L
+      DEFC @I
+      DEFC @B
+      DEFC @R
+      DEFC @A
+      DEFC @R
+      DEFC @Y
+      DEFC 12
+      DEFC @ 
+      DEFC @I
+      DEFC @N
+      DEFC @D
+      DEFC @E
+      DEFC @F
+      DEFC @I
+      DEFC @N
+      DEFC @I
+      DEFC @D
+      DEFC @O
+      DEFC 15
+      DEFC @P
+      DEFC @R
+      DEFC @I
+      DEFC @M
+      DEFC @.
+      DEFC @E
+      DEFC @N
+      DEFC @D
+      DEFC @.
+      DEFC @L
+      DEFC @I
+      DEFC @V
+      DEFC @R
+      DEFC @E
+      DEFC 7
+      DEFC @F
+      DEFC @A
+      DEFC @L
+      DEFC @T
+      DEFC @A
+      DEFC @ 
+*
+*
+*  ROTINAS AUXILIARES
+*
+*
+*
+*  ROTINA TRATADORA DE INTERRUPCAO
+*
+INTER SAL  /84
+      PLA  .+1
+      PARE *
+      PUL  *
+.     ARM  KA+4
+      TRI  *
+      ARM  KA+1
+      FNC  /81   LIMPA ESTADO
+      FNC  /84   LIMPA INTERRUPCAO
+      CAR  PDOIS
+      INC
+      ARM  PDOIS
+      ARM  0
+      CMP2
+      SOM  PUM
+      PLAZ KA
+      CARX BUFER
+      SAI  /80
+      CARI 0
+      TRI  *
+      CARI 0
+      PUL  *
+*
+*  ROTINA P/ LER UM BYTE DA FITA
+*
+LEUM  PLA  0
+      SAL  /E1
+      PLA  *-2
+      ENTR /E0
+      FNC  /E6
+      PLA  LEUM
+*
+*  ROTINA P/ LER NUMERO DE PALAVRAS
+*  DO BLOCO E GUARDAR EM CONT.
+*
+LENUC PLA  0
+      PUG  LEUM
+      PLAZ  *-2
+      ARM  CKSUM
+      SOMI  -1
+      ARM  CONT
+      PLA  LENUC
+*
+* ROTINA P/ LER UM BYTE DO BLOCO
+LEBYT PLA  0
+      PUG  LEUM
+      ARM  .+1+1
+      SOM  CKSUM
+      ARM  CKSUM
+.     CARI 0
+      PLA  LEBYT
+*
+* ROTINA F/ LER 2 BYTES
+*
+LED   PLA  0
+      PUG  LEBYT
+      TRE  *
+      PUG  LEBYT
+      PLA  LED
+*
+* ROTINA P/ ESCREVER RETURN E LINEFEED
+*
+RETUR PLA  0
+      CARI 13
+      PUG  SAI
+      CARI 10
+      PUG  SAI
+      PLA  RETUR
+*
+* ROTINA P/ ESCREVER UM CARACTER
+*
+SAI   PLA  0
+      SAL  /A1
+      PLA  *-2
+      SAI  /A0
+      PLA  SAI
+*
+*  ROTINA P/ PERFURAR 1 BYTE
+*
+PERF  PLA  0
+      TRI  *
+      ARM  SS+1
+      CARI 0
+PUM   EQU  *-1
+      CMP1 *
+      SOMI 0
+PDOIS EQU  *-1
+      PLAZ PUM-1
+      CAR  PUM
+      TRI  *
+      ARMX BUFER
+      INIB *
+      CAR  PUM
+      CMP2  *
+      SOM  PDOIS
+      PLAZ .+1
+SS    CARI 0
+      TRI  *
+      INC  *
+      ARM  PUM
+      PERM *
+      PLA  PERF
+.     CARX BUFER
+      SAI  /80
+      PLA  SS
+*
+* PERFU
+*
+PERFU PLA  0
+      PUG  PERF
+      DEFC /D8  SOMI
+CKSD  DEFC  0
+      ARM  CKSD
+      PLA  PERFU
+*
+*  ROTINA P/ PERFURAR CHECKSUM NA FITA
+*
+GCKSM PLA  0
+      CAR  CKSD
+      CMP2
+      PUG  PERFU
+      PLA  GCKSM
+*
+*  ROTINA P/ SOMAR ACUMULADOR
+*  COM TAMANHO DO PROGRAMA
+*
+SOMA  PLA 0
+      SOM  EDB+1
+      ARM  EDB+1
+      CAR  EDB
+      SV   0
+      SOMI 1
+      ARM  EDB
+      PLA  SOMA
+*
+*  ROTINA P/ COLOCAR UM
+*  EXTERNO NA TABELA
+*
+COLEX PLA  0
+      CAR  CNE
+      ARM  0
+      SOMI -100
+      PLAN .+1
+      CARI 4
+      PLA  ERRO
+.     CAR  CNP
+      ARMX TXU
+      PUG  LEBYT
+      ARMX TXD
+      PUG  LEBYT
+      ARMZ TXT
+      TRI  *
+      INC  *
+      ARM  CNE
+      PLA  COLEX
+*
+*  ROTINA P/ LER CHECKSUM
+*
+LECKS PLA  0
+      PUG  LEBYT
+      CAR  CKSUM
+      PLAZ LECKS
+      UM   *
+*
+*  ROTINA DE ERRO
+*
+ERRO  SOMI 48
+      ARM  .+1+1
+      LIMP0 *
+      PUG  MENSA
+.     CARI 0
+      PUG  SAI
+      PARE *
+      PLA  *-1
+*
+*  ROTINA P/ ESCREVER MENSAGENS
+*
+MENSA PLA  0
+      TRE  *
+      LIMP0 *
+.     TRI  *
+      CARX BUF
+      SUS  1
+      PLA  .+2
+      SOMI -2
+      TRE  *
+      TRI  *
+.     INC  *
+      TRI  *
+      CARX BUF
+      PUG  SAI
+      TRI  *
+      SUS  1
+      PLA  .-1
+      PLA  MENSA
+.     SOM  0
+      PLA  .-3
+*
+*  ROTINA P/ TRATAR BLOCO DE EXTERNO
+*
+EXT   PLA  0
+      UNEG *
+      SOM  CONT
+      DD   1
+      ARM  CONT
+.     PUG  COLEX
+      SUS  CONT
+      PLA  .-1
+      PUG  LECKS
+      PLA  EXT
+*
+*  ROTINA P/ TRATAR BLOCO DE DADO
+*
+DADO  PLA  0
+      PUG  LEBYT
+      ARM  EDB
+      PUG  LEBYT
+      ARM  EDB+1
+      PLA  .+2-2
+.     PUG  LEBYT
+      DE   3
+      PLAN  EAB
+      PUG  LED
+      CARI 2
+      PUG  SOMA
+      CARI -3
+      PLA  .+1
+EAB   PUG  LEBYT
+      UM   *
+      PUG  SOMA
+      CARI -2
+.     SOM  CONT
+      PLAZ .+1
+      ARM  CONT
+      PLA  .-2
+.     PUG  COMPA   COMPARA ENDERECO FINAL
+      PUG  LECKS   DESSE BLOCO COM TAMANHO DO
+      PLA  DADO   PROGRAMA. ATUALIZA SE MAIOR
+*
+*  ROTINA P/ COMPARAR ENDERECO FINAL
+*  DO BLOCO COM TAMANHO DO PROGRAMA
+*   E ATUALIZAR SE MAIOR.
+*
+COMPA PLA  0
+      CAR  EDB
+      CMP2 *
+      SOM  TAM
+      PLAN .+2
+      PLAZ .+1
+      PLA  COMPA
+.     CAR  EDB+1
+      CMP2 *
+      SOM  TAM+1
+      PLAN .*1
+      PLA  COMPA
+.     CAR  EDB
+      ARM  TAM
+      CAR  EDB*1
+      ARM  TAM+1
+      PLA  COMPA
+*
+*  ROTINA PARA DESCOMPACTAR
+*  E ESCREVER UM NOME COMPACTADO.
+*  ENTRADA : 1A PARTE NA EXT
+*            2A PARTE NO ACC.
+ESCNO PLA  0
+      ARM  .+1+1
+      NAND /1F
+      CMP1 *
+      SOMI 64
+      PUG  SAI
+      CAR  1
+      DE   3
+      NAND /18
+      CMP1 *
+      ARM  .+2+1
+.     CARI 0
+      DD   4
+      DD   1
+.     SOMI 0
+      SOMI 64
+      PUG  SAI
+      CAR  1
+      DD   2
+      SOMI 64
+      PUG  SAI
+      PLA  ESCNO
+*
+﻿*  ROTINA P/ ESCREVER UM
+*  NUMERO EM HEXADECIMAL.
+EHEXA PLA  0
+      ARM  1
+      DD   4
+      PUG  EHE
+      TRE  *
+      NAND /F
+      CMP1 *
+      PUG  EHE
+      PLA  EHEXA
+EHE   PLA  0
+      SOMI -10
+      PLAN .+1
+      SOMI 7
+.     SOMI 58
+      PUG  SAI
+      PLA  EHE
+*
+* ROTINA P/ ESCREVER /
+*
+BARRA PLA  0
+      CARI @ 
+      PUG  SAI
+      CARI @/
+      PUG  SAI
+      PLA  BARRA
+*
+* ROTINA P/ GERAR UM BLOCO
+*
+VAIGERA PLA 0
+      CAR  TAM
+      PLAZ VAIGERA
+      PUG  PERFU
+      SUS  TAM
+      CAR  EDB
+      PUG  PERFU
+      CAR  EDB+1
+      PUG  PERFU
+      LIMP0 *
+.     TRI
+      CARX BLOCO
+      PUG  PERFU
+      TRI  *
+      INC  *
+      SUS  TAM
+      PLA  .-1
+      PUG  GCKSM
+      PLA  VAIGERA
+*
+*
+*
+*  ERROS DETECTADOS PELO PROGRAMA
+*    1- CHECKSUM
+*    2- NAO E' PROGRAMA PRINCIPAL
+*    3- BLOCO DE TIPO INVALIDO.
+*    4- ESTOURO DA TABELA DE EXTERNOS (100).
+*    5- NAO E' ROTINA,
+*    6- TAMANHO DO COMMON DA ROTINA
+*        E' MAIOR QUE O DO PROGRAMA PRINCIPAL.
+*    7- ESTOURO DA TABELA DE ROTINAS (30).
+*    8- ESTOURO DA TABELA DE ENTRY-POINTS (50).
+*    9- ENCONTROU EXTERNO NAO DECLARADO.
+*
+*
+*      INICIO DO PROGRAMA - PASSO LOGICO 1.
+*
+INIC  LIMP0 *
+      ARM  CNE
+      ARM  CNY
+      ARM  CNF
+      FNC  /A2   SETA FLAG DA DEC
+      FNC  /E2   SETA FLAG DA L.0.
+      FNC  /85   PERMITA INTER. DA PERF. DE FITA
+      UM   *
+      PUG  MENSA
+      PUG  RETUR
+      PARE *
+      PNL  0
+      ARM  ENDC   LE ENDERECO DE CARGA
+      PARE *
+      PNL  0
+      ARM  ENDC+1
+      CARI 2
+	PUG  MENSA
+      PUG  RETUR
+      PARE *
+      PUG  LENUC
+      PUG  LEBYT  LE BLOCO DE NOME
+      PLAZ .+1    DO PROGRAMA PRINCIPAL
+      CARI 2
+      PLA  ERRO
+.     PUG  LEBYT
+      ARM  TNU
+      PUG  LEBYT
+      ARM  TNO
+      PUG  LEBYT
+      ARM  COMOM
+	PUG  LEBYT
+      ARM  COMOM+1
+      PUG  LECKS
+AA    PUG  LENUC
+      PUG  LEBYT
+      SOMI -8
+      PLAZ EXTU
+      SOMI -2
+      PLAZ  DADOU
+      SOMI -2
+      PLAZ  FIMPP
+TRES  CARI  3
+      PLA  ERRO
+EXTU  PUG  EXT
+      PLA  AA
+DADOU PUG  DADO
+      PLA  AA
+FIMPP CAR  COMOM+1
+      SOM  ENDC+1
+      ARM  ENDEX+1
+      ARM  TNQ
+﻿      TRE  *
+      CAR  COMOM
+      SV   0
+      SOMI 1
+      SOM  ENDC
+      ARM  ENDEX
+      ARM  TNT
+      TRE  *
+      SOM  TAM+1
+      ARM  PEL+1
+      TRE  *
+      SV   0
+      SCMI 1
+      SOM  TAM
+      ARM  PEL
+      PUG  LED
+      SOM  ENDEX+1
+      ARM  ENDEX+1
+      TRE  *
+      SV   0
+      SOMI 1
+      SOM  ENDEX
+      ARM  ENDEX
+      PUG  LECKS
+*
+* TRATAMENTO DAS ROTINAS.
+*
+TDR   CAR  CNE
+      PLAZ PSD
+      CARI 3
+      PUG  MENSA  ESCREVE LIBRARY.
+      PUG  RETUR
+      PARE *
+      PNL  0      SE CHAVE 0 E' 1
+      GD   1      ENTAO ACABOU A LIBRARY
+      PLAN PSD    =PASSO 2
+LUPR  PUG  LENUC
+      LIMP0 *
+﻿      ARM  TAM
+      ARM  TAM+1
+      PUG  LEBYT
+      SOMI -4
+      PLAZ .+1
+      CARI 5
+      PLA  ERRO
+.     CAR  CNP
+      INC  *
+      ARM  0
+      ARM  CNP
+      SOMI -30
+      PLAN *+6
+      CARI 7
+      PLA  ERRO
+      PUG  LEBYT   COLOCA NOME DA
+      ARMX TNL     ROTINA NA TABELA.
+      PUG  LEBYT
+      ARMX TND
+      PUG  LED
+      PUG  LECKS
+      PUG  LENUC   LE UM BLOCO DA ROTINA
+      PUG  LEBYT
+      SOMI -6
+      PLAZ EEY     E' ENTRY-POINT
+      SOMI -2
+      PLAZ EEO     E' EXTERNO
+      SOMI -2
+      PLAZ EDO     E' DADO
+      SOMI -2
+      PLAZ EBF
+      PLA  TRES
+EEO   PUG  EXT
+      PLA  MOB
+EDO   PUG  DADO
+      PLA  MOB
+EBF   PUG  LED
+      PUG  LECKS
+      CAR  CNP
+      TRI  *
+      CAR  TAM
+      ARMX TNT
+      CAR  TAM+1
+      ARMX TNQ
+      CARI 19
+      TRI  *
+.     PUG  LEUM
+      PLAZ .+1
+      PLA  .+2
+.     SUS  0
+      PLA  .-2
+      PLA  TDR
+.     ARM  CKSUM
+      SOMI -1
+      ARM  CONT
+      PLA  LUPR+2
+EEY   CAR  CONT
+      DD   2
+      SOMI -1
+      ARM  CONT
+      CAR  CNY
+.     ARM  0
+      SOMI -50
+      PLAN *+6
+      CARI 8
+      PLA  ERRO
+      CAR  CNP
+      ARMX TYU
+      PUG  LEBYT
+      ARMX TYC
+      PUG  LEBYT
+      ARMX TYT
+      PUG  LEBYT
+      ARMX TYQ
+      PUG  LEBYT
+      ARMX TYC
+      TRI  *
+      INC  *
+      SUS  CONT
+      PLA  .-1
+      ARM  CNY
+      PUG  LECKS
+      PLA  MOB
+*
+*  PASSO 2 = MONTAGEM DOS ENDERECOS ABSOLUTOS.
+*
+PSD   PUG  RETUR
+      CAR  TNU
+      TRE  *
+      CAR  TND
+      PUG  ESCNO
+      PUG  BARRA
+      CAR  ENDC
+      PUG  EHEXA
+      CAR  ENDC+1
+      PUG  EHEXA
+      PUG  RETUR
+*  PROCURA NA TABELA DE EXTERNOS
+PTX   LIMPO *
+      ARM  0
+      XCR  0
+CNE   EQU  *-1
+      PLAZ PST
+      CARX TXU
+      PLAZ PTY
+      TRI  *
+      INC  *
+      PLA  PTX+1
+*  PROCURA NA TABELA DE ENTRY-POINTS
+PTY   CARX TXD
+      ARM  SU+1
+      CARX TXT
+      ARM  SD+1
+      LIMPO *
+      TRI  *
+      TRE  *    INDICE DO EXTERNO NA EXTENSAO
+.     CARX TYD
+SU    XOR  0
+      PLAZ .+1
+      PLA  .+2
+.     CARX TYT
+SD    XOR  0
+      PLAZ ACHO
+.     TRI  *
+      INC  *
+      ARM  0
+      XOR  0
+CNY   EQU  *-1
+      PLAZ SIN    SIMBOLO INDEFINIDO
+      PLA  .-3
+SIN   CAR  SU+1
+      TRE  *
+      CAR  SD+1
+      PUG ESCNO
+      CARI 4
+      PUG  MENSA
+      PUG  RETUR
+      CARI 3
+      PUG  MENSA
+      PARE *
+      PLA  LUPR
+*  ACHOU O ENTRY-POINT
+ACHO  TRI  *
+      TRE  *     INDICE DO ENTRY NA EXTENSAO
+      TRI  *
+      UNEG *
+      ARMX TXU   FAZ NUMERO DO PROGRAMA
+*             NA TABELA DE EXTERNO = -1
+      TRE  *
+      TRI  *
+      CARX TYU
+      PLAN PTX   INDICE DO ENTRY JA ERA NEGATIVO
+      ARM  0
+      ARM  HU+1
+      CMP2 *
+      ARM  HD+1
+      ARM  .+2+1
+      CARX TNU
+      TRE  *
+      CARX TND   ESCREVE
+      PUG  ESCNO NOME
+      PUG  BARRA E
+      CAR  PEL   ENDERECO
+      ARM  TAM
+      PUG  EHEXA DA
+      CAR  PEL+1 ROTINA
+      ARM  TAM+1
+      PUG  EHEXA
+      PUG  RETUR
+* VAI PROCURAR OUTROS ENTRY-POINTS
+      UNEG *
+      SOM  CNY
+      TRI  *
+.     CARX TYU
+.     SOMI 0
+      PLAZ IGU
+LUPN  SUS  0
+      PLA  .-2
+HU    CARI 0
+      TRI  *
+      CARX TNG
+      SOM  PEL+1  ATUALIZA
+      ARM  PEL+1
+      CARX TNT
+      SV   0      ENDERECO
+      SOMI 1
+      SOM  PEL    DISPONIVEL
+      ARM  PEL
+      CAR  TAM
+      XOR  /80
+      ARMX TNT
+      CAR  TAM+1
+      ARMX TNG
+* PROCURA NA TABELA DE EXTERNOS OS
+* EXTERNOS DA ROTINA.
+      UNEG *
+      SOM  CNE
+      TRI  *
+.     CARX TXU
+HD    SOMI 0
+      PLAZ .+1
+      SUS  0
+      PLA  .-1
+      PLA  PTX
+.     ARMX TXU
+      PLA  HD+4
+* ACHOU ENTRY-POINT.
+IGU   CARI @     ESCREVE
+      PUG  SAI   NOME
+      CARX TYD   DO
+      TRE  *
+      CARX TYT   ENTRY-POINT
+      PUG  ESCNO
+      PUG  BARRA
+      CARX TYU
+      SOMI /80   SETA BIT DE SINAL DO NUMERO
+      ARMX TYU   DE PROGRAMA DO ENTRY-POINT.
+      CARX TYC
+      SOM  PEL+1
+      ARMX TYC
+      CARX TYQ
+      SV   0
+      SOMI 1
+      SOM  PEL
+      ARMX TYQ
+      PUG  EHEXA  ESCREVE ENDERECO
+      CARX TYC    DO
+      PUG  EHEXA  ENTRY-POINT
+      PUG  RETUR
+      PLA  LUPN
+*
+*  PASSO 3 - GERACAO DA FITA ABSOLUTA.
+*
+PST   CARI 5
+      PUG  MENSA  ESCREVE PRIM.END.L1VRE
+      PUG  BARRA
+      CAR  PEL
+      PUG  EHEXA
+      CAR  PEL+1
+      PUG  EHEXA
+      PUG  RETUR
+      PUG  RETUR
+      CARI 119    GERA
+      TRI  *
+.     LIMPO *     FEED FRAMES
+      PUG  PERF   NO INICIO
+      SUS  0
+      PLA  .-1    DA FITA
+      CARI 2      GERA
+      PUG  PERFU  ORG /6
+      LIMPO *     PLA ENDEX
+      PUG  PERFU  (ENDERECO DE EXECUCAO)
+      CARI 6
+      PUG  PERFU
+      CAR  ENDEX
+      PUG  PERFU
+      CAR  ENDEX+1
+      PUG  PERFU
+      PUG  GCKSM
+      CARI 2
+      PUG  MENSA
+      PUG  RETUR
+      PARE *
+      PUG  LENUC
+      PUG  LEBYT
+      PLAZ .+1
+      CARI 2
+      PLA  ERRO
+.     PUG  LED
+      PUG  LED
+      PUG  LECKS
+      LIMP0 *
+      ARM  TAM
+      CAR  TNT
+      ARM  ENDEX
+      CAR  TNQ
+      ARM  ENDEX+1
+AAA   PUG  LENUC
+      PUG  LEBYT
+      SOMI -6
+      PLAZ LEOBL
+      SOMI -2
+      PLAZ LEOBL
+      SOMI -2
+      PLAZ GERAB
+      SOMI -2
+      PLAZ BBB
+      CARI 3
+      PLA  ERRO
+GERAB CAR  CONT
+      SOMI -2
+      ARM  CONT
+      PUG  LED
+      SOM  ENDEX+1
+      ARM  PEL+1
+      TRE  *
+      SV  0
+      SOMI 1
+      SOM  ENDEX
+      ARM  PEL
+      CAR  CONT
+      PLAZ LEOBL-4
+VLD   PUG  LEBYT
+      DE   1
+      PLAN EXTER   E' EXTERNO
+      DE   1
+      PLAN COMO    E' COMMON
+      DE   1
+      PLAN ABSOL   E' ABSOLUTO
+      DE   1
+      TRE  *       E' RELOCAVEL PORTANTO
+      PUG  LEBYT
+      SOM  1
+      TRE  *
+      PUG  LEBYT
+      SOM  ENDEX+1
+      TRE  *
+      SV   0
+      SOMI 1
+      SOM  ENDEX
+.     TRI  *
+      PLA  GERAU-2
+ABSOL PUG  LEBYT
+      TRI  *
+      UM   *
+      PLA  GERAU
+COMO  DE   2
+      TRE  *
+      PUG  LEBYT
+      SOM  1
+      TRE  *
+      PUG  LEBYT
+      SOM  ENDC+1
+      TRE  *
+      SV   0
+      SOMI 1
+      SOM  ENDC
+      PLA  .-1
+EXTER DE   3
+      TRE  *
+      UNEG *
+      SOM  CNY
+      TRI  *
+      PUG  LEBYT
+      ARM  EOU+1
+      PUG  LEBYT
+      ARM  EOD+1
+.     CARX TYD
+EOU   XOR  0
+      PLAZ .+1
+      SUS  0
+      PLA  .-1
+      CARI 9
+      PLA  ERRO
+.     CARX TYT
+EOD   XOR  0
+      PLAZ .+1
+      PLA  EOU+4
+.     CARX TYC
+      TRE  *
+      SOMX TYQ
+      TRI  *
+      CARI 2
+GERAU ARM  SALVA
+      TRI  *
+      ARM  SX+1
+      TRI  *
+      SOM  TAM
+      PLAN VAIGER
+      CAR  TAM
+      SOM  EDB+1
+      TRI  *
+      CAR  EDB
+      SV   0
+      SOMI 1
+      CMP2 *
+      SOM  PEL
+      PLAZ .+1
+      PLA  VAIGER
+.     TRI  *
+      CMP2 *
+      SOM  PEL+1
+      PLAZ JJ
+VAIGER PUG VAIGERA
+.     CAR  PEL+1
+      ARM  EDB+1
+      CAR  PEL
+      ARM EDB
+      LIMP0 *
+      ARM  TAM
+JJ    CAR  TAM
+      TRI  *
+SX    CARI 0
+      ARMX BLOCO
+      TRE  *
+      ARMX BLOCO+1
+      TRI  *
+      SOM  SALVA
+      ARM  TAM
+      DEFC /DA   =CARI SALVA
+SALVA DEFC 0
+      CMP1 *
+      SOM  CONT
+      PLAZ .+1
+      ARM  CONT
+      CAR  SALVA
+      SOM  PEL+1
+      ARM  PEL+1
+      CAR  PEL
+      SV   0
+      SOMI 1
+      ARM  PEL
+      PLA  VLD
+.     PUG  LECKS
+      PLA  AAA
+LEOBL SUS  CONT   IGNORA UM BLOCC
+      PUG  LEBYT
+      SUS  CONT
+      PLA  LEOBL+2
+      PUG  LECKS
+      PLA  AAA
+BBB   PUG  LED
+      PUG  LECKS
+      CAR  CNE
+      PLAZ FPT
+      CARI 19
+      TRE  *
+.     PUG  LEUM
+      PLAZ .+1
+      PLA  .+2
+.     SUS  1
+      PLA  .-2
+      PLA  CCC
+.     ARM  CKSUM
+      SOMI -1
+      ARM  CONT
+      PLA  .+1
+CCC   CARI 3
+      PUG  MENSA
+      PUG  RETUR
+      PARE *
+      PNL  0
+      GD   1
+      PLAN FPT     #FIM DO PASSO 3
+      PUG  LENUC
+.     PUG  LEBYT
+      SOMI -4
+      PLAZ .+1
+      CARI 5
+      PLA  ERRO
+.     PUG  LEBYT   LE NOME DA ROTINA
+      ARM  XRU+1
+      PUG  LEBYT
+      ARM  XRD+1
+      CAR  CNP
+      SOMI -2
+      TRI  *
+      CARX TNU+1
+XRU   XOR  0
+      PLAZ ANI
+      SUS  0
+      PLA  XRU-2
+      PUG  LED
+.     PUG  LECKS
+      PUG  LENUC
+      PUG  LEBYT
+      SOMI -12
+      PLAZ .+2
+      SUS  CONT
+.     PUG  LEBYT
+      SUS  CONT
+      PLA  .-1
+      PLA  .-2
+.     PLA  BBB
+ANI   CARX TND+1
+XRD   XOR  0
+      PLAZ .+1   ACHOU UMA ROTINA NA TABELA
+      PLA  XRU+4
+.     CARX TNT+1
+      PLAN *+4
+      PLA  .-4-2
+      XOR  /80   RESETA BIT DE SINAL
+      ARM  ENDEX
+      CARX TNQ+1
+      ARM  ENDEX+1
+      LIMPO *
+      ARMX TNT+1
+      PUG  LEBYT
+      CMP2 *
+      SOM  COMOM
+      PLAN ERS
+      PUG  LEBYT
+      CMP2 *
+      SOM  COMOM+1
+      PLAN ERS
+      PUG  LECKS
+      PLA  AAA
+ERS   CARI 6
+      PLA ERRO
+*
+*  FIM DO PASSC 3
+*
+FPT   CAR  CNP
+      SOMI -2
+      TRI  *
+.     CARX TNT+1 TESTA SE GEROU
+      PLAN .+1
+      PLA  .+3
+.     TRI  *
+      ARM .+1+1
+      CARI 6
+      PUG  MENSA
+.     CARI 0
+      TRI  *
+      CARX TNU+1
+      TRE  *
+      CARX TND+1
+      PUG  ESCNO
+      PUG  RETUR
+      PLA  CCC
+.     SUS  0
+      PLA .-4
+      PUG VAIGERA
+      CARI 119     GERA 120
+      TRI  *
+      LIMP0 *     FEED-FRAMES
+      PUG  PERF
+      SUS  0
+      PLA  *-5
+      ESP  *
+      PLA  *-1
+      FIM  0

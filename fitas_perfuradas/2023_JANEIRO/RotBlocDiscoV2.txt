@@ -1,0 +1,440 @@
+
+ASMB,R,B,L,T,C
+      NAM DBLOC,7 
+      HED *** ROTINAS DE BLOCAGEM EM DISCO ***
+      SPC 3 
+******************************************************* 
+*                                                     * 
+*                                                     * 
+*                                                     * 
+*     ROTINAS DE BLOCAGEM EM DISCO                    * 
+*                                                     * 
+*     1-OPEN  INICIALIZA AS VARIAVEIS E ARQUIVOS      * 
+*     2-DFILE DECLARA OS ARQUIVOS NA WORKING STOREGE  * 
+*     3-FILE  ASSOCIA UM ARQUIVO NA USER AREA.        * 
+*     4-WSPAC NUMERO DE SETORES RESTANTES NA WS       * 
+*     5-CLOSE "FECHA" OS ARQUIVOS,PARA REDEFINI-LOS   * 
+*     6-LEIAS ROTINA DE LEITURA EM DISCO              * 
+*     7-GRAVS ROTINA DE ESCRITA EM DISCO              * 
+*                                                     * 
+*     MODO DE USAR:  CALL OPEN                        * 
+*                    CALL DFILE(1,MREG,NPALR)         * 
+*                    CALL FILE(1,NOME,TIPO,NTREG)     * 
+*                    CALL WSPAC(ITAM)                 * 
+*                    CALL GRAVS(NARQ,NREG,MAT,NPAL)   * 
+*                    CALL LEIAS(NARQ,NREG,MAT,NPAL)   * 
+*                    CALL CLOSE                       * 
+*                                                     * 
+*     AUTOR-SEBASTIAO SANTIAGO BARRETTO-LSD/EPUSP/DEE * 
+*                                                     * 
+*     VERSAO-1 MODIFICACAO-1   JULHO/1975             * 
+*                                                     * 
+******************************************************* 
+      SPC 3 
+      SPC 3 
+      ENT OPEN
+      ENT DFILE 
+      ENT FILE
+      ENT WSPAC 
+      ENT CLOSE 
+      ENT LEIAS 
+      ENT GRAVS 
+      SPC 3 
+      EXT EXEC
+      EXT .ENTR 
+      SKP 
+* 
+*  OPEN 
+* 
+      SPC 3 
+OPEN  NOP 
+      LDA DETEC    TESTA SE JA FOI
+      SZA          DADO UM CALL OPEN
+      JMP ERRO1   =TWO CALL OPEN
+      ISZ DETEC    INCREMENTA DETECTOR
+      LDA NXTTS  PROXIMO TRACK/SETOR DISPONIVEL 
+      JSB AUX 
+      STA AREAU 
+      LDA JBINC  TRACK/SETOR ATUAL DA 
+      AND B1774  JOB BINARY AREA
+      JSB AUX 
+      ADA 52B    =DECIMAL -1
+      STA LTRAK 
+      ISZ OPEN
+      JMP OPEN,I   E RETORNA
+      SPC 3 
+AUX   NOP          ROTINA PARA SEPARAR
+      CLB          TRACK/SETOR E
+      DIV =D256    TRANSFORMAR EM SETOR 
+      STB CLOSE 
+      MPY SIZE
+      ADA CLOSE 
+      JMP AUX,I 
+      SKP 
+* 
+*  CLOSE
+* 
+      SPC 3 
+CLOSE NOP 
+      CLA 
+      STA CONT     ZERA NUMERO DE ARQUIVOS
+      STA DETEC    E DETECTOR DE CALL OPEN
+      ISZ CLOSE 
+      JMP CLOSE,I  E RETORNA
+      SKP 
+* 
+*  DFILE
+* 
+      SPC 3 
+PARA1 NOP 
+PARA2 NOP 
+PARA3 NOP 
+DFILE NOP 
+      JSB .ENTR 
+      DEF PARA1 
+      LDA DETEC    TESTA SE JA FOI DADO 
+      SZA,RSS      UM CALL OPEN 
+      JMP ERRO2   =NO OPEN CALL 
+      LDB CONT     TESTA SE JA TEM 10 ARQUIVOS
+      CPB 65B     =DECIMAL 10 
+      JMP ERRO3   =TOO MANY FILES 
+      INB 
+      CPB PARA1,I  TESTA SE ESTA
+      RSS          NA ORDEM CORRETA 
+      JMP ERRO4   =NO FILE SEQUENCE 
+      STB CONT
+      BLS          MULTIPLICA NUMERO
+      ADB CONT     DE ARQUIVOS POR 3
+      ADB ENTAB    SOMA COM ENDERECO DA TABELA-3
+      LDA PARA2,I  COLOCA NUMERO DE REGISTROS 
+      STA S        EM LABEL E 
+      STA B,I      NA PRIMEIRA POSICAO DA TABELA
+      LDA AREAU    COLOCA OENDERECO INICIAL 
+      INB          DO ARQUIVO NA SEGUNDA
+      STA B,I      POSICAO DA TABELA
+      LDA PARA3,I  COLOCA O NUMERO  DE
+      INB          PALAVRAS POR REGISTRO NA 
+      STA B,I      TERCEIRA PALAVRA DA TABELA 
+      MPY S        MULTIPLICA PELO NUMERO 
+      CLE          DE REGISTROS,SOMA COM
+      ADA 72B     =DECIMAL 63 (DOUBLE PRECISION)
+      SEZ          PARA CALCULAR NUMERO DE
+      INB          PALAVRAS DO ARQUIVO,DIVIDE POR 
+      DIV 67B    =DECIMAL 64 PARA CALCULAR
+      ADA AREAU    NUMERO DE SETORES DO ARQUIVO 
+      STA AREAU    E PRIMEIRO SETOR DISPONIVEL
+      CMA,INA 
+      ADA LTRAK    TESTA SE AINDA TEM ESPACO
+      SSA       DISPONIVEL
+      JMP ERRO5   =WORK AEA FULL 
+      CCA 
+      STA TEST2 
+      JMP DFILE,I  E RETORNA
+      SKP 
+* 
+*  WSPAC
+* 
+      SPC 3 
+ENDRA NOP 
+WSPAC NOP 
+      JSB .ENTR 
+      DEF ENDRA 
+      LDA AREAU    CALCULA O NUMERO 
+      CMA,INA 
+      ADA LTRAK    DE SETORES DA WS 
+      STA ENDRA,I  SENDO USADOS 
+      JMP WSPAC,I  E RETORNA            8 
+      SKP 
+* 
+*  GRAVS
+* 
+      SPC  
+GRAVS NOP 
+      CLA          SETA INDICADOR 
+      STA RCODB    PARA SABER QUE 
+      LDA GRAVS    E GRAVACAO 
+      STA LEIAS    E DESVIA PARA A
+      JMP LEIAS+1  PARTE COMUM
+      SPC 5 
+* 
+*  LEIAS
+* 
+      SPC 3 
+ARQ   NOP 
+REG   NOP 
+BUFAD NOP 
+BUFL NOP
+LEIAS NOP 
+      JSB .ENTR 
+      DEF ARQ 
+      ISZ RCODB 
+      LDA ARQ,I    TESTA SE O 
+      CMA,INA      NUMERO DO ARQUIVO
+      SSA,RSS      E POSITIVO 
+      JMP ERRO6   =UNDEFINED FILE 
+      ADA CONT     E MENOR OU IGUAL AO
+      SSA          TOTAL DE ARQUIVOS
+      JMP ERRO6   =UNDEFINED FILE 
+      LDA ARQ,I    MULTIPLICA 
+      ALS          NUMERO DO ARQUIVO
+      ADA ARQ,I    POR 3 E SOMA COM O 
+      ADA ENTAB    ENDERECO DA TABELA-3 
+      LDB REG,I    TESTA SE O NUMERO DO 
+      CMB,INB      REGISTRO E POSITIVO
+      SSB,RSS 
+      JMP ERRO7   =END OF FILE
+      ADB A,I      E MENOR OU IGUAL AO
+      SSB          NUMERO DE REGISTROS
+      JMP ERRO7   =END OF FILE
+      INA 
+      LDB A,I      GUARDA EM ENDA O 
+      STB ENDA     ENDERECO DO ARQUIVO
+      INA 
+      LDB BUFL,I   DESCOBRE O NUMERO
+      CMB,INB      DE PALAVRAS A SEREM
+      ADB A,I      TRANSFERIDAS = MINIMO
+      SSB          ENTRE BUFL E NUMERO DE 
+      JMP *+3      PALAVRAS POR REGISTRO
+      LDB BUFL,I   E GUARDA EM N
+      JMP *+2 
+      LDB A,I 
+      STB N 
+      LDB REG,I   CALCULA O TRACK/SECTOR
+      ADB 52B     =DECIMAL -1 
+      STB S        A SER LIDO/ESCRITO 
+      LDA A,I      ENDA=ENDA+INT((REG-1)*NPAL/64) 
+      MPY S 
+      DIV 67B      =DECIMAL 64
+      STB S        S=POSICAO DO REGISTRO
+      ADA ENDA     DENTRO DO SETOR
+      STA ENDA
+VOLTA CLB 
+      DIV SIZE     TRACK=INT(ENDA/SIZE) 
+      CPB SETOR 
+      RSS 
+      JMP LED-2 
+      CPA TRACK 
+      JMP LED+1 
+      STB SETOR    SETOR=ENDA-SIZE*TRACK
+      STA TRACK 
+LED   JSB LDISK 
+      LDA 40B 
+      ADA S        PALAVRAS DESSE 
+      STA D        SETOR VAO SER
+      ADA N        TRANSFERIDAS 
+      SSA,RSS      E GUARDA ESSE
+      JMP GG       NUMERO COMPLE- 
+      LDA N        MENTADO EM D 
+      CMA,INA 
+      STA D        NO ACUMULADOR B O ENDERECO 
+GG    LDB ENDBL     DA PRIMEIRA PALAVRA DO
+      ADB S        SETOR A SER TRANSFERIDA
+      LDA RCODB    TESTA SE E PARA
+      CPA 54B  TESTA SE E PARA
+      JMP LOP2    LER OU GRAVAR 
+LOP1  LDA B,I   LOOP PARA LER 
+      STA BUFAD,I 
+      INB 
+      ISZ BUFAD 
+      ISZ D 
+      JMP LOP1
+      JMP WW
+LOP2  LDA BUFAD,I  LOOP PARA GRAVAR 
+      STA B,I 
+      INB 
+      ISZ BUFAD 
+      ISZ D 
+      JMP LOP2
+      JSB EXEC     GRAVA UM SETOR 
+      DEF *+7 
+      OCT 51      =DECIMAL -2 
+      DEF B102
+      DEF BLOCO 
+      OCT 67      =DECIMAL 64 
+      DEF TRACK 
+      DEF SETOR 
+WW    LDA 40B   =DEC -10  TESTA SE JA ACABOU
+      ADA S        OU SE AINDA TEM
+      ADA N        DE LER OUTRO SETOR 
+      SSA 
+      JMP LEIAS,I  RETORNA SE ACABOU
+      INA          CALCULA O NUMERO DE
+      STA N        PALAVRAS QUE FALTAM
+      CLA 
+      STA S        ZERA A VARIAVEL S
+      ISZ ENDA     INCREMENTA ENDERECO
+      LDA ENDA     DO DISCO E VOLTA 
+      JMP VOLTA    PARA LER OUTRO SETOR 
+      SPC 6 
+LDISK NOP          ROTINA PARA LER UM SETOR 
+      JSB EXEC
+      DEF *+7 
+      OCT 52      =DECIMAL -1 
+      DEF B102
+ENDBL DEF BLOCO 
+      OCT 67      =DECIMAL 64 
+      DEF TRACK 
+      DEF SETOR 
+      JMP LDISK,I 
+      SKP 
+* 
+*  FILE 
+* 
+      SPC 3 
+NARQU NOP 
+NAME  NOP 
+TIPO  NOP 
+VNREG NOP 
+FILE NOP
+      JSB .ENTR 
+      DEF NARQU 
+      ISZ TEST2 
+      JMP ERRO4 
+      LDA NARQU,I  TESTA SE O NUMERO
+      SZA,RSS      DO ARQUIVO E ZERO 
+      JMP ERRO6   =UNDEFINED FILE 
+      CPA CONT     OU DIFERENTE DO NUMERO 
+      RSS          DO ULTIMO ARQUIVO DEFINIDO 
+      JMP ERRO4   =NO FILE ORDER
+      LDA 115B     CARREGA TRACK/SETOR
+      CLB          DO INICIO DO DIRETORIO 
+      DIV =D256    DIVIDE POR 256 PARA SEPARAR
+      STB SETOR    EM B SETOR 
+      STA TRACK    EM A TRACK 
+      LDA NAME,I   JOGA O NIME DO ARQUIVO 
+      STA BUF3     NAS 3 POSICOES DA
+      ISZ NAME     AREA BUF3
+      DLD NAME,I
+      DST BUF3+1
+YY    JSB LDISK    LE UM SETOR DO DIRETORIO 
+      LDB ENDBL 
+TENT  LDA B,I      TESTA SE A PALAVRA E ZERO
+      SZA,RSS      SE FOR ACABOU O DIRETORIO
+      JMP ERRO8   =..... NO EXIST 
+      SSA,RSS      TESTA SE E NEGATIVO:SE NAO,
+      JMP NONEG    CONTINUA NO MESMO SETOR
+      ISZ SETOR    INCREMENT NUMERO DO SETOR
+      LDA SETOR 
+      CPA SIZE     ACABOU O TRACK 6 
+      RSS 
+      JMP YY
+      CLA          SE ACABO? FAZ SETOR=0
+      STA SETOR 
+      ISZ TRACK    E INCREMENTA NUMERO DO TRACK 
+      JMP YY
+NONEG XOR BUF3     TESTA SE ACHOU O NOME. 
+      SZA          DO ARQUIVO NO DIRETORIO
+      JMP NAOE
+      INB 
+      LDA B,I 
+      XOR BUF3+1
+      SZA 
+      JMP NAOE+1
+      INB 
+      LDA B,I 
+      XOR BUF3+2
+      AND B1774 
+      SZA 
+      JMP NAOE+2
+      LDA B,I 
+      AND B377
+      STA TIPO,I
+      INB          SE ACHOU 
+      LDA B,I      CARREGA
+      INB         TRACK/SETOR 
+      STB S 
+      JSB AUX      TRANSFORMA EM SETOR. 
+      LDB CONT     MULTIPLICA NUMERO DO 
+      BLS          ARQUIVO POR 3 E SOMA COM 
+      ADB CONT     ENDERECO DA TABELA-3 
+      ADB ENTAB 
+      INB          SALVA O ENDERECO DO
+      STB D        ARQUIVO NA WS E JOGA EM AREAU
+      LDB D,I      COLOCA NA TABELA O NOVO
+      STA D,I      ENDERECO DO ARQUIVO. 
+      STB AREAU 
+      ISZ D 
+      LDA S,I      CARREGA NUMERO DE SETORES
+      MPY 67B     =DECIMAL 64 ,MULTIPLICA POR 
+      DIV D,I      DIVIDE PELO NUMERO DE PAL/REGISTROS
+      STA VNREG,I  PARA OBTER NOVO NUMERO DE REGISTROS
+      LDB D        COLOCA ESSE NUMERO EM VNREG,I
+      ADB 51B      E NA PRIMEIRA POSICAO DA TABELA
+      STA B,I 
+      JMP FILE,I   E RETORNA
+NAOE  INB          SE NAO E ESSE O ARQUIVO
+      INB          CARREGA O TIPO DE ARQUIVO
+      LDA B,I 
+      AND 72B     =OCTAL 77 
+      CPA 56B     =D3  SE FOR TIPO 3 OU 5 , 
+      RSS               A PROXIMA ENTRADA ESTA
+      CPA 60B     =D5  11 PALAVRAS APOS ESSA, 
+      ADB 61B     =D6  CASO CONTRARIO ESTA
+      ADB 56B     =D3  5 PALAVRAS APOS ESSA.
+      JMP TENT     VOLTA PARA RENTAR ACHAR
+      SKP 
+      SPC 3 
+ERRO8 ISZ ERRO
+ERRO7 ISZ ERRO
+ERRO6 ISZ ERRO
+ERRO5 ISZ ERRO
+ERRO4 ISZ ERRO
+ERRO3 ISZ ERRO
+ERRO2 ISZ ERRO
+ERRO1 LDA ERRO
+      MPY 63B      =DECIMAL 8 
+      ADA EMEN
+      STA ADDRR 
+      JSB EXEC     IMPRIME
+      DEF *+5      MENSAGEM 
+      OCT 55      =2 DE ERRO NA 
+      OCT 61      =6 IMPRESSORA 
+ADDRR NOP 
+      OCT 63
+      JSB EXEC     E PARA 
+      DEF *+2 
+      OCT 61    =6
+      SPC 6 
+ERRO  DEC 0 
+EMEN  DEF MENSA 
+MENSA ASC 8, TWO OPEN CALL
+      ASC 8, NO OPEN CALL 
+      ASC 8, TWO MANY FILES 
+      ASC 8, NO FILE ORDER
+      ASC 8, WORK AREA FULL 
+      ASC 8, UNDEFINED FILE 
+      ASC 8, END OF FILE
+      ASC 1,
+BUF3  BSS 3 
+      ASC 4,NO EXIST
+      SKP 
+* 
+*  CONSTANTES , VARIAVEIS E AREAS 
+* 
+      SPC 3 
+SIZE EQU 116B     NUMERO DESETORES POR TRACK
+NXTTS EQU 160B     PRIMEIRO TRACK/SETOR DISPONIVEL
+JBINC EQU 102B     TRACK/SETOR CORRENTE DA JBA
+B377  EQU 74B 
+B1774 EQU 75B 
+B102  OCT 102 
+DETEC DEC 0 
+CONT  DEC 0 
+TEST2 DEC 0 
+RCODB DEC 1 
+      SPC 1 
+SETOR NOP 
+TRACK NOP FTRAK NOP 
+LTRAK NOP 
+AREAU NOP 
+ENDA  NOP 
+S     NOP 
+N     NOP 
+D     NOP 
+      SPC 1 
+ENTAB DEF TABEL-3 
+TABEL BSS 30
+BLOCO BSS 64
+A     EQU 0 
+B     EQU 1 
+     END 
