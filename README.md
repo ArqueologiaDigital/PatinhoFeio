@@ -87,6 +87,12 @@ Para uma introdução mais direta ao projeto de desenvolvimento do "Patinho Feio
 * PDF disponível em: Descrição_de_um_Sistema_Modular_de_Sintese_de_Sons_Com_Controle_Automático_Por_Computador__Guido_Stolfi__1979.pdf
 * Arquivos originais do escaneamento (para gerar imagens de maior resolução) disponíveis em: https://github.com/felipesanches/SintetizadorGuidoStolfi
 
+## 1979: MOACYR MARTUCCI JUNIOR: Projeto de uma memória monolítica: Recusto para ampliação da memória principal de um minicomputador
+* Descreve modificações no Patinho Feio para expandir a memória de 4k em núcleo de ferrite para 32kbytes usando chips de memória disponíveis na época.
+* Buscou-se manter compatibilidade com software pré-existente.
+* O trabalho também inclui a instalação permanente de programa carregador (loader) em memória ROM.
+* PDF disponível em: Projeto de uma memória monolítica: Recusto para ampliação da memória principal de um minicomputador Moacyr Martucci Junior__1979.pdf
+
 ## 2003: Dissertação de mestrado de Marcia de Oliveira Cardoso
 * Em 2003, Marcia de Oliveira Cardoso desenvolveu uma dissertação de mestrado entitulada "O Patinho Feio como construção sociotécnica", defendida no Instituto de Matemática da Universidade Federal do Rio de Janeiro – IM/UFRJ.
 * [Dissertação completa] O_Patinho_Feio_como_Construção_Sociotécnica__Marcia_de_Oliveira_Cardoso__2003_dissertação_de_mestrado_UFRJ.pdf
