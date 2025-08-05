@@ -9,36 +9,39 @@
 ;  Felipe Sanches, OUT/2019
 ;
 
-	EQU	CANAL_4	4
-	EQU	CANAL_6	6
-	EQU	CANAL_7	7
+	EQU	SYNTH_SYNC	4
+	EQU	DUPLEX_A	6
+	EQU	DUPLEX_B	7
 	EQU	DECWRITER	11
-	EQU	CANAL_D	13
+	EQU	CANAL_D		13
 	EQU	LEITORA_DE_FITA	14
 
 	ORG /4 
 
-entry_point:
-	SALTA canal=4 func=4 ; Salta prox. instr. se ff de pedido de interrupcao estiver desligado
+interrupt_entry:
+	SALTA canal=SYNTH_SYNC, func=4 ; Salta prox. instr. se ff de pedido de interrupcao estiver desligado
 	PULA int
 
-	SALTA canal=13 func=4 ; Salta prox. instr. se ff de pedido de interrupcao estiver desligado
+	SALTA canal=CANAL_D, func=4 ; Salta prox. instr. se ff de pedido de interrupcao estiver desligado
 	PULA ilo
 
-	CARI 4
-	TRI		; guarda no registrador indexador o valor 4 (seria isso o endereço de entry_point ?!)
-	CARI /2E	; coloca 0x2E (caractere '.') no acumulador para ser impresso
+	; Imprime ".ERRO" na DECWRITER:
+	CARI 4	 ; 4 é o comprimento da string "ERRO"
+	TRI
+	CARI /2E ; coloca 0x2E (caractere '.') no acumulador para ser o primeiro caractere impresso
 	PULA decwriter_print_char
 
 
 int:
-	FUNC canal=4 func=4	; LIMPA F.F. PED. INT.
+	FUNC canal=SYNTH_SYNC, func=4	; LIMPA F.F. PED. INT.
+
+	; Salva estado dos registradores ACC e IDX:
 	ARM ACC
 	TRI
-	ARM RI
+	ARM IDX
  
-	SALTA canal=4, func=3	; SALTA SE NAO FOR PULSO DE SINCRONISMO
-	PULA sinc		; É PULSO DE SINCRONISMO
+	SALTA canal=SYNTH_SYNC, func=3	; SALTA SE NAO FOR PULSO DE SINCRONISMO
+	PULA sinc			; É PULSO DE SINCRONISMO
 
 	SUS CSQ
 	PULA nsq		; CSQ NAO CHEGOU A ZERO AINDA
@@ -49,16 +52,16 @@ csq_zero:
 
 nsq:
 	CHAMA verifica_hora_de_mandar
-	CAR RI
+	CAR IDX
 	TRI
 	CAR ACC
-	PULA
+	IRET
 
 
 sinc:
-	FUNC canal=4, func=3	; LIMPA F.F. PULSO SINC. 
-	CAR CSQ			; É PULSO DE SINCRONISMO 
-	PULA_Z csq_zero		; CSQ == 0 , TUDO BEM.
+	FUNC canal=SYNTH_SYNC, func=3	; LIMPA F.F. PULSO SINC. 
+	CAR CSQ				; É PULSO DE SINCRONISMO 
+	PULA_Z csq_zero			; CSQ == 0 , TUDO BEM.
 	SOMI -31		; CSQ != 0 , HOUVE PERDA OU GANHO DE PULSOS. CORRIGIR.
 	PULA_N perda_de_pulsos	; VAI P/ SUBROTINA - N (PERDA DE PULSOS)
 				;                      ( 1 <= CSQ <= 30 )
@@ -115,12 +118,12 @@ ppz:
 	SOMI -2
 	TRI
 	CARX BUF
-	SAI canal=6, func=2	;  SAI NO CANAL 6 (8 BITS)
+	SAI canal=DUPLEX_A, func=2
 	SUS 0
 	CARX BUF
-	SAI canal=6, func=3	;  SAI NO CANAL 6 (8 BITS)
-	SAI canal=6, func=4	;  MANDA DADOS.
-	SALTA canal=6, func=1	;  WAIT - FOR - FLAG.
+	SAI canal=DUPLEX_A, func=3
+	SAI canal=DUPLEX_A, func=4	;  MANDA DADOS.
+	SALTA canal=DUPLEX_A, func=1	;  WAIT - FOR - FLAG.
 	PULA *-2
 	SUS 0
 	PULA nzs
@@ -148,17 +151,20 @@ vcfim:
 	PULA_N escreve	; ATRAZO
 
 vparar:
-	FUNC canal=4, func=7	; LIMPA CONTROLE       (TBGEN) 
-	FUNC canal=4, func=0	; NAO PERM. INT.       (TBGEN) 
+	FUNC canal=SYNTH_SYNC, func=7	; LIMPA CONTROLE       (TBGEN) 
+	FUNC canal=SYNTH_SYNC, func=0	; NAO PERM. INT.       (TBGEN)
+
+	; salva endereço da rotina "pare" no endereço
+	; de retorno do tratamento de interrupções
 	CAR Y
 	ARM 2
 	CAR Y+1
 	ARM 3
-	PULA
+	IRET
 
 
 escreve:
-	CARI 5
+	CARI 5 ; 5 = offset do último char da string "ATRAZO"
 
 igual:
 	TRI
@@ -212,7 +218,8 @@ aum:
 
 
 	ORG /300
-pri:
+
+rotina_principal:
 	LIMP0
 	ARM F
 .:
@@ -263,10 +270,10 @@ le_dado_da_fita:
 
 
 liz:
-	FUNC canal=4, func=1	; AVISA QUE A INTERFACE MANDA 
+	FUNC canal=SYNTH_SYNC, func=1	; AVISA QUE A INTERFACE MANDA 
 	CAR TEMPI
-	SAI canal=4, func=0	; SAI DADO, SETA CONTROLE E COMECA A CONTAR TEMPO REAL 
-	PULA C
+	SAI canal=SYNTH_SYNC, func=0	; SAI DADO, SETA CONTROLE E COMECA A CONTAR TEMPO REAL 
+	PULA c
 
 
 [ROTINA]
@@ -278,16 +285,16 @@ armp:
 	SUS 0
 	CARX BUF
 	ARM PER
-	FUNC canal=6, func=8	; MODO SERIE PARA CANAL 6
-	FUNC canal=7, func=8	; MODO SERIE PARA CANAL 7
-	FUNC canal=7, func=10	; MODO ACOPLADO 
+	FUNC canal=DUPLEX_A, func=8	; MODO SERIE PARA CANAL 6
+	FUNC canal=DUPLEX_B, func=8	; MODO SERIE PARA CANAL 7
+	FUNC canal=DUPLEX_B, func=10	; MODO ACOPLADO 
 	UNEG
 	SOMA ACC
 	PULA_Z liz
-	FUNC canal=4, func=2	; AVISA QUE O SINTETIZADOR MANDA    (TBGEN)
+	FUNC canal=SYNTH_SYNC, func=2	; AVISA QUE O SINTETIZADOR MANDA    (TBGEN)
 
 c:
-	FUNC canal=4, func=5	; PERM. INT.                        (TBGEN) 
+	FUNC canal=SYNTH_SYNC, func=5	; PERM. INT.                        (TBGEN) 
 	PERM
 	RET (armp)
 
@@ -355,7 +362,7 @@ edai:
 pare:
 	PARE
 	INIBE
-	PULA pri
+	PULA rotina_principal
 
 
 ACC:
@@ -379,13 +386,13 @@ F:	DEFC 0
 L:	DEFC 0
 PERI:	DEFC 0
 PER:	DEFC 0
-RI:	DEFC 0
+IDX:	DEFC 0
 S:	DEFC 0
 TEMPI:	DEFC 0
 TEMP:	DEFC 0
 TRES:	DEFC 0
-X:	DEFE ESP
-Y:	DEFE PARE
+X:	DEFE esp
+Y:	DEFE pare
 BUF:	BLOC 80
 
 
